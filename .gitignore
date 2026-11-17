@@ -1,0 +1,12 @@
+# Gizli bilgiler – ASLA depoya girmez
+.env
+client_secret*.json
+token*.json
+
+# Medya dosyaları (ses, görsel, video) – depoya girmez, ayrıca yedeklenir
+medya/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
