@@ -1,6 +1,5 @@
 # YouTube Kanal Asistanı
 <!-- Kanal adı henüz belirlenmedi -->
-YouTube Kanal Asistanı
 
 İLK OTURUM NOTU: Bu metni olduğu gibi proje klasörünün köküne
 CLAUDE.md olarak kaydet, sonra "4. İlk oturum" adımlarıyla başla.
