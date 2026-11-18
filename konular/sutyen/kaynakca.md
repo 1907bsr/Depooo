@@ -23,3 +23,4 @@ Asıl videodan önce patent belgesi (Google Patents US1115674) doğrudan açıl�
 - K18: Smithsonian – How the myth of feminist bra burning spread – https://www.smithsonianmag.com/blogs/smithsonian-books/2025/03/06/how-the-myth-of-feminist-bra-burning-spread/
 - K19: History.com – Protests at the 1968 Miss America pageant – https://www.history.com/this-day-in-history/september-7/protests-at-the-1968-miss-america-pageant
 - K20: Media Myth Alert (W. Joseph Campbell) – https://mediamythalert.com/category/bra-burning/page/4
+- K21 (BİRİNCİL KAYNAK): ABD Patenti No. 1.115.674, "Brassière", M. P. Jacob (Mamaroneck, New York); başvuru 12 Şubat 1914, patent 3 Kasım 1914 – https://patentimages.storage.googleapis.com/pdfs/US1115674.pdf

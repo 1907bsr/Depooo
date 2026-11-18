@@ -130,7 +130,7 @@ Anlatılana göre baloda arkadaşları hemen soruyor: "Bu ne? Bana da yapar mıs
 
 Ve Mary burada çok önemli bir şey fark ediyor: Herkes bunu istiyor.
 
-12 Şubat 1914'te patent başvurusu yapıyor. Aynı yılın Kasım ayında patenti alıyor. Patentin adı: "Sırtı Açık Sütyen." Numarası: 1.115.674. [K1][K2][K4]
+12 Şubat 1914'te patent başvurusu yapıyor. Aynı yılın Kasım ayında patenti alıyor. Patentin adı tek kelime: "Brassière." Yani… sütyen. Numarası: 1.115.674. [K21][K1][K2]
 
 [GÖRSEL: Patent belgesinin çizimi (kamu malı – Google Patents), yakınlaşma.]
 

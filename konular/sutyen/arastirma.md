@@ -11,7 +11,7 @@ Güven: ✅ iki+ bağımsız kaynak | ⚠️ kaynaklar çelişiyor / tartışmal
 | 3 | Avusturya, Doğu Tirol, Lengberg Şatosu: 2008'deki tadilatta bir tonozun dolgusundan yaklaşık 2.700 tekstil parçası çıktı; aralarında kaplı (cup) 4 keten sütyen benzeri giysi. Karbon testiyle 15. yüzyıl. 2012'de duyuruldu (Innsbruck Üniversitesi, Beatrix Nutz). | ✅ | K5, K6, K7 |
 | 4 | 1889 Paris: Herminie Cadolle korseyi ikiye böldü ("corselet-gorge"); üst kısım 1905 civarı ayrı satılmaya başlandı. Cadolle markası hâlâ ailesi tarafından yürütülüyor. | ✅ (tarih ayrıntıları ⚠️) | K8, K12 |
 | 5 | Mary Phelps Jacob, bir baloya hazırlanırken balina çubuklu korsenin ince, dekolteli elbisesinin altından görünmesinden bıktı; hizmetçisinden iki mendil ve kurdele istedi, iğne-iplikle bir şey dikti. | ✅ (yıl ⚠️: çoğu kaynak 1913, kendi anlatımına dayanan bazıları 1910) | K1, K2, K3 |
-| 6 | Patent başvurusu 12 Şubat 1914; ABD patenti No. 1.115.674 "Backless Brassiere" 3 Kasım 1914'te verildi. | ✅ | K1, K2, K4 |
+| 6 | Patent başvurusu 12 Şubat 1914; ABD patenti No. 1.115.674 3 Kasım 1914'te verildi. Belgedeki resmi ad: "Brassière" ("Backless Brassiere" sonradan yaygınlaşan ad). | ✅ birincil kaynakla doğrulandı | K21, K1, K2, K4 |
 | 7 | Patenti Warner Brothers Corset Company'ye 1.500 dolara sattı. | ✅ (satış yılı ⚠️ 1915/1917) | K1, K2, K3 |
 | 8 | Warner'ın bu patentten sonraki 30 yılda 15 milyon dolardan fazla kazandığı söyleniyor. | ⚠️ tekrar eden ama birincil kaynağı görülmemiş rakam → "söylenene göre" | K1, K3 |
 | 9 | Mary Phelps Jacob sonradan "Caresse Crosby" adını aldı, Paris'te bohem bir hayat sürdü. | ✅ | K2, K3 |

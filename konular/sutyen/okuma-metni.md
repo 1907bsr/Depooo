@@ -108,7 +108,7 @@ Ve Mary burada çok önemli bir şey fark ediyor: / **Herkes bunu istiyor.** //
 
 On iki Şubat bin dokuz yüz on dörtte / patent başvurusu yapıyor. /
 Aynı yılın Kasım ayında / patenti alıyor. /
-Patentin adı: / "Sırtı Açık Sütyen." //
+Patentin adı tek kelime: / **"Brassière."** [Brasiyer] // Yani… sütyen. //
 
 Ama bir fikri patentlemek başka, / onu bütün dünyaya satmak başka. /
 Ve sonunda patenti büyük bir korse şirketine, / Warner Brothers [Vorner Bradırs] şirketine satıyor. //
