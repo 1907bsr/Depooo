@@ -45,6 +45,16 @@ ALACAĞIMIZ DERS: kapakta tek güçlü duygu + tanıdık tip + nesne + 2-4 kelim
   o döneme düşüp şaşıran kişi (izleyicinin gözü). Petrol mavisi ceket = kanal rengi.
 - Konuya göre dönem karakterleri (Mary, Cadolle vb.) – her biri kendi karakter kartıyla.
 
+## Hareket seviyesi (2026-11-18, üçüncü geri bildirim – Böcek-3 hareketli sahne videosu)
+İstenen: Karakterlerin gerçekten akıcı hareket ettiği sahneler (örnekte amca terlikle
+kokarcayı kovalıyor, böcek uçuyor, koku püskürtüyor). Bu, yapay zekâ "görselden video" aracıyla yapılır.
+Plan – KARMA KURGU:
+- Komik / aksiyon anları (videonun ~%25-30'u): görselden üretilen 5 sn'lik hareketli klipler
+  (video başına ~20-30 klip).
+- Bilgi sahneleri (harita, cetvel, soy ağacı, kelime anlamı): durağan çizim + kamera hareketi +
+  sırayla beliren yazı/ok (örnek kanal da böyle yapıyor).
+- Böylece hem "canlı" görünür hem bütçe aşılmaz.
+
 ---
 ## (Eski) İlk taslak – aşağıdakiler geçersiz, kayıt için duruyor
 
