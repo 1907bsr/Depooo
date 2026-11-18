@@ -14,3 +14,4 @@ KURAL: Bu listede sadece kamu malı / CC0 / kendi üretimimiz / kendi yapay zek�
 | Yazı tipleri: Inter, Caladea | Açık kaynak | SIL Open Font License (ticari kullanım serbest) | Hayır | – |
 | Müzik: merak, gizem, zafer (medya/muzik) | Claude besteledi ve üretti – scripts/muzik/uret.py (notalar dosyada) | Kendi üretimimiz | Hayır | Hiçbir sanatçıdan/kütüphaneden parça yok |
 | Sinematik müzik: merak, gizem, zafer (medya/muzik/sinematik) | Beste ve düzenleme: Claude (scripts/muzik/orkestra.py). Enstrüman kayıtları: VSCO 2 Community Edition, Versilian Studios – github.com/sgossner/VSCO-2-CE | Beste: kendi üretimimiz · Kayıtlar: CC0 1.0 (LICENSE dosyası okunarak doğrulandı, 2026-11-18) | Hayır | Telif kuralına uygun |
+| Ses efekti kütüphanesi (medya/efekt, 15 efekt) | Claude üretti – scripts/muzik/efektler.py | Kendi üretimimiz | Hayır | Fon müziği yok kararı (2026-11-18) |
