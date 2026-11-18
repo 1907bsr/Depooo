@@ -1,0 +1,346 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  html,body{margin:0;padding:0;background:#000;overflow:hidden}
+  svg{display:block}
+  text{font-family:"Inter Display","Inter",sans-serif}
+</style></head>
+<body>
+<svg id="sv" xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"></svg>
+<script>
+// ---------- NasılOldu? kukla animasyon denemesi ----------
+// Palet
+const C = {
+  teal:'#1F5C63', mustard:'#E3A72F', coral:'#E8604C', coralL:'#F08A74',
+  ink:'#2A2320', skin:'#F7D5BC', skinS:'#EDB99A', hair:'#8A3B26', hairS:'#6E2C1C',
+  paper:'#EBDDC2', sepia:'#7A5C3E', blush:'#F29A8E', white:'#FFFDF8'
+};
+const lerp=(a,b,k)=>a+(b-a)*k;
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ease=k=>k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;
+const easeOutBack=k=>{const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(k-1,3)+c1*Math.pow(k-1,2)};
+const seg=(t,a,b)=>clamp((t-a)/(b-a));
+
+// ---------- Karakter: Mary ----------
+// st: {pose:{elbow,hand} için 0=akimbo 1=aşağı 2=yukarı, brows, mouth, talk, eyes, look, corset, tilt}
+function arm(side, poseK){
+  // side: -1 sol, +1 sağ. poseK: 0 akimbo, 1 aşağı, 2 yukarı (kesirli değer = geçiş)
+  const P = [
+    {e:[-92,150], h:[-44,188]},   // akimbo (eller belde)
+    {e:[-72,165], h:[-80,222]},   // aşağı
+    {e:[-108,75], h:[-118,8]},    // yukarı (şaşkın)
+  ];
+  const i=Math.min(1,Math.floor(poseK)), k=poseK-i;
+  const a=P[i], b=P[Math.min(2,i+1)];
+  const fix=p=>[p[0]*(side<0?1:-1),p[1]];
+  const S=fix([-52,118]), E=fix([lerp(a.e[0],b.e[0],k),lerp(a.e[1],b.e[1],k)]), H=fix([lerp(a.h[0],b.h[0],k),lerp(a.h[1],b.h[1],k)]);
+  const d=`M${S[0]},${S[1]} Q${E[0]},${E[1]} ${H[0]},${H[1]}`;
+  return `<path d="${d}" fill="none" stroke="${C.ink}" stroke-width="26" stroke-linecap="round"/>
+          <path d="${d}" fill="none" stroke="${C.coral}" stroke-width="17" stroke-linecap="round"/>
+          <circle cx="${H[0]}" cy="${H[1]}" r="14" fill="${C.skin}" stroke="${C.ink}" stroke-width="4.5"/>`;
+}
+
+function eyes(st){
+  const L=[-38,12], R=[38,12];
+  const look=st.look||0;
+  if(st.eyes==='happy'){
+    return [L,R].map(p=>`<path d="M${p[0]-18},${p[1]+6} Q${p[0]},${p[1]-16} ${p[0]+18},${p[1]+6}" fill="none" stroke="${C.ink}" stroke-width="6" stroke-linecap="round"/>`).join('');
+  }
+  const wide = st.eyes==='wide';
+  const ry = (wide?31:26)*(st.blink?0.1:1);
+  const ir = wide?10:14;
+  let out='';
+  for(const p of [L,R]){
+    out+=`<ellipse cx="${p[0]}" cy="${p[1]}" rx="${wide?23:20}" ry="${ry}" fill="${C.white}" stroke="${C.ink}" stroke-width="4.5"/>`;
+    if(!st.blink){
+      out+=`<circle cx="${p[0]+look}" cy="${p[1]+3}" r="${ir}" fill="#3A2A20"/>
+            <circle cx="${p[0]+look+5}" cy="${p[1]-4}" r="${ir*0.38}" fill="#fff"/>
+            <circle cx="${p[0]+look-4}" cy="${p[1]+7}" r="${ir*0.16}" fill="#fff"/>`;
+      if(st.eyes==='tired'){
+        out+=`<path d="M${p[0]-22},${p[1]-28} L${p[0]+22},${p[1]-28} L${p[0]+22},${p[1]+1} Q${p[0]},${p[1]+4} ${p[0]-22},${p[1]+1} Z" fill="${C.skin}" stroke="${C.ink}" stroke-width="4.5"/>`;
+      }
+    }
+  }
+  return out;
+}
+
+function brows(type){
+  const B={
+    angry:  ['M-60,-24 L-20,-10','M20,-10 L60,-24'],
+    neutral:['M-58,-24 Q-38,-32 -18,-24','M18,-24 Q38,-32 58,-24'],
+    up:     ['M-58,-36 Q-38,-48 -18,-38','M18,-38 Q38,-48 58,-36'],
+    tired:  ['M-58,-18 Q-38,-22 -18,-24','M18,-24 Q38,-22 58,-18'],
+  }[type||'neutral'];
+  return B.map(d=>`<path d="${d}" fill="none" stroke="${C.hairS}" stroke-width="7" stroke-linecap="round"/>`).join('');
+}
+
+function mouth(st, t){
+  const type=st.mouth, talk=st.talk;
+  if(talk){
+    const a = clamp((0.5+0.5*Math.sin(t*19))*(0.55+0.45*Math.sin(t*6.1+1)));
+    if(a>0.15){
+      const ry=4+15*a;
+      return `<ellipse cx="0" cy="${60}" rx="${12+4*a}" ry="${ry}" fill="#7A1F22" stroke="${C.ink}" stroke-width="4"/>
+              <ellipse cx="0" cy="${60+ry*0.55}" rx="${7+2*a}" ry="${ry*0.35}" fill="#E07A7A"/>`;
+    }
+  }
+  switch(type){
+    case 'frown': return `<path d="M-17,63 Q0,51 17,63" fill="none" stroke="${C.ink}" stroke-width="5.5" stroke-linecap="round"/>`;
+    case 'o':     return `<ellipse cx="0" cy="62" rx="11" ry="15" fill="#7A1F22" stroke="${C.ink}" stroke-width="4"/>`;
+    case 'grin':  return `<path d="M-24,50 Q0,84 24,50 Z" fill="#7A1F22" stroke="${C.ink}" stroke-width="4.5" stroke-linejoin="round"/>
+                          <path d="M-20,52 L20,52 L17,59 L-17,59 Z" fill="#fff"/>`;
+    case 'flat':  return `<path d="M-14,60 L14,60" fill="none" stroke="${C.ink}" stroke-width="5.5" stroke-linecap="round"/>`;
+    default:      return `<path d="M-17,54 Q0,68 17,54" fill="none" stroke="${C.ink}" stroke-width="5.5" stroke-linecap="round"/>`;
+  }
+}
+
+function head(st,t){
+  return `
+  <g transform="rotate(${st.tilt||0} 0 90)">
+    <!-- arka saç -->
+    <ellipse cx="0" cy="-2" rx="108" ry="106" fill="${C.hair}" stroke="${C.ink}" stroke-width="5"/>
+    <!-- topuz + kurdele -->
+    <circle cx="6" cy="-118" r="48" fill="${C.hair}" stroke="${C.ink}" stroke-width="5"/>
+    <path d="M-10,-140 Q6,-128 24,-142" fill="none" stroke="${C.hairS}" stroke-width="4" stroke-linecap="round"/>
+    <path d="M44,-100 l30,-22 l2,36 z M44,-100 l34,10 l-20,24 z" fill="${C.mustard}" stroke="${C.ink}" stroke-width="4" stroke-linejoin="round"/>
+    <circle cx="46" cy="-100" r="8" fill="${C.mustard}" stroke="${C.ink}" stroke-width="4"/>
+    <!-- yüz -->
+    <ellipse cx="0" cy="8" rx="94" ry="92" fill="${C.skin}" stroke="${C.ink}" stroke-width="5"/>
+    <!-- kulak altı gölge -->
+    <path d="M-60,78 Q0,104 60,78" fill="none" stroke="${C.skinS}" stroke-width="6" stroke-linecap="round" opacity=".6"/>
+    <!-- perçem -->
+    <path d="M-98,4 C-96,-78 -30,-108 4,-88 C34,-110 98,-80 98,4 C82,-44 52,-58 14,-50 C-6,-38 -30,-42 -40,-54 C-62,-44 -86,-26 -98,4 Z"
+          fill="${C.hair}" stroke="${C.ink}" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M-30,-70 Q-10,-58 6,-74" fill="none" stroke="${C.hairS}" stroke-width="4" stroke-linecap="round"/>
+    <!-- yanaklar -->
+    <ellipse cx="-58" cy="46" rx="17" ry="10" fill="${C.blush}" opacity="${st.blush??0.55}"/>
+    <ellipse cx="58" cy="46" rx="17" ry="10" fill="${C.blush}" opacity="${st.blush??0.55}"/>
+    ${eyes(st)}
+    ${brows(st.brows)}
+    ${mouth(st,t)}
+  </g>`;
+}
+
+function body(st,t){
+  const corset=st.corset||0;
+  let stripes='';
+  if(corset>0){
+    for(const x of [-30,-12,6,24]){
+      stripes+=`<path d="M${x},${96-14*corset} L${x*0.75},186" stroke="#9AA0A6" stroke-width="6" stroke-linecap="round" opacity="${corset}"/>
+                <path d="M${x},${96-14*corset} L${x*0.75},186" stroke="${C.ink}" stroke-width="1.5" fill="none" opacity="${corset*.6}"/>`;
+    }
+  }
+  const bow = (1-corset)>0.01 ? `<g transform="translate(0,118) scale(${1-corset})">
+      <path d="M0,0 l-26,-14 l0,28 z M0,0 l26,-14 l0,28 z" fill="#F4A3B4" stroke="${C.ink}" stroke-width="3.5" stroke-linejoin="round"/>
+      <circle r="6" fill="#F4A3B4" stroke="${C.ink}" stroke-width="3.5"/></g>`:'';
+  return `
+    <!-- etek -->
+    <path d="M-40,182 C-74,228 -112,296 -130,338 Q0,362 130,338 C112,296 74,228 40,182 Z" fill="${C.coralL}" stroke="${C.ink}" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M-124,326 Q0,350 124,326" fill="none" stroke="${C.mustard}" stroke-width="10"/>
+    <path d="M-60,250 Q-70,300 -80,338 M60,250 Q70,300 80,338 M0,200 L0,352" fill="none" stroke="${C.coral}" stroke-width="4" opacity=".7"/>
+    <!-- boyun -->
+    <rect x="-15" y="86" width="30" height="26" fill="${C.skin}" stroke="${C.ink}" stroke-width="4.5"/>
+    <!-- üst gövde -->
+    <path d="M-56,110 Q0,98 56,110 L40,190 Q0,198 -40,190 Z" fill="${C.coral}" stroke="${C.ink}" stroke-width="5" stroke-linejoin="round"/>
+    ${stripes}
+    ${bow}`;
+}
+
+function mary(st,t){
+  const breathe = 1+0.012*Math.sin(t*2.6);
+  return `<g transform="translate(${st.x},${st.y - (st.jump||0)}) rotate(${st.sway||0} 0 340) scale(${(st.scale||1)/Math.sqrt(st.squash||1)},${(st.scale||1)*(st.squash||1)*breathe})">
+    <ellipse cx="0" cy="350" rx="${120-(st.jump||0)*0.4}" ry="16" fill="#000" opacity=".13" transform="translate(0,${st.jump||0})"/>
+    ${arm(-1, st.armL)}
+    ${arm(1, st.armR)}
+    ${body(st,t)}
+    ${head(st,t)}
+  </g>`;
+}
+
+// ---------- Sahne parçaları ----------
+function background(){
+  let arches='';
+  for(const x of [170,520,870]){
+    arches+=`<path d="M${x},520 L${x},230 Q${x+120},110 ${x+240},230 L${x+240},520 Z" fill="#E2CFAE" stroke="${C.sepia}" stroke-width="3"/>
+             <path d="M${x+120},150 L${x+120},520 M${x},330 L${x+240},330 M${x},430 L${x+240},430" stroke="${C.sepia}" stroke-width="2" opacity=".7"/>
+             <rect x="${x}" y="230" width="240" height="290" fill="url(#hatch)" opacity=".35"/>`;
+  }
+  let chand='';
+  for(let i=-3;i<=3;i++) chand+=`<path d="M640,70 Q${640+i*30},110 ${640+i*42},96" fill="none" stroke="${C.sepia}" stroke-width="2.5"/><circle cx="${640+i*42}" cy="92" r="5" fill="${C.mustard}" opacity=".8"/>`;
+  return `
+  <defs>
+    <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <line x1="0" y1="0" x2="0" y2="7" stroke="${C.sepia}" stroke-width="1.2"/></pattern>
+    <radialGradient id="vig" cx="50%" cy="45%" r="70%">
+      <stop offset="60%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#3a2a1a" stop-opacity=".45"/></radialGradient>
+    <filter id="paper"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3"/>
+      <feColorMatrix values="0 0 0 0 .45  0 0 0 0 .35  0 0 0 0 .22  0 0 0 .18 0"/></filter>
+  </defs>
+  <rect width="1280" height="720" fill="${C.paper}"/>
+  ${arches}
+  <path d="M640,20 L640,70" stroke="${C.sepia}" stroke-width="3"/>${chand}
+  <rect y="520" width="1280" height="200" fill="#D9C29C"/>
+  <path d="M0,520 L1280,520" stroke="${C.sepia}" stroke-width="3"/>
+  ${Array.from({length:14},(_,i)=>`<path d="M${i*100-40},720 L${640+(i*100-680)*0.45},520" stroke="${C.sepia}" stroke-width="1.5" opacity=".45"/>`).join('')}
+  <rect width="1280" height="720" filter="url(#paper)"/>
+  <rect width="1280" height="720" fill="url(#vig)"/>`;
+}
+
+function handkerchiefs(k,t){
+  if(k<=0) return '';
+  const s=easeOutBack(clamp(k));
+  const fl = Math.sin(t*3)*3;
+  const hk=(x,y,r)=>`<g transform="translate(${x},${y}) rotate(${r+fl})">
+      <rect x="-48" y="-48" width="96" height="96" rx="6" fill="${C.white}" stroke="${C.ink}" stroke-width="4.5"/>
+      <rect x="-38" y="-38" width="76" height="76" rx="4" fill="none" stroke="${C.coralL}" stroke-width="3" stroke-dasharray="6 5"/>
+      <path d="M-48,48 Q-30,30 -10,44" fill="none" stroke="${C.ink}" stroke-width="2.5" opacity=".5"/></g>`;
+  return `<g transform="translate(905,420) scale(${s})">
+    ${hk(-60,0,-14)}${hk(50,-8,11)}
+    <path d="M-40,70 C-10,40 20,100 60,66 C80,50 100,80 120,62" fill="none" stroke="#F4A3B4" stroke-width="9" stroke-linecap="round"/>
+    <path d="M-40,70 C-10,40 20,100 60,66 C80,50 100,80 120,62" fill="none" stroke="${C.ink}" stroke-width="1.6" opacity=".5"/>
+  </g>`;
+}
+
+function bang(k){
+  if(k<=0||k>=1) return '';
+  const s=easeOutBack(clamp(k*3));
+  const o=k>0.8?(1-k)/0.2:1;
+  return `<g transform="translate(560,170) scale(${s}) rotate(12)" opacity="${o}">
+    <path d="M-14,-70 L14,-70 L8,20 L-8,20 Z" fill="${C.mustard}" stroke="${C.ink}" stroke-width="5" stroke-linejoin="round"/>
+    <circle cx="0" cy="44" r="13" fill="${C.mustard}" stroke="${C.ink}" stroke-width="5"/></g>`;
+}
+
+function sparkles(k,t){
+  if(k<=0) return '';
+  const pts=[[300,200],[560,250],[250,430],[610,420],[430,120]];
+  return pts.map((p,i)=>{
+    const s=clamp(k*2)*(0.6+0.4*Math.sin(t*7+i*1.7));
+    return `<path transform="translate(${p[0]},${p[1]}) scale(${s})" d="M0,-18 Q3,-3 18,0 Q3,3 0,18 Q-3,3 -18,0 Q-3,-3 0,-18Z" fill="${C.mustard}" stroke="${C.ink}" stroke-width="2.5"/>`;
+  }).join('');
+}
+
+function stamp(k){
+  if(k<=0) return '';
+  const s=lerp(2.4,1,ease(clamp(k*2.5)));
+  const o=clamp(k*2.5);
+  return `<g transform="translate(930,190) rotate(-9) scale(${s})" opacity="${o}">
+    <rect x="-200" y="-56" width="400" height="112" rx="10" fill="${C.white}" fill-opacity=".55" stroke="${C.coral}" stroke-width="8"/>
+    <rect x="-188" y="-44" width="376" height="88" rx="6" fill="none" stroke="${C.coral}" stroke-width="2.5"/>
+    <text x="0" y="-6" text-anchor="middle" font-size="40" font-weight="900" fill="${C.coral}" letter-spacing="3">PATENT · 1914</text>
+    <text x="0" y="32" text-anchor="middle" font-size="24" font-weight="700" fill="${C.coral}">No. 1.115.674</text></g>`;
+}
+
+function subtitle(txt){
+  if(!txt) return '';
+  return `<text x="640" y="672" text-anchor="middle" font-size="40" font-weight="800" fill="#fff" stroke="#111" stroke-width="9" paint-order="stroke" stroke-linejoin="round">${txt}</text>`;
+}
+
+function labels(){
+  return `<g opacity=".9">
+    <rect x="18" y="18" width="336" height="38" rx="19" fill="${C.teal}"/>
+    <text x="186" y="44" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">NasılOldu? · stil + hareket denemesi</text>
+    <text x="1262" y="706" text-anchor="end" font-size="15" font-weight="600" fill="${C.sepia}">Arka plan: gerçek videoda dönemin arşiv görseli kullanılacak</text></g>`;
+}
+
+// ---------- Zaman çizelgesi ----------
+const DUR=10.5;
+function render(t){
+  const blink = (t%2.4)<0.12 && t<5.6 || (t>8.6 && t<8.72);
+  let st={x:400,y:250,armL:0,armR:0,brows:'angry',mouth:'frown',talk:false,eyes:'normal',look:0,corset:1,tilt:-4,sway:0,jump:0,squash:1,blink};
+  let sub='';
+  // 1) Kızgın: "Bu korseyle dans etmem!"
+  if(t<2.9){
+    st.talk = t>0.3 && t<2.4;
+    sub = t>0.25 ? 'Bu korseyle dans etmem!' : '';
+    st.tilt = -4 + Math.sin(t*3)*2;
+  }
+  // 2) Normal: "Bana iki mendil getirin… bir de kurdele."
+  else if(t<5.0){
+    const k=ease(seg(t,2.9,3.4));
+    st.armL=k; st.armR=k; st.brows='neutral'; st.mouth='smile'; st.tilt=lerp(-4,3,k);
+    st.talk = t>3.1 && t<4.7;
+    sub='Bana iki mendil getirin… bir de kurdele.';
+    st.look = 0;
+  }
+  // 3) Mendiller geliyor, bakıyor
+  else if(t<5.6){
+    st.armL=1; st.armR=1; st.brows='neutral'; st.mouth='smile'; st.look=7*ease(seg(t,5.0,5.3)); st.tilt=3;
+  }
+  // 4) Şaşkın: kollar yukarı, zıplama
+  else if(t<6.7){
+    const k=ease(seg(t,5.6,5.8));
+    st.armL=1+k; st.armR=1+k; st.brows='up'; st.mouth='o'; st.eyes='wide'; st.look=6; st.tilt=0;
+    const j=seg(t,5.6,6.3); st.jump = Math.sin(j*Math.PI)*70; st.squash = j<0.08? 0.88 : (j>0.92?0.9:1.05);
+    sub = t>5.7 ? 'Dur bir dakika…' : '';
+  }
+  // 5) Mutlu: korse gidiyor, sütyen geliyor
+  else{
+    const k=ease(seg(t,6.7,7.1));
+    st.corset = 1-k;
+    st.armL = 2 - k; st.armR = lerp(2,1.6,k) + Math.sin(t*6)*0.25*k;
+    st.brows='neutral'; st.mouth='grin'; st.eyes = (t>8.0 && t<8.6) ? 'happy' : 'normal';
+    st.sway = Math.sin(t*3.2)*5*k; st.tilt = Math.sin(t*3.2+1)*4*k; st.blush=0.8;
+    st.jump = Math.abs(Math.sin(t*6.4))*10*k;
+    sub = t>7.0 ? 'Ve tarih… iki mendille değişti.' : '';
+  }
+  // Kamera
+  let cam = 1 + 0.04*(t/DUR);
+  let shx=0, shy=0;
+  if(t>5.6 && t<5.85){ cam += 0.06*Math.sin(seg(t,5.6,5.85)*Math.PI); }
+  if(t>7.6 && t<7.9){ const a=(1-seg(t,7.6,7.9))*7; shx=Math.sin(t*90)*a; shy=Math.cos(t*80)*a; }
+  const seed = Math.floor(t*8)%5+1;
+  const fadeIn = clamp(t/0.35), fadeOut = clamp((DUR-t)/0.4);
+
+  document.getElementById('sv').innerHTML = `
+    <defs><filter id="wob" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency=".022" numOctaves="2" seed="${seed}"/>
+      <feDisplacementMap in="SourceGraphic" scale="3.2"/></filter></defs>
+    <g transform="translate(${640+shx},${360+shy}) scale(${cam}) translate(-640,-360)">
+      ${background()}
+      <g filter="url(#wob)">
+        ${mary(st,t)}
+        ${handkerchiefs(seg(t,5.0,5.45),t)}
+        ${bang(seg(t,5.6,6.7))}
+        ${sparkles(seg(t,7.0,7.6),t)}
+        ${stamp(seg(t,7.6,8.4))}
+      </g>
+    </g>
+    ${subtitle(sub)}
+    ${labels()}
+    <rect width="1280" height="720" fill="#000" opacity="${1-Math.min(fadeIn,fadeOut)}"/>`;
+}
+window.render=render; window.DUR=DUR;
+
+// ---------- Karakter kartı ----------
+window.renderSheet=function(){
+  const sv=document.getElementById('sv');
+  sv.setAttribute('width',1600); sv.setAttribute('height',900); sv.setAttribute('viewBox','0 0 1600 900');
+  const ex=[
+    ['Kızgın',{brows:'angry',mouth:'frown',eyes:'normal'}],
+    ['Normal',{brows:'neutral',mouth:'smile',eyes:'normal'}],
+    ['Şaşkın',{brows:'up',mouth:'o',eyes:'wide'}],
+    ['Mutlu',{brows:'neutral',mouth:'grin',eyes:'happy',blush:.85}],
+    ['Bezgin',{brows:'tired',mouth:'flat',eyes:'tired',blush:.25}],
+  ];
+  let heads='';
+  ex.forEach(([n,s],i)=>{
+    const x=930+(i%3)*215, y= i<3?250:560;
+    heads+=`<g transform="translate(${x},${y}) scale(.72)">${head(Object.assign({tilt:0},s),0.9)}</g>
+            <text x="${x}" y="${y+130}" text-anchor="middle" font-size="26" font-weight="800" fill="${C.teal}">${n}</text>`;
+  });
+  sv.innerHTML=`
+    <rect width="1600" height="900" fill="${C.paper}"/>
+    <rect x="30" y="30" width="1540" height="840" rx="26" fill="none" stroke="${C.teal}" stroke-width="5" stroke-dasharray="14 10"/>
+    <text x="70" y="104" font-size="50" font-weight="900" fill="${C.teal}">MARY PHELPS JACOB</text>
+    <text x="70" y="146" font-size="24" font-weight="600" fill="${C.sepia}">Karakter kartı · NasılOldu? · deneme çizimi</text>
+    <g transform="translate(360,330) scale(1.05)">${mary({x:0,y:0,armL:1,armR:1,brows:'neutral',mouth:'smile',eyes:'normal',corset:0,tilt:3},0.9)}</g>
+    <g font-size="21" font-weight="600" fill="${C.ink}">
+      <text x="70" y="790">Saç: kızıl-kahve topuz + hardal kurdele · Elbise: mercan kırmızısı balo elbisesi</text>
+      <text x="70" y="822">Kişilik: inatçı, pratik, "ben bununla dans etmem" tipi</text>
+    </g>
+    <g>${['teal','mustard','coral','hair','skin'].map((c,i)=>`<circle cx="${1000+i*70}" cy="800" r="24" fill="${C[c]}" stroke="${C.ink}" stroke-width="3"/>`).join('')}
+      <text x="1140" y="852" text-anchor="middle" font-size="18" font-weight="600" fill="${C.sepia}">kanal paleti</text></g>
+    ${heads}`;
+};
+</script>
+</body></html>
