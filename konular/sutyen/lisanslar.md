@@ -7,3 +7,4 @@
 | (bekliyor) s14 Bikinili Kızlar mozaiği | Wikimedia: "Villa Romana del Casale Bikini Maedchen modified.jpg" – Clemensfranz | CC BY 2.5 | EVET: "Clemensfranz, CC BY 2.5, Wikimedia Commons" | Wikimedia istek sınırı nedeniyle henüz indirilemedi |
 | (bekliyor) s28 Paris 1889 | Wikimedia: "Eiffel tower at Exposition Universelle, Paris, 1889.jpg" | Kamu malı | Hayır | İndirilemedi (istek sınırı) |
 | (bekliyor) s21 Lengberg Şatosu | Wikimedia (aranacak) | ? | ? | Bulunamazsa Gemini sahne 8 tarzı çizim |
+| s01-newyork-gemini.png | Google Gemini (Mert/Büşra üretti, 2026-11-18) | Yapay zekâ ile üretildi | Hayır | Ön planda Mary'ye benzeyen kızıl saçlı kadın var – sahne 2'ye geçiş için kullanılabilir |

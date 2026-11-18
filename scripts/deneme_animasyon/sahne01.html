@@ -1,0 +1,46 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}svg{display:block}</style></head>
+<body><svg id="sv" xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
+<script>
+const IMG='../../medya/sutyen/gorsel/s01-newyork-3x.png';
+const DUR=6.0;
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ease=k=>k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;
+const seg=(t,a,b)=>clamp((t-a)/(b-a));
+const INK='#2A1D16', TEAL='#1F5C63', CREAM='#F8EED8';
+// sokak lambaları (görsel koordinatı 1024x572)
+const LAMPS=[[60,92],[103,92],[183,160],[372,232],[490,240],[862,172],[893,197],[206,297],[860,355]];
+// pseudo-random
+const rnd=i=>{const x=Math.sin(i*127.1)*43758.5453;return x-Math.floor(x)};
+const DROPS=Array.from({length:140},(_,i)=>({x:rnd(i)*2200-140,y:rnd(i+500)*1200,v:900+rnd(i+900)*500,l:22+rnd(i+77)*26}));
+
+function render(t){
+  const k=ease(seg(t,0,DUR));
+  const w=1010-(1010-700)*k, cx=512+(560-512)*k, cy=290+(330-290)*k;
+  const h=w*9/16, s=1920/w, ox=-(cx-w/2)*s, oy=-(cy-h/2)*s;
+  const P=(x,y)=>[x*s+ox,y*s+oy];
+  let glow='';
+  LAMPS.forEach(([x,y],i)=>{const [X,Y]=P(x,y);const f=0.55+0.25*Math.sin(t*7+i*2.1)+0.12*Math.sin(t*17+i);
+    glow+=`<circle cx="${X}" cy="${Y}" r="${26*s}" fill="url(#g)" opacity="${f}"/>`;});
+  let rain='';
+  for(const d of DROPS){const y=((d.y+t*d.v)%1250)-80, x=d.x+((d.y+t*d.v)%1250)*0.18;
+    rain+=`<line x1="${x}" y1="${y}" x2="${x+d.l*0.18}" y2="${y+d.l}" stroke="#E8F0F2" stroke-width="2" opacity=".28"/>`;}
+  const cap=clamp(seg(t,0.4,0.9));
+  const caption=`<g transform="translate(70,${70-30*(1-ease(cap))})" opacity="${cap}">
+    <rect x="10" y="10" width="560" height="96" rx="8" fill="${TEAL}"/>
+    <rect width="560" height="96" rx="8" fill="${CREAM}" stroke="${INK}" stroke-width="5"/>
+    <text x="32" y="64" font-family="Caladea,serif" font-weight="700" font-size="50" fill="${INK}">New York, 1910'lar.</text></g>`;
+  let sub=''; if(t>0.3&&t<3.0) sub='New York. 1910\'ların başı.'; else if(t>=3.0) sub='Büyük bir balo var.';
+  const fade=Math.min(clamp(t/0.4),clamp((DUR-t)/0.35));
+  document.getElementById('sv').innerHTML=`
+   <defs><radialGradient id="g"><stop offset="0" stop-color="#FFE2A0" stop-opacity=".85"/><stop offset=".45" stop-color="#FFC766" stop-opacity=".35"/><stop offset="1" stop-color="#FFC766" stop-opacity="0"/></radialGradient>
+   <radialGradient id="v" cx="50%" cy="50%" r="75%"><stop offset="62%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#0a0604" stop-opacity=".55"/></radialGradient></defs>
+   <image href="${IMG}" x="${ox}" y="${oy}" width="${1024*s}" height="${572*s}" preserveAspectRatio="none"/>
+   <g style="mix-blend-mode:screen">${glow}</g>${rain}
+   <rect width="1920" height="1080" fill="url(#v)"/>
+   ${caption}
+   ${sub?`<text x="960" y="1020" text-anchor="middle" font-family="Inter" font-weight="800" font-size="52" fill="#fff" stroke="#111" stroke-width="11" paint-order="stroke" stroke-linejoin="round">${sub}</text>`:''}
+   <rect width="1920" height="1080" fill="#000" opacity="${1-fade}"/>`;
+}
+window.render=render; window.DUR=DUR;
+</script></body></html>
