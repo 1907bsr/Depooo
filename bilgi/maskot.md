@@ -4,7 +4,7 @@ Amaç: Yüzü görünmeyen kanalda izleyicinin bağ kurduğu, kapakta anında ta
 Kural: Tamamen özgün, gerçek bir kişiye veya bilinen bir çizgi karaktere benzemeyecek.
 
 ## 1. "Soru" – canlı soru işareti (ÖNERİLEN)
-- Kanal adındaki "?" işaretinin kendisi: kocaman gözlü, ince bıyıklı, başında eski bir kâşif şapkası,
+- Kanal adındaki "?" işaretinin kendisi: kocaman gözlü, ince bıyıklı (kâşif şapkası İPTAL – Mürekkep Teorisi kanalına benziyor; yeni aksesuar seçilecek),
   elinde büyüteç olan bir soru işareti.
 - Artısı: İsimle doğrudan bağlantılı → marka. Kapakta tek başına bile tanınır. Logo da olabilir.
 - Videoda: Şaşırdığında kıvrılıp ünlem işaretine dönüşür ("?" → "!") – imza hareketi.
