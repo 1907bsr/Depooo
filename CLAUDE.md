@@ -249,13 +249,17 @@ Kurallar:
 /okuma-metni
   Senaryodan seslendirilecek versiyonu üret: kısa cümleler, vurgu,
   duraklama ve espri zamanlaması işaretleri.
-  YAZIM KURALI (Mert'in isteği, 2026-11-18): Yıllar SADECE RAKAMLA yazılır ("1913"), okunuşu
-  eklenmez. Bütün özel yabancı isimlerin Türkçe okunuşu parantezde:
-  "Mary Phelps Jacob (Meri Felps Ceykıb)". Türkçe dil bilgisi ve noktalama (virgül, nokta,
-  soru/ünlem işareti, tırnak) eksiksiz ve doğru olacak; "/" durak işaretleri noktalamanın yerine geçmez.
-/ses-kontrol
-  Kayıt gelince ölç ve düzenle: gürültü, yankı, seviye, kırpılma, hız; okuma metniyle
-  karşılaştırıp eksik/yanlış cümleleri listele; gerekirse yeniden okunacak cümleleri iste.
+  YAZIM KURALI (Mert'in isteği, 2026-11-18):
+  - BÜTÜN sayılar rakamla: yıllar ("1913"), miktarlar ("500 yıl", "2.700 parça", "3 lokma"),
+    sıra sayıları ("15. yüzyıl"). Binlik ayraç nokta. Yılların okunuşu EKLENMEZ.
+    Yazıyla kalanlar: tanımlık/deyim ("bir kadın", "binde biri", "tek bir"), özel isimler
+    ("Birinci Dünya Savaşı").
+  - PARA tutarları rakam + parantezde okunuş: "1.500 dolar (bin beş yüz dolar)".
+  - Bütün özel yabancı isimlerin Türkçe okunuşu parantezde: "Mary Phelps Jacob (Meri Felps Ceykıb)";
+    okunuşu yazılışıyla aynıysa parantez yazılmaz ("Otto", "Lengberg").
+  - Türkçe dil bilgisi ve noktalama eksiksiz: Özneden sonra virgül YOK, "ama/fakat" öncesi virgül YOK,
+    zaman/kip uyumu ("görsen … dersin"), alıntıda tırnak ve noktalama doğru.
+    "/" durak işareti noktalamanın yerine geçmez; durak için virgül EKLENMEZ.
 /yorumlar
   Yorumları API ile oku ve özetle. Konu isteklerini konu havuzuna
   ekle. Yanıt taslakları hazırla. Asla kendi başına yorum gönderme.
