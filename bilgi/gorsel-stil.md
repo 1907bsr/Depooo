@@ -1,5 +1,29 @@
 # Görsel Stil – NasılOldu? (TASLAK, onay bekliyor)
 
+## GÜNCEL YÖN (2026-11-18, ikinci geri bildirim)
+İlk deneme (büyük kafalı Mary) "çok çizgi filmsi" bulundu. Yeni yön: gönderilen sarıkız
+videosu tarzıyla HARMAN → "çizgi roman / dergi illüstrasyonu":
+- Gerçekçi vücut oranları (büyük kafa YOK), yüz ifadeleri hafif abartılı ama insan gibi.
+- Mürekkep kontur (kalın-ince değişen çizgi), 2-3 tonlu gölgelendirme, detaylı arka planlar.
+- Sıcak toprak paleti (kum, hardal, krem, kiremit) + bizim imza rengimiz petrol mavisi
+  (gölgelerde, etiketlerde, maskotta) → örnekten ayrışmak için.
+- Tanıdık, gündelik Türk tipleri komedi için (ör. kasketli, atletli, terlikli amca).
+- Bilgi sahneleri infografik gibi: cetvelle boy karşılaştırma, harita, soy ağacı,
+  "kelimenin anlamı" okları, gece/gündüz bölünmüş ekran.
+- Elle yazılmış gibi etiketler ve oklar, sahnede SIRAYLA belirir.
+- Çizgi roman efektleri: hız çizgileri, savrulan toz/taş, ter damlası, titreme çizgileri.
+Bizi ayıracaklar: kendi karakter kadromuz, petrol mavisi vurgu, kendi yazı tipimiz,
+gerçek arşiv belgelerinin (patent, gazete) bu çizimlerin içine yerleştirilmesi.
+
+Hareket: kamera kaydırma/yakınlaşma, katmanlı derinlik (ön plan-arka plan ayrı kayar),
+okların/yazıların çizilerek belirmesi, efektler, karakterde sınırlı hareket
+(göz kırpma, kafa/kol oynatma, 2-3 poz arası geçiş).
+
+Üretim: Bu kalite elle kodla çizilemez → yapay zekâ görsel aracı gerekir (teklif: EK-3).
+
+---
+## (Eski) İlk taslak – aşağıdakiler geçersiz, kayıt için duruyor
+
 İstek (2026-11-18): Tatlı çizim karakterler, HAREKETLİ olacak. Örnek kanallardan ilham
 alınacak ama hiçbirinin aynısı olmayacak; bize özel. Her karakterin kendi tipi olacak.
 
