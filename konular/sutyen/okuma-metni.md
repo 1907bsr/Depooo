@@ -48,7 +48,7 @@ Romalılar da benzer bir bant kullanmışlar / ama adını **strophium** (strofy
 Yani mal aynı, / etiket yeni. / Pazarlamanın piri de / Romalılar. //
 
 Hatta Sicilya'da / 1.700 yıllık bir Roma villasında / bir mozaik var. /
-Bir grup kadın: / Bantlar takılmış, / şortlar giyilmiş; / top oynanıyor, / ağırlık kaldırılıyor. //
+Mozaikte bir grup kadın var: / Göğüslerinde bant, / altlarında şort. / Kimi top oynuyor, / kimi ağırlık kaldırıyor. //
 Herkes buna "Bikinili Kızlar" diyor / ama bunlar mayo değil… / **spor kıyafeti.** /
 Yani 1.700 yıl önce bile / birileri "Spor salonuna ne giysem?" diye dert yanıyormuş. [güler] //
 
@@ -70,7 +70,7 @@ Avusturya. / Doğu Tirol. / **Lengberg** Şatosu. //
 Ama öyle sıradan bir çöp değil. / **500 yıllık**, / halis muhlis / Orta Çağ çöpü. /
 Yani Orta Çağ'ın "Bunu sonra atarız." dediği ne varsa. [güler] //
 
-Yaklaşık 2.700 parça kumaş. /
+Tam 2.700 parça kumaş çıkıyor. /
 Arkeologlar bunları tek tek inceliyorlar / ve bir tanesini görünce / **donup kalıyorlar.** //
 Çünkü ellerindeki şey… / düpedüz bir **sütyen.** / Keten. / 2 kaplı. / Askılı. //
 Bugün bir mağazada görsen / "Biraz retro ama fena değil." dersin, / indirimdeyse kaparsın. [güler] //
