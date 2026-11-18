@@ -50,7 +50,7 @@ Yani mal aynı, / etiket yeni. / Pazarlamanın piri de / Romalılar. //
 Hatta Sicilya'da / 1.700 yıllık bir Roma villasında / bir mozaik var. /
 Mozaikte bir grup kadın var: / Göğüslerinde bant, / altlarında şort. / Kimi top oynuyor, / kimi ağırlık kaldırıyor. //
 Herkes buna "Bikinili Kızlar" diyor / ama bunlar mayo değil… / **spor kıyafeti.** /
-Yani 1.700 yıl önce bile / birileri "Spor salonuna ne giysem?" diye dert yanıyormuş. [güler] //
+Yani 1.700 yıl önce bile / kadınlar "Spora giderken ne giysem?" derdindeymiş. [güler] //
 
 Peki sonra ne oldu? /
 Avrupa yüzyıllarca oturdu / ve şunu düşündü: / "Bu bant çok rahat. // Bunu nasıl **daha zor** hâle getiririz?" //
