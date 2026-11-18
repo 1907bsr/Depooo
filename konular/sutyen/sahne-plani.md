@@ -63,5 +63,5 @@ Not: Bu ortamdan patents.google.com'a erişim kapalı; patent çizimi için Wiki
 
 ## Ses ve müzik
 - Anlatım: yapay zekâ sesi (ElevenLabs – ödeme bekliyor) veya kendi sesiniz.
-- Müzik: Kendi ürettiğimiz müzik (telif kuralı). YouTube Ses Kitaplığı ancak onay alınırsa.
+- Müzik: YOK (karar 2026-11-18). Sadece ses efektleri ve kısa vurgu sesleri.
 - Efektler: hepsini ben üretiyorum (telif yok).

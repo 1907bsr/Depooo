@@ -20,6 +20,10 @@ başka YouTube kanallarından herhangi bir parça, popüler müzik/film/dizi par
 MÜZİK (2026-11-18 kesin karar): Bütün müzikleri Claude kendisi besteleyip üretir
 (scripts/muzik/). Hiçbir sanatçıdan, kütüphaneden, YouTube Ses Kitaplığı'ndan parça ALINMAZ.
 Bilinen bir şarkının melodisi/akor dizisi taklit edilmez; her parça özgün bestedir.
+MÜZİK TARZI KARARI (2026-11-18): Kodla üretilen fon müziği iki denemede beğenilmedi
+(sentez ve CC0 örnekli). Karar: NEREDEYSE MÜZİKSİZ – fon müziği yok; sadece Claude'un ürettiği
+ses efektleri ve kısa vurgu sesleri (whoosh, gerilim tonu, ding, boing, kasa, trombon vb.).
+Bu kararı kullanıcı değiştirmedikçe fon müziği önerme.
 Şüphe varsa KULLANILMAZ. Bu kural ANA HEDEF'ten bile önce gelir.
 
 ## 0. ANA HEDEF (her kararda önce buna bak)
