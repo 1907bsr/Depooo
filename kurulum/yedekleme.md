@@ -10,7 +10,7 @@ girmiyor. Bu yüzden ayrıca yedeklenmesi gerekiyor.
 
 ## Öneri: iki katmanlı yedek
 1. **Harici disk (ana yedek)** – 1 TB taşınabilir disk, tek seferlik alım.
-   Her video bittiğinde `medya/<vaka>/` klasörünü diske kopyalarız.
+   Her video bittiğinde `medya/<konu>/` klasörünü diske kopyalarız.
 2. **Bulut (sadece en değerli dosyalar)** – Google Drive (Google One).
    Yalnızca Büşra'nın ham ses kayıtları + final videolar. Ses kayıtları
    tekrar üretilemeyen tek şey; bunlar mutlaka iki yerde olmalı.
