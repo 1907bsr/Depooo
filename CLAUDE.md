@@ -23,14 +23,14 @@ izletilsin, izleyici ve abone sayısı günden güne hızla artsın. En iyisi is
   Örnek: "Sütyeni kim buldu?"
 - Ton: Bilgi doğru ve kaynaklı, anlatım ESPRİLİ. Ders anlatır gibi değil,
   arkadaşa "biliyor musun bu nasıl çıkmış" diye anlatır gibi.
-  Amaç: izleyiciyi kanalda tutmak. Mizah dozu: netleşecek (hafif/orta/yüksek).
-- Format: Uzun video (süre netleşecek; öneri 8-12 dk) + her uzun videodan
-  2-3 Shorts.
+  Amaç: izleyiciyi kanalda tutmak. Mizah dozu: ORTA-YÜKSEK (2026-11-18 onaylandı).
+- Format: 8-12 dakikalık uzun video (2026-11-18 onaylandı) + her uzun videodan
+  3 Short + bağımsız Shorts (hedef haftada 4-7 Short).
 - Anlatım: Yapay zekâ sesi (2026-11-18 kararı). Şartlar: ses özgün olacak,
   tanınmış / çok kullanılan hazır seslerden olmayacak; gerçek bir kişinin
   sesi taklit edilmeyecek. Ses aracı seçimi EK-3'e göre onaylanır.
-  (Alternatif olarak kendi sesimiz + düzenleme veya kendi sesimizin klonu
-  konuşuldu; karar bekliyor.)
+  Karar yöntemi (onaylandı): aynı 1 dakikalık metin yapay zekâ sesiyle ve
+  kendi sesimizle hazırlanıp karşılaştırılacak; daha komik/doğal olan seçilir.
 - Hedef: Haftada 1 uzun video.
 - Aylık bütçe: 3000 TL (araçlar, abonelikler, API'ler dahil).
 - Durum: Kanal yeni, Faz 0'dayız (bkz. yol-haritasi.md).
@@ -242,3 +242,4 @@ Format: Kural – Kaynağı: video adı, tarih, hangi veri.)
 - 2026-11-18: Anlatım kararı: özgün yapay zekâ sesi.
 - 2026-11-18: İlk kanal NasılOldu? oldu (icatların esprili hikâyesi). True crime fikri fikirler/ klasörüne ertelendi.
 - 2026-11-18: ANA HEDEF eklendi: hızlı büyüme ve maksimum izlenme; büyüme stratejisi yazıldı.
+- 2026-11-18: Onaylandı: mizah orta-yüksek, süre 8-12 dk, ses karşılaştırma testi. İlk senaryo (sütyen), maskot fikirleri, 20 konuluk havuz yazıldı.

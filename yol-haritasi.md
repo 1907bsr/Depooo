@@ -16,8 +16,11 @@
 - [ ] Test videosu: `scripts/test_videosu.sh` → `scripts/yukle.py` ile "Özel" yükleme
 - [ ] Medya yedeği yöntemini seç (kurulum/yedekleme.md)
 - [ ] Kanal adı: "NasılOldu?" YouTube'da müsait mi kontrol et
-- [ ] Netleştir: mizah dozu, video süresi, ses yöntemi
-- [ ] Örnek senaryo (Sütyeni kim buldu?) ile ton denemesi
+- [x] Netleştir: mizah orta-yüksek, süre 8-12 dk, ses karşılaştırma testi
+- [x] İlk senaryo taslağı: konular/sutyen/senaryo.md (onay bekliyor)
+- [ ] Ses karşılaştırma testi (yapay ses vs kendi sesimiz, aynı 1 dk metin)
+- [ ] Maskot seçimi (bilgi/maskot.md)
+- [x] 20 konuluk ilk havuz: bilgi/konu-havuzu.md
 - [ ] Yapay zekâ ses aracını seç ve özgün anlatıcı sesini tasarla (onay bekliyor)
 - [ ] Ses testi: deneme metniyle örnek sahne
 
