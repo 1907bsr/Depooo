@@ -55,11 +55,9 @@ izletilsin, izleyici ve abone sayısı günden güne hızla artsın. En iyisi is
   Amaç: izleyiciyi kanalda tutmak. Mizah dozu: ORTA-YÜKSEK (2026-11-18 onaylandı).
 - Format: 8-12 dakikalık uzun video (2026-11-18 onaylandı) + her uzun videodan
   3 Short + bağımsız Shorts (hedef haftada 4-7 Short).
-- Anlatım: Yapay zekâ sesi (2026-11-18 kararı). Şartlar: ses özgün olacak,
-  tanınmış / çok kullanılan hazır seslerden olmayacak; gerçek bir kişinin
-  sesi taklit edilmeyecek. Ses aracı seçimi EK-3'e göre onaylanır.
-  Karar yöntemi (onaylandı): aynı 1 dakikalık metin yapay zekâ sesiyle ve
-  kendi sesimizle hazırlanıp karşılaştırılacak; daha komik/doğal olan seçilir.
+- Anlatım (KARAR 2026-11-18): Mert kendi sesiyle okur (telefon kaydı), Claude düzenler:
+  hataları/tekrarları keser, sessizlikleri kısaltır, gürültüyü azaltır, seviyeyi eşitler,
+  tını düzeltir. Yapay zekâ sesi kullanılmaz. Kayıt rehberi: kurulum/ses-kaydi.md
 - Hedef: Haftada 1 uzun video.
 - Aylık bütçe: 3000 TL (araçlar, abonelikler, API'ler dahil).
 - Durum: Kanal yeni, Faz 0'dayız (bkz. yol-haritasi.md).
@@ -242,8 +240,8 @@ Kurallar:
   duraklama ve espri zamanlaması işaretleri, zor yabancı isimlerin
   okunuşu parantezde.
 /ses-kontrol
-  Sesi değerlendir: telaffuz (özellikle yabancı isimler), vurgu, hız,
-  espri zamanlaması, doğal olmayan yerler. Hatalı cümleleri yeniden üret.
+  Kayıt gelince ölç ve düzenle: gürültü, yankı, seviye, kırpılma, hız; okuma metniyle
+  karşılaştırıp eksik/yanlış cümleleri listele; gerekirse yeniden okunacak cümleleri iste.
 /yorumlar
   Yorumları API ile oku ve özetle. Konu isteklerini konu havuzuna
   ekle. Yanıt taslakları hazırla. Asla kendi başına yorum gönderme.
@@ -273,3 +271,4 @@ Format: Kural – Kaynağı: video adı, tarih, hangi veri.)
 - 2026-11-18: ANA HEDEF eklendi: hızlı büyüme ve maksimum izlenme; büyüme stratejisi yazıldı.
 - 2026-11-18: Onaylandı: mizah orta-yüksek, süre 8-12 dk, ses karşılaştırma testi. İlk senaryo (sütyen), maskot fikirleri, 20 konuluk havuz yazıldı.
 - 2026-11-18: 00. TELİF KURALI eklendi: telif riski olan hiçbir şey yok; sadece kamu malı/CC0, kendi üretimimiz, kendi yapay zekâ çıktılarımız.
+- 2026-11-18: Anlatım kararı: Mert'in kendi sesi + Claude düzenlemesi. Fon müziği yok, efekt kütüphanesi onaylı.

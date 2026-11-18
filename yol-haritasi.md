@@ -33,7 +33,7 @@
 - [x] Senaryo taslak 1 → [ ] Mert/Büşra onayı
 - [x] Okuma metni
 - [x] Sahne planı (44 sahne)
-- [ ] Ses (yapay ses için ödeme / ya da kendi sesimiz) – BEKLİYOR
+- [ ] Ses: Mert'in kendi sesi (karar) → önce 30 sn deneme kaydı, sonra 7 bölüm (kurulum/ses-kaydi.md)
 - [ ] Yapay zekâ görselleri (32) – BEKLİYOR (ödeme ya da ücretsiz Gemini uygulaması)
 - [ ] B sahneleri (12 infografik) – 2/12 bitti (s35 patent, s36 para sayacı)
 - [x] Hareketlendirilen yapay zekâ sahneleri: s01, s04
