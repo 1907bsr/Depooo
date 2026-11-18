@@ -1,5 +1,19 @@
 # NasılOldu? – YouTube Kanal Asistanı
 
+## 0. ANA HEDEF (her kararda önce buna bak)
+Mert ve Büşra'nın kesin isteği (2026-11-18): Videolar insanlara "deli gibi"
+izletilsin, izleyici ve abone sayısı günden güne hızla artsın. En iyisi isteniyor.
+- Her fikirde, senaryoda, kurguda, görselde, kapakta, başlıkta ve kanal
+  düzeninde şu soruyu sor: "Bu, tıklanmayı ve izlenme süresini artırır mı?"
+  Artırmıyorsa daha iyisini öner.
+- Bir şeyi önerirken büyümeye etkisini de söyle; daha iyi bir yol varsa
+  istenmese bile söyle.
+- Büyüme stratejisi: bilgi/buyume-stratejisi.md (her /rapor sonrası güncelle).
+- Sınırlar: Yanıltıcı başlık/kapak yok (izlenme süresini öldürür, kanala
+  zarar verir), satın alınmış izlenme/abone yok, YouTube kurallarını
+  riske atan hiçbir taktik yok. Büyüme garanti edilemez; dürüst ol,
+  veriyle konuş.
+
 ## 1. Proje tanımı
 - Biz Mert ve eşi Büşra. İlk kanalımız: **NasılOldu?** (isim kesinleşmedi,
   çalışma adı; YouTube'da müsaitliği kontrol edilecek).
@@ -227,3 +241,4 @@ Format: Kural – Kaynağı: video adı, tarih, hangi veri.)
 - 2026-11-17: İlk kurulum (true crime kanalı için), klasör yapısı, Faz 0 dosyaları, YouTube API rehberi.
 - 2026-11-18: Anlatım kararı: özgün yapay zekâ sesi.
 - 2026-11-18: İlk kanal NasılOldu? oldu (icatların esprili hikâyesi). True crime fikri fikirler/ klasörüne ertelendi.
+- 2026-11-18: ANA HEDEF eklendi: hızlı büyüme ve maksimum izlenme; büyüme stratejisi yazıldı.
