@@ -36,3 +36,11 @@ Ortamı ve sesi ölçer, gerekirse yer/mesafe önerisi veririm.
 - Tını düzeltme ("p/b" patlamaları, sert "s" sesleri, daha dolgun ses)
 - Okuma metniyle karşılaştırıp atlanan cümle var mı kontrol etmek
 Not: Güçlü yankı ve mikrofonun cızırdadığı (çok yüksek ses) kayıtlar tam düzeltilemez – yer seçimi önemli.
+
+## Mikrofonla kayıt (USB veya yaka mikrofonu)
+- Mikrofonu ağızdan bir yumruk–bir karış (10-20 cm) uzağa, hafif yana koyun; "p/b" patlamasın.
+- Varsa süngeri/pop filtresini takın (yoksa mikrofonun önüne ince bir çorap gerilebilir).
+- Seviye: en yüksek sesle konuştuğunuzda gösterge kırmızıya gitmesin (yaklaşık -6 dB tepe).
+- Telefona bağlanan yaka mikrofonunu yakaya, ağzın bir karış altına takın.
+- Bilgisayarda kaydediyorsanız ücretsiz Audacity yeterli; WAV olarak kaydedin.
+- Geri kalan her şey aynı: 3 sn sessizlik, gülümseyerek, hatada durup cümleyi baştan okumak.

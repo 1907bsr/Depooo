@@ -33,7 +33,7 @@
 - [x] Senaryo taslak 1 → [ ] Mert/Büşra onayı
 - [x] Okuma metni TASLAK 2 (esprili) – ONAYLANDI
 - [x] Sahne planı (44 sahne)
-- [ ] Ses: Mert'in sesi (doğal işleme). Bölüm 1 ✅ (medya/sutyen/ses/kayit1/bolum1-temiz) · Bölüm 2-7 bekleniyor
+- [ ] Ses: Mert'in sesi. Bölüm 1 iki kez kaydedildi (kayit1, kayit2) – Mert beğenmedi, yarın MİKROFONLA yeniden kaydedecek. Versiyon seçimi bekliyor (öneri: doğal + gramofonlu replikler). Bölüm 2-7 bekleniyor
 - [ ] Yapay zekâ görselleri (32) – BEKLİYOR (ödeme ya da ücretsiz Gemini uygulaması)
 - [ ] B sahneleri (12 infografik) – 8/12 bitti (s10 logo, s11, s20, s26, s35, s36, s39, s43). Kalan: s7, s16 (görsel üstüne damga), s3/s12 etiketleri – ilgili görseller gelince
 - [x] Hareketlendirilen yapay zekâ sahneleri: s01, s04
