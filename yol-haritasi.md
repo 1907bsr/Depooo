@@ -28,6 +28,21 @@
 - [ ] Yapay zekâ ses aracını seç ve özgün anlatıcı sesini tasarla (onay bekliyor)
 - [ ] Ses testi: deneme metniyle örnek sahne
 
+## Video 1: Sütyeni Kim Buldu? – durum
+- [x] Araştırma + kaynakça
+- [x] Senaryo taslak 1 → [ ] Mert/Büşra onayı
+- [x] Okuma metni
+- [x] Sahne planı (44 sahne)
+- [ ] Ses (yapay ses için ödeme / ya da kendi sesimiz) – BEKLİYOR
+- [ ] Yapay zekâ görselleri (32) – BEKLİYOR (ödeme ya da ücretsiz Gemini uygulaması)
+- [ ] B sahneleri (12 infografik) – bende, başlanabilir
+- [ ] Arşiv görselleri + lisanslar
+- [ ] Müzik + efektler
+- [ ] Kurgu + altyazı
+- [ ] Kapak (deneme hazır) + başlık/açıklama
+- [ ] Shorts x3
+- [ ] "Özel" yükleme (YouTube API kurulumu gerekli) → Büşra'nın onayı
+
 ## Faz 1 – İlk 5 video (2-6. hafta)
 Her adım onaylı, odak kalite. Her videodan sonra "ne öğrendik" notu.
 Çıkış şartı: Üretim süresi ve kalite oturdu.

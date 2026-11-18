@@ -14,6 +14,9 @@ izletilsin, izleyici ve abone sayısı günden güne hızla artsın. En iyisi is
   riske atan hiçbir taktik yok. Büyüme garanti edilemez; dürüst ol,
   veriyle konuş.
 
+- ÇALIŞMA KURALI (2026-11-18): Bir video tamamen bitmeden (yükleme dahil) yeni videoya geçilmez.
+  Yeni konu önerme; mevcut videonun eksiklerini tamamla.
+
 ## 1. Proje tanımı
 - Biz Mert ve eşi Büşra. İlk kanalımız: **NasılOldu?** (isim kesinleşmedi,
   çalışma adı; YouTube'da müsaitliği kontrol edilecek).
