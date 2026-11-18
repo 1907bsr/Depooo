@@ -1,0 +1,65 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}svg{display:block}</style></head>
+<body><svg id="sv" xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
+<script>
+// Görsel koordinatları: 1024x572 (3x büyütülmüş dosya, 3072x1716 olarak çizilir)
+const IMG='../../medya/sutyen/gorsel/s04-mary-korse-3x.png';
+const DUR=7.0;
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ease=k=>k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;
+const back=k=>{const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(k-1,3)+c1*Math.pow(k-1,2)};
+const seg=(t,a,b)=>clamp((t-a)/(b-a));
+const INK='#2A1D16', TEAL='#1F5C63', GOLD='#D9A441', CREAM='#F8EED8';
+
+function render(t){
+  // Kamera: belden yukarı kadraj (etek alt kısmı görünmez), yavaşça yüz+çubuğa yaklaş
+  const k=ease(seg(t,0,DUR));
+  const w0=760, w1=560;                  // görsel üzerindeki kadraj genişliği (px, 1024 ölçeğinde)
+  const cx0=520, cy0=225, cx1=560, cy1=215;
+  let w=w0+(w1-w0)*k, cx=cx0+(cx1-cx0)*k, cy=cy0+(cy1-cy0)*k;
+  // boing anlarında sarsıntı + mini zoom
+  let shx=0, shy=0;
+  for(const b of [1.4,3.9]){ if(t>b && t<b+0.3){ const a=(1-seg(t,b,b+0.3)); shx+=Math.sin(t*95)*6*a; shy+=Math.cos(t*80)*5*a; w*=1-0.03*a; } }
+  const h=w*9/16, s=1920/w;
+  const tx=-(cx-w/2)*s*3/3, ty=-(cy-h/2)*s;
+  // çubuk ucu (görsel koordinatı)
+  const rod={x:655,y:185};
+  const R=p=>({x:(p.x-(cx-w/2))*s+shx, y:(p.y-(cy-h/2))*s+shy});
+  const r=R(rod);
+  let boing='';
+  for(const b of [1.4,3.9]){
+    const kk=seg(t,b,b+1.1);
+    if(kk>0 && kk<1){
+      const sc=back(clamp(kk*4))*(kk>0.8?(1-kk)/0.2:1);
+      boing+=`<g transform="translate(${r.x+70},${r.y-70}) rotate(-12) scale(${sc})">
+        <text font-family="Caladea,serif" font-weight="700" font-style="italic" font-size="96" fill="${CREAM}" stroke="${INK}" stroke-width="14" paint-order="stroke">boing!</text></g>`;
+      // titreşim çizgileri
+      const o=1-kk;
+      for(let i=0;i<3;i++){
+        const rr=50+i*28+kk*30;
+        boing+=`<path d="M${r.x+rr*Math.cos(-1.9)},${r.y+rr*Math.sin(-1.9)} A${rr},${rr} 0 0 1 ${r.x+rr*Math.cos(-0.9)},${r.y+rr*Math.sin(-0.9)}" fill="none" stroke="${INK}" stroke-width="7" stroke-linecap="round" opacity="${o}"/>`;
+      }
+    }
+  }
+  // anlatım kutusu
+  const cap=clamp(seg(t,0.3,0.8)), capY=-30*(1-ease(cap));
+  const caption=`<g transform="translate(70,${70+capY})" opacity="${cap}">
+    <rect x="10" y="10" width="760" height="150" rx="8" fill="${TEAL}"/>
+    <rect width="760" height="150" rx="8" fill="${CREAM}" stroke="${INK}" stroke-width="5"/>
+    <text x="34" y="64" font-family="Caladea,serif" font-weight="700" font-size="50" fill="${INK}">New York, 1913.</text>
+    <text x="34" y="120" font-family="Caladea,serif" font-style="italic" font-size="35" fill="${INK}">Baloya 20 dakika var… ve büyük bir sorun var.</text></g>`;
+  // altyazı
+  let sub='';
+  if(t>0.2 && t<3.0) sub='Altındaki korse… nefes almayı "isteğe bağlı" yapıyor.';
+  else if(t>=3.0) sub='Ve bu çubuklar… resmen dışarı bakıyor.';
+  const subtitle = sub?`<text x="960" y="1020" text-anchor="middle" font-family="Inter" font-weight="800" font-size="52" fill="#fff" stroke="#111" stroke-width="11" paint-order="stroke" stroke-linejoin="round">${sub}</text>`:'';
+  const fade=Math.min(clamp(t/0.3),clamp((DUR-t)/0.35));
+  document.getElementById('sv').innerHTML=`
+   <image href="${IMG}" x="${-(cx-w/2)*s+shx}" y="${-(cy-h/2)*s+shy}" width="${1024*s}" height="${572*s}" preserveAspectRatio="none"/>
+   <rect width="1920" height="1080" fill="url(#v)"/>
+   <defs><radialGradient id="v" cx="50%" cy="45%" r="75%"><stop offset="65%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#1a0f08" stop-opacity=".45"/></radialGradient></defs>
+   ${boing}${caption}${subtitle}
+   <rect width="1920" height="1080" fill="#000" opacity="${1-fade}"/>`;
+}
+window.render=render; window.DUR=DUR;
+</script></body></html>

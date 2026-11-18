@@ -7,7 +7,8 @@ Durum: Hazır, Google anahtarı bekleniyor. Tahmini deneme maliyeti: ≤ 2 $.
 > slightly exaggerated expressive faces. Bold ink outlines with varying line weight,
 > 2-3 tone cel shading, detailed but clean background. Warm earthy palette: sand, ochre,
 > cream, terracotta, with deep petrol-teal (#1F5C63) accents in shadows and details.
-> Soft paper texture. No text, no letters, no watermark. 16:9.
+> Soft paper texture. Modest, family-friendly: fully opaque clothing, no see-through fabric.
+> No text, no letters, no watermark. 16:9.
 
 ## Karakter kartı: Mary Phelps Jacob (önce bu üretilir, sonra her sahneye referans verilir)
 > Young American woman around 1913, early 20s, auburn-brown hair in an elegant Edwardian
