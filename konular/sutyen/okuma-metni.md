@@ -128,7 +128,7 @@ O hikâye de / başlı başına bir video.
 Şimdi biraz oyun oynayalım: / **Efsane mi, / gerçek mi?** //
 
 **1:** / "Birinci Dünya Savaşı'nda kadınlar korseyi bıraktı / ve o çelikle savaş gemisi yapıldı." //
-Anlatılana göre 1917'de Amerika'daki Savaş Sanayi Kurulu / kadınlardan korse almamalarını istemiş / ve böylece 28.000 ton çelik kazanılmış. /
+Anlatılana göre 1917'de / ABD Savaş Sanayi Kurulu / kadınlardan korse almamalarını istemiş. / Bu sayede 28.000 ton çelik / savaş için ayrılmış. /
 Hatta bunun 2 savaş gemisine yettiği bile söylenir. //
 Ama… / kurulun kendi raporunda / korseden **hiç** bahsedilmiyor. / Bazı tarihçilere göre / bu, büyük ölçüde bir **abartı.** //
 Kadınlar korseyi bıraktı mı? / Evet. / Peki korselerden gemi mi yapıldı? / O kısım… // biraz **süslenmiş.** /
