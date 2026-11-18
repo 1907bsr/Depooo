@@ -39,7 +39,7 @@
 - [x] Hareketlendirilen yapay zekâ sahneleri: s01, s04
 - [ ] Gemini API anahtarını ortama ekle (bilgisayardan: claude.ai/code → ortam Depooo → Edit → Network secrets; host generativelanguage.googleapis.com, header x-goog-api-key) – anahtar Google'da oluşturuldu
 - [ ] Arşiv görselleri + lisanslar
-- [ ] Müzik + efektler
+- [x] Müzik: YOK (karar) · Efektler: 15'lik kütüphane ONAYLANDI (medya/efekt, scripts/muzik/efektler.py)
 - [ ] Kurgu + altyazı
 - [ ] Kapak (deneme hazır) + başlık/açıklama
 - [ ] Shorts x3
