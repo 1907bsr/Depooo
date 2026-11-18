@@ -161,6 +161,6 @@ O adam / bir kitap daha yazdı. / Ve o kitap yüzünden dünya / hâlâ **tuvale
 Bir sonraki videoda: / Tuvaletin gerçek hikâyesi. /
 Sana söz veriyorum: / Sifonu çekmeden önce / **2 kere** düşüneceksin. [güler] //
 
-Ha, / bir de: / Sıradaki icadı **sen seç!** / Tuvalet kâğıdı mı, / mikrodalga mı, / yoksa topuklu ayakkabı mı? / Yorumlara yaz; / en çok istenen konu / bir sonraki videoda. //
+Ondan sonrakini de / **sen seç!** / Topuklu ayakkabıyı kim buldu? / Çatalı kim buldu? / Yoksa tuvalet kâğıdı icat edilmeden önce / insanlar ne kullanıyordu? / Yorumlara yaz; / en çok istenen konu / sıradaki videolardan biri olacak. //
 
 Görüşmek üzere. / Ve unutma: / Nefes almak… // **isteğe bağlı değildir.** [güler]
