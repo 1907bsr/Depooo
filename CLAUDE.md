@@ -135,6 +135,12 @@ gerekiyorsa tıklama tıklama tarif et.
     yorum, üçleme, sahneye iç ses ekleme ("Hizmetçi muhtemelen şöyle düşünüyor…"), videoda
     tekrar eden şaka (callback; ör. "nefes almak isteğe bağlı"), en sona dönüş esprisi.
     Okuma metninde anlatıcının güleceği yerler [güler] ile işaretlenir.
+- Anlatım dili (2026-11-18, Donca analizi sonrası onaylandı): İzleyiciye "SEN" diye hitap;
+    mümkünse izleyiciyi hikâyenin kahramanının yerine koy ("Sen 1913'te 20 yaşında bir kızsın").
+    Mahalle ağzı/sokak deyimleri ölçülü (racon kesmek, cartı curtu, fişini çekmek, jeton düşmek),
+    ağır kelimelerle argo zıtlığı (velhâsıl kelâm, halis muhlis), ciddi rakama komik benzetme.
+    Başka milletleri küçümseyen ifade ("gavur" vb.) ve dini göndermeli espri YOK.
+- YORUM ÇAĞRISI ("sıradaki icadı sen seç") SADECE VİDEONUN SONUNDA. Videonun ortasına koyma.
 - Mizah kuralları:
   - Şaka ile bilgi birbirine karışmasın; izleyici neyin gerçek
     olduğunu anlayabilmeli. Komik olsun diye bilgi uydurma.
