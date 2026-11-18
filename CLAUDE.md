@@ -8,8 +8,10 @@ CLAUDE.md olarak kaydet, sonra "4. İlk oturum" adımlarıyla başla.
   true crime / seri katil vakaları anlatan bir YouTube kanalı kuruyoruz.
 - Kanal adı: Henüz belirlenmedi (Faz 0'da isim önerileri hazırlanacak).
 - Format: 10-20 dakikalık uzun videolar + her uzun videodan 2-3 Shorts.
-- Anlatım: Videolardaki ses Büşra'nın kendi sesi.
-  Yapay ses kullanılmaz.
+- Anlatım: Yapay zekâ sesi (2026-11-18 kararı; önceki kural "Büşra'nın
+  kendi sesi, yapay ses yok" idi). Şartlar: ses özgün olacak, tanınmış /
+  çok kullanılan hazır seslerden olmayacak; gerçek bir kişinin (ünlü vb.)
+  sesi taklit edilmeyecek. Ses aracı seçimi EK-3'e göre onaylanır.
 - Hedef: Haftada 1 uzun video.
 - Aylık bütçe: 3000 TL (araçlar, abonelikler, API'ler dahil).
 - Durum: Kanal yeni, Faz 0'dayız (bkz. yol-haritasi.md).
@@ -172,12 +174,13 @@ Kurallar:
   takvimi çıkar. Vakaları çeşitlendir: dönem, ülke, soruşturma türü.
   Nişte çok işlenmiş vakaları ve yorumlarda istenenleri işaretle.
 /okuma-metni
-  Senaryodan Büşra'nın okuyacağı versiyonu üret: kısa
+  Senaryodan seslendirilecek versiyonu üret: kısa
   cümleler, vurgu ve nefes işaretleri, zor yabancı isimlerin okunuşu
   parantezde.
 /ses-kontrol
-  Kayıt gelince kaliteyi değerlendir: yankı, gürültü, seviye, hız.
-  Gerekirse kayıt ortamı için öneri ver.
+  Üretilen sesi dinlenebilirlik için değerlendir: telaffuz (özellikle
+  yabancı isimler), vurgu, hız, doğal olmayan yerler. Hatalı cümleleri
+  yeniden üret.
 /yorumlar
   Yorumları API ile oku ve özetle. Video isteklerini vaka havuzuna
   ekle. Yanıt taslakları hazırla. Asla kendi başına yorum gönderme.
@@ -203,3 +206,4 @@ Format: Kural – Kaynağı: video adı, tarih, hangi veri.)
 
 ## Oturum günlüğü
 - 2026-11-17: CLAUDE.md kaydedildi, klasör yapısı ve Faz 0 dosyaları kuruldu, YouTube API kurulum rehberi yazıldı.
+- 2026-11-18: Anlatım kararı değişti: Büşra'nın sesi yerine özgün yapay zekâ sesi.

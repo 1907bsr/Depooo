@@ -16,6 +16,8 @@
 - [ ] Test videosu: `scripts/test_videosu.sh` → `scripts/yukle.py` ile "Özel" yükleme
 - [ ] Medya yedeği yöntemini seç (kurulum/yedekleme.md)
 - [ ] Kanal adı önerileri → Büşra seçer
+- [ ] Yapay zekâ ses aracını seç ve özgün anlatıcı sesini tasarla (onay bekliyor)
+- [ ] Ses testi: deneme metniyle örnek sahne
 
 ## Faz 1 – İlk 5 video (2-6. hafta)
 Her adım onaylı, odak kalite. Her videodan sonra "ne öğrendik" notu.
