@@ -12,8 +12,8 @@ Durum: Hazır, Google anahtarı bekleniyor. Tahmini deneme maliyeti: ≤ 2 $.
 
 ## Karakter kartı: Mary Phelps Jacob (önce bu üretilir, sonra her sahneye referans verilir)
 > Young American woman around 1913, early 20s, auburn-brown hair in an elegant Edwardian
-> updo with a mustard-yellow ribbon, determined eyebrows, light freckles. Wearing a sheer,
-> low-cut coral-red evening gown of the 1910s. Character turnaround: front, three-quarter,
+> updo with a mustard-yellow ribbon, determined eyebrows, light freckles. Wearing an elegant,
+> fully opaque coral-red evening gown of the 1910s with a modest neckline. Character turnaround: front, three-quarter,
 > side; plus 4 facial expressions: annoyed, surprised, delighted, exhausted. Plain cream background.
 
 ## Sahneler
