@@ -248,8 +248,11 @@ Kurallar:
   ve yorumlarda istenenleri işaretle.
 /okuma-metni
   Senaryodan seslendirilecek versiyonu üret: kısa cümleler, vurgu,
-  duraklama ve espri zamanlaması işaretleri, zor yabancı isimlerin
-  okunuşu parantezde.
+  duraklama ve espri zamanlaması işaretleri.
+  YAZIM KURALI (Mert'in isteği, 2026-11-18): Yıllar RAKAMLA yazılır, okunuşu parantezde:
+  "1913 (bin dokuz yüz on üç)". Bütün özel yabancı isimlerin Türkçe okunuşu parantezde:
+  "Mary Phelps Jacob (Meri Felps Ceykıb)". Türkçe dil bilgisi ve noktalama (virgül, nokta,
+  soru/ünlem işareti, tırnak) eksiksiz ve doğru olacak; "/" durak işaretleri noktalamanın yerine geçmez.
 /ses-kontrol
   Kayıt gelince ölç ve düzenle: gürültü, yankı, seviye, kırpılma, hız; okuma metniyle
   karşılaştırıp eksik/yanlış cümleleri listele; gerekirse yeniden okunacak cümleleri iste.
