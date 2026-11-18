@@ -21,6 +21,30 @@ okların/yazıların çizilerek belirmesi, efektler, karakterde sınırlı harek
 
 Üretim: Bu kalite elle kodla çizilemez → yapay zekâ görsel aracı gerekir (teklif: EK-3).
 
+## Örnek kanal: Böcek-3 (sarıkız videosunun kanalı) – kapak analizi (2026-11-18)
+Gözlenen (ekran görüntüsünden): 8 dk civarı videolar, 2-3 haftada 42-79 bin izlenme.
+Kapak formülü: krem zemin + kırmızı dev "SAKIN!" + altında siyah serif emir cümlesi
+("Onu Susturma") + kırmızı el çizimi ok canlıya + sağda öfkeli yaşlı Türk tipi
+(kasketli amca terlikle / başörtülü teyze). Başlık: "X'i Asla ...ma! (...)"
+Neden çalışıyor: tek duygu (öfke/uyarı), insan-canlı çatışması, tanıdık tip, merak boşluğu.
+
+ALMAYACAKLARIMIZ (onların imzası): "SAKIN!" kalıbı, krem+kırmızı kapak, kırmızı ok,
+amca/teyze karakterlerinin aynısı.
+ALACAĞIMIZ DERS: kapakta tek güçlü duygu + tanıdık tip + nesne + 2-4 kelime.
+
+## Bizim kapak formülümüz (öneri)
+- Zemin: petrol mavisi / koyu zemin (onların krem zeminine zıt, akışta ayrışır).
+- Yazı: hardal sarısı dev kelime + beyaz kısa cümle; imza öğe olarak "?" işareti (kanal adı).
+- Sahne: "ESKİDEN" çatışması → geçmişte o nesne yokken çile çeken tanıdık bir tip + nesnenin kendisi.
+  Ör. Tuvalet kâğıdı: elinde mısır koçanıyla dehşete düşmüş adam → "ÖNCEDEN BUNU MU?!"
+  Ör. Sütyen: korseyle nefes alamayan balo kızı + iki mendil → "2 MENDİL = 15 MİLYON $"
+- Başlık kalıbı: "X İcat Edilmeden Önce İnsanlar Ne Yapıyordu?" / "X'i Aslında Kim Buldu?"
+
+## Bizim tekrar eden karakter kadromuz (öneri, onların amca/teyzesine benzemeyecek)
+- "Zaman yolcusu" anlatıcı karakter: 30'larında, modern kıyafetli, elinde telefon; her videoda
+  o döneme düşüp şaşıran kişi (izleyicinin gözü). Petrol mavisi ceket = kanal rengi.
+- Konuya göre dönem karakterleri (Mary, Cadolle vb.) – her biri kendi karakter kartıyla.
+
 ---
 ## (Eski) İlk taslak – aşağıdakiler geçersiz, kayıt için duruyor
 
