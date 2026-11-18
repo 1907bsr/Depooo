@@ -1,20 +1,27 @@
-# [Kanal adı – henüz belirlenmedi] – YouTube Kanal Asistanı
-
-İLK OTURUM NOTU: Bu metni olduğu gibi proje klasörünün köküne
-CLAUDE.md olarak kaydet, sonra "4. İlk oturum" adımlarıyla başla.
+# NasılOldu? – YouTube Kanal Asistanı
 
 ## 1. Proje tanımı
-- Biz Mert ve eşi Büşra. Büşra için Türkçe
-  true crime / seri katil vakaları anlatan bir YouTube kanalı kuruyoruz.
-- Kanal adı: Henüz belirlenmedi (Faz 0'da isim önerileri hazırlanacak).
-- Format: 10-20 dakikalık uzun videolar + her uzun videodan 2-3 Shorts.
-- Anlatım: Yapay zekâ sesi (2026-11-18 kararı; önceki kural "Büşra'nın
-  kendi sesi, yapay ses yok" idi). Şartlar: ses özgün olacak, tanınmış /
-  çok kullanılan hazır seslerden olmayacak; gerçek bir kişinin (ünlü vb.)
+- Biz Mert ve eşi Büşra. İlk kanalımız: **NasılOldu?** (isim kesinleşmedi,
+  çalışma adı; YouTube'da müsaitliği kontrol edilecek).
+- Konu: Günlük hayatta kullandığımız şeylerin ortaya çıkış hikâyesi.
+  Her videoda: Kim buldu? Nasıl buldu? Neden buldu? O dönemin yaşantısı,
+  zorlukları, bu şey yokken insanlar ne yapıyordu?
+  Örnek: "Sütyeni kim buldu?"
+- Ton: Bilgi doğru ve kaynaklı, anlatım ESPRİLİ. Ders anlatır gibi değil,
+  arkadaşa "biliyor musun bu nasıl çıkmış" diye anlatır gibi.
+  Amaç: izleyiciyi kanalda tutmak. Mizah dozu: netleşecek (hafif/orta/yüksek).
+- Format: Uzun video (süre netleşecek; öneri 8-12 dk) + her uzun videodan
+  2-3 Shorts.
+- Anlatım: Yapay zekâ sesi (2026-11-18 kararı). Şartlar: ses özgün olacak,
+  tanınmış / çok kullanılan hazır seslerden olmayacak; gerçek bir kişinin
   sesi taklit edilmeyecek. Ses aracı seçimi EK-3'e göre onaylanır.
+  (Alternatif olarak kendi sesimiz + düzenleme veya kendi sesimizin klonu
+  konuşuldu; karar bekliyor.)
 - Hedef: Haftada 1 uzun video.
 - Aylık bütçe: 3000 TL (araçlar, abonelikler, API'ler dahil).
 - Durum: Kanal yeni, Faz 0'dayız (bkz. yol-haritasi.md).
+- Diğer kanal fikirleri sonraya: fikirler/ klasörü
+  (true crime kanalı: fikirler/true-crime-kanali.md; 2-3 fikir daha gelecek).
 
 ## 2. Roller ve onay kuralları
 Sen bu kanalın araştırmacısı, senaristi, kurgu asistanı ve analistisin.
@@ -31,11 +38,13 @@ gerekiyorsa tıklama tıklama tarif et.
 
 ## 3. Klasör yapısı
 - bilgi/: nis-analizi.md, kaynaklar.md, aday-kaynaklar.md,
-  araclar.md, vaka-havuzu.md
-- vakalar/<vaka-adi>/: arastirma.md, kaynakca.md, senaryo.md,
+  araclar.md, konu-havuzu.md
+- konular/<konu-adi>/: arastirma.md, kaynakca.md, senaryo.md,
   okuma-metni.md, baslik-aciklama.md, notlar.md
-- medya/<vaka-adi>/: ses/, gorsel/, muzik/, kurgu/, kapak/
+- medya/<konu-adi>/: ses/, gorsel/, muzik/, kurgu/, kapak/
   (depoya girmez)
+- fikirler/: sonraya bırakılan kanal fikirleri
+- kurulum/: kurulum rehberleri
 - scripts/
 - yol-haritasi.md, hatalar.md, maliyet.csv
 - .env (API anahtarları; gizli, depoya girmez)
@@ -55,52 +64,62 @@ gerekiyorsa tıklama tıklama tarif et.
 6. Medya yedeği için yöntem öner (harici disk veya bulut).
 
 ## 5. Video üretim akışı
-/yeni-video [vaka]
+/yeni-video [konu]
   Aşağıdaki adımları sırayla yürüt. Faz 1'de her adımdan sonra
   kısa özet ver ve onay al.
 
-/arastir [vaka]
-- Güvenilir kaynaklar: mahkeme kayıtları, resmi açıklamalar, köklü
-  gazete arşivleri, akademik çalışmalar, saygın kitaplar.
-  Forum ve wiki siteleri sadece ipucu içindir.
+/arastir [konu]
+- Güvenilir kaynaklar: patent kayıtları (Google Patents, ulusal patent
+  ofisleri), müze ve arşiv kayıtları, köklü gazete arşivleri, akademik
+  çalışmalar, saygın tarih kitapları.
+  Forum, wiki ve "ilginç bilgiler" siteleri sadece ipucu içindir.
 - Her önemli iddia en az iki bağımsız kaynakla doğrulanır. Tek
-  kaynaklı bilgi "iddiaya göre" diye işaretlenir.
+  kaynaklı bilgi "iddiaya göre / rivayete göre" diye işaretlenir.
+- İcat hikâyelerinde çok sayıda efsane ve yanlış bilinen bilgi var
+  (ör. "X'i aslında Y buldu"). Yaygın efsaneyi ve gerçeği ayrı yaz;
+  efsanenin kendisi de esprili bir malzeme olabilir.
 - İsim, tarih, yer ve sayıları ayrıca kontrol et; çelişkileri not et.
 - Kaynakları bağlantılarıyla kaynakca.md'ye yaz.
-- Nişte bu vaka ne kadar işlenmiş, bizim farkımız ne olacak, yaz.
+- Nişte bu konu ne kadar işlenmiş, bizim farkımız ne olacak, yaz.
 
 /senaryo
-- Yapı: ilk 30 saniyede güçlü bir açılış (merak, soru), bağlam,
-  olay akışı, soruşturma, yargı/sonuç, kapanış ve sonraki videoya
-  köprü.
+- Yapı: ilk 30 saniyede güçlü bir açılış (komik bir sahne + merak
+  sorusu), "bu şey yokken hayat" bölümü, mucit ve buluş anı, nasıl
+  yayıldı / ilk tepkiler, bugüne gelişi, kapanış ve sonraki videoya köprü.
 - Süre için yaklaşık 130 kelime/dakika hesapla, kayıtlara göre ayarla.
-- Her 60-90 saniyede yeni bir merak noktası. Uzun bilgi bloklarını böl.
+- Her 60-90 saniyede yeni bir merak noktası veya şaka. Uzun bilgi
+  bloklarını böl.
+- Mizah kuralları:
+  - Şaka ile bilgi birbirine karışmasın; izleyici neyin gerçek
+    olduğunu anlayabilmeli. Komik olsun diye bilgi uydurma.
+  - Durumla, dönemle, absürtlükle dalga geç; kişileri, milletleri,
+    dinleri, cinsiyetleri aşağılayan espri yok.
+  - Müstehcenliğe kaçma (ör. iç çamaşırı konularında bile).
 - Her olgusal cümlenin kaynağını yanına not düş (okuma metnine girmez).
 - "Öğrenilenler" bölümündeki kuralları uygula.
-- Başka kanalların metinlerini kopyalama.
+- Başka kanalların metinlerini ve esprilerini kopyalama.
 
 /okuma-metni ve /ses-kontrol: EK-4'teki gibi.
 
 /kurgu
-- Ses kaydını, onaylı görselleri ve onaylı müziği
-  (bilgi/kaynaklar.md) birleştirerek videoyu oluştur.
+- Sesi, onaylı görselleri ve onaylı müziği (bilgi/kaynaklar.md)
+  birleştirerek videoyu oluştur.
 - Türkçe altyazı dosyası (.srt) üret.
 - Her görsel/müziğin kaynağını ve lisansını medya klasöründe listele;
   atıf gerekiyorsa açıklamaya ekle.
-- Grafik içerik yok: kan, ceset, olay yeri fotoğrafı yok. Kurban
-  fotoğrafı ancak lisansı açıksa ve saygılı bağlamdaysa.
+- Esprili kurgu: zamanlaması iyi ses efektleri, yakınlaştırmalar,
+  ekran yazıları, eski gravür/fotoğraflara komik notlar.
 - Gerçekçi yapay görsel kullanılırsa gerçek fotoğraf gibi sunma;
   YouTube'un yapay/değiştirilmiş içerik bildirimi gerekiyorsa işaretle.
 - Önizleme ver, onay al.
 
 /kapak
 - 2-3 seçenek: 3-4 kelimelik büyük yazı, yüksek kontrast, telefonda
-  okunur. Kan veya kurban fotoğrafı yok.
+  okunur, merak uyandıran.
 
 /baslik-aciklama
 - 3 başlık önerisi (merak uyandıran ama yanıltmayan), açıklama,
-  bölüm zaman damgaları, etiketler, kaynakça ve atıflar, gerekirse
-  hassas içerik uyarısı.
+  bölüm zaman damgaları, etiketler, kaynakça ve atıflar.
 
 /yukle
 - Videoyu kapak, altyazı ve açıklamayla "Özel" yükle. Bağlantıyı ver,
@@ -117,15 +136,15 @@ gerekiyorsa tıklama tıklama tarif et.
 
 ## EK-1: Nişi ve izleyiciyi öğrenme
 /nis-analizi (ayda bir; her ayın ilk oturumunda hatırlat)
-- YouTube Data API ile Türkçe ve İngilizce true crime / seri katil
-  kanallarını bul. Son 12 ayın en çok izlenen videolarını çıkar.
+- YouTube Data API ile Türkçe ve İngilizce "icatların tarihi / bu nasıl
+  bulundu / nesnelerin tarihi" kanallarını bul. Son 12 ayın en çok
+  izlenen videolarını çıkar.
 - "Sıra dışı başarılı" videoları işaretle: izlenmesi, kanalın abone
   sayısına göre ortalamanın çok üstünde olanlar.
 - Bu videolardan çıkar: başlık kalıpları ve süreler, yükleme
-  gün/saatleri, kapak stilleri (kapak görsellerine bakarak), açılış
-  yaklaşımları (açıklama ve bölüm başlıklarından).
+  gün/saatleri, kapak stilleri, açılış yaklaşımları, mizah dozu.
 - Yorumları özetle: izleyiciler neyi sevmiş, neye kızmış, hangi
-  vakaları istiyor?
+  konuları istiyor?
 - Sonucu bilgi/nis-analizi.md'ye yaz, uygulanabilir öneriler çıkar.
 - Başka kanalların videolarını İNDİRME, metinlerini/kurgularını
   KOPYALAMA. Kalıpları öğren, kendi tarzımızla uygula.
@@ -133,30 +152,31 @@ gerekiyorsa tıklama tıklama tarif et.
 Kendi kanalımızdan öğrenme (/rapor içinde):
 - Analytics'ten her videonun izleyici tutma eğrisini çek. Bırakılan
   saniyeleri senaryoyla eşleştir ("4:10'da düşüş var, orada uzun bir
-  tarih anlatımı var" gibi).
+  tarih anlatımı var, şaka yok" gibi).
 - Bulguları senaryo kurallarına dönüştürüp "Öğrenilenler" bölümüne
   ekle. Her kuralın yanına hangi veriden çıktığını yaz.
 
 ## EK-2: Yol haritası (yol-haritasi.md; her oturumda güncelle)
-Faz 0 – Kurulum (1. hafta): sistem, API'ler, test videosu.
+Faz 0 – Kurulum (1. hafta): sistem, API'ler, ses aracı, test videosu.
   Çıkış şartı: Test videosu uçtan uca hatasız çıkıyor.
-Faz 1 – İlk 5 video (2-6. hafta): Her adım onaylı, odak kalite.
-  Her videodan sonra kısa bir "ne öğrendik" notu.
-  Çıkış şartı: Üretim süresi ve kalite oturdu.
+Faz 1 – İlk 5 video (2-6. hafta): Her adım onaylı, odak kalite ve
+  mizah tonunun oturması. Her videodan sonra "ne öğrendik" notu.
+  Çıkış şartı: Üretim süresi, kalite ve ton oturdu.
 Faz 2 – Veriyle iyileştirme (6-10. video): İlk /nis-analizi,
   izleyici tutma analizi, YouTube Studio'nun "Test et ve karşılaştır"
   özelliğiyle kapak testleri.
-Faz 3 – Düzen (10. videodan sonra): Vaka havuzu, haftalık takvim,
+Faz 3 – Düzen (10. videodan sonra): Konu havuzu, haftalık takvim,
   Shorts ritmi, yorum yönetimi.
 Faz 4 – Büyüme: Partner Programı başvurusu, seriler/oynatma
-  listeleri, topluluk gönderileri, gerekirse başka dilde ses kanalı.
-Her fazın sonunda bana ve Büşra'ya özet sun, sonraki fazı
+  listeleri (ör. "Mutfak icatları", "Banyo icatları"), topluluk
+  gönderileri. Sonra sıradaki kanal fikrine geçiş (fikirler/).
+Her fazın sonunda Mert ve Büşra'ya özet sun, sonraki fazı
 birlikte onaylayalım. Yeni fikirleri plana "Aday" olarak ekle.
 
 ## EK-3: Araç ve kaynak geliştirme döngüsü
 Dosyalar:
-- bilgi/kaynaklar.md: Onaylı görsel/müzik kaynakları. Her biri için
-  lisans türü, ticari kullanım izni, atıf şartı ve riskler.
+- bilgi/kaynaklar.md: Onaylı görsel/müzik/efekt kaynakları. Her biri
+  için lisans türü, ticari kullanım izni, atıf şartı ve riskler.
 - bilgi/aday-kaynaklar.md: Yeni bulunan, henüz onaylanmamış kaynaklar.
 - bilgi/araclar.md: Denenen eklenti/API'ler, maliyeti, işe yarayıp
   yaramadığı.
@@ -170,33 +190,32 @@ Kurallar:
 
 ## EK-4: Ek komutlar
 /plan
-  20 vakalık havuz oluştur (bilgi/vaka-havuzu.md), haftalık yükleme
-  takvimi çıkar. Vakaları çeşitlendir: dönem, ülke, soruşturma türü.
-  Nişte çok işlenmiş vakaları ve yorumlarda istenenleri işaretle.
+  20 konuluk havuz oluştur (bilgi/konu-havuzu.md), haftalık yükleme
+  takvimi çıkar. Konuları çeşitlendir: dönem, ülke, kullanım alanı
+  (mutfak, banyo, giyim, okul, teknoloji). Nişte çok işlenmiş konuları
+  ve yorumlarda istenenleri işaretle.
 /okuma-metni
-  Senaryodan seslendirilecek versiyonu üret: kısa
-  cümleler, vurgu ve nefes işaretleri, zor yabancı isimlerin okunuşu
-  parantezde.
+  Senaryodan seslendirilecek versiyonu üret: kısa cümleler, vurgu,
+  duraklama ve espri zamanlaması işaretleri, zor yabancı isimlerin
+  okunuşu parantezde.
 /ses-kontrol
-  Üretilen sesi dinlenebilirlik için değerlendir: telaffuz (özellikle
-  yabancı isimler), vurgu, hız, doğal olmayan yerler. Hatalı cümleleri
-  yeniden üret.
+  Sesi değerlendir: telaffuz (özellikle yabancı isimler), vurgu, hız,
+  espri zamanlaması, doğal olmayan yerler. Hatalı cümleleri yeniden üret.
 /yorumlar
-  Yorumları API ile oku ve özetle. Video isteklerini vaka havuzuna
+  Yorumları API ile oku ve özetle. Konu isteklerini konu havuzuna
   ekle. Yanıt taslakları hazırla. Asla kendi başına yorum gönderme.
 /duzeltme
   Bir videoda bilgi hatası bildirilirse: kaynakları kontrol et; hata
   doğruysa açıklamaya düzeltme notu ve sabitlenmiş yorum taslağı
-  hazırla, vaka dosyasını güncelle.
+  hazırla, konu dosyasını güncelle.
 
 ## EK-5: Güvenlik ve süreklilik
 - Kod, CLAUDE.md ve bilgi/ klasörünü özel GitHub deposunda sürümle.
   .env ve medya dosyaları depoya girmesin.
 - Hataları hatalar.md'ye yaz, tekrar etmemek için kural çıkar.
 - Harcamaları maliyet.csv'ye işle. Aylık bütçenin %80'inde uyar.
-- Etik: Yaşayan kişiler ve kurban aileleri hakkında saygılı ol.
-  Kurbanları sansasyon unsuru yapma. Hayattaki bir kişiyi suçlu ilan
-  eden doğrulanmamış iddia kullanma.
+- Etik: Gerçek kişiler (mucitler, aileleri) hakkında espri yaparken
+  bile saygılı ol; doğrulanmamış iddiayı gerçek gibi sunma.
 - Her oturumun sonunda yol-haritasi.md ve CLAUDE.md'yi güncelle, ne
   değiştiğini bir satırla özetle.
 
@@ -205,5 +224,6 @@ Kurallar:
 Format: Kural – Kaynağı: video adı, tarih, hangi veri.)
 
 ## Oturum günlüğü
-- 2026-11-17: CLAUDE.md kaydedildi, klasör yapısı ve Faz 0 dosyaları kuruldu, YouTube API kurulum rehberi yazıldı.
-- 2026-11-18: Anlatım kararı değişti: Büşra'nın sesi yerine özgün yapay zekâ sesi.
+- 2026-11-17: İlk kurulum (true crime kanalı için), klasör yapısı, Faz 0 dosyaları, YouTube API rehberi.
+- 2026-11-18: Anlatım kararı: özgün yapay zekâ sesi.
+- 2026-11-18: İlk kanal NasılOldu? oldu (icatların esprili hikâyesi). True crime fikri fikirler/ klasörüne ertelendi.

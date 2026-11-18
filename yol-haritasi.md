@@ -1,4 +1,4 @@
-# Yol Haritası
+# Yol Haritası – NasılOldu?
 
 Şu anki faz: **Faz 0 – Kurulum** (başlangıç: 2026-11-17)
 
@@ -15,7 +15,9 @@
 - [ ] API denetimi (audit) başvurusu – herkese açık yayın için gerekli olabilir
 - [ ] Test videosu: `scripts/test_videosu.sh` → `scripts/yukle.py` ile "Özel" yükleme
 - [ ] Medya yedeği yöntemini seç (kurulum/yedekleme.md)
-- [ ] Kanal adı önerileri → Büşra seçer
+- [ ] Kanal adı: "NasılOldu?" YouTube'da müsait mi kontrol et
+- [ ] Netleştir: mizah dozu, video süresi, ses yöntemi
+- [ ] Örnek senaryo (Sütyeni kim buldu?) ile ton denemesi
 - [ ] Yapay zekâ ses aracını seç ve özgün anlatıcı sesini tasarla (onay bekliyor)
 - [ ] Ses testi: deneme metniyle örnek sahne
 
@@ -33,4 +35,4 @@ Vaka havuzu, haftalık takvim, Shorts ritmi, yorum yönetimi.
 Partner Programı, seriler/oynatma listeleri, topluluk gönderileri.
 
 ## Aday fikirler
-- (Henüz yok)
+- Sonraki kanallar: true crime (fikirler/true-crime-kanali.md) + 2-3 fikir daha (gelecek)
