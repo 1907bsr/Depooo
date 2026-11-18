@@ -70,7 +70,7 @@ Avusturya. / Doğu Tirol. / **Lengberg** Şatosu. //
 Ama öyle sıradan bir çöp değil. / **500 yıllık**, / halis muhlis / Orta Çağ çöpü. /
 Yani Orta Çağ'ın "Bunu sonra atarız." dediği ne varsa. [güler] //
 
-Tam 2.700 parça kumaş çıkıyor. /
+Yaklaşık 2.700 parça kumaş çıkıyor. /
 Arkeologlar bunları tek tek inceliyorlar / ve bir tanesini görünce / **donup kalıyorlar.** //
 Çünkü ellerindeki şey… / düpedüz bir **sütyen.** / Keten. / 2 kaplı. / Askılı. //
 Bugün bir mağazada görsen / "Biraz retro ama fena değil." dersin, / indirimdeyse kaparsın. [güler] //
