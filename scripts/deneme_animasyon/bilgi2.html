@@ -1,0 +1,113 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}svg{display:block}</style></head>
+<body><svg id="sv" xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
+<script>
+// Bilgi sahneleri 2: ?s=10 logo · 11 geri sarma · 20 "Ta ki…" · 26 500 yıl · 39 efsane/gerçek · 43 özet
+const SC=new URLSearchParams(location.search).get('s')||'10';
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ease=k=>k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;
+const back=k=>{const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(k-1,3)+c1*Math.pow(k-1,2)};
+const seg=(t,a,b)=>clamp((t-a)/(b-a));
+const INK='#2A1D16',TEAL='#1F5C63',TEALD='#123C41',GOLD='#D9A441',CORAL='#E06A50',CREAM='#F8EED8',PAPER='#EADBC0',SEPIA='#7A5C3E';
+const SERIF='Caladea,serif', SANS='Inter Display,Inter,sans-serif';
+const DEFS=`<defs>
+ <filter id="paper"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="7"/><feColorMatrix values="0 0 0 0 .4  0 0 0 0 .3  0 0 0 0 .2  0 0 0 .16 0"/></filter>
+ <radialGradient id="tealbg" cx="50%" cy="45%" r="80%"><stop offset="0" stop-color="#2C727A"/><stop offset=".7" stop-color="${TEAL}"/><stop offset="1" stop-color="#0F3237"/></radialGradient>
+ <radialGradient id="vig" cx="50%" cy="50%" r="75%"><stop offset="60%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#2a1a0e" stop-opacity=".45"/></radialGradient>
+ <filter id="sh"><feDropShadow dx="8" dy="10" stdDeviation="6" flood-opacity=".3"/></filter>
+</defs>`;
+const paperBg=`<rect width="1920" height="1080" fill="${PAPER}"/>`;
+const finish=`<rect width="1920" height="1080" filter="url(#paper)"/><rect width="1920" height="1080" fill="url(#vig)"/>`;
+const pop=(t,a)=>back(clamp(seg(t,a,a+0.35)));
+const T=(x,y,s,txt,o={})=>`<text x="${x}" y="${y}" text-anchor="${o.a||'middle'}" font-family="${o.f||SANS}" font-weight="${o.w||900}" font-style="${o.i?'italic':'normal'}" font-size="${s}" fill="${o.c||INK}" ${o.st?`stroke="${o.st}" stroke-width="${o.sw||10}" paint-order="stroke" stroke-linejoin="round"`:''} ${o.ls?`letter-spacing="${o.ls}"`:''} opacity="${o.op??1}">${txt}</text>`;
+
+const SCENES={
+ '10':{DUR:3.4, render(t){
+   const a=pop(t,0.05), q=pop(t,0.45), wob=Math.sin(t*9)*6*Math.exp(-2*(t-0.5));
+   const typ=Math.floor(clamp(seg(t,1.1,2.4))*28); const sub='Sütyeni gerçekten kim buldu?'.slice(0,typ);
+   return `${DEFS}<rect width="1920" height="1080" fill="url(#tealbg)"/>
+    <g opacity=".1">${Array.from({length:18},(_,i)=>`<path d="M960,500 L${960+Math.cos(i/18*6.283+t*.2)*1700},${500+Math.sin(i/18*6.283+t*.2)*1700}" stroke="#fff" stroke-width="60"/>`).join('')}</g>
+    <g transform="translate(960,500) scale(${a})">
+      ${T(-110,40,190,'Nasıl',{f:SERIF,i:1,w:700,c:CREAM,st:INK,sw:12,a:'end'})}
+      ${T(-90,40,200,'Oldu',{c:GOLD,st:INK,sw:14,a:'start'})}
+    </g>
+    <g transform="translate(1420,470) rotate(${wob}) scale(${q})">${T(0,60,300,'?',{c:CORAL,st:INK,sw:14})}</g>
+    ${T(960,760,64,sub,{f:SERIF,i:1,w:700,c:CREAM})}
+    <rect width="1920" height="1080" filter="url(#paper)"/>`; }},
+
+ '11':{DUR:5.0, render(t){
+   const years=[1913,1800,1700,1500,1200,1000,500,'MS 1','MÖ 500'];
+   const k=ease(seg(t,0.4,4.2)), off=k*(years.length-1)*520;
+   let ticks='';
+   years.forEach((y,i)=>{const x=960+i*520-off; if(x<-300||x>2300) return;
+     const big=i===years.length-1;
+     ticks+=`<line x1="${x}" y1="470" x2="${x}" y2="${big?610:570}" stroke="${INK}" stroke-width="${big?8:5}"/>
+       ${T(x,690,big?96:80,y,{f:SERIF,w:700,c:big?CORAL:INK})}`;});
+   const jit=t>0.4&&t<4.2? (Math.sin(t*80)*3):0;
+   let lines=''; if(t>0.4&&t<4.2) for(let i=0;i<6;i++){const y=(i*190+t*900)%1080; lines+=`<rect x="0" y="${y}" width="1920" height="${4+i%3*3}" fill="#fff" opacity=".18"/>`;}
+   const fin=pop(t,4.25);
+   return `${DEFS}${paperBg}
+    <g transform="translate(${jit},0)">
+      <line x1="0" y1="540" x2="1920" y2="540" stroke="${INK}" stroke-width="7"/>${ticks}
+    </g>${lines}
+    <g transform="translate(960,330)">${T(0,0,90,'◀◀ Geri saralım…',{f:SERIF,i:1,w:700,c:TEAL,op:t<4.2?1:0})}</g>
+    <g transform="translate(960,330) scale(${fin})">${T(0,0,92,'Antik Yunan',{c:GOLD,st:INK,sw:10})}</g>
+    ${finish}`; }},
+
+ '20':{DUR:3.2, render(t){
+   const o=clamp(seg(t,0.3,1.0)), hand=t*360/2;
+   return `${DEFS}<rect width="1920" height="1080" fill="#0b0a09"/>
+    <g transform="translate(960,420)" opacity="${o}">
+      <circle r="110" fill="none" stroke="${CREAM}" stroke-width="9"/>
+      <line x1="0" y1="0" x2="0" y2="-70" stroke="${CREAM}" stroke-width="9" stroke-linecap="round"/>
+      <line x1="0" y1="0" x2="0" y2="-92" stroke="${GOLD}" stroke-width="5" stroke-linecap="round" transform="rotate(${Math.floor(hand/6)*6})"/>
+      <circle r="10" fill="${GOLD}"/></g>
+    ${T(960,700,110,'Ta ki…',{f:SERIF,i:1,w:700,c:CREAM,op:clamp(seg(t,0.9,1.5))})}`; }},
+
+ '26':{DUR:4.6, render(t){
+   const x0=360,x1=1560, fill=ease(seg(t,0.6,2.2)), xe=x0+(x1-x0)*fill;
+   const a=pop(t,0.1), b=pop(t,2.1), st=seg(t,2.6,2.9), stS=3-2*ease(st);
+   let shx=0; if(t>2.9&&t<3.2){shx=Math.sin(t*90)*10*(1-seg(t,2.9,3.2));}
+   return `${DEFS}${paperBg}<g transform="translate(${shx},0)">
+    <line x1="${x0}" y1="560" x2="${x1}" y2="560" stroke="${SEPIA}" stroke-width="10" stroke-dasharray="4 18" stroke-linecap="round"/>
+    <line x1="${x0}" y1="560" x2="${xe}" y2="560" stroke="${CORAL}" stroke-width="14" stroke-linecap="round"/>
+    <g transform="translate(${x0},560) scale(${a})"><circle r="34" fill="${TEAL}" stroke="${INK}" stroke-width="6"/>
+      ${T(0,-70,64,'1400\'ler',{f:SERIF,w:700})}${T(0,110,40,'Lengberg Şatosu',{f:SERIF,i:1,w:700,c:SEPIA})}</g>
+    <g transform="translate(${x1},560) scale(${b})"><circle r="34" fill="${GOLD}" stroke="${INK}" stroke-width="6"/>
+      ${T(0,-70,64,'1914',{f:SERIF,w:700})}${T(0,110,40,'Mary\'nin patenti',{f:SERIF,i:1,w:700,c:SEPIA})}</g>
+    ${st>0?`<g transform="translate(960,330) rotate(-7) scale(${stS})" opacity="${clamp(st*3)}">
+      <rect x="-330" y="-110" width="660" height="200" rx="16" fill="${CREAM}" fill-opacity=".8" stroke="${CORAL}" stroke-width="14"/>
+      ${T(0,40,150,'500 YIL!',{c:CORAL,ls:6})}</g>`:''}
+    </g>${finish}`; }},
+
+ '39':{DUR:4.2, render(t){
+   const L=ease(seg(t,0,0.5)), R=ease(seg(t,0.15,0.65)), ti=pop(t,0.8);
+   const sweep=960+Math.sin(t*2.2)*700;
+   return `${DEFS}
+    <rect x="${-960*(1-L)}" y="0" width="960" height="1080" fill="${CORAL}"/>
+    <rect x="${960+960*(1-R)}" y="0" width="960" height="1080" fill="${TEAL}"/>
+    <path d="M${sweep-160},0 L${sweep+160},0 L${sweep+420},1080 L${sweep-420},1080 Z" fill="#fff" opacity=".12"/>
+    ${T(480,640,130,'EFSANE',{c:CREAM,st:INK,sw:12,op:L})}
+    ${T(1440,640,130,'GERÇEK',{c:CREAM,st:INK,sw:12,op:R})}
+    <g transform="translate(960,300) scale(${ti})">
+      <rect x="-620" y="-95" width="1240" height="150" rx="20" fill="${CREAM}" stroke="${INK}" stroke-width="8"/>
+      ${T(0,20,92,'EFSANE Mİ, GERÇEK Mİ?',{c:INK})}</g>
+    <g transform="translate(960,640)">${T(0,0,140,'?',{c:GOLD,st:INK,sw:12,op:clamp(seg(t,1.2,1.6))})}</g>
+    <rect width="1920" height="1080" filter="url(#paper)"/>`; }},
+
+ '43':{DUR:8.4, render(t){
+   const nodes=[['Antik Yunan','apodesmos',TEAL],['Roma','strophium',TEAL],['1400\'ler','Lengberg Şatosu',SEPIA],['1889','Cadolle',CORAL],['1914','Mary Phelps Jacob',GOLD]];
+   const x0=230,dx=365; const line=ease(seg(t,0.2,4.4));
+   let g=`<line x1="${x0}" y1="520" x2="${x0+dx*4*line}" y2="520" stroke="${INK}" stroke-width="9" stroke-linecap="round"/>`;
+   nodes.forEach(([y,n,c],i)=>{const s=pop(t,0.3+i*0.9); const x=x0+i*dx;
+     g+=`<g transform="translate(${x},520) scale(${s})"><circle r="40" fill="${c}" stroke="${INK}" stroke-width="7"/>
+       ${T(0,-78,58,y,{f:SERIF,w:700})}${T(0,112,40,n,{f:SERIF,i:1,w:700,c:SEPIA})}</g>`;});
+   const f1=pop(t,5.2), f2=pop(t,6.4);
+   return `${DEFS}${paperBg}${g}
+    <g transform="translate(960,840) scale(${f1})">${T(0,0,72,'Sütyen bir icat değil…',{f:SERIF,i:1,w:700,c:INK})}</g>
+    <g transform="translate(960,960) scale(${f2})">${T(0,0,104,'bir İSYAN.',{c:CORAL,st:INK,sw:10})}</g>
+    ${finish}`; }},
+};
+const S=SCENES[SC]; window.DUR=S.DUR;
+window.render=t=>{const f=Math.min(clamp(t/0.25),clamp((S.DUR-t)/0.25));document.getElementById('sv').innerHTML=S.render(t)+`<rect width="1920" height="1080" fill="#000" opacity="${1-f}"/>`;};
+</script></body></html>

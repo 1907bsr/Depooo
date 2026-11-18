@@ -31,11 +31,11 @@
 ## Video 1: Sütyeni Kim Buldu? – durum
 - [x] Araştırma + kaynakça
 - [x] Senaryo taslak 1 → [ ] Mert/Büşra onayı
-- [x] Okuma metni
+- [x] Okuma metni TASLAK 2 (esprili) – ONAYLANDI
 - [x] Sahne planı (44 sahne)
-- [ ] Ses: Mert'in kendi sesi (karar) → önce 30 sn deneme kaydı, sonra 7 bölüm (kurulum/ses-kaydi.md)
+- [ ] Ses: KARAR BEKLİYOR – Mert kendi sesini beğenmedi; seçenekler: alışmak / Büşra / yapay ses (ödeme) / karışık. Deneme kaydı ve 5 versiyon: medya/sutyen/ses/deneme
 - [ ] Yapay zekâ görselleri (32) – BEKLİYOR (ödeme ya da ücretsiz Gemini uygulaması)
-- [ ] B sahneleri (12 infografik) – 2/12 bitti (s35 patent, s36 para sayacı)
+- [ ] B sahneleri (12 infografik) – 8/12 bitti (s10 logo, s11, s20, s26, s35, s36, s39, s43). Kalan: s7, s16 (görsel üstüne damga), s3/s12 etiketleri – ilgili görseller gelince
 - [x] Hareketlendirilen yapay zekâ sahneleri: s01, s04
 - [ ] Gemini API anahtarını ortama ekle (bilgisayardan: claude.ai/code → ortam Depooo → Edit → Network secrets; host generativelanguage.googleapis.com, header x-goog-api-key) – anahtar Google'da oluşturuldu
 - [ ] Arşiv görselleri + lisanslar
