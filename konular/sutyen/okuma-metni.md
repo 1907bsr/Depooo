@@ -4,14 +4,14 @@
 - `/` kısa nefes · `//` uzun durak (espriden önce bekleme)
 - **kalın** = vurgu
 - **[güler]** = içinden gelirse kısa bir kıkırdama ya da gülümseyerek söyle
-- (parantez) = yılın ya da yabancı ismin okunuşu; parantez içini okuyacaksın, rakamı ya da yabancı yazılışı değil
+- (parantez) = yabancı ismin okunuşu; parantez içini okuyacaksın, yabancı yazılışı değil
 
 Bilgiler önceki taslaklarla aynıdır (kaynaklar: senaryo.md, kaynakca.md). Yorum çağrısı sadece sondadır.
 
 ---
 
 ## 1. Açılış
-Yıl 1913 (bin dokuz yüz on üç). / New York (Nyu York). //
+Yıl 1913. / New York (Nyu York). //
 
 Sen yirmi yaşında, / sosyetenin göz bebeği bir kızsın. /
 Bu akşam şehrin en havalı balosu var. / Davetiye cebinde, / elbisen hazır, / özgüvenin **tavan.** //
@@ -62,7 +62,7 @@ Velhâsıl kelâm, / bu işkence tam **üç yüz yıl** sürdü. /
 Ta ki…
 
 ## 3. Şatodaki sır
-…2008 (iki bin sekiz) yılına kadar. /
+…2008 yılına kadar. /
 Avusturya. / Doğu Tirol. / **Lengberg** (Lengberg) Şatosu. //
 
 Şatoda tadilat var. / İşçiler bir zemini kaldırıyor / ve altından… / **çöp** çıkıyor. //
@@ -75,7 +75,7 @@ Arkeologlar bunları tek tek inceliyor / ve bir tanesini görünce / **donup kal
 Bugün bir mağazada görsen, / "Biraz retro ama fena değil." der, / indirimdeyse kapardın. [güler] //
 
 Karbon testi yapılıyor. / Sonuç: / **On beşinci yüzyıl.** //
-Yani tarih kitapları "Sütyen 1900'lerde (bin dokuz yüzlerde) icat edildi." diye racon keserken, /
+Yani tarih kitapları "Sütyen 1900'lerde icat edildi." diye racon keserken, /
 Orta Çağ'da bir kadın bunu çoktan giymiş, / yıkamış, / eskitmiş / ve **çöpe atmış.** [güler] //
 
 Peki bu fikir neden unutuldu? /
@@ -83,7 +83,7 @@ Peki bu fikir neden unutuldu? /
 Hem de kötü bir eski sevgili gibi, / hiç çağırılmadan. [güler]
 
 ## 4. Paris'ten ilk hamle
-Yıl 1889 (bin sekiz yüz seksen dokuz). / Paris. /
+Yıl 1889. / Paris. /
 Bütün şehir yeni dikilen Eyfel Kulesi'ne bakıyor. / Biz ise / küçük bir terzi dükkânına bakacağız. //
 
 Herminie Cadolle (Ermini Kadol) adında bir kadın, / korseyi tezgâha yatırıyor / ve makası basıyor: / **Ortadan ikiye!** //
@@ -108,7 +108,7 @@ Hizmetçinle birlikte, / birkaç dakikada bir şey dikiyorsun. / Giyiyorsun / ve
 Anlatılana göre baloda arkadaşların etrafını sarıyor: / "Bu ne? / Bana da yapar mısın?" /
 İşte o an, / jeton düşüyor: / Bu bir elbise meselesi değil, / bu bir **iş fikri.** //
 
-12 Şubat 1914'te (on iki şubat bin dokuz yüz on dörtte), / patent başvurusu yapıyorsun. / Aynı yılın kasım ayında / patent onaylanıyor. /
+12 Şubat 1914'te, / patent başvurusu yapıyorsun. / Aynı yılın kasım ayında / patent onaylanıyor. /
 Patentin adı tek kelime: / **"Brassière"** (Brasiyer). // Yani… / sütyen. / Kısa, / net, / iddialı. //
 
 Ama bir fikrin patentini almak başka, / onu bütün dünyaya satmak başka. /
@@ -128,7 +128,7 @@ O hikâye de / başlı başına bir video.
 Şimdi biraz oyun oynayalım: / **Efsane mi, / gerçek mi?** //
 
 **Bir:** / "Birinci Dünya Savaşı'nda kadınlar korseyi bıraktı / ve o çelikle savaş gemisi yapıldı." //
-Anlatılana göre 1917'de (bin dokuz yüz on yedide) Amerika'da, / kadınlardan korse almamaları istenmiş / ve böylece yirmi sekiz bin ton çelik kazanılmış. /
+Anlatılana göre 1917'de Amerika'da, / kadınlardan korse almamaları istenmiş / ve böylece yirmi sekiz bin ton çelik kazanılmış. /
 Hatta bunun iki savaş gemisine yettiği bile söylenir. //
 Ama… / kurulun kendi raporunda / korseden **hiç** bahsedilmiyor. / Bazı tarihçilere göre / bu, büyük ölçüde bir **abartı.** //
 Kadınlar korseyi bıraktı mı? / Evet. / Peki korselerden gemi mi yapıldı? / O kısım… // biraz **süslenmiş.** /
@@ -137,11 +137,11 @@ Hikâyeye de korse giydirmişler. [güler] //
 **İki:** / "Sütyeni Otto Titzling (Otto Titsling) adında bir Alman buldu." //
 Bunu bir sürü yerde okuyabilirsin. / Ünlü bir bilgi yarışması oyununda / soru olarak bile çıktı. //
 Tek bir sorun var: / Otto Titzling (Otto Titsling)… // **hiç yaşamadı.** //
-1971'de (bin dokuz yüz yetmiş birde), / Wallace Reyburn (Volıs Reybırn) adında bir mizahçı / tamamen uydurma bir kitap yazdı. /
+1971'de, / Wallace Reyburn (Volıs Reybırn) adında bir mizahçı / tamamen uydurma bir kitap yazdı. /
 Kahramanının adı da İngilizcede… / diyelim ki / biraz **açık saçık** bir kelime oyunu. //
 Yani adam şaka yaptı, / dünya **ciddiye aldı.** / İnternetten önceki zamanların / sahte haberi. [güler] //
 
-**Üç:** / "1968'de (bin dokuz yüz altmış sekizde) feministler sokakta sütyen yaktı." //
+**Üç:** / "1968'de feministler sokakta sütyen yaktı." //
 O yıl Amerika'da, / bir güzellik yarışması protesto ediliyor. /
 Kadınlar sütyenlerini, / korselerini, / takma kirpiklerini / bir "Özgürlük Çöp Kutusu"na atıyor. //
 Plan, / kutuyu ateşe vermek. / Ama polis diyor ki: / "Hanımlar, / burası tahta bir iskele. / Yakarsanız, / bütün sahili yakarsınız." / Ve **izin vermiyor.** //
