@@ -1,4 +1,7 @@
-# Görsel Stil – NasılOldu? (TASLAK, onay bekliyor)
+# Görsel Stil – NasılOldu?
+
+ONAY (2026-11-18): Çizgi roman tarzı deneme (sahne + kapak, medya/deneme-cizgiroman/) beğenildi.
+Yön ve kapak formülü onaylı. Asıl kalite için yapay zekâ görsel aracı (Gemini) – ücretsiz uygulamayla deneme yapılacak.
 
 ## GÜNCEL YÖN (2026-11-18, ikinci geri bildirim)
 İlk deneme (büyük kafalı Mary) "çok çizgi filmsi" bulundu. Yeni yön: gönderilen sarıkız
