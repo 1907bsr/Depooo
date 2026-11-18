@@ -130,6 +130,11 @@ gerekiyorsa tıklama tıklama tarif et.
 - Süre için yaklaşık 130 kelime/dakika hesapla, kayıtlara göre ayarla.
 - Her 60-90 saniyede yeni bir merak noktası veya şaka. Uzun bilgi
   bloklarını böl.
+- Mizah yoğunluğu (Mert'in isteği, 2026-11-18): Bilgilendirirken GÜLDÜRMEK. Her 15-25 sn'de
+    bir espri/punchline. Teknikler: abartılı benzetme, modern hayattan gönderme, "deadpan"
+    yorum, üçleme, sahneye iç ses ekleme ("Hizmetçi muhtemelen şöyle düşünüyor…"), videoda
+    tekrar eden şaka (callback; ör. "nefes almak isteğe bağlı"), en sona dönüş esprisi.
+    Okuma metninde anlatıcının güleceği yerler [güler] ile işaretlenir.
 - Mizah kuralları:
   - Şaka ile bilgi birbirine karışmasın; izleyici neyin gerçek
     olduğunu anlayabilmeli. Komik olsun diye bilgi uydurma.

@@ -1,6 +1,7 @@
 # Senaryo – Sütyeni Kim Buldu?
 
-Durum: TASLAK 1 (2026-11-18) – onay bekliyor
+Durum: TASLAK 1 (2026-11-18). GÜNCEL ANLATIM: okuma-metni.md TASLAK 2 (daha esprili, aynı bilgiler).
+Bu dosya kaynak etiketleri ve kurgu notları için referanstır.
 Tahmini süre: ~8 dk (≈950 kelime anlatım + efekt/duraklamalar). İstenirse Caresse Crosby bölümü uzatılarak 9-10 dk'ya çıkarılır. | Mizah: orta-yüksek
 Gösterim: **Anlatım** normal yazı · [GÖRSEL: ...] kurgu notu · [EFEKT: ...] ses efekti · [K#] kaynak (okuma metnine girmez)
 
