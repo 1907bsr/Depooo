@@ -1,4 +1,4 @@
-# Okuma Metni – Sütyeni Kim Buldu? (TASLAK 3.2)
+# Okuma Metni – Sütyeni Kim Buldu? (TASLAK 3.3)
 
 İşaretler:
 - `/` kısa nefes · `//` uzun durak (espriden önce bekleme)
@@ -20,7 +20,7 @@ Bu akşam şehrin en havalı balosu var. / Davetiye cebinde, / elbisen hazır, /
 Tek bir pürüz var: / Üstündeki **korse.** //
 
 Balina kemiğinden, / metal telden / ve bağcıktan yapılmış bu alet / nefes almayı **"isteğe bağlı"** hâle getiriyor. /
-Eğilemiyorsun, / oturamıyorsun. / 3 lokma fazla yesen / dikişler **grev ilan ediyor.** [güler] //
+Eğilemiyorsun, / oturamıyorsun. / 3 lokma fazla yesen / dikişler **grev ilan eder.** [güler] //
 
 Üstelik çubuklar / ince elbisenin altından / cartlı curtlu **dışarı fırlamış.** /
 Sanki elbisenin içinde / şemsiye taşıyorsun. //
@@ -48,7 +48,7 @@ Romalılar da benzer bir bant kullanmışlar / ama adını **strophium** (strofy
 Yani mal aynı, / etiket yeni. / Pazarlamanın piri de / Romalılar. //
 
 Hatta Sicilya'da / 1.700 (bin yedi yüz) yıllık bir Roma villasında / bir mozaik var. /
-Mozaikte bir grup kadın var: / Göğüslerinde bant, / altlarında şort. / Kimi top oynuyor, / kimi ağırlık kaldırıyor. //
+Mozaikte bir grup kadın görüyorsun: / Göğüslerinde bant, / altlarında şort. / Kimi top oynuyor, / kimi ağırlık kaldırıyor. //
 Herkes buna "Bikinili Kızlar" diyor / ama bunlar mayo değil… / **spor kıyafeti.** /
 Yani 1.700 (bin yedi yüz) yıl önce bile / kadınlar "Spora giderken ne giysem?" derdindeymiş. [güler] //
 
@@ -131,7 +131,7 @@ O hikâye de / başlı başına bir video.
 Bunu bir sürü yerde okuyabilirsin. / Ünlü bir bilgi yarışması oyununda / soru olarak bile çıktı. //
 Tek bir sorun var: / Otto Titzling (Otto Titsling)… // **hiç yaşamadı.** //
 1971'de / Wallace Reyburn (Volıs Reybırn) adında bir mizahçı / tamamen uydurma bir kitap yazdı. /
-Kahramanının adı da İngilizcede… / diyelim ki / biraz **açık saçık** bir kelime oyunu. //
+Kitabın kahramanının adı da İngilizcede… / diyelim ki / biraz **açık saçık** bir kelime oyunu. //
 Yani adam şaka yaptı, / dünya **ciddiye aldı.** / İnternetten önceki zamanların / sahte haberi. [güler] //
 
 **2:** / "1968'de feministler sokakta sütyen yaktı." //
