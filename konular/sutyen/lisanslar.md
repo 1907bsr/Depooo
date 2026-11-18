@@ -12,3 +12,4 @@
 KURAL: Bu listede sadece kamu malı / CC0 / kendi üretimimiz / kendi yapay zekâ çıktımız olabilir (CLAUDE.md 00. TELİF KURALI).
 | Ses efektleri (boing, at nalı, yağmur, damga, kasa, trombon) | Claude kodla üretti (ffmpeg/python sentez) | Kendi üretimimiz | Hayır | – |
 | Yazı tipleri: Inter, Caladea | Açık kaynak | SIL Open Font License (ticari kullanım serbest) | Hayır | – |
+| Müzik: merak, gizem, zafer (medya/muzik) | Claude besteledi ve üretti – scripts/muzik/uret.py (notalar dosyada) | Kendi üretimimiz | Hayır | Hiçbir sanatçıdan/kütüphaneden parça yok |

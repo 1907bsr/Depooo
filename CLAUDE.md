@@ -17,8 +17,9 @@ Kullanılabilecekler SADECE:
 YASAK: "atıf karşılığı serbest" (CC BY, CC BY-SA vb.) eserler, stok sitelerinin kendi
 lisansları (Pexels, Pixabay vb.), "telifsiz" diye satılan ama lisansı belirsiz her şey,
 başka YouTube kanallarından herhangi bir parça, popüler müzik/film/dizi parçaları.
-YouTube Ses Kitaplığı: Kullanmadan önce Mert/Büşra'ya sorulacak (lisanslı ama teknik olarak
-telifli eserler). Varsayılan: kendi ürettiğimiz müzik ve efektler.
+MÜZİK (2026-11-18 kesin karar): Bütün müzikleri Claude kendisi besteleyip üretir
+(scripts/muzik/). Hiçbir sanatçıdan, kütüphaneden, YouTube Ses Kitaplığı'ndan parça ALINMAZ.
+Bilinen bir şarkının melodisi/akor dizisi taklit edilmez; her parça özgün bestedir.
 Şüphe varsa KULLANILMAZ. Bu kural ANA HEDEF'ten bile önce gelir.
 
 ## 0. ANA HEDEF (her kararda önce buna bak)
