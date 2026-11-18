@@ -25,7 +25,7 @@ Mary her sahnede karakter kartıyla (referans görsel) üretilir.
 | 11 | Yokken | 5 | "Sütyen yokken kadınlar ne yapıyordu?" | Zaman çizelgesi geriye sarıyor: 1913 → MÖ | B |
 | 12 | Yokken | 5 | "Antik Yunan'da… apodesmos" | Antik Yunan evi, kadın göğsüne kumaş bant sarıyor (saygılı, örtülü) | G + "APODESMOS (evet, gerçek kelime)" (B) |
 | 13 | Yokken | 5 | "Romalılar… strophium" | Romalı kadın aynı bandı takıyor, kendini beğenmiş ifade; ekranda "STROPHIUM" | G |
-| 14 | Yokken | 6 | "Sicilya'da… mozaik" | GERÇEK FOTOĞRAF: Villa Romana del Casale "Bikinili Kızlar" mozaiği (Wikimedia, lisans kontrol) | Arşiv |
+| 14 | Yokken | 6 | "Sicilya'da… mozaik" | Mozaik: SADECE kamu malı/CC0 fotoğraf bulunursa; yoksa Gemini ile "antik mozaik" çizimi | Arşiv(PD) / G |
 | 15 | Yokken | 5 | "…top oynuyorlar, ağırlık kaldırıyorlar" | Mozaikteki sahnenin çizgi roman canlandırması: Romalı kadınlar top oynuyor | K |
 | 16 | Yokken | 4 | "…spor kıyafeti." | Damga: "MAYO DEĞİL → SPOR KIYAFETİ" | B |
 | 17 | Yokken | 5 | "Bunu daha zor nasıl yaparız?" | 1700'ler: terzi ve müşterileri sinsi sinsi gülerek korse tasarlıyor | G |
@@ -58,10 +58,10 @@ Mary her sahnede karakter kartıyla (referans görsel) üretilir.
 | 44 | Kapanış | 8 | "Otto'yu uyduran… tuvalet" | Eski bir klozet, üstünde spot ışığı ve soru işareti → bitiş ekranı | G + B |
 
 ## Arşiv görselleri (ücretsiz, lisans kontrolü bende)
-14, 21, 25, 28, 35 → Wikimedia Commons / Google Patents. Her birinin lisansı medya/sutyen/gorsel/LISANSLAR.md'ye yazılacak.
+14, 21, 25, 28, 35 → SADECE kamu malı/CC0 (Wikimedia'da "Public domain"/"CC0" etiketli) veya ABD patenti. Lisans kanıtı konular/sutyen/lisanslar.md'ye.
 Not: Bu ortamdan patents.google.com'a erişim kapalı; patent çizimi için Wikimedia'daki kopya veya sizin indirmeniz gerekebilir.
 
 ## Ses ve müzik
 - Anlatım: yapay zekâ sesi (ElevenLabs – ödeme bekliyor) veya kendi sesiniz.
-- Müzik: YouTube Ses Kitaplığı (ücretsiz) – Studio'dan indirilecek.
-- Efektler (boing, kasa, trombon, damga, tik tak): ücretsiz kaynak + lisans kontrolü, ya da bende üretim.
+- Müzik: Kendi ürettiğimiz müzik (telif kuralı). YouTube Ses Kitaplığı ancak onay alınırsa.
+- Efektler: hepsini ben üretiyorum (telif yok).

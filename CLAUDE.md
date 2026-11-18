@@ -1,5 +1,26 @@
 # NasılOldu? – YouTube Kanal Asistanı
 
+## 00. TELİF KURALI – ASLA UNUTMA (2026-11-18, Mert ve Büşra'nın kesin isteği)
+TÜM videolar, Shorts, kapaklar ve TÜM kanal fikirleri için geçerlidir (fikirler/ dahil).
+Videolarda telif hakkı sorunu çıkarabilecek HİÇBİR şey kullanılmaz: müzik, görsel, video, ses
+efekti, yazı tipi, logo, karakter, başka kanalın içeriği – hiçbiri.
+Kullanılabilecekler SADECE:
+1. Kamu malı (public domain) veya CC0 olduğu açıkça belgelenmiş eserler
+   (ör. 1929 öncesi ABD patentleri, telif süresi dolmuş arşiv fotoğrafları). Her birinin
+   kaynağı ve lisans kanıtı konular/<konu>/lisanslar.md'ye yazılır.
+2. Kendi ürettiklerimiz: kodla çizdiğim görseller, ürettiğim ses efektleri/müzik,
+   Mert ve Büşra'nın kendi kayıtları.
+3. Bizim ürettiğimiz yapay zekâ çıktıları (aracın şartları ticari kullanıma izin veriyorsa).
+   Tariflerde ünlü karakter, marka, logo, belirli bir sanatçının tarzı veya gerçek bir
+   fotoğrafın kopyası İSTENMEZ.
+4. Yazı tipleri: sadece ticari kullanıma açık, açık lisanslı (OFL) fontlar.
+YASAK: "atıf karşılığı serbest" (CC BY, CC BY-SA vb.) eserler, stok sitelerinin kendi
+lisansları (Pexels, Pixabay vb.), "telifsiz" diye satılan ama lisansı belirsiz her şey,
+başka YouTube kanallarından herhangi bir parça, popüler müzik/film/dizi parçaları.
+YouTube Ses Kitaplığı: Kullanmadan önce Mert/Büşra'ya sorulacak (lisanslı ama teknik olarak
+telifli eserler). Varsayılan: kendi ürettiğimiz müzik ve efektler.
+Şüphe varsa KULLANILMAZ. Bu kural ANA HEDEF'ten bile önce gelir.
+
 ## 0. ANA HEDEF (her kararda önce buna bak)
 Mert ve Büşra'nın kesin isteği (2026-11-18): Videolar insanlara "deli gibi"
 izletilsin, izleyici ve abone sayısı günden güne hızla artsın. En iyisi isteniyor.
@@ -246,3 +267,4 @@ Format: Kural – Kaynağı: video adı, tarih, hangi veri.)
 - 2026-11-18: İlk kanal NasılOldu? oldu (icatların esprili hikâyesi). True crime fikri fikirler/ klasörüne ertelendi.
 - 2026-11-18: ANA HEDEF eklendi: hızlı büyüme ve maksimum izlenme; büyüme stratejisi yazıldı.
 - 2026-11-18: Onaylandı: mizah orta-yüksek, süre 8-12 dk, ses karşılaştırma testi. İlk senaryo (sütyen), maskot fikirleri, 20 konuluk havuz yazıldı.
+- 2026-11-18: 00. TELİF KURALI eklendi: telif riski olan hiçbir şey yok; sadece kamu malı/CC0, kendi üretimimiz, kendi yapay zekâ çıktılarımız.

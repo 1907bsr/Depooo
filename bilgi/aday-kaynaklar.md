@@ -3,5 +3,5 @@ Yeni bulunan kaynaklar önce buraya yazılır, onaydan sonra kaynaklar.md'ye ta�
 
 | Kaynak | Tür | Lisans | Maliyet | Neden faydalı | Risk |
 |---|---|---|---|---|---|
-| Wikimedia Commons | Görsel | Dosyaya göre değişir (CC/kamu malı) | Ücretsiz | Arşiv fotoğrafları, haritalar | Her dosyanın lisansı ayrı kontrol edilmeli |
-| Pexels / Pixabay | Görsel/video | Kendi lisansları | Ücretsiz | Atmosfer görüntüleri | Tanınabilir kişilerde dikkat |
+| Wikimedia Commons | Görsel | SADECE "Public domain" veya "CC0" etiketli dosyalar | Ücretsiz | Arşiv fotoğrafları, haritalar | CC BY / CC BY-SA olanlar KULLANILMAZ (telif kuralı) |
+| ~~Pexels / Pixabay~~ | Görsel/video | Kendi lisansları | – | – | REDDEDİLDİ: telif kuralı (kamu malı değil) |
