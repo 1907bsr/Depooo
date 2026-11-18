@@ -254,7 +254,8 @@ Kurallar:
     sıra sayıları ("15. yüzyıl"). Binlik ayraç nokta. Yılların okunuşu EKLENMEZ.
     Yazıyla kalanlar: tanımlık/deyim ("bir kadın", "binde biri", "tek bir"), özel isimler
     ("Birinci Dünya Savaşı").
-  - PARA tutarları rakam + parantezde okunuş: "1.500 dolar (bin beş yüz dolar)".
+  - PARA tutarları ve 1.000 ve üzeri BÜYÜK SAYILAR rakam + parantezde okunuş:
+    "1.500 dolar (bin beş yüz dolar)", "28.000 (yirmi sekiz bin) ton". Yıllar hariç (sadece rakam).
   - Bütün özel yabancı isimlerin Türkçe okunuşu parantezde: "Mary Phelps Jacob (Meri Felps Ceykıb)";
     okunuşu yazılışıyla aynıysa parantez yazılmaz ("Otto", "Lengberg").
   - Türkçe dil bilgisi ve noktalama eksiksiz: Özneden sonra virgül YOK, "ama/fakat" öncesi virgül YOK,

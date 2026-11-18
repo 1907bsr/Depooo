@@ -4,7 +4,7 @@
 - `/` kısa nefes · `//` uzun durak (espriden önce bekleme)
 - **kalın** = vurgu
 - **[güler]** = içinden gelirse kısa bir kıkırdama ya da gülümseyerek söyle
-- (parantez) = yabancı ismin ya da para tutarının okunuşu; parantez içini okuyacaksın
+- (parantez) = yabancı ismin, para tutarının ya da büyük sayının okunuşu; parantez içini okuyacaksın
 
 Yazım: Bütün sayılar rakamla. Para tutarlarının okunuşu parantezde. Bilgiler önceki taslaklarla aynıdır
 (kaynaklar: senaryo.md, kaynakca.md). Yorum çağrısı sadece sondadır.
@@ -47,10 +47,10 @@ Evet, / kulağa öksürük şurubu gibi geliyor: / "Günde 2 apodesmos, / tok ka
 Romalılar da benzer bir bant kullanmışlar / ama adını **strophium** (strofyum) koymuşlar. /
 Yani mal aynı, / etiket yeni. / Pazarlamanın piri de / Romalılar. //
 
-Hatta Sicilya'da / 1.700 yıllık bir Roma villasında / bir mozaik var. /
+Hatta Sicilya'da / 1.700 (bin yedi yüz) yıllık bir Roma villasında / bir mozaik var. /
 Mozaikte bir grup kadın var: / Göğüslerinde bant, / altlarında şort. / Kimi top oynuyor, / kimi ağırlık kaldırıyor. //
 Herkes buna "Bikinili Kızlar" diyor / ama bunlar mayo değil… / **spor kıyafeti.** /
-Yani 1.700 yıl önce bile / kadınlar "Spora giderken ne giysem?" derdindeymiş. [güler] //
+Yani 1.700 (bin yedi yüz) yıl önce bile / kadınlar "Spora giderken ne giysem?" derdindeymiş. [güler] //
 
 Peki sonra ne oldu? /
 Avrupa yüzyıllarca oturdu / ve şunu düşündü: / "Bu bant çok rahat. // Bunu nasıl **daha zor** hâle getiririz?" //
@@ -70,7 +70,7 @@ Avusturya. / Doğu Tirol. / **Lengberg** Şatosu. //
 Ama öyle sıradan bir çöp değil. / **500 yıllık**, / halis muhlis / Orta Çağ çöpü. /
 Yani Orta Çağ'ın "Bunu sonra atarız." dediği ne varsa. [güler] //
 
-Yaklaşık 2.700 parça kumaş çıkıyor. /
+Yaklaşık 2.700 (iki bin yedi yüz) parça kumaş çıkıyor. /
 Arkeologlar bunları tek tek inceliyorlar / ve bir tanesini görünce / **donup kalıyorlar.** //
 Çünkü ellerindeki şey… / düpedüz bir **sütyen.** / Keten. / 2 kaplı. / Askılı. //
 Bugün bir mağazada görsen / "Biraz retro ama fena değil." dersin, / indirimdeyse kaparsın. [güler] //
@@ -128,7 +128,7 @@ O hikâye de / başlı başına bir video.
 Şimdi biraz oyun oynayalım: / **Efsane mi, / gerçek mi?** //
 
 **1:** / "Birinci Dünya Savaşı'nda kadınlar korseyi bıraktı / ve o çelikle savaş gemisi yapıldı." //
-Anlatılana göre 1917'de / ABD Savaş Sanayi Kurulu / kadınlardan korse almamalarını istemiş. / Bu sayede 28.000 ton çelik / savaş için ayrılmış. /
+Anlatılana göre 1917'de / ABD Savaş Sanayi Kurulu / kadınlardan korse almamalarını istemiş. / Bu sayede 28.000 (yirmi sekiz bin) ton çelik / savaş için ayrılmış. /
 Hatta bunun 2 savaş gemisine yettiği bile söylenir. //
 Ama… / kurulun kendi raporunda / korseden **hiç** bahsedilmiyor. / Bazı tarihçilere göre / bu, büyük ölçüde bir **abartı.** //
 Kadınlar korseyi bıraktı mı? / Evet. / Peki korselerden gemi mi yapıldı? / O kısım… // biraz **süslenmiş.** /
