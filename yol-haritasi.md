@@ -35,7 +35,9 @@
 - [x] Sahne planı (44 sahne)
 - [ ] Ses (yapay ses için ödeme / ya da kendi sesimiz) – BEKLİYOR
 - [ ] Yapay zekâ görselleri (32) – BEKLİYOR (ödeme ya da ücretsiz Gemini uygulaması)
-- [ ] B sahneleri (12 infografik) – bende, başlanabilir
+- [ ] B sahneleri (12 infografik) – 2/12 bitti (s35 patent, s36 para sayacı)
+- [x] Hareketlendirilen yapay zekâ sahneleri: s01, s04
+- [ ] Gemini API anahtarını ortama ekle (bilgisayardan: claude.ai/code → ortam Depooo → Edit → Network secrets; host generativelanguage.googleapis.com, header x-goog-api-key) – anahtar Google'da oluşturuldu
 - [ ] Arşiv görselleri + lisanslar
 - [ ] Müzik + efektler
 - [ ] Kurgu + altyazı

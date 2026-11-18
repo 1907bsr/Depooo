@@ -6,7 +6,7 @@ const path = require('path'); const fs = require('fs');
   const fr = path.join(out, 'kareler'); fs.rmSync(fr, { recursive: true, force: true }); fs.mkdirSync(fr, { recursive: true });
   const b = await chromium.launch();
   const p = await b.newPage({ viewport: { width: 1920, height: 1080 } });
-  await p.goto('file://' + html);
+  await p.goto('file://' + html + (process.argv[4] ? '?' + process.argv[4] : ''));
   await p.evaluate(() => document.fonts.ready);
   const dur = await p.evaluate(() => window.DUR); const n = Math.round(dur * 30);
   await p.evaluate(() => window.render(0)); await p.waitForTimeout(500);
