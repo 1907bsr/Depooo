@@ -127,21 +127,14 @@ O hikâye de / başlı başına bir video.
 ## 6. Efsane mi, gerçek mi?
 Şimdi biraz oyun oynayalım: / **Efsane mi, / gerçek mi?** //
 
-**1:** / "Birinci Dünya Savaşı'nda kadınlar korseyi bıraktı / ve o çelikle savaş gemisi yapıldı." //
-Anlatılana göre 1917'de / ABD Savaş Sanayi Kurulu / kadınlardan korse almamalarını istemiş. / Bu sayede 28.000 (yirmi sekiz bin) ton çelik / savaş için ayrılmış. /
-Hatta bunun 2 savaş gemisine yettiği bile söylenir. //
-Ama… / kurulun kendi raporunda / korseden **hiç** bahsedilmiyor. / Bazı tarihçilere göre / bu, büyük ölçüde bir **abartı.** //
-Kadınlar korseyi bıraktı mı? / Evet. / Peki korselerden gemi mi yapıldı? / O kısım… // biraz **süslenmiş.** /
-Hikâyeye de korse giydirmişler. [güler] //
-
-**2:** / "Sütyeni Otto Titzling (Otto Titsling) adında bir Alman buldu." //
+**1:** / "Sütyeni Otto Titzling (Otto Titsling) adında bir Alman buldu." //
 Bunu bir sürü yerde okuyabilirsin. / Ünlü bir bilgi yarışması oyununda / soru olarak bile çıktı. //
 Tek bir sorun var: / Otto Titzling (Otto Titsling)… // **hiç yaşamadı.** //
 1971'de / Wallace Reyburn (Volıs Reybırn) adında bir mizahçı / tamamen uydurma bir kitap yazdı. /
 Kahramanının adı da İngilizcede… / diyelim ki / biraz **açık saçık** bir kelime oyunu. //
 Yani adam şaka yaptı, / dünya **ciddiye aldı.** / İnternetten önceki zamanların / sahte haberi. [güler] //
 
-**3:** / "1968'de feministler sokakta sütyen yaktı." //
+**2:** / "1968'de feministler sokakta sütyen yaktı." //
 O yıl Amerika'da / bir güzellik yarışması protesto ediliyor. /
 Kadınlar sütyenlerini, / korselerini, / takma kirpiklerini / bir "Özgürlük Çöp Kutusu"na atıyor. //
 Plan şu: / Kutuyu ateşe vermek. / Ama polis diyor ki: / "Hanımlar, / burası tahta bir iskele. / Yakarsanız / bütün sahili yakarsınız." / Ve **izin vermiyor.** //

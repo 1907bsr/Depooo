@@ -170,7 +170,7 @@ Wide 16:9 landscape. Same comic-book style, bold ink outlines, cel shading, warm
 Scene: Paris in the 1920s, a lively sidewalk café. The same woman, now older and glamorous with a stylish 1920s bob haircut and a cloche hat, laughing with artists and writers, a whippet dog at her feet, joyful bohemian mood.
 ```
 
-### Sahne 40 – Korselerden savaş gemisi (hayal)
+### ~~Sahne 40 – Korselerden savaş gemisi~~ (ÇIKARILDI – üretmeyin)
 ```
 Wide 16:9 landscape. Same comic-book style, bold ink outlines, cel shading, warm earthy palette with petrol-teal accents. No text.
 Scene: An absurd imaginary scene: a giant magnet crane pulls thousands of steel-boned corsets out of a 1917 American town, and the corsets assemble themselves into a grey battleship in the harbor, citizens watch in awe. Over-the-top comedic exaggeration.

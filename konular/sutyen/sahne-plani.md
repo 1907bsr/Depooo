@@ -51,7 +51,7 @@ Mary her sahnede karakter kartıyla (referans görsel) üretilir.
 | 37 | Patent | 4 | "…binde biri bile değil." | Mary elinde birkaç kâğıt para, yanında dev para yığını, bezgin bakış | G |
 | 38 | Patent | 4 | "…Caresse Crosby… Paris" | 1920'ler Paris kafesi, şık ve bohem Mary | G |
 | 39 | Efsane | 4 | "Şimdi biraz oyun oynayalım." | Bölünmüş ekran EFSANE / GERÇEK, yarışma ışıkları | B |
-| 40 | Efsane | 8 | "Bir: …savaş gemisi" | Korseler dev bir mıknatısla toplanıp savaş gemisine dönüşüyor (abartılı hayal) → damga "ABARTILI" | G + B |
+| 40 | ~~Efsane~~ | – | ~~"Bir: …savaş gemisi"~~ | ÇIKARILDI (2026-11-18): konuyu koparıyordu | – |
 | 41 | Efsane | 8 | "İki: Otto Titzling…" | Bıyıklı uydurma mucit çizimi buruşup çöpe uçuyor → "EFSANE" | K + B |
 | 42 | Efsane | 9 | "Üç: 1968…" | 1968 protestosu: tahta iskele, "Özgürlük Çöp Kutusu", polis "hayır" işareti | G + B |
 | 43 | Kapanış | 8 | "Peki sütyeni kim buldu?" | Hızlı özet zaman çizelgesi: apodesmos → Lengberg → Cadolle → Jacob | B |
