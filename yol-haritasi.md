@@ -19,7 +19,10 @@
 - [x] Netleştir: mizah orta-yüksek, süre 8-12 dk, ses karşılaştırma testi
 - [x] İlk senaryo taslağı: konular/sutyen/senaryo.md (onay bekliyor)
 - [ ] Ses karşılaştırma testi (yapay ses vs kendi sesimiz, aynı 1 dk metin)
-- [ ] Maskot seçimi (bilgi/maskot.md)
+- [ ] Maskot seçimi (bilgi/maskot.md) – öneri: "Zaman yolcusu" karakteri (bilgi/gorsel-stil.md)
+- [x] Görsel stil yönü: çizgi roman/dergi illüstrasyonu + karma kurgu (bilgi/gorsel-stil.md)
+- [x] Proje ortamı "Depooo" oluşturuldu
+- [ ] Google Gemini anahtarı ekle (aistudio.google.com) → deneme sahnesi (konular/sutyen/gorsel-plani.md) – BEKLİYOR
 - [x] 20 konuluk ilk havuz: bilgi/konu-havuzu.md
 - [ ] Yapay zekâ ses aracını seç ve özgün anlatıcı sesini tasarla (onay bekliyor)
 - [ ] Ses testi: deneme metniyle örnek sahne
