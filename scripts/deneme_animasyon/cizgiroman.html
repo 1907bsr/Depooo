@@ -1,0 +1,202 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0;background:#000}svg{display:block}</style></head>
+<body><svg id="sv" xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"></svg>
+<script>
+const K={ink:'#2A1D16',cream:'#EEDFC4',cream2:'#E4D0AE',ochre:'#C98F3A',ochreD:'#9C6A2A',terra:'#B5603F',terraD:'#8E4630',
+ teal:'#1F5C63',tealD:'#16454B',tealL:'#3E7F86',skin:'#F1C9A8',skinS:'#D99E7E',hair:'#7E3A22',hairS:'#5A2614',hairL:'#A2522F',
+ coral:'#E06A50',coralS:'#B64A36',coralL:'#F2A08A',sheer:'#F7C9B8',bone:'#B8BCC0',white:'#FFF8EC',gold:'#D9A441',goldD:'#A9772A'};
+const ink=(w=3.5)=>`stroke="${K.ink}" stroke-width="${w}" stroke-linejoin="round" stroke-linecap="round"`;
+
+function defs(){return `<defs>
+ <pattern id="damask" width="70" height="80" patternUnits="userSpaceOnUse">
+  <path d="M35,8 C45,22 45,30 35,40 C25,30 25,22 35,8 Z M35,40 C48,48 48,60 35,72 C22,60 22,48 35,40 Z" fill="${K.ochreD}" opacity=".16"/>
+  <circle cx="0" cy="40" r="4" fill="${K.ochreD}" opacity=".14"/><circle cx="70" cy="40" r="4" fill="${K.ochreD}" opacity=".14"/></pattern>
+ <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(40)"><line x1="0" y1="0" x2="0" y2="6" stroke="${K.ink}" stroke-width="1.1" opacity=".35"/></pattern>
+ <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9FC2C2"/><stop offset=".55" stop-color="#5F8E92"/><stop offset="1" stop-color="#2F5C62"/></linearGradient>
+ <linearGradient id="shaft" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF6DC" stop-opacity=".55"/><stop offset="1" stop-color="#FFF6DC" stop-opacity="0"/></linearGradient>
+ <radialGradient id="vig" cx="55%" cy="45%" r="75%"><stop offset="60%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#2a1a0e" stop-opacity=".42"/></radialGradient>
+ <radialGradient id="tealbg" cx="65%" cy="45%" r="80%"><stop offset="0" stop-color="#2C727A"/><stop offset=".7" stop-color="${K.teal}"/><stop offset="1" stop-color="#0F3237"/></radialGradient>
+ <filter id="paper"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="7"/><feColorMatrix values="0 0 0 0 .4  0 0 0 0 .3  0 0 0 0 .2  0 0 0 .16 0"/></filter>
+ <filter id="rough" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".04" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="2.2"/></filter>
+</defs>`;}
+
+function room(){
+  let planks='';
+  for(let i=0;i<22;i++){const x=i*90-200;planks+=`<path d="M${x},900 L${800+(x-800)*0.55},705" stroke="${K.terraD}" stroke-width="2" opacity=".55"/>`;}
+  let panels='';
+  for(let i=0;i<9;i++){const x=40+i*180;panels+=`<rect x="${x}" y="585" width="150" height="95" rx="4" fill="none" ${ink(2.2)} opacity=".55"/>`;}
+  return `
+  <rect width="1600" height="705" fill="${K.cream}"/><rect width="1600" height="705" fill="url(#damask)"/>
+  <!-- pencere + perde -->
+  <g>
+   <rect x="1260" y="110" width="250" height="430" fill="#F8EBCB" ${ink(4)}/>
+   <path d="M1385,110 L1385,540 M1260,325 L1510,325" ${ink(3)}/>
+   <path d="M1230,90 C1250,250 1235,420 1262,560 L1300,560 C1290,400 1300,220 1290,90 Z" fill="${K.teal}" ${ink(3.5)}/>
+   <path d="M1540,90 C1520,250 1535,420 1508,560 L1470,560 C1480,400 1470,220 1480,90 Z" fill="${K.teal}" ${ink(3.5)}/>
+   <path d="M1252,120 C1262,260 1252,420 1272,550" stroke="${K.tealD}" stroke-width="7" fill="none" opacity=".7"/>
+   <path d="M1518,120 C1508,260 1518,420 1498,550" stroke="${K.tealD}" stroke-width="7" fill="none" opacity=".7"/>
+   <rect x="1210" y="78" width="350" height="18" rx="6" fill="${K.goldD}" ${ink(3)}/>
+  </g>
+  <!-- lambri -->
+  <rect y="560" width="1600" height="145" fill="${K.ochre}"/>
+  <rect y="560" width="1600" height="14" fill="${K.ochreD}"/>${panels}
+  <path d="M0,560 L1600,560 M0,705 L1600,705" ${ink(3.5)}/>
+  <!-- zemin -->
+  <rect y="705" width="1600" height="195" fill="${K.terra}"/>${planks}
+  <!-- halı -->
+  <path d="M300,880 L520,740 L1250,740 L1450,880 Z" fill="${K.tealD}" ${ink(3)}/>
+  <path d="M340,868 L540,752 L1232,752 L1410,868 Z" fill="none" stroke="${K.gold}" stroke-width="4" stroke-dasharray="14 8"/>
+  <!-- ışık huzmeleri -->
+  <path d="M1270,120 L1500,120 L1100,900 L640,900 Z" fill="url(#shaft)" opacity=".55"/>
+  <!-- küçük masa + parfüm -->
+  <g>
+   <path d="M150,560 L330,560 L320,585 L160,585 Z" fill="${K.goldD}" ${ink(3.5)}/>
+   <path d="M175,585 L170,780 M305,585 L310,780 M240,585 L240,770" ${ink(5)}/>
+   <path d="M190,560 C188,520 200,510 208,505 L208,492 L222,492 L222,505 C232,510 242,520 240,560 Z" fill="#B7D3CF" ${ink(3)}/>
+   <circle cx="215" cy="486" r="8" fill="${K.coralL}" ${ink(2.5)}/>
+   <path d="M262,560 L262,522 L292,522 L292,560 Z" fill="${K.coralL}" ${ink(3)}/><rect x="270" y="508" width="14" height="14" fill="${K.gold}" ${ink(2.5)}/>
+  </g>`;
+}
+
+function mirror(){
+  return `<g>
+   <path d="M470,860 L540,700 M750,860 L680,700" ${ink(7)}/>
+   <path d="M470,860 L540,700 M750,860 L680,700" stroke="${K.goldD}" stroke-width="3"/>
+   <ellipse cx="610" cy="430" rx="190" ry="285" fill="${K.gold}" ${ink(4.5)}/>
+   <ellipse cx="610" cy="430" rx="168" ry="262" fill="url(#glass)" ${ink(3)}/>
+   <g opacity=".35"><rect x="640" y="240" width="90" height="170" fill="#FFF6DC"/><path d="M685,240 L685,410 M640,325 L730,325" stroke="${K.tealD}" stroke-width="4"/>
+    <path d="M620,230 C628,300 622,380 632,420 L646,420 C640,380 644,300 640,230 Z" fill="${K.tealD}"/></g>
+   <path d="M500,250 C520,210 560,190 590,184" stroke="#fff" stroke-width="9" fill="none" opacity=".45" stroke-linecap="round"/>
+   <path d="M492,300 C496,280 504,266 512,256" stroke="#fff" stroke-width="5" fill="none" opacity=".35" stroke-linecap="round"/>
+   <path d="M600,150 l10,-26 l10,26 z" fill="${K.gold}" ${ink(3)}/>
+  </g>`;
+}
+
+// ---------- Mary (gerçekçi oran, 3/4 sola dönük) ----------
+function mary(expr='annoyed'){
+  const browA = expr==='annoyed' ? `<path d="M964,236 Q974,234 984,241" ${ink(3.4)} fill="none"/><path d="M993,241 Q1003,233 1013,233" ${ink(3.4)} fill="none"/>`
+                                 : `<path d="M963,233 Q974,226 984,232" ${ink(3.2)} fill="none"/><path d="M994,232 Q1004,225 1014,229" ${ink(3.2)} fill="none"/>`;
+  const mouth = expr==='annoyed' ? `<path d="M962,284 Q970,281 979,285" ${ink(2.8)} fill="none"/><path d="M978,285 l3,2" ${ink(2)}/>`
+                                 : `<path d="M960,281 Q972,292 983,282 Z" fill="#7A2420" ${ink(2.5)}/>`;
+  return `<g filter="url(#rough)">
+  <!-- etek kuyruğu (arka) -->
+  <path d="M1056,470 C1090,600 1140,760 1190,850 Q1150,872 1080,866 Z" fill="${K.coralS}" ${ink(4)}/>
+  <!-- etek -->
+  <path d="M952,432 C944,560 926,720 906,862 Q1000,880 1104,866 C1088,720 1070,560 1058,432 Z" fill="${K.coral}" ${ink(4.5)}/>
+  <path d="M1030,440 C1042,580 1056,730 1070,866 L1104,866 C1088,720 1070,560 1058,432 Z" fill="${K.coralS}" opacity=".9"/>
+  <path d="M985,450 C982,600 974,740 962,866 M1012,452 C1016,600 1022,740 1030,868" stroke="${K.coralS}" stroke-width="3" fill="none"/>
+  <!-- tül katman -->
+  <path d="M948,436 C936,580 918,730 900,866 Q960,876 1010,872 C990,720 976,560 968,436 Z" fill="${K.sheer}" opacity=".35"/>
+  <!-- etek ucu süsü -->
+  <path d="M906,862 Q1000,880 1104,866" stroke="${K.gold}" stroke-width="6" fill="none"/>
+  <!-- kollar: sağ (uzak) eli belde -->
+  <path d="M1060,350 C1086,368 1100,392 1098,404 C1094,418 1078,428 1060,430" fill="none" ${ink(19)}/>
+  <path d="M1060,350 C1086,368 1100,392 1098,404 C1094,418 1078,428 1060,430" fill="none" stroke="${K.skin}" stroke-width="12.5" stroke-linecap="round"/>
+  <path d="M1088,380 C1096,396 1096,408 1088,418" stroke="${K.skinS}" stroke-width="4" fill="none"/>
+  <!-- gövde / korsaj -->
+  <path d="M946,345 C960,338 1040,334 1064,342 C1062,372 1058,400 1058,432 Q1004,442 952,432 C952,402 950,372 946,345 Z" fill="${K.coral}" ${ink(4.5)}/>
+  <path d="M1030,342 C1046,346 1062,344 1064,342 C1062,372 1058,400 1058,432 L1034,436 C1038,400 1036,370 1030,342 Z" fill="${K.coralS}"/>
+  <!-- korse çubukları tülün altından görünüyor -->
+  <path d="M968,356 L966,428 M990,360 L990,436 M1014,358 L1016,436 M1038,352 L1040,432" stroke="${K.bone}" stroke-width="3.5" opacity=".85"/>
+  <!-- dekolte -->
+  <path d="M952,348 C968,344 984,352 1000,368 C1018,350 1040,342 1060,344 C1048,336 960,336 952,348 Z" fill="${K.skin}" ${ink(3)}/>
+  <!-- dışarı fırlayan çubuklar -->
+  <path d="M1046,350 L1058,300" stroke="${K.bone}" stroke-width="7" stroke-linecap="round"/>
+  <path d="M1046,350 L1058,300" ${ink(2)} fill="none"/>
+  <path d="M970,352 L962,318" stroke="${K.bone}" stroke-width="7" stroke-linecap="round"/>
+  <path d="M970,352 L962,318" ${ink(2)} fill="none"/>
+  <!-- kuşak (petrol mavisi) -->
+  <path d="M951,418 Q1004,428 1059,418 L1058,440 Q1004,450 952,440 Z" fill="${K.teal}" ${ink(3.5)}/>
+  <path d="M1052,428 l26,30 l-18,6 z" fill="${K.teal}" ${ink(3)}/>
+  <!-- omuz / kol kapakları -->
+  <path d="M938,346 C944,334 960,332 966,340 L960,362 C950,362 940,358 938,346 Z" fill="${K.coralL}" ${ink(3)}/>
+  <path d="M1052,340 C1060,332 1074,334 1078,348 C1072,358 1062,360 1054,358 Z" fill="${K.coralL}" ${ink(3)}/>
+  <!-- sol (yakın) kol: çubuğu bastırıyor -->
+  <path d="M944,356 C926,372 918,394 930,402 C944,410 958,380 966,352" fill="none" ${ink(19)}/>
+  <path d="M944,356 C926,372 918,394 930,402 C944,410 958,380 966,352" fill="none" stroke="${K.skin}" stroke-width="12.5" stroke-linecap="round"/>
+  <path d="M955,343 C962,333 974,332 978,340 C980,348 972,356 962,356 C954,355 951,349 955,343 Z" fill="${K.skin}" ${ink(3)}/>
+  <path d="M960,336 l-4,-8 M967,333 l-2,-9 M974,334 l1,-8" ${ink(2.6)}/>
+  <!-- boyun -->
+  <path d="M984,318 C985,326 984,332 978,340 L1016,340 C1012,332 1011,326 1013,316 Z" fill="${K.skin}" ${ink(3.5)}/>
+  <path d="M990,320 C1000,328 1008,328 1012,322 L1016,340 L1004,340 Z" fill="${K.skinS}" opacity=".8"/>
+  <g transform="translate(1000,330) scale(1.14) translate(-1000,-316)">
+  <!-- arka saç + topuz -->
+  <path d="M1004,190 C1040,186 1058,214 1052,248 C1048,270 1040,282 1030,288 C1036,262 1034,236 1018,220 Z" fill="${K.hair}" ${ink(4)}/>
+  <circle cx="1024" cy="178" r="27" fill="${K.hair}" ${ink(4)}/>
+  <path d="M1006,172 C1016,164 1032,166 1040,176 M1010,186 C1022,180 1036,184 1044,192" stroke="${K.hairS}" stroke-width="3" fill="none"/>
+  <!-- kurdele -->
+  <path d="M1044,168 l24,-14 l2,26 z M1044,170 l26,10 l-16,18 z" fill="${K.gold}" ${ink(3)}/>
+  <!-- yüz -->
+  <path d="M1004,206 C986,206 972,216 968,232 C966,242 964,250 958,262 C955,267 958,270 963,271 C961,276 962,280 965,282 C964,288 966,292 970,296 C980,304 996,306 1012,298 C1026,290 1034,274 1036,256 C1038,230 1028,208 1004,206 Z" fill="${K.skin}" ${ink(4)}/>
+  <!-- yüz gölgesi -->
+  <path d="M1020,214 C1032,226 1036,246 1034,262 C1030,282 1018,296 1000,302 C1016,290 1024,270 1024,250 C1024,236 1022,224 1020,214 Z" fill="${K.skinS}" opacity=".85"/>
+  <!-- kulak -->
+  <path d="M1022,246 C1032,242 1036,256 1030,266 C1026,272 1020,268 1020,262" fill="${K.skin}" ${ink(3)}/>
+  <!-- ön saç -->
+  <path d="M966,238 C962,214 980,192 1006,188 C1030,186 1046,200 1048,222 C1040,212 1028,206 1016,210 C1004,216 996,214 990,208 C984,222 976,232 966,238 Z" fill="${K.hair}" ${ink(4)}/>
+  <path d="M984,210 C996,200 1018,198 1032,204" stroke="${K.hairL}" stroke-width="4" fill="none"/>
+  <path d="M968,240 C964,252 966,262 970,268" ${ink(2.2)} fill="none"/>
+  <!-- gözler -->
+  <path d="M966,249 Q974,243 983,249 Q974,253 966,249 Z" fill="#fff" ${ink(2.4)}/>
+  <circle cx="970" cy="249" r="3.2" fill="#3A2416"/>
+  <path d="M994,248 Q1003,242 1012,248 Q1003,252 994,248 Z" fill="#fff" ${ink(2.4)}/>
+  <circle cx="998" cy="248" r="3.2" fill="#3A2416"/>
+  <path d="M965,247 Q974,240 984,247 M993,246 Q1003,239 1013,246" ${ink(3)} fill="none"/>
+  ${browA}
+  <!-- burun gölgesi, ağız, çiller -->
+  <path d="M963,271 C967,272 970,270 972,268" ${ink(2.2)} fill="none"/>
+  ${mouth}
+  <g fill="${K.skinS}"><circle cx="984" cy="264" r="1.4"/><circle cx="990" cy="268" r="1.3"/><circle cx="1002" cy="264" r="1.4"/><circle cx="996" cy="262" r="1.2"/></g>
+  <ellipse cx="1000" cy="272" rx="9" ry="5" fill="${K.coral}" opacity=".25"/>
+  </g>
+  </g>`;
+}
+
+function fx(){
+  return `
+  <!-- hareket çizgileri + ter -->
+  <path d="M1068,292 q10,-6 18,0 M1072,306 q12,-4 20,4 M1064,280 q6,-10 16,-10" ${ink(2.6)} fill="none"/>
+  <path d="M948,306 q-10,-4 -16,4 M944,320 q-12,0 -16,8" ${ink(2.6)} fill="none"/>
+  <path d="M1044,214 C1050,224 1050,232 1044,234 C1038,232 1038,224 1044,214 Z" fill="#CFEFF2" ${ink(2.2)}/>
+  <g transform="translate(1100,262) rotate(-12)">
+    <text x="0" y="0" font-family="Caladea, serif" font-weight="700" font-style="italic" font-size="38" fill="${K.white}" stroke="${K.ink}" stroke-width="7" paint-order="stroke">boing!</text></g>`;
+}
+
+function caption(){
+  return `<g transform="translate(70,60)">
+    <rect x="8" y="8" width="560" height="112" rx="6" fill="${K.teal}"/>
+    <rect width="560" height="112" rx="6" fill="#F8EED8" ${ink(3.5)}/>
+    <text x="24" y="46" font-family="Caladea, serif" font-weight="700" font-size="34" fill="${K.ink}">New York, 1913.</text>
+    <text x="24" y="88" font-family="Caladea, serif" font-style="italic" font-size="25" fill="${K.ink}">Baloya 20 dakika var… ve büyük bir sorun var.</text></g>`;
+}
+
+window.scene=function(){
+  document.getElementById('sv').innerHTML = defs()+room()+mirror()+`<ellipse cx="1010" cy="882" rx="135" ry="14" fill="#000" opacity=".22"/>`+
+    `<g transform="translate(-110,-97) scale(1.12)" >${mary('annoyed')}${fx()}</g>`+
+    `<rect width="1600" height="900" filter="url(#paper)"/><rect width="1600" height="900" fill="url(#vig)"/>`+caption()+
+    `<text x="1585" y="888" text-anchor="end" font-family="Inter" font-size="14" fill="${K.cream}" opacity=".8">NasılOldu? · stil denemesi (elle kodlanmış çizim)</text>`;
+};
+
+window.thumb=function(){
+  const sv=document.getElementById('sv'); sv.setAttribute('width',1280); sv.setAttribute('height',720); sv.setAttribute('viewBox','0 0 1280 720');
+  const hk=(x,y,r)=>`<g transform="translate(${x},${y}) rotate(${r})"><rect x="-70" y="-70" width="140" height="140" rx="8" fill="${K.white}" ${ink(5)}/>
+     <rect x="-56" y="-56" width="112" height="112" rx="5" fill="none" stroke="${K.coralL}" stroke-width="4" stroke-dasharray="9 7"/>
+     <path d="M-70,70 Q-40,40 -6,64" ${ink(3)} fill="none" opacity=".5"/></g>`;
+  sv.innerHTML = defs()+`<rect width="1280" height="720" fill="url(#tealbg)"/>
+   <g opacity=".12">${Array.from({length:18},(_,i)=>`<path d="M${900},${360} L${900+Math.cos(i/18*6.283)*1200},${360+Math.sin(i/18*6.283)*1200}" stroke="#fff" stroke-width="40"/>`).join('')}</g>
+   <g transform="translate(-600,-215) scale(1.62)">${mary('delighted')}</g>
+   ${hk(690,575,-14)}${hk(820,610,10)}
+   <path d="M630,670 C690,620 750,710 830,660 C880,630 920,680 960,650" stroke="#F4A3B4" stroke-width="16" fill="none" stroke-linecap="round"/>
+   <path d="M630,670 C690,620 750,710 830,660 C880,630 920,680 960,650" ${ink(2.5)} fill="none" opacity=".6"/>
+   <g font-family="Inter Display, Inter, sans-serif" font-weight="900">
+     <text x="56" y="250" font-size="150" fill="${K.gold}" stroke="${K.ink}" stroke-width="12" paint-order="stroke" letter-spacing="-3">2 MENDİL</text>
+     <text x="62" y="375" font-size="96" fill="${K.white}" stroke="${K.ink}" stroke-width="10" paint-order="stroke">= 15 MİLYON $</text>
+   </g>
+   <g transform="translate(160,600) rotate(-8)">
+     <rect x="-6" y="-56" width="330" height="80" rx="10" fill="${K.coral}" ${ink(5)}/>
+     <text x="159" y="2" text-anchor="middle" font-family="Inter Display, Inter" font-weight="900" font-size="46" fill="#fff">GERÇEK HİKÂYE</text></g>
+   <text x="790" y="200" text-anchor="start" font-family="Inter Display, Inter" font-weight="900" font-size="170" fill="${K.gold}" stroke="${K.ink}" stroke-width="10" paint-order="stroke" opacity=".95">?</text>
+   <rect width="1280" height="720" filter="url(#paper)"/>`;
+};
+</script></body></html>
