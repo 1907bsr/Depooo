@@ -7,6 +7,8 @@
 - Ortak stil tarifi: konular/sutyen/gemini-tarifleri-yeni.md başında.
 - ÜRETİM: Bir süre Büşra görselleri Gemini uygulamasından ELLE (ücretsiz) üretiyor, adım adım; Claude tarif yazar ve kontrol eder.
 - Açıklamaya "Görseller yapay zekâ ile üretilmiştir" notu; gerekirse YouTube yapay içerik bildirimi.
+- MİMİK KURALI (2026-11-19, Büşra): Karakter tariflerine duruma göre ABARTILI, KOMİK yüz ifadesi yazılır
+  (kanal komik). Örn. 'exaggerated comedic expression: eye-roll, puffed cheeks, dramatic frown'. Aile dostu, aşağılayıcı değil.
 
 ## ⚠️ KARAR 2026-11-19 (Büşra): PETROL MAVİSİ İMZA RENGİ İPTAL
 - Petrol mavisi hiçbir yerde imza/vurgu rengi olarak kullanılmaz (görsel tarifleri, etiketler, kapak zemini, isim kartı).
