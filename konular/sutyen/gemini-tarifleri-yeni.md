@@ -14,4 +14,5 @@ Wide 16:9 landscape image. The BACKGROUND must look almost photorealistic: a rea
 - [x] ADIM 3: Sahne 2 – Mary aynanın önünde (s02.png)
 - [x] Sahne 3 – korse: GERÇEK Met korse fotoğrafı (met-157937, CC0) kullanılacak, üretim yok
 - [x] ADIM 4A: Sahne 4 – çubuk dışarıda, aynasız yakın çekim (s04A.png)
-- [ ] ADIM 4B: çubuk içeride
+- [x] ADIM 4B: çubuk içeride (s04B.png)
+- [ ] ADIM 5: Sahne 5 – 'Ben bununla dans etmem'
