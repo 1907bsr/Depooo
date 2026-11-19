@@ -25,3 +25,9 @@ Format: Tarih – Ne oldu – Neden – Bundan sonraki kural
 ## 2026-11-19 – Gemini ödeme türü yanlış anlatıldı
 - Claude "kumbara yok, ay sonu karttan çekilir" dedi; oysa hesap ÖN ÖDEMELİ (prepay). Kredi bitince API 402 veriyor.
 - KURAL: Bilmediğin ödeme/fatura bilgisini kesinmiş gibi söyleme; "kontrol edelim" de. Kalan krediyi Büşra AI Studio > Billing'den görür.
+
+## 2026-11-19 – Maliyet yine düşük tahmin edildi (350 TL sınırı doldu)
+- Claude "245 TL fazlasıyla yeter, 30 kare ~55-70 TL" dedi; referanslı ve uzun tarifli üretimler pahalıya geldi, 350 TL aylık sınır doldu.
+- Sebep: Görsel başı 1,7 TL en basit üretime göre; referans görsel + uzun tarif ek ücret (giriş birimi). Gerçek ~2,5-3 TL olabilir.
+- KURAL: Ücretli üretimden önce Spend sayfasındaki GERÇEK rakamla görsel başı fiyatı hesapla; tahmini EN PAHALI senaryoya göre ver.
+- KURAL: Gerçek fiyat netleşene kadar ücretli üretim YOK.
