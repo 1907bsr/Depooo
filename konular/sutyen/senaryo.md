@@ -31,7 +31,7 @@ Ve o gece… iç çamaşırı tarihi değişiyor.
 
 Ama durun. Çünkü bu kadın sütyeni ilk bulan kişi **değil.** Avusturya'da bir şatonun duvarında 500 yıl saklanmış bir sır var. Ve ortada, bütün dünyayı kandırmış "Otto" diye bir mucit var… ki kendisi hiç yaşamadı.
 
-Bugün NasılOldu'da: **Sütyeni gerçekten kim buldu?**
+Bugün Büş Buldu'da: **Sütyeni gerçekten kim buldu?**
 
 [GÖRSEL: Kanal logosu – en fazla 2 saniye.]
 

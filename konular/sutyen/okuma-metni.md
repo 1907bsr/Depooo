@@ -35,7 +35,7 @@ Yalnız bir dakika. / Sütyeni ilk bulan aslında **sen değilsin.** /
 Avusturya'da bir şatonun altında / 500 yıldır bekleyen bir sır var. /
 Bir de bütün dünyayı kandıran / Otto adında bir mucit var… / üstelik kendisi **hiç yaşamadı.** //
 
-Bugün NasılOldu'da: / **Sütyeni gerçekten kim buldu?**
+Bugün Büş Buldu'da: / **Sütyeni gerçekten kim buldu?**
 
 ## 2. Sütyen yokken hayat
 Şimdi düşün: / Sütyen yokken kadınlar ne yapıyordu? //

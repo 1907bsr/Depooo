@@ -21,7 +21,7 @@ Mary her sahnede karakter kartıyla (referans görsel) üretilir.
 | 7 | Açılış | 3 | "Ve o gece…" | İki mendil + kurdele, yazı: "ŞU AN TARİH YAZILIYOR" | B |
 | 8 | Açılış | 5 | "Ama durun… bir şatonun dibinde…" | Sisli dağlarda eski bir şato, gizemli | G |
 | 9 | Açılış | 4 | "…Otto diye bir mucit…" | Bıyıklı, gölgeli, yüzü soru işaretiyle kapalı adam silueti | G |
-| 10 | Açılış | 3 | "Bugün NasılOldu'da…" | Kanal logosu + başlık kartı | B |
+| 10 | Açılış | 3 | "Bugün Büş Buldu'da…" | Kanal logosu + başlık kartı | B |
 | 11 | Yokken | 5 | "Sütyen yokken kadınlar ne yapıyordu?" | Zaman çizelgesi geriye sarıyor: 1913 → MÖ | B |
 | 12 | Yokken | 5 | "Antik Yunan'da… apodesmos" | Antik Yunan evi, kadın göğsüne kumaş bant sarıyor (saygılı, örtülü) | G + "APODESMOS (evet, gerçek kelime)" (B) |
 | 13 | Yokken | 5 | "Romalılar… strophium" | Romalı kadın aynı bandı takıyor, kendini beğenmiş ifade; ekranda "STROPHIUM" | G |
