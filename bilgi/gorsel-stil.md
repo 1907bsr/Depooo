@@ -1,5 +1,13 @@
 # Görsel Stil – İcatbuldum
 
+## ✅ YENİ STİL ONAYI (2026-11-19, Büşra): "Gerçekçi arka plan + çizim karakter"
+- Arka plan neredeyse fotoğraf gibi (gerçek dokular, doğal gün ışığı), karakter kaliteli dijital illüstrasyon,
+  gerçekçi oranlar, soluk/doğal renkler (bej, sıcak gri, yumuşak kahve, krem, soluk zeytin). Mavi/teal yok.
+- İlk onaylı örnek: medya/sutyen/gorsel/yeni-stil/s06-busra-gemini.png (Büşra Gemini uygulamasında üretti).
+- Ortak stil tarifi: konular/sutyen/gemini-tarifleri-yeni.md başında.
+- ÜRETİM: Bir süre Büşra görselleri Gemini uygulamasından ELLE (ücretsiz) üretiyor, adım adım; Claude tarif yazar ve kontrol eder.
+- Açıklamaya "Görseller yapay zekâ ile üretilmiştir" notu; gerekirse YouTube yapay içerik bildirimi.
+
 ## ⚠️ KARAR 2026-11-19 (Büşra): PETROL MAVİSİ İMZA RENGİ İPTAL
 - Petrol mavisi hiçbir yerde imza/vurgu rengi olarak kullanılmaz (görsel tarifleri, etiketler, kapak zemini, isim kartı).
 - Mevcut çizgi roman renkleri "çizgi film gibi" bulundu. Yeni yön: SOLUK, DOĞAL renkler, gerçekçi ışık
