@@ -26,7 +26,12 @@ def tr_title(title):
             return p.get('langlinks', [{}])[0].get('*')
     except Exception: return None
 rows = []
+import os
+if os.path.exists(sys.argv[1]):  # devam: önceki sonuçları koru
+    rows = [tuple(r) for r in list(csv.reader(open(sys.argv[1])))[1:] if r and r[1]]
+done = {r[0] for r in rows}
 for t in EN:
+    if t in done: continue
     en = views('en.wikipedia', t); time.sleep(20)
     tt = tr_title(t) if '--tr' in sys.argv else None
     tr = views('tr.wikipedia', tt) if tt else None
