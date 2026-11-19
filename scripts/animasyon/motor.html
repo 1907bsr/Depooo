@@ -99,6 +99,19 @@ function ter(e, t, c) { // ter damlaları
   for (let i = 0; i < 3; i++) { const q = ((t - at) * 1.1 + i * .33) % 1; o += `<path transform="translate(${p.x + i * 40 - 40},${p.y + q * 90}) scale(1.4)" d="M0,-22 C12,-4 14,6 0,14 C-14,6 -12,-4 0,-22 Z" fill="#CFE7F2" stroke="${INK}" stroke-width="4" opacity="${1 - q}"/>`; }
   return o;
 }
+function gozyasi(e, t, c) { // gözden yanağa akan yaşlar
+  const at = e.t * TS; if (t < at) return ''; let o = '';
+  for (const [gx, gy] of e.gozler) {
+    for (let i = 0; i < 3; i++) {
+      const q = ((t - at) * .55 + i * .34) % 1;
+      const p = yer(c, gx, gy + q * (e.boy || .14));
+      const sc = (1.1 - q * .3) * (c.w < .5 ? 1.6 : 1.1);
+      o += `<path transform="translate(${p.x},${p.y}) scale(${sc})" d="M0,-20 C10,-4 12,6 0,13 C-12,6 -10,-4 0,-20 Z" fill="#BFE3F5" fill-opacity=".9" stroke="#2A5F7A" stroke-width="3" opacity="${q < .85 ? 1 : (1 - q) / .15}"/>
+            <path transform="translate(${p.x - 3},${p.y - 4}) scale(${sc})" d="M-3,-6 Q-1,-10 2,-6" stroke="#fff" stroke-width="3" fill="none"/>`;
+    }
+  }
+  return o;
+}
 function parilti(e, t, c) {
   const at = e.t * TS; if (t < at) return ''; let o = '';
   for (let i = 0; i < 9; i++) {
@@ -143,6 +156,7 @@ function render(t) {
     else if (e.tip === 'kutu') ust += kutu(e, t);
     else if (e.tip === 'ter') ust += ter(e, t, c);
     else if (e.tip === 'parilti') ust += parilti(e, t, c);
+    else if (e.tip === 'gozyasi') ust += gozyasi(e, t, c);
     else if (e.tip === 'hiz') ust += hiz(e, t);
     else if (e.tip === 'isim') ust += isim(e, t);
     else if (e.tip === 'ucur') {
