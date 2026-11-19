@@ -15,3 +15,9 @@ Format: Tarih – Ne oldu – Neden – Bundan sonraki kural
 - KURAL: Yeni bir yöntem/araç önce 1-2 örnekle denenir, kullanıcıya gösterilir, onay gelmeden toplu üretim YAPILMAZ.
 - KURAL: Kullanıcı "şimdi değil / bekle" dediğinde yeni iş başlatılmaz; sadece söyleneni yap.
 - KURAL: Harcama tahmini verirken gerçek sayıyı say (deneme ve tekrarlar dahil), düşük tahmin verme.
+
+## 2026-11-19 – "Sen üret" = ücretsiz sanıldı (~7 TL)
+- Ne oldu: Büşra ücretsiz yolu kastederek "sen üretsene" dedi; Claude ücretli API ile 4 görsel üretti.
+- KURAL: Claude'un ürettiği HER görsel ücretlidir (Gemini API). Ücretsiz yol sadece Büşra'nın telefonundaki
+  Gemini uygulamasıdır. Onay cevabı belirsizse ("yap", "üret") üretmeden önce "Ücretli (X TL) mi, ücretsiz
+  (sen uygulamadan) mı?" diye açıkça sor.
