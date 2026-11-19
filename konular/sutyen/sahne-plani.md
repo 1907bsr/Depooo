@@ -49,7 +49,7 @@ Mary her sahnede karakter kartıyla (referans görsel) üretilir.
 | 35 | Patent | 5 | "…patent başvurusu…" | GERÇEK BELGE: ABD patenti 1.115.674 çizimi (kamu malı) + damga "PATENT 1914" | Arşiv + B |
 | 36 | Patent | 5 | "…bin beş yüz dolar… on beş milyon" | Sayaç: 1.500 $ → 15.000.000 $, kasa sesi + trombon | B |
 | 37 | Patent | 4 | "…binde biri bile değil." | Mary elinde birkaç kâğıt para, yanında dev para yığını, bezgin bakış | G |
-| 37b | Patent | 4 | (37'nin devamı) | Mary yakın plan, gözyaşları akıyor, hüzünlü trombon (Mert'in isteği 2026-11-19) | G + B |
+| 37b | Patent | 5 | (37'nin devamı) | KOMİK ağlayan Mary (s37c): fıskiye gözyaşı, hıçkırık, "HÜÜÜÜ!", trombon. Sakin versiyon s37b yedek (Mert'in isteği 2026-11-19) | G + B |
 | 38 | Patent | 4 | "…Caresse Crosby… Paris" | 1920'ler Paris kafesi, şık ve bohem Mary | G |
 | 39 | Efsane | 4 | "Şimdi biraz oyun oynayalım." | Bölünmüş ekran EFSANE / GERÇEK, yarışma ışıkları | B |
 | 40 | ~~Efsane~~ | – | ~~"Bir: …savaş gemisi"~~ | ÇIKARILDI (2026-11-18): konuyu koparıyordu | – |
