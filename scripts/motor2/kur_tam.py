@@ -167,6 +167,25 @@ def zaman(v, D):
     if isinstance(v, tuple): return round(v[1] * D, 2)
     return round(D + v, 2) if v < 0 else v
 
+def yol_uret(sid, D, W, H, odak, ofs, hiz=.02):
+    """Kesintisiz kamera yolu: ~4,5 sn aralıklı yol noktaları; yakınlaşma ve kayma hızı sınırlı (sert kesme ve atlama YOK)."""
+    zcap = 1.18 if W >= 1344 else 1.06
+    n = max(2, round(D / 4.5) + 1)
+    U = [0.0, 0.85, 0.25, 1.0, 0.45, 0.1]
+    pts = []
+    for k in range(n):
+        t = round(D * k / (n - 1), 2)
+        fx, fy = odak[(k + ofs) % len(odak)]
+        if len(odak) == 1: fx += .02 * (1 if (k + ofs) % 2 == 0 else -1)
+        z = 1 + (zcap - 1) * U[(k + ofs) % len(U)]
+        if pts:   # hız sınırları: yakınlaşma ≤ %3,5/sn, kayma ≤ hiz*(kenar uzunluğu)/sn
+            dt = t - pts[-1]['t']; p = pts[-1]
+            z = clamp_(z, p['z'] - .035 * dt, p['z'] + .035 * dt); z = clamp_(z, 1.0, zcap)
+            fx = clamp_(fx, p['cx'] - hiz * dt, p['cx'] + hiz * dt); fy = clamp_(fy, p['cy'] - hiz * dt, p['cy'] + hiz * dt)
+        pts.append({'t': t, 'cx': round(fx, 3), 'cy': round(fy, 3), 'z': round(z, 3)})
+    return pts
+def clamp_(x, a, b): return max(a, min(b, x))
+
 def kesmeler(sid, D, W, odak, ofs):
     zcap = 1.18 if W >= 1344 else 1.06
     desen = [(1.00, 1.07), (1.09, 1.16), (1.14, 1.08), (1.04, 1.12), (1.12, 1.18), (1.06, 1.00)]
@@ -187,15 +206,16 @@ for i, (sid, mk, mn) in enumerate(SAHNE):
     odak = ODAK[ok] if ok else [(.5, .5)]
     s = {'id': ad, 'dur': D, 'img': A}
     if B: s.update(imgB=B, maske=M, gecis=[{'t': round(f * D, 2), 'to': to, 'sure': .1} for f, to in gecis])
+    if sid == 's15': s['bKayma'] = [-3, 0]   # B ayrı boyutta üretildi: yüz bölgesi 3 px sola kaymış
     base = re.sub(r'[a-z]$', '', sid) if sid not in ('s18b',) else 's18'
-    if ok == 's35':
-        s['kesmeler'] = [{'t': 0, 'a': [.5, .17, 1.0], 'b': [.5, .30, 1.06]}, {'t': round(D * .34, 2), 'a': [.5, .42, 1.06], 'b': [.5, .55, 1.0]}, {'t': round(D * .68, 2), 'a': [.5, .56, 1.0], 'b': [.5, .64, 1.04]}]
-    elif sid == 's36':
-        s['kesmeler'] = [{'t': 0, 'a': [.5, .5, 1.0], 'b': [.5, .5, 1.0]}]
-    elif sid == 'n39':
-        s['kesmeler'] = [{'t': 0, 'a': [.5, .5, 1.0], 'b': [.5, .5, 1.0]}]
+    if ok == 's35':     # uzun, dar belge: üstten alta tek yavaş tarama
+        s['yol'] = [{'t': 0, 'cx': .5, 'cy': .19, 'z': 1.0}, {'t': round(D * .5, 2), 'cx': .5, 'cy': .41, 'z': 1.04}, {'t': D, 'cx': .5, 'cy': .62, 'z': 1.0}]
+    elif sid == 's03':  # korse fotoğrafı: yukarıdan aşağı tek kesintisiz tarama
+        s['yol'] = [{'t': 0, 'cx': .5, 'cy': .30, 'z': 1.0}, {'t': D, 'cx': .5, 'cy': .70, 'z': 1.06}]
+    elif sid in ('s36', 'n39'):
+        s['yol'] = [{'t': 0, 'cx': .5, 'cy': .5, 'z': 1.0}, {'t': D, 'cx': .5, 'cy': .5, 'z': 1.0}]
     else:
-        s['kesmeler'] = kesmeler(sid, D, W, odak, i % 5)
+        s['yol'] = yol_uret(sid, D, W, H, odak, i % 5)
     yz = []
     for (metin, b0, b1, x, y, fs, ek) in YAZI.get(sid, []):
         d = {'t0': zaman(b0, D), 't1': zaman(b1, D), 'x': x, 'y': y, 'yazi': metin, 'fs': fs}; d.update(ek); yz.append(d)

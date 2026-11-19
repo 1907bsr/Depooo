@@ -40,3 +40,9 @@ Format: Tarih – Ne oldu – Neden – Bundan sonraki kural
   KURAL: renk kararı değişince gradyan/sabit hex değerlerini de tara (grep).
 - Caveat yazı tipinde "5" rakamı S gibi okunuyor: rakamlı ekran yazılarında Alegreya İtalik kalın kullan.
 - Siyah kenar: hizalanmış B görsellerinde (s22B, s34B) sağ kenarda siyah şerit vardı; hizalamadan sonra kenar şeridini A'dan doldur.
+
+## 2026-11-20 – Kamera "atlıyor" (sert çekim sınırı)
+- Aynı fotoğrafı ~3 sn'de bir farklı kadraja SERT keserek "hızlı kesme" yapmıştım. Çözünürlük yüzünden kadraj farkı küçük kaldığı için (zoom ≤1,18)
+  kesme gibi değil, titreme/atlama gibi göründü; dik fotoğraflarda (korse, patent) 180-350 px'lik dikey sıçrama vardı. 124 sınırın 70'i <40 px'ti.
+- KURAL: Aynı görselde sert kesme yapma; kesintisiz kamera yolu kullan (scripts/motor2: yol_uret). Ölçüm: kareler arası fark/medyan > ~5 ise hata.
+- A/B geçişlerinde ayrı üretilmiş (farklı boyutlu) B görselinin yerel kaymasını ölç ve düzelt (s15'te 3 px).

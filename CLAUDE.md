@@ -210,7 +210,9 @@ Sütyen videosunda oturan sistem. Kullanıcı değiştirmedikçe aynen uygulanı
 4. Arşiv: Gerçek nesne/fotoğraf (Met Open Access CC0, ABD patentleri vb.) – Büşra çok beğendi (ör. açılışta gerçek
    1885 korsesi). Mümkün olan her yerde gerçek arşiv parçası kullan; kanıt lisanslar.md'ye.
 5. Kurgu tarzı (ONAYLANDI 2026-11-19, "Böyle editler istiyorum"): scripts/animasyon/motor.html + sahneler_<konu>.js
-   - HIZLI KESMELER: aynı görselden geniş açı / yakın çekim, 1-2 sn'de bir açı değişir ('cekimler').
+   - KAMERA (2026-11-20, Büşra: "fotoğraflar kayarken birden başka yere atlıyor"): Aynı görsel içinde SERT KESME YOK.
+     Kamera sahne boyunca kesintisiz tek yumuşak yolda gezer (Hermite eğrisi, 'yol'); kayma ve yakınlaşma hız sınırlı.
+     Kesme yalnızca sahne/görsel değişiminde ve A/B mimik geçişlerinde olur. Uzun dar fotoğraf/belgede tek yavaş tarama.
    - İKİ HÂL GEÇİŞİ: aynı sohbette üretilen A/B görselleri (ör. çubuk dışarıda/içeride, sakin/göz devirme);
      şakanın anında ani kesme + kısa sarsıntı + efekt sesi. Sahne başına 1-2 kez; sürekli oynatma YOK.
    - Çizgi roman yazıları ("boing!", "ÇAT!", "ASLA!") KULLANILMAZ; sadece ses + hareket. Bilgi yazısı az ve kısa.

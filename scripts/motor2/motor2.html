@@ -24,13 +24,23 @@ async function init(scene, opt = {}) {
   uyari = [];
   // çözünürlük sınırı
   const zmax = W >= 1344 ? 1.18 : 1.0;
-  for (const k of (S.kamera || (S.kesmeler || []).flatMap(c => [c.a, c.b || c.a]))) if (k[2] > zmax + 1e-6 && !(W < 1344 && k[2] <= 1.06)) uyari.push(`zoom ${k[2]} > sınır ${zmax} (kaynak ${W}px)`);
+  for (const k of (S.kamera || (S.yol ? S.yol.map(p => [p.cx, p.cy, p.z]) : (S.kesmeler || []).flatMap(c => [c.a, c.b || c.a])))) if (k[2] > zmax + 1e-6 && !(W < 1344 && k[2] <= 1.06)) uyari.push(`zoom ${k[2]} > sınır ${zmax} (kaynak ${W}px)`);
   return { W, H };
 }
 
+function yolKamera(t) {
+  const P = S.yol; let i = 0;
+  while (i + 2 < P.length && t >= P[i + 1].t) i++;
+  const p0 = P[i], p1 = P[i + 1], h = Math.max(.01, p1.t - p0.t), u = clamp((t - p0.t) / h);
+  const tan = (k, c) => (k <= 0 || k >= P.length - 1) ? 0 : (P[k + 1][c] - P[k - 1][c]) / (P[k + 1].t - P[k - 1].t);
+  const f = c => { const m0 = tan(i, c) * h, m1 = tan(i + 1, c) * h, u2 = u * u, u3 = u2 * u;
+    return (2 * u3 - 3 * u2 + 1) * p0[c] + (u3 - 2 * u2 + u) * m0 + (-2 * u3 + 3 * u2) * p1[c] + (u3 - u2) * m1; };
+  return [f('cx'), f('cy'), f('z')];
+}
 function kamera(t) {
   let K, k;
-  if (S.kesmeler) { // hızlı kesme: her çekim kendi başlangıç/bitiş kadrajına sahip, çekimler arası sert kesme
+  if (S.yol) { const q = yolKamera(t); K = [q, q]; k = 0; }
+  else if (S.kesmeler) { // (eski) sert kesme: her çekim kendi başlangıç/bitiş kadrajına sahip, çekimler arası sert kesme
     let i = 0; while (i + 1 < S.kesmeler.length && t >= S.kesmeler[i + 1].t) i++;
     const c = S.kesmeler[i], son = i + 1 < S.kesmeler.length ? S.kesmeler[i + 1].t : S.dur;
     K = [c.a, c.b || c.a]; k = smooth((t - c.t) / Math.max(.01, son - c.t));
@@ -88,7 +98,7 @@ function renderAt(t) {
     let p = 0;
     for (const g of S.gecis) { if (t >= g.t) p = g.to === 'B' ? clamp((t - g.t) / (g.sure || .1)) : 1 - clamp((t - g.t) / (g.sure || .1)); }
     if (p > 0) {
-      tctx.globalCompositeOperation = 'source-over'; tctx.clearRect(0, 0, W, H); tctx.drawImage(IMG.B, 0, 0, W, H);
+      tctx.globalCompositeOperation = 'source-over'; tctx.clearRect(0, 0, W, H); tctx.drawImage(IMG.B, (S.bKayma || [0, 0])[0], (S.bKayma || [0, 0])[1], W, H);
       tctx.globalCompositeOperation = 'destination-in'; tctx.drawImage(abMask, 0, 0);
       bctx.globalAlpha = p; bctx.drawImage(tmp, 0, 0); bctx.globalAlpha = 1;
     }
