@@ -14,7 +14,7 @@ html,body{margin:0;background:#000}svg{display:block}
 const Q = new URLSearchParams(location.search);
 const S = SAHNELER[Q.get('s')];
 const DUR = parseFloat(Q.get('d') || S.dur);
-const IW = 2688, IH = 1536, AR = IW / IH;
+const IW = (S.boyut || [2688, 1536])[0], IH = (S.boyut || [2688, 1536])[1], AR = IW / IH;
 const INK = '#2A1D16', TEAL = '#1F5C63', GOLD = '#D9A441', CORAL = '#E06A50', CREAM = '#F8EED8';
 const SERIF = 'Alegreya,serif', SANS = 'Inter Display,Inter,sans-serif';
 const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
@@ -176,7 +176,7 @@ function render(t) {
   if (S.yuz) { // yüz animasyonu: k0 ana, k1 göz kapalı, k2 ağız yarım, k3 ağız açık
     const k = yuzKare(t);
     img = [0, 1, 2, 3].map(i => `<image href="../../medya/sutyen/gorsel/2x/s${Q.get('s')}_k${i}.png" x="${x0}" y="${y0}" width="${IW * s}" height="${IH * s}" preserveAspectRatio="none" opacity="${i === k ? 1 : 0}"/>`).join('');
-  } else img = `<image href="../../medya/sutyen/gorsel/2x/s${Q.get('s')}.png" x="${x0}" y="${y0}" width="${IW * s}" height="${IH * s}" preserveAspectRatio="none"/>`;
+  } else img = `<image href="../../medya/sutyen/gorsel/2x/${S.img || 's' + Q.get('s')}.png" x="${x0}" y="${y0}" width="${IW * s}" height="${IH * s}" preserveAspectRatio="none"/>`;
   let ust = '';
   for (const e of (S.fx || [])) {
     if (e.tip === 'etiket') ust += etiket(e, t, c);

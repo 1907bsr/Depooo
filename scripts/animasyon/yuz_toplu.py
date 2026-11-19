@@ -43,10 +43,30 @@ def uret(s):
             procs.append(subprocess.Popen([sys.executable, 'scripts/gorsel/gemini_uret.py', f, B + tarif.format(k=KIM[s]), kaynak(s)]))
     for p in procs: p.wait()
 def kaynak(s): return f'{G}s37b-v5.png' if s == '37b' else f'{G}s{s}.png'
+def hizala(base, v):  # Gemini'nin küçük kaydırma/ölçek farkını bul ve düzelt
+    w, h = base.size; A = np.asarray(base.convert('L').resize((w // 4, h // 4)), float); L = v.convert('L')
+    def dene(sc, dx, dy, kucuk=True):
+        t = L.transform(L.size, Image.AFFINE, (1 / sc, 0, -dx / sc, 0, 1 / sc, -dy / sc), resample=Image.BILINEAR)
+        return (np.abs(np.asarray(t.resize((w // 4, h // 4)), float) - A) > 38).mean()
+    en = (dene(1, 0, 0), 1, 0, 0)
+    for sc in np.arange(.96, 1.041, .005):
+        for dx in range(-40, 41, 8):
+            for dy in range(-40, 41, 8):
+                d = dene(sc, dx, dy)
+                if d < en[0]: en = (d, sc, dx, dy)
+    _, sc0, dx0, dy0 = en
+    for sc in np.arange(sc0 - .004, sc0 + .0041, .002):
+        for dx in range(dx0 - 6, dx0 + 7, 2):
+            for dy in range(dy0 - 6, dy0 + 7, 2):
+                d = dene(sc, dx, dy)
+                if d < en[0]: en = (d, sc, dx, dy)
+    _, sc, dx, dy = en
+    return v.transform(v.size, Image.AFFINE, (1 / sc, 0, -dx / sc, 0, 1 / sc, -dy / sc), resample=Image.BICUBIC), en
 def maske(base, v):
-    d = np.abs(np.asarray(v.convert('L'), float) - np.asarray(base.convert('L'), float)) > 38
+    bl = lambda im: np.asarray(im.convert('L').filter(ImageFilter.GaussianBlur(2.5)), float)
+    d = np.abs(bl(v) - bl(base)) > 45   # bulanıklaştırınca 1 piksellik çizgi kaymaları yok sayılır
     H, W = d.shape; b = 16
-    blk = d[:H // b * b, :W // b * b].reshape(H // b, b, W // b, b).mean((1, 3)) > .12
+    blk = d[:H // b * b, :W // b * b].reshape(H // b, b, W // b, b).mean((1, 3)) > .18
     lab, n = etiketle(genis(blk))
     keep = np.zeros_like(blk)
     for i in range(1, n + 1):
@@ -64,7 +84,11 @@ for s in sys.argv[1:]:
         f = f'{G}s{s}-{v}.png'
         if not os.path.exists(f): rap.append(f'{v}:YOK'); im = base
         else:
-            var = Image.open(f).convert('RGB').resize(base.size); m, z = maske(base, var); rap.append(f'{v}:{z}')
+            hf = f.replace('.png', '-h.png')
+            if os.path.exists(hf): var = Image.open(hf).convert('RGB'); en = (0,)
+            else:
+                var = Image.open(f).convert('RGB').resize(base.size); var, en = hizala(base, var); var.save(hf)
+            m, z = maske(base, var); rap.append(f'{v}:{z}(fark {en[0]:.3f})')
             im = Image.composite(var, base, m)
         im.resize((im.width * 2, im.height * 2), Image.LANCZOS).save(f'{O}s{s}_k{k}.png')
     print(s, ' '.join(rap), flush=True)

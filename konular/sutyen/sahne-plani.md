@@ -18,7 +18,7 @@ Mary her sahnede karakter kartıyla (referans görsel) üretilir.
 | 4 | Açılış | 5 | "Ve bu çubuklar… dışarı bakıyor." | Çubuk elbiseden fırlıyor, Mary bastırıyor, "boing" | K |
 | 5 | Açılış | 4 | "Ben bununla dans etmem." | Mary kollarını kavuşturup başını sallıyor | K |
 | 6 | Açılış | 4 | "Hizmetçisini çağırıyor…" | Kapıda hizmetçi, elinde iki dantelli mendil + pembe kurdele | G |
-| 7 | Açılış | 3 | "Ve o gece…" | İki mendil + kurdele, yazı: "ŞU AN TARİH YAZILIYOR" | B |
+| 7 | Açılış | 3 | "Ve o gece…" | s06 yakın: mendiller + damga "ŞU AN TARİH YAZILIYOR" | B ✅ |
 | 8 | Açılış | 5 | "Ama durun… bir şatonun dibinde…" | Sisli dağlarda eski bir şato, gizemli | G |
 | 9 | Açılış | 4 | "…Otto diye bir mucit…" | Bıyıklı, gölgeli, yüzü soru işaretiyle kapalı adam silueti | G |
 | 10 | Açılış | 3 | "Bugün İcatbuldum'da…" | Kanal logosu + başlık kartı | B |
@@ -39,7 +39,7 @@ Mary her sahnede karakter kartıyla (referans görsel) üretilir.
 | 25 | Şato | 5 | "Keten, iki kaplı, askılı…" | GERÇEK FOTOĞRAF: Lengberg sütyeni (Innsbruck Üniv. – izin/lisans kontrol; yoksa çizim) | Arşiv / G |
 | 26 | Şato | 4 | "Sonuç: On beşinci yüzyıl." | Zaman çizelgesi: 1400'ler ——— 1914, "500 YIL!" | B |
 | 27 | Şato | 4 | "Ne var bunda?" | Orta Çağ kadını omuz silkiyor | G |
-| 28 | Paris | 5 | "1889. Paris. Eyfel…" | GERÇEK FOTOĞRAF: 1889 Paris Fuarı / Eyfel (kamu malı) | Arşiv |
+| 28 | Paris | 5 | "1889. Paris. Eyfel…" | GERÇEK FOTOĞRAF: Met Open Access 271707 (CC0), Eyfel + 1889 fuar çeşmesi | Arşiv ✅ |
 | 29 | Paris | 5 | "Herminie Cadolle… ikiye bölüyor" | Cadolle atölyede, dev makasla korseyi ikiye kesiyor | K |
 | 30 | Paris | 4 | "…en azından nefes alalım" | Manken üstünde iki parçalı giysi, rahatlamış müşteri derin nefes alıyor | G |
 | 31 | Patent | 4 | "Adı: Mary Phelps Jacob." | Mary portresi + isim kartı (B) | G + B |
