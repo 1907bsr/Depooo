@@ -22,3 +22,16 @@ Araç: Google Gemini API (gemini-2.5-flash-image), ücretli katman (Tier 1). Goo
 kullanıcıya aittir, ticari kullanım serbesttir. Tariflerde marka, ünlü karakter, sanatçı tarzı veya gerçek fotoğraf kopyası yok.
 Sahne 14 gerçek mozaiğin fotoğrafı DEĞİL; özgün "mozaik tarzı" çizimdir.
 Yeniden üretilenler: s22 (Mısır lahdi çıkmıştı), s24 (elbise çıkmıştı), s42 (kibrit vardı – 1968'de hiçbir şey yakılmadı).
+
+
+## Arşiv görselleri – The Metropolitan Museum of Art, Open Access (2026-11-19)
+Met'in "Open Access" eserleri CC0 1.0 (kamu malı adanması) ile yayınlanır: ticari kullanım serbest, atıf gerekmez.
+Kanıt: her eserin API kaydında isPublicDomain=true + eser sayfasında "Public Domain / Open Access" ibaresi.
+Dosyalar: medya/sutyen/gorsel/arsiv/met/
+| Dosya | Eser | Sanatçı | Lisans | Kaynak |
+|---|---|---|---|---|
+| met-271707.jpg | Eiffel Tower (1890s) | Unknown | The Met Open Access – CC0 (isPublicDomain: True) | https://www.metmuseum.org/art/collection/search/271707 |
+| met-928627.jpg | Fan leaf for the Universal Exposition of 1889 (1889) | Alejandro Sans | The Met Open Access – CC0 (isPublicDomain: True) | https://www.metmuseum.org/art/collection/search/928627 |
+| met-157937.jpg | Corset (ca. 1885) | Ball's | The Met Open Access – CC0 (isPublicDomain: True) | https://www.metmuseum.org/art/collection/search/157937 |
+| met-158100.jpg | Corset (ca. 1890) | Corset Parisien | The Met Open Access – CC0 (isPublicDomain: True) | https://www.metmuseum.org/art/collection/search/158100 |
+| met-173657.jpg | Corset (ca. 1885) | Worcester Corset Company | The Met Open Access – CC0 (isPublicDomain: True) | https://www.metmuseum.org/art/collection/search/173657 |
