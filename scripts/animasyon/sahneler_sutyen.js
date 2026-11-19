@@ -63,7 +63,7 @@ const SAHNELER = {
   '30': { dur: 4.5, cam: [[.4, .45, .7], [.35, .4, .55]],
     fx: [{ tip: 'pat', t: 1.2, x: 900, y: 260, yazi: 'ohhh…', fs: 120, sure: 2.5 }, { tip: 'parilti', t: 1, x: .3, y: .35, r: .1 }],
     sfx: ['parilti@1@.6'] },
-  '31': { dur: 4.5, cam: [[.5, .45, .9], [.55, .4, .75]],
+  '31': { dur: 4.5, yuz: { kirp: [.4, 2.9], konus: [[1.0, 2.7], [3.2, 4.3]] }, cam: [[.5, .45, .9], [.55, .4, .75]],
     fx: [{ tip: 'isim', t: .6, yazi: 'Mary Phelps Jacob', alt: 'New York, 1913', x: 70, y: 780 }],
     sfx: ['ding@.7'] },
   '32': { dur: 5, cam: [[.5, .45, .8], [.5, .45, .7]],
