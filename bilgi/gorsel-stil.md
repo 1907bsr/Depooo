@@ -1,5 +1,11 @@
 # Görsel Stil – İcatbuldum
 
+## ⚠️ KARAR 2026-11-19 (Büşra): PETROL MAVİSİ İMZA RENGİ İPTAL
+- Petrol mavisi hiçbir yerde imza/vurgu rengi olarak kullanılmaz (görsel tarifleri, etiketler, kapak zemini, isim kartı).
+- Mevcut çizgi roman renkleri "çizgi film gibi" bulundu. Yeni yön: SOLUK, DOĞAL renkler, gerçekçi ışık
+  (Böcek-3 örneğindeki gibi doğal ev ortamı tonları – kopyası değil). Önce 1 sahnede denenecek.
+- Kurguda çizgi roman yazıları ("hop!", "ÇAT!") azaltılacak; daha çok gerçek hareket ve hızlı kesme.
+
 ONAY (2026-11-18): Çizgi roman tarzı deneme (sahne + kapak, medya/deneme-cizgiroman/) beğenildi.
 Yön ve kapak formülü onaylı. Asıl kalite için yapay zekâ görsel aracı (Gemini) – ücretsiz uygulamayla deneme yapılacak.
 

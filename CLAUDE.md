@@ -204,6 +204,7 @@ Sütyen videosunda oturan sistem. Kullanıcı değiştirmedikçe aynen uygulanı
 2. Sahne planı (konular/<konu>/sahne-plani.md) + Gemini tarifleri (gemini-tarifleri.md).
 3. Görseller: Gemini API (gemini-2.5-flash-image), çizgi roman/dergi illüstrasyonu stili (bilgi/gorsel-stil.md),
    ana karakter referans görseliyle (aynı yüz). ÖNCE maliyet + adet söylenip onay alınır.
+   PETROL MAVİSİ KULLANILMAZ (2026-11-19, Büşra beğenmedi). Renkler soluk ve doğal olacak (yeni stil denemesi bekliyor).
    Bilgi hatası olan görsel yeniden üretilir (ör. yanlış dönem nesnesi, yakılan sütyen).
 4. Arşiv: Sadece kamu malı/CC0 (Met Open Access, ABD patentleri vb.); kanıt lisanslar.md'ye.
 5. Hareket (scripts/animasyon/): motor.html + sahneler_<konu>.js
@@ -332,3 +333,4 @@ Format: Kural – Kaynağı: video adı, tarih, hangi veri.)
 - 2026-11-19: Gemini API ödemesi açıldı (aylık sınır 200 TL). Sütyen videosunun 29 sahne görseli otomatik üretildi.
 - 2026-11-19: STANDART ÜRETİM SİSTEMİ kaydedildi (Gemini görsel + kod animasyon + ara sıra mimik). Her harcamadan önce onay kuralı.
 - 2026-11-19: DÜZELTME: Ses kaydını Mert değil BÜŞRA yapıyor (anlatıcı kadın sesi). Kanalda Claude Büşra ile konuşuyor.
+- 2026-11-19: Büşra: petrol mavisi imza rengi iptal; mevcut renkler çizgi film gibi bulundu, soluk/doğal renk ve daha çok hareket isteniyor.
