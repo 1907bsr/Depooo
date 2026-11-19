@@ -16,4 +16,5 @@ Wide 16:9 landscape image. The BACKGROUND must look almost photorealistic: a rea
 - [x] ADIM 4A: Sahne 4 – çubuk dışarıda, aynasız yakın çekim (s04A.png)
 - [x] ADIM 4B: çubuk içeride (s04B.png)
 - [x] ADIM 5: Sahne 5 (s05.png sakin + s05b.png göz devirme – mimik geçişi)
-- [ ] ADIM 6: Sahne 8 – şato
+- [x] ADIM 6: Sahne 8 – şato (s08.png; fotoğraf gibi → ekranda 'temsilî görsel' notu şart, gerçek Lengberg değil)
+- [ ] ADIM 7: Sahne 9 – gizemli Otto
