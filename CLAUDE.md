@@ -59,7 +59,7 @@ izletilsin, izleyici ve abone sayısı günden güne hızla artsın. En iyisi is
   Amaç: izleyiciyi kanalda tutmak. Mizah dozu: ORTA-YÜKSEK (2026-11-18 onaylandı).
 - Format: 8-12 dakikalık uzun video (2026-11-18 onaylandı) + her uzun videodan
   3 Short + bağımsız Shorts (hedef haftada 4-7 Short).
-- Anlatım (KARAR 2026-11-18): Mert kendi sesiyle okur (telefon kaydı), Claude düzenler:
+- Anlatım (KARAR 2026-11-19, düzeltildi): BÜŞRA kendi sesiyle okur (mikrofon/telefon kaydı), Claude düzenler:
   hataları/tekrarları keser, sessizlikleri kısaltır, gürültüyü azaltır, seviyeyi eşitler,
   tını düzeltir. Yapay zekâ sesi kullanılmaz. Kayıt rehberi: kurulum/ses-kaydi.md
 - Dil (KARAR 2026-11-19): Kanal TÜRKÇE. 10-20 video sonra aynı videolara İngilizce ses parçası
@@ -212,9 +212,9 @@ Sütyen videosunda oturan sistem. Kullanıcı değiştirmedikçe aynen uygulanı
    - Yazı tipleri: Alegreya + Inter (OFL). Ekran yazıları kodla (dil değişince değişsin).
    - MİMİK: ARA SIRA – sahne başına EN FAZLA 1 kısa mimik (bir göz kırpma YA DA kısa ağız açma/tepki).
      Sürekli oynatma YOK. Varyantlar Gemini ile (göz kapalı / ağız açık), otomatik hizalama + maske
-     (yuz_toplu.py), her biri gözle kontrol edilir; bozuk olan kullanılmaz. Konuşan ağız Mert'in sesine bağlanır.
+     (yuz_toplu.py), her biri gözle kontrol edilir; bozuk olan kullanılmaz. Konuşan ağız Büşra'nın sesine bağlanır.
    - Duygusal/komik yakın planlar istenirse (ör. ağlayan karakter): yeni görsel + kodla gözyaşı/sarsılma/efekt.
-6. Ses: Mert'in kaydı (Claude temizler), fon müziği YOK, sadece Claude'un ürettiği efektler.
+6. Ses: Büşra'nın kaydı (Claude temizler), fon müziği YOK, sadece Claude'un ürettiği efektler.
 7. Kurgu: klipler sese oturtulur, .srt altyazı, kapak (scripts/animasyon/kapak.html, 3 seçenek), başlık/açıklama.
 8. Önizleme: Video TAMAMEN bitince tek seferde gönderilir; parça parça gönderilmez (deneme gerekiyorsa önce sor).
 9. Yükleme "Özel"; 3 Shorts.
@@ -331,3 +331,4 @@ Format: Kural – Kaynağı: video adı, tarih, hangi veri.)
 - 2026-11-19: KANAL ADI KESİNLEŞTİ: İcatbuldum (@icatbuldum). Mert yeni e-posta açıp hesapları açacak.
 - 2026-11-19: Gemini API ödemesi açıldı (aylık sınır 200 TL). Sütyen videosunun 29 sahne görseli otomatik üretildi.
 - 2026-11-19: STANDART ÜRETİM SİSTEMİ kaydedildi (Gemini görsel + kod animasyon + ara sıra mimik). Her harcamadan önce onay kuralı.
+- 2026-11-19: DÜZELTME: Ses kaydını Mert değil BÜŞRA yapıyor (anlatıcı kadın sesi). Kanalda Claude Büşra ile konuşuyor.

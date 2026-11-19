@@ -34,7 +34,7 @@
 - [x] Senaryo taslak 1 → [ ] Mert/Büşra onayı
 - [x] Okuma metni TASLAK 2 (esprili) – ONAYLANDI
 - [x] Sahne planı (44 sahne)
-- [ ] Ses: Mert'in sesi. Bölüm 1 iki kez kaydedildi (kayit1, kayit2) – Mert beğenmedi, yarın MİKROFONLA yeniden kaydedecek. Versiyon seçimi bekliyor (öneri: doğal + gramofonlu replikler). Bölüm 2-7 bekleniyor
+- [ ] Ses: BÜŞRA'nın sesi. Bölüm 1 iki kez kaydedildi (kayit1, kayit2) – beğenilmedi, MİKROFONLA yeniden kaydedilecek. Versiyon seçimi bekliyor (öneri: doğal + gramofonlu replikler). Bölüm 2-7 bekleniyor
 - [ ] Yapay zekâ görselleri (32) – BEKLİYOR (ödeme ya da ücretsiz Gemini uygulaması)
 - [ ] B sahneleri (12 infografik) – 8/12 bitti (s10 logo, s11, s20, s26, s35, s36, s39, s43). Kalan: s7, s16 (görsel üstüne damga), s3/s12 etiketleri – ilgili görseller gelince
 - [x] Hareketlendirilen yapay zekâ sahneleri: s01, s04
@@ -68,5 +68,5 @@ Partner Programı, seriler/oynatma listeleri, topluluk gönderileri.
 - ✅ Ara sıra mimik (sahne başına tek göz kırpma/kısa ağız) – 15 sahnede, ücretsiz (mevcut varyantlar).
 - ✅ Arşiv: Met Open Access (CC0) Eyfel 1890'lar fotoğrafı (s28), patent çizimi (s35).
 - ✅ 3 kapak seçeneği, başlık/açıklama taslağı 2 (kullanıcıya gösterilecek).
-- ⏳ BEKLENEN: Mert'in mikrofonla ses kaydı → kurgu (sahneleri sese oturtma, ağzı sese bağlama), altyazı.
+- ⏳ BEKLENEN: Büşra'nın mikrofonla ses kaydı → kurgu (sahneleri sese oturtma, ağzı sese bağlama), altyazı.
 - ⏳ BEKLENEN: @icatbuldum hesapları, YouTube API kurulumu, Özel yükleme. Sonra 3 Shorts.
