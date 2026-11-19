@@ -7,7 +7,7 @@ Güven: ✅ iki+ bağımsız kaynak | ⚠️ kaynaklar çelişiyor / tartışmal
 | # | Bilgi | Güven | Kaynak |
 |---|---|---|---|
 | 1 | Antik Yunan'da göğüs bandına "apodesmos", Roma'da "strophium" deniyordu. | ✅ | K9, K10 |
-| 2 | Sicilya'daki Villa Romana del Casale'de "Bikinili Kızlar" mozaiği (yaklaşık MS 4. yy): bant + alt giysiyle spor yapan kadınlar. Mayo değil, spor kıyafeti. | ✅ | K10, K11 |
+| 2 | Sicilya'daki Villa Romana del Casale'de "Bikinili Kızlar" mozaiği (yaklaşık MS 4. yy): bant + alt giysiyle spor yapan kadınlar. Mayo değil, spor kıyafeti. Mozaik "On Genç Kız Odası"nın zemininde, BUGÜN HÂLÂ YERİNDE (in situ); villa 1997'den beri UNESCO Dünya Mirası (ref. 832), Piazza Armerina'ya ~3 km. Oda 1959-60 kazısında ortaya çıktı. | ✅ | K10, K11, K22, K23, K24 |
 | 3 | Avusturya, Doğu Tirol, Lengberg Şatosu: 2008'deki tadilatta bir tonozun dolgusundan yaklaşık 2.700 tekstil parçası çıktı; aralarında kaplı (cup) 4 keten sütyen benzeri giysi. Karbon testiyle 15. yüzyıl. 2012'de duyuruldu (Innsbruck Üniversitesi, Beatrix Nutz). | ✅ | K5, K6, K7 |
 | 4 | 1889 Paris: Herminie Cadolle korseyi ikiye böldü ("corselet-gorge"); üst kısım 1905 civarı ayrı satılmaya başlandı. Cadolle markası hâlâ ailesi tarafından yürütülüyor. | ✅ (tarih ayrıntıları ⚠️) | K8, K12 |
 | 5 | Mary Phelps Jacob, bir baloya hazırlanırken balina çubuklu korsenin ince, dekolteli elbisesinin altından görünmesinden bıktı; hizmetçisinden iki mendil ve kurdele istedi, iğne-iplikle bir şey dikti. | ✅ (yıl ⚠️: çoğu kaynak 1913, kendi anlatımına dayanan bazıları 1910) | K1, K2, K3 |

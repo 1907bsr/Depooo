@@ -24,4 +24,6 @@ Asıl videodan önce patent belgesi (Google Patents US1115674) doğrudan açıl�
 - K19: History.com – Protests at the 1968 Miss America pageant – https://www.history.com/this-day-in-history/september-7/protests-at-the-1968-miss-america-pageant
 - K20: Media Myth Alert (W. Joseph Campbell) – https://mediamythalert.com/category/bra-burning/page/4
 - K21 (BİRİNCİL KAYNAK): ABD Patenti No. 1.115.674, "Brassière", M. P. Jacob (Mamaroneck, New York); başvuru 12 Şubat 1914, patent 3 Kasım 1914 – https://patentimages.storage.googleapis.com/pdfs/US1115674.pdf
-- K22: UNESCO Dünya Mirası – Villa Romana del Casale (Piazza Armerina, Sicilya; listeye giriş 1997) – https://whc.unesco.org/en/list/832 (NOT: bu ortamdan açılamadı; yüklemeden önce bağlantı kontrol edilecek)
+- K22: UNESCO Dünya Mirası – Villa Romana del Casale (Piazza Armerina, Sicilya; listeye giriş 1997) – https://whc.unesco.org/en/list/832 – referans no. 832 doğrulandı (K23 ve Wikipedia ile)
+- K23: İtalya Kültür Bakanlığı UNESCO sitesi – Piazza Armerina, Villa Romana del Casale – https://unesco.cultura.gov.it/en/?p=8455
+- K24: Italy Magazine – Sicily's finest mosaics of the Roman world – https://italymagazine.com/featured-story/heart-sicily-finest-mosaics-roman-world
