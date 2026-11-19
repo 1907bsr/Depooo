@@ -17,4 +17,5 @@ Wide 16:9 landscape image. The BACKGROUND must look almost photorealistic: a rea
 - [x] ADIM 4B: çubuk içeride (s04B.png)
 - [x] ADIM 5: Sahne 5 (s05.png sakin + s05b.png göz devirme – mimik geçişi)
 - [x] ADIM 6: Sahne 8 – şato (s08.png; fotoğraf gibi → ekranda 'temsilî görsel' notu şart, gerçek Lengberg değil)
-- [ ] ADIM 7: Sahne 9 – gizemli Otto
+- [x] ADIM 7: Sahne 9 – gizemli Otto (s09.png)
+- [ ] ADIM 8: Sahne 12 – Antik Yunan apodesmos (A + B mimik)
