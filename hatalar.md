@@ -32,3 +32,11 @@ Format: Tarih – Ne oldu – Neden – Bundan sonraki kural
   Asıl sebep: Google, sınıra YAKLAŞINCA (gecikmeli sayaç yüzünden ~%88'de) üretimi önceden durduruyor. Kumbarada ~190 TL kaldı.
 - KURAL: Ücretli üretimden önce Spend sayfasındaki GERÇEK rakamla görsel başı fiyatı hesapla; tahmini EN PAHALI senaryoya göre ver.
 - KURAL: Gerçek fiyat netleşene kadar ücretli üretim YOK.
+
+## 2026-11-20 – Motor2 sırasında bulunan hatalar (öğrenilenler)
+- Gemini'nin "düzenle" görsellerinde ince doku her yerde yeniden çizilir: A/B maskesi ham farkla çıkarılırsa %60-90 kaplar.
+  KURAL: farkı önce 3 px bulanıklaştır, yoğun/anlamlı değişimi al, kenara yapışan küçük lekeleri at (scripts/motor2/maske_ab.py).
+- Eski bilgi kliplerinde sert kodlu petrol mavisi (#2C727A, #0F3237) kalmıştı; renk değişkeni değiştirilince gitmemişti.
+  KURAL: renk kararı değişince gradyan/sabit hex değerlerini de tara (grep).
+- Caveat yazı tipinde "5" rakamı S gibi okunuyor: rakamlı ekran yazılarında Alegreya İtalik kalın kullan.
+- Siyah kenar: hizalanmış B görsellerinde (s22B, s34B) sağ kenarda siyah şerit vardı; hizalamadan sonra kenar şeridini A'dan doldur.

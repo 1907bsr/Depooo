@@ -1,0 +1,340 @@
+[
+ {
+  "tur": "motor2",
+  "id": "01-s01",
+  "dur": 4.16
+ },
+ {
+  "tur": "motor2",
+  "id": "02-s02",
+  "dur": 11.37
+ },
+ {
+  "tur": "motor2",
+  "id": "03-s03",
+  "dur": 11.37
+ },
+ {
+  "tur": "motor2",
+  "id": "04-s19b",
+  "dur": 6.71
+ },
+ {
+  "tur": "motor2",
+  "id": "05-s04",
+  "dur": 8.35
+ },
+ {
+  "tur": "motor2",
+  "id": "06-s05",
+  "dur": 6.77
+ },
+ {
+  "tur": "motor2",
+  "id": "07-s06",
+  "dur": 9.17
+ },
+ {
+  "tur": "motor2",
+  "id": "08-s07",
+  "dur": 4.89
+ },
+ {
+  "tur": "motor2",
+  "id": "09-s08",
+  "dur": 9.5
+ },
+ {
+  "tur": "motor2",
+  "id": "10-s09",
+  "dur": 7.58
+ },
+ {
+  "tur": "klip",
+  "id": "11-s10",
+  "dur": 3.71,
+  "yol": "medya/sutyen/motor2/eski/s10-sessiz.mp4",
+  "bas": 0,
+  "bit": 3.4,
+  "max": 1.0
+ },
+ {
+  "tur": "klip",
+  "id": "12-s11",
+  "dur": 8.27,
+  "yol": "medya/sutyen/motor2/eski/s11-sessiz.mp4",
+  "bas": 0,
+  "bit": 5.0,
+  "max": 2.4
+ },
+ {
+  "tur": "motor2",
+  "id": "13-s12",
+  "dur": 12.58
+ },
+ {
+  "tur": "motor2",
+  "id": "14-s13",
+  "dur": 10.96
+ },
+ {
+  "tur": "motor2",
+  "id": "15-s14",
+  "dur": 20.05
+ },
+ {
+  "tur": "motor2",
+  "id": "16-s15",
+  "dur": 7.86
+ },
+ {
+  "tur": "motor2",
+  "id": "17-s16",
+  "dur": 13.44
+ },
+ {
+  "tur": "motor2",
+  "id": "18-s17",
+  "dur": 11.09
+ },
+ {
+  "tur": "motor2",
+  "id": "19-s18",
+  "dur": 8.76
+ },
+ {
+  "tur": "motor2",
+  "id": "20-s19",
+  "dur": 9.95
+ },
+ {
+  "tur": "klip",
+  "id": "21-s20",
+  "dur": 3.2,
+  "yol": "medya/sutyen/motor2/eski/s20-sessiz.mp4",
+  "bas": 0,
+  "bit": 3.2,
+  "max": 1.0
+ },
+ {
+  "tur": "motor2",
+  "id": "22-s21",
+  "dur": 5.75
+ },
+ {
+  "tur": "motor2",
+  "id": "23-s22",
+  "dur": 6.07
+ },
+ {
+  "tur": "motor2",
+  "id": "24-s23",
+  "dur": 12.22
+ },
+ {
+  "tur": "motor2",
+  "id": "25-s24",
+  "dur": 10.19
+ },
+ {
+  "tur": "motor2",
+  "id": "26-s25",
+  "dur": 12.99
+ },
+ {
+  "tur": "klip",
+  "id": "27-s26",
+  "dur": 3.87,
+  "yol": "medya/sutyen/motor2/eski/s26-sessiz.mp4",
+  "bas": 0,
+  "bit": 2.65,
+  "max": 1.6,
+  "yazi": {
+   "metin": "500 YIL!",
+   "renk": "0xE06A50",
+   "boy": 120,
+   "y": 0.14,
+   "son": 1.3,
+   "tip": "alegreya"
+  }
+ },
+ {
+  "tur": "motor2",
+  "id": "28-s27",
+  "dur": 11.77
+ },
+ {
+  "tur": "motor2",
+  "id": "29-s18b",
+  "dur": 12.63
+ },
+ {
+  "tur": "motor2",
+  "id": "30-s28",
+  "dur": 9.58
+ },
+ {
+  "tur": "motor2",
+  "id": "31-s29",
+  "dur": 7.7
+ },
+ {
+  "tur": "motor2",
+  "id": "32-s30",
+  "dur": 9.54
+ },
+ {
+  "tur": "motor2",
+  "id": "33-s29b",
+  "dur": 6.8
+ },
+ {
+  "tur": "motor2",
+  "id": "34-s28b",
+  "dur": 11.62
+ },
+ {
+  "tur": "motor2",
+  "id": "35-s29c",
+  "dur": 3.83
+ },
+ {
+  "tur": "motor2",
+  "id": "36-s02b",
+  "dur": 7.06
+ },
+ {
+  "tur": "motor2",
+  "id": "37-s31",
+  "dur": 7.34
+ },
+ {
+  "tur": "motor2",
+  "id": "38-s32",
+  "dur": 7.57
+ },
+ {
+  "tur": "motor2",
+  "id": "39-s33",
+  "dur": 9.32
+ },
+ {
+  "tur": "motor2",
+  "id": "40-s34",
+  "dur": 13.0
+ },
+ {
+  "tur": "motor2",
+  "id": "41-s35",
+  "dur": 13.28
+ },
+ {
+  "tur": "motor2",
+  "id": "42-s37a",
+  "dur": 16.59
+ },
+ {
+  "tur": "motor2",
+  "id": "43-s36",
+  "dur": 13.54
+ },
+ {
+  "tur": "motor2",
+  "id": "44-s37c",
+  "dur": 5.62
+ },
+ {
+  "tur": "motor2",
+  "id": "45-s37b",
+  "dur": 6.3
+ },
+ {
+  "tur": "motor2",
+  "id": "46-s38",
+  "dur": 14.39
+ },
+ {
+  "tur": "motor2",
+  "id": "47-n39",
+  "dur": 5.7
+ },
+ {
+  "tur": "motor2",
+  "id": "48-s41a",
+  "dur": 11.71
+ },
+ {
+  "tur": "motor2",
+  "id": "49-s09b",
+  "dur": 5.79
+ },
+ {
+  "tur": "motor2",
+  "id": "50-s41b",
+  "dur": 20.86
+ },
+ {
+  "tur": "motor2",
+  "id": "51-s42a",
+  "dur": 12.64
+ },
+ {
+  "tur": "motor2",
+  "id": "52-s42b",
+  "dur": 10.79
+ },
+ {
+  "tur": "motor2",
+  "id": "53-s42c",
+  "dur": 23.28
+ },
+ {
+  "tur": "klip",
+  "id": "54-s43",
+  "dur": 24.64,
+  "yol": "medya/sutyen/motor2/eski/s43-sessiz.mp4",
+  "bas": 0,
+  "bit": 4.5,
+  "max": 4.2
+ },
+ {
+  "tur": "klip",
+  "id": "55-s43b",
+  "dur": 4.12,
+  "yol": "medya/sutyen/motor2/eski/s43-sessiz.mp4",
+  "dondur": 6.4,
+  "yazi": {
+   "metin": "bir İSYAN.",
+   "renk": "0xE06A50",
+   "boy": 120,
+   "y": 0.1,
+   "son": 0.4,
+   "oran": true
+  }
+ },
+ {
+  "tur": "motor2",
+  "id": "56-s33b",
+  "dur": 5.22
+ },
+ {
+  "tur": "motor2",
+  "id": "57-s41c",
+  "dur": 7.82
+ },
+ {
+  "tur": "motor2",
+  "id": "58-s44a",
+  "dur": 6.61
+ },
+ {
+  "tur": "motor2",
+  "id": "59-s44b",
+  "dur": 24.65
+ },
+ {
+  "tur": "motor2",
+  "id": "60-s31b",
+  "dur": 6.14
+ }
+]

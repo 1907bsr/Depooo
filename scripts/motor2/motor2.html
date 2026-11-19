@@ -1,5 +1,5 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}canvas{display:block}</style></head>
+<html><head><meta charset="utf-8"><style>@font-face{font-family:'Caveat';src:url('../fontlar/Caveat[wght].ttf');font-weight:400 700}html,body{margin:0;background:#000}canvas{display:block}</style></head>
 <body><canvas id="c" width="1920" height="1080"></canvas>
 <script>
 // MOTOR 2 – tek <canvas>, saf renderAt(t): aynı t her zaman aynı kare (animation/setTimeout/rAF YOK).
@@ -11,8 +11,10 @@ let S, W, H, IMG = {}, base, bctx, tmp, tctx, abMask, patchMask = [], rectMask =
 
 const load = src => new Promise((ok, no) => { const i = new Image(); i.onload = async () => { try { await i.decode(); } catch (e) {} ok(i); }; i.onerror = () => no(new Error('yüklenemedi: ' + src)); i.src = src; });
 
-async function init(scene) {
-  S = scene; await document.fonts.ready;
+let OW = 1920, OH = 1080;
+async function init(scene, opt = {}) {
+  S = scene; OW = opt.outW || 1920; OH = Math.round(OW * 9 / 16); OUT.width = OW; OUT.height = OH;
+  await document.fonts.load('700 80px Caveat'); await document.fonts.ready;
   IMG.A = await load(S.img); if (S.imgB) IMG.B = await load(S.imgB);
   W = IMG.A.naturalWidth; H = IMG.A.naturalHeight;
   base = mk(W, H); bctx = base.getContext('2d'); tmp = mk(W, H); tctx = tmp.getContext('2d');
@@ -22,17 +24,29 @@ async function init(scene) {
   uyari = [];
   // çözünürlük sınırı
   const zmax = W >= 1344 ? 1.18 : 1.0;
-  for (const k of (S.kamera || [])) if (k[2] > zmax + 1e-6 && !(W < 1344 && k[2] <= 1.06)) uyari.push(`zoom ${k[2]} > sınır ${zmax} (kaynak ${W}px)`);
+  for (const k of (S.kamera || (S.kesmeler || []).flatMap(c => [c.a, c.b || c.a]))) if (k[2] > zmax + 1e-6 && !(W < 1344 && k[2] <= 1.06)) uyari.push(`zoom ${k[2]} > sınır ${zmax} (kaynak ${W}px)`);
   return { W, H };
 }
 
 function kamera(t) {
-  const K = S.kamera, k = smooth(t / S.dur);
+  let K, k;
+  if (S.kesmeler) { // hızlı kesme: her çekim kendi başlangıç/bitiş kadrajına sahip, çekimler arası sert kesme
+    let i = 0; while (i + 1 < S.kesmeler.length && t >= S.kesmeler[i + 1].t) i++;
+    const c = S.kesmeler[i], son = i + 1 < S.kesmeler.length ? S.kesmeler[i + 1].t : S.dur;
+    K = [c.a, c.b || c.a]; k = smooth((t - c.t) / Math.max(.01, son - c.t));
+  } else { K = S.kamera; k = smooth(t / S.dur); }
   const z = K[0][2] + (K[1][2] - K[0][2]) * k;
   let cx = K[0][0] + (K[1][0] - K[0][0]) * k, cy = K[0][1] + (K[1][1] - K[0][1]) * k;
   const sc = Math.max(1920 / W, 1080 / H) * z, sw = 1920 / sc, sh = 1080 / sc;
   cx = clamp(cx * W, sw / 2, W - sw / 2); cy = clamp(cy * H, sh / 2, H - sh / 2);   // kenar dışı görünmesin
-  return { sx: cx - sw / 2, sy: cy - sh / 2, sw, sh };
+  let sx = cx - sw / 2, sy = cy - sh / 2;
+  if (S.yuz) {   // güvenli kamera: yüz kutusu sığıyorsa kadrajı kaydırıp yüzü her zaman içeride tut
+    const [x0, y0, x1, y1] = S.yuz;
+    if ((x1 - x0) * W <= sw) sx = clamp(sx, x1 * W - sw, x0 * W);
+    if ((y1 - y0) * H <= sh) sy = clamp(sy, y1 * H - sh, y0 * H);
+    sx = clamp(sx, 0, W - sw); sy = clamp(sy, 0, H - sh);
+  }
+  return { sx, sy, sw, sh };
 }
 
 function renderAt(t) {
@@ -82,11 +96,36 @@ function renderAt(t) {
   // 5) kamera: kaynak çözünürlüğünde çiz, çıktıya yüksek kaliteyle ölçekle
   const c = kamera(t);
   octx.imageSmoothingEnabled = true; octx.imageSmoothingQuality = 'high';
-  octx.drawImage(base, c.sx, c.sy, c.sw, c.sh, 0, 0, 1920, 1080);
+  octx.drawImage(base, c.sx, c.sy, c.sw, c.sh, 0, 0, OW, OH);
+  // 6) el yazısı: soldan sağa yazılır, zıplama/büyüme yok
+  const sc = OW / 1920;
+  for (const y of (S.yazilar || [])) {
+    if (t < y.t0 || t > y.t1) continue;
+    const lines = y.yazi.split('\n'), fs = (y.fs || 84) * sc, sure = y.sure || Math.max(.7, y.yazi.length * .05);
+    const k = clamp((t - y.t0) / sure), al = Math.min(1, (y.t1 - t) / .4);
+    octx.save(); octx.globalAlpha = clamp(al); octx.textBaseline = 'top'; octx.lineJoin = 'round';
+    const w = Math.max(...lines.map(l => { octx.font = `700 ${fs}px Caveat`; return octx.measureText(l).width; }));
+    const x = y.x * OW, yy = y.y * OH;
+    octx.translate(x, yy); octx.rotate((y.rot ?? -1.5) * Math.PI / 180);
+    octx.beginPath(); octx.rect(-fs * .3, -fs * .3, (w + fs * .6) * k, lines.length * fs * 1.1 + fs * .6); octx.clip();
+    lines.forEach((l, i) => { octx.font = `700 ${i ? fs * .72 : fs}px Caveat`; const ly = i ? fs * 1.05 + (i - 1) * fs * .78 : 0;
+      octx.strokeStyle = y.kontur || 'rgba(25,15,8,.85)'; octx.lineWidth = fs * (y.konturKalin ?? .16); if (octx.lineWidth > 0) octx.strokeText(l, 0, ly);
+      octx.fillStyle = y.renk || '#F6F1E4'; octx.fillText(l, 0, ly); });
+    octx.restore();
+  }
+  // 7) sayaç: el yazısı rakamlar, a'dan b'ye yumuşakça sayar
+  for (const y of (S.sayaclar || [])) {
+    if (t < y.t0 || t > y.t1) continue;
+    const fs = (y.fs || 150) * sc, k = smooth((t - y.t0) / (y.sure || 3)), al = clamp(Math.min((t - y.t0) / .4, (y.t1 - t) / .4));
+    const v = Math.round(y.a + (y.b - y.a) * k), txt = String(v).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + (y.onek || '');
+    octx.save(); octx.globalAlpha = al; octx.font = `700 ${fs}px Caveat`; octx.textBaseline = 'top'; octx.textAlign = 'center'; octx.lineJoin = 'round';
+    octx.strokeStyle = y.kontur || 'rgba(25,15,8,.85)'; octx.lineWidth = fs * .14; octx.strokeText(txt, y.x * OW, y.y * OH);
+    octx.fillStyle = y.renk || '#D9A441'; octx.fillText(txt, y.x * OW, y.y * OH); octx.restore();
+  }
   // yüz kadraj kontrolü
   let yuzTamam = true;
   if (S.yuz) { const [x0, y0, x1, y1] = S.yuz; yuzTamam = x0 * W >= c.sx && x1 * W <= c.sx + c.sw && y0 * H >= c.sy && y1 * H <= c.sy + c.sh; }
   return yuzTamam;
 }
-window.init = init; window.renderAt = renderAt; window.uyari = () => uyari;
+window.init = init; window.OWf = () => OW; window.renderAt = renderAt; window.uyari = () => uyari;
 </script></body></html>
