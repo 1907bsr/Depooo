@@ -62,3 +62,11 @@ Partner Programı, seriler/oynatma listeleri, topluluk gönderileri.
 
 ## Aday fikirler
 - Sonraki kanallar: true crime (fikirler/true-crime-kanali.md) + 2-3 fikir daha (gelecek)
+
+## Durum – 2026-11-19 akşam (Sütyen videosu)
+- ✅ 44 sahnenin tamamı klip olarak hazır (görüntü + yazı + efekt), 1/4 eski denemeler yeni motora taşındı.
+- ✅ Ara sıra mimik (sahne başına tek göz kırpma/kısa ağız) – 15 sahnede, ücretsiz (mevcut varyantlar).
+- ✅ Arşiv: Met Open Access (CC0) Eyfel 1890'lar fotoğrafı (s28), patent çizimi (s35).
+- ✅ 3 kapak seçeneği, başlık/açıklama taslağı 2 (kullanıcıya gösterilecek).
+- ⏳ BEKLENEN: Mert'in mikrofonla ses kaydı → kurgu (sahneleri sese oturtma, ağzı sese bağlama), altyazı.
+- ⏳ BEKLENEN: @icatbuldum hesapları, YouTube API kurulumu, Özel yükleme. Sonra 3 Shorts.
