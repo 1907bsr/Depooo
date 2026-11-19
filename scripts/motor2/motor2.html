@@ -1,0 +1,92 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}canvas{display:block}</style></head>
+<body><canvas id="c" width="1920" height="1080"></canvas>
+<script>
+// MOTOR 2 – tek <canvas>, saf renderAt(t): aynı t her zaman aynı kare (animation/setTimeout/rAF YOK).
+const OUT = document.getElementById('c'), octx = OUT.getContext('2d');
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const smooth = k => { k = clamp(k); return k * k * (3 - 2 * k); };
+const mk = (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; };
+let S, W, H, IMG = {}, base, bctx, tmp, tctx, abMask, patchMask = [], rectMask = [], uyari = [];
+
+const load = src => new Promise((ok, no) => { const i = new Image(); i.onload = async () => { try { await i.decode(); } catch (e) {} ok(i); }; i.onerror = () => no(new Error('yüklenemedi: ' + src)); i.src = src; });
+
+async function init(scene) {
+  S = scene; await document.fonts.ready;
+  IMG.A = await load(S.img); if (S.imgB) IMG.B = await load(S.imgB);
+  W = IMG.A.naturalWidth; H = IMG.A.naturalHeight;
+  base = mk(W, H); bctx = base.getContext('2d'); tmp = mk(W, H); tctx = tmp.getContext('2d');
+  patchMask = (S.yama || []).map(p => { const m = mk(W, H), c = m.getContext('2d'); c.filter = `blur(${p.bulan || 20}px)`; c.fillStyle = '#fff'; c.beginPath(); c.ellipse(p.x, p.y, p.rx, p.ry, 0, 0, 7); c.fill(); return m; });
+  rectMask = (S.serit || []).map(p => { const m = mk(W, H), c = m.getContext('2d'); c.filter = `blur(${p.bulan || 14}px)`; c.fillStyle = '#fff'; c.fillRect(p.x + 14, p.y + 14, p.w - 28, p.h - 28); return m; });
+  if (S.maske) { const mi = await load(S.maske); abMask = mk(W, H); abMask.getContext('2d').drawImage(mi, 0, 0, W, H); }
+  uyari = [];
+  // çözünürlük sınırı
+  const zmax = W >= 1344 ? 1.18 : 1.0;
+  for (const k of (S.kamera || [])) if (k[2] > zmax + 1e-6 && !(W < 1344 && k[2] <= 1.06)) uyari.push(`zoom ${k[2]} > sınır ${zmax} (kaynak ${W}px)`);
+  return { W, H };
+}
+
+function kamera(t) {
+  const K = S.kamera, k = smooth(t / S.dur);
+  const z = K[0][2] + (K[1][2] - K[0][2]) * k;
+  let cx = K[0][0] + (K[1][0] - K[0][0]) * k, cy = K[0][1] + (K[1][1] - K[0][1]) * k;
+  const sc = Math.max(1920 / W, 1080 / H) * z, sw = 1920 / sc, sh = 1080 / sc;
+  cx = clamp(cx * W, sw / 2, W - sw / 2); cy = clamp(cy * H, sh / 2, H - sh / 2);   // kenar dışı görünmesin
+  return { sx: cx - sw / 2, sy: cy - sh / 2, sw, sh };
+}
+
+function renderAt(t) {
+  const B = IMG.A;
+  bctx.globalCompositeOperation = 'source-over'; bctx.globalAlpha = 1; bctx.filter = 'none';
+  bctx.drawImage(B, 0, 0);
+  // 1) yumuşak yama: küçük kaydırma/dönme, elips bulanık maske
+  (S.yama || []).forEach((p, i) => {
+    const ph = 2 * Math.PI * t / p.periyot + (p.faz || 0), s = Math.sin(ph);
+    tctx.globalCompositeOperation = 'source-over'; tctx.clearRect(0, 0, W, H);
+    tctx.save(); tctx.translate(p.px ?? p.x, p.py ?? p.y); tctx.rotate((p.aci || 0) * s * Math.PI / 180);
+    tctx.translate(-(p.px ?? p.x), -(p.py ?? p.y)); tctx.translate((p.dx || 0) * s, (p.dy || 0) * s);
+    tctx.drawImage(B, 0, 0); tctx.restore();
+    tctx.globalCompositeOperation = 'destination-in'; tctx.drawImage(patchMask[i], 0, 0);
+    bctx.drawImage(tmp, 0, 0);
+  });
+  // 2) kumaş/perde: 4 px şerit, sinüsle yatay kayma, kenarlar erir
+  (S.serit || []).forEach((p, i) => {
+    tctx.globalCompositeOperation = 'source-over'; tctx.clearRect(0, 0, W, H);
+    const n = Math.ceil(p.h / 4);
+    for (let j = 0; j < n; j++) {
+      const a = p.genlik * (p.alt ? .25 + .75 * j / n : 1);
+      const off = a * Math.sin(2 * Math.PI * (t * p.frekans + j * (p.faz || .035)));
+      const y = p.y + j * 4; tctx.drawImage(B, p.x, y, p.w, 4, p.x + off, y, p.w, 4);
+    }
+    tctx.globalCompositeOperation = 'destination-in'; tctx.drawImage(rectMask[i], 0, 0);
+    bctx.drawImage(tmp, 0, 0);
+  });
+  // 3) ışık: çok hafif nabız atan sıcak gradyan (screen)
+  (S.isik || []).forEach(p => {
+    const a = p.alfa * (.5 + .5 * Math.sin(2 * Math.PI * t / p.periyot));
+    const g = bctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r);
+    g.addColorStop(0, `rgba(255,214,150,${a})`); g.addColorStop(1, 'rgba(255,214,150,0)');
+    bctx.globalCompositeOperation = 'screen'; bctx.fillStyle = g; bctx.fillRect(0, 0, W, H);
+  });
+  bctx.globalCompositeOperation = 'source-over';
+  // 4) A/B: yalnızca maske içindeki bölge B'den alınır, 3 karelik çözülme
+  if (S.imgB && abMask) {
+    let p = 0;
+    for (const g of S.gecis) { if (t >= g.t) p = g.to === 'B' ? clamp((t - g.t) / (g.sure || .1)) : 1 - clamp((t - g.t) / (g.sure || .1)); }
+    if (p > 0) {
+      tctx.globalCompositeOperation = 'source-over'; tctx.clearRect(0, 0, W, H); tctx.drawImage(IMG.B, 0, 0, W, H);
+      tctx.globalCompositeOperation = 'destination-in'; tctx.drawImage(abMask, 0, 0);
+      bctx.globalAlpha = p; bctx.drawImage(tmp, 0, 0); bctx.globalAlpha = 1;
+    }
+  }
+  // 5) kamera: kaynak çözünürlüğünde çiz, çıktıya yüksek kaliteyle ölçekle
+  const c = kamera(t);
+  octx.imageSmoothingEnabled = true; octx.imageSmoothingQuality = 'high';
+  octx.drawImage(base, c.sx, c.sy, c.sw, c.sh, 0, 0, 1920, 1080);
+  // yüz kadraj kontrolü
+  let yuzTamam = true;
+  if (S.yuz) { const [x0, y0, x1, y1] = S.yuz; yuzTamam = x0 * W >= c.sx && x1 * W <= c.sx + c.sw && y0 * H >= c.sy && y1 * H <= c.sy + c.sh; }
+  return yuzTamam;
+}
+window.init = init; window.renderAt = renderAt; window.uyari = () => uyari;
+</script></body></html>

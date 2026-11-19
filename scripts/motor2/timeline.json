@@ -1,0 +1,29 @@
+{
+  "fps": 30,
+  "sahneler": [
+    {
+      "id": "d1-yerel-hareket", "dur": 5,
+      "img": "medya/sutyen/gorsel/yeni-stil/s33.png",
+      "kamera": [[0.50, 0.50, 1.04], [0.47, 0.44, 1.15]],
+      "yuz": [0.49, 0.08, 0.58, 0.22],
+      "yama": [
+        { "ad": "nefes",   "x": 715, "y": 255, "rx": 85, "ry": 70, "bulan": 22, "dy": 1.6, "periyot": 4.5 },
+        { "ad": "bas-egme","x": 715, "y": 125, "rx": 62, "ry": 78, "bulan": 20, "aci": 0.7, "px": 715, "py": 190, "periyot": 5.5, "faz": 1.0 }
+      ],
+      "serit": [
+        { "ad": "sol-perde",  "x": 345, "y": 60, "w": 95, "h": 480, "genlik": 3.0, "frekans": 0.30, "alt": true },
+        { "ad": "sag-perde",  "x": 500, "y": 40, "w": 90, "h": 440, "genlik": 2.5, "frekans": 0.26, "alt": true, "faz": 0.05 },
+        { "ad": "etek",       "x": 455, "y": 470, "w": 500, "h": 230, "genlik": 2.2, "frekans": 0.45, "bulan": 22 }
+      ],
+      "isik": [ { "x": 470, "y": 210, "r": 260, "alfa": 0.07, "periyot": 6 } ]
+    },
+    {
+      "id": "d2-maskeli-ab", "dur": 5,
+      "img": "medya/sutyen/gorsel/yeni-stil/s13A.png",
+      "imgB": "medya/sutyen/gorsel/yeni-stil/s13B.png",
+      "maske": "medya/sutyen/gorsel/yeni-stil/maske-s13.png",
+      "kamera": [[0.52, 0.50, 1.06], [0.45, 0.50, 1.06]],
+      "gecis": [ { "t": 2.6, "to": "B", "sure": 0.1 }, { "t": 4.2, "to": "A", "sure": 0.1 } ]
+    }
+  ]
+}
