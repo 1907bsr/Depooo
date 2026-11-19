@@ -103,3 +103,8 @@ Telif notu: Marka konularında (kola, Monopoly vb.) logo/ambalaj görseli KULLAN
 → 9. Konserve → 10. Wi-Fi'nin film yıldızı annesi
 Neden: Seri halinde art arda izlenme + Türk izleyicinin yorum yapacağı konular (döner, kahve, kruvasan)
 erken gelirse etkileşim ve algoritma desteği artar. Videoların sonundaki oylamalar bu sırayı değiştirebilir.
+
+## ⏳ Adaylar – 10. videodan sonra (hassas konular)
+| Konu | Kanca (doğrulanacak) | Not | Puan |
+|---|---|---|---|
+| Kondom | Hayvan bağırsağından lastiğe; İngilizler "Fransız mektubu", Fransızlar "İngiliz şapkası" dedi | Kanal kimliği oturmadan yapılmaz (sınırlı reklam ve imaj riski). Tamamen tarih + sağlık odaklı, müstehcenliğe kaçmadan; kapak çok dikkatli. | 5 |
