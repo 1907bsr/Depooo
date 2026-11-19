@@ -25,9 +25,16 @@ const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 // zaman ölçeği: sahne süresi değişirse olaylar orantılı kayar
 const TS = DUR / S.dur;
 
+function cekim(t) { // hızlı kesme: S.cekimler = [{t, img, cam:[[cx,cy,w],[cx,cy,w]]}, ...]
+  const L = S.cekimler; let i = 0;
+  while (i + 1 < L.length && t >= L[i + 1].t * TS) i++;
+  const bas = L[i].t * TS, son = i + 1 < L.length ? L[i + 1].t * TS : DUR;
+  return { c: L[i], k: seg(t, bas, son) };
+}
 function kamera(t) {
-  const k = ease(seg(t, 0, DUR));
-  const a = S.cam[0], b = S.cam[1] || S.cam[0];
+  let k = ease(seg(t, 0, DUR)), a = S.cam ? S.cam[0] : null, b;
+  if (S.cekimler) { const q = cekim(t); k = ease(q.k); a = q.c.cam[0]; b = q.c.cam[1] || a; }
+  else b = S.cam[1] || S.cam[0];
   let cx = a[0] + (b[0] - a[0]) * k, cy = a[1] + (b[1] - a[1]) * k, w = a[2] + (b[2] - a[2]) * k;
   let shx = 0, shy = 0;
   for (const e of (S.fx || [])) {
@@ -177,7 +184,7 @@ function render(t) {
   if (S.yuz) { // yüz animasyonu: k0 ana, k1 göz kapalı, k2 ağız yarım, k3 ağız açık
     const k = yuzKare(t);
     img = [0, 1, 2, 3].map(i => `<image href="../../medya/sutyen/gorsel/2x/s${Q.get('s')}_k${i}.png" x="${x0}" y="${y0}" width="${IW * s}" height="${IH * s}" preserveAspectRatio="none" opacity="${i === k ? 1 : 0}"/>`).join('');
-  } else img = `<image href="../../medya/sutyen/gorsel/2x/${S.img || 's' + Q.get('s')}.png" x="${x0}" y="${y0}" width="${IW * s}" height="${IH * s}" preserveAspectRatio="none"/>`;
+  } else img = `<image href="../../medya/sutyen/gorsel/2x/${S.cekimler ? cekim(t).c.img : (S.img || 's' + Q.get('s'))}.png" x="${x0}" y="${y0}" width="${IW * s}" height="${IH * s}" preserveAspectRatio="none"/>`;
   let ust = '';
   for (const e of (S.fx || [])) {
     if (e.tip === 'etiket') ust += etiket(e, t, c);

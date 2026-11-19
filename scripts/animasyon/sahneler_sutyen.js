@@ -114,4 +114,23 @@ const SAHNELER = {
     sfx: ['whoosh@.2@.5', 'damga@5'] },
   '44': { dur: 8, cam: [[.5, .5, .98], [.5, .55, .55]],
     fx: [{ tip: 'pat', t: 5, x: 1380, y: 300, yazi: '?', fs: 260, renk: '#D9A441', sure: 3 }], sfx: ['gerilim@0', 'ding@5'] },
+  // ===== YENİ STİL DENEMESİ (2026-11-19): hızlı kesme + iki hâl geçişi, az yazı =====
+  'y03': { dur: 4.5, boyut: [2048, 1957], cekimler: [
+      { t: 0, img: 'met-157937', cam: [[.5, .5, .98], [.5, .48, .9]] },
+      { t: 2.0, img: 'met-157937', cam: [[.42, .42, .45], [.44, .44, .4]] }],
+    fx: [{ tip: 'etiket', t: 2.3, x: 1150, y: 760, yazi: 'Gerçek bir korse, 1885\n(Metropolitan Müzesi)', fs: 50 }],
+    sfx: ['gerilim@0@.5', 'kalem@2.3@.6'] },
+  'y04': { dur: 7, boyut: [2048, 1144], cekimler: [
+      { t: 0, img: 'y04B', cam: [[.5, .45, .95], [.5, .42, .85]] },
+      { t: 1.5, img: 'y04A', cam: [[.55, .62, .42], [.55, .62, .38]] },
+      { t: 2.7, img: 'y04B', cam: [[.5, .4, .7], [.5, .38, .65]] },
+      { t: 4.6, img: 'y04A', cam: [[.5, .45, .9], [.5, .45, .85]] },
+      { t: 5.6, img: 'y04A', cam: [[.45, .22, .35], [.45, .22, .32]] }],
+    fx: [{ tip: 'sars', t: 1.5, sure: .3, g: .6 }, { tip: 'sars', t: 4.6, sure: .3, g: .6 }],
+    sfx: ['boing@1.5', 'boing@4.6', 'dundun@5.6@.5'] },
+  'y05': { dur: 4.5, boyut: [2048, 1144], cekimler: [
+      { t: 0, img: 'y05', cam: [[.47, .45, .85], [.46, .4, .75]] },
+      { t: 2.2, img: 'y05b', cam: [[.43, .2, .42], [.43, .2, .38]] }],
+    fx: [{ tip: 'sars', t: 2.2, sure: .25, g: .4 }],
+    sfx: ['trombon@2.25@.7'] },
 };
