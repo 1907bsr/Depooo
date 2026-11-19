@@ -1,0 +1,106 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000}svg{display:block}</style></head>
+<body><svg id="sv" xmlns="http://www.w3.org/2000/svg" width="1800" height="1500" viewBox="0 0 1800 1500"></svg>
+<script>
+const INK='#2A1D16',TEAL='#1F5C63',TEALD='#123C41',GOLD='#D9A441',CORAL='#E06A50',CREAM='#F8EED8',PAPER='#EADBC0';
+const SERIF='Caladea,serif', SANS='Inter Display,Inter,sans-serif';
+const T=(x,y,s,txt,o={})=>`<text x="${x}" y="${y}" text-anchor="${o.a||'middle'}" font-family="${o.f||SANS}" font-weight="${o.w||900}" font-style="${o.i?'italic':'normal'}" font-size="${s}" fill="${o.c||INK}" ${o.st?`stroke="${o.st}" stroke-width="${o.sw||10}" paint-order="stroke" stroke-linejoin="round"`:''} letter-spacing="${o.ls||0}" ${o.extra||''}>${txt}</text>`;
+
+// A) Gözlü harfler + büyüteç "d"
+function A(){
+  const eye=(x,y,r,lx)=>`<circle cx="${x}" cy="${y}" r="${r}" fill="#fff" stroke="${INK}" stroke-width="7"/><circle cx="${x+lx}" cy="${y+4}" r="${r*0.45}" fill="${INK}"/><circle cx="${x+lx+5}" cy="${y-3}" r="${r*0.14}" fill="#fff"/>`;
+  return `<g>
+   <rect width="900" height="750" fill="${TEAL}"/>
+   <circle cx="450" cy="360" r="300" fill="${TEALD}" opacity=".5"/>
+   <!-- Büş: ü'nün noktaları göz -->
+   ${T(330,330,210,'B',{f:SERIF,i:1,w:700,c:CREAM,st:INK,sw:12})}
+   <text x="455" y="330" text-anchor="middle" font-family="${SERIF}" font-style="italic" font-weight="700" font-size="210" fill="${CREAM}" stroke="${INK}" stroke-width="12" paint-order="stroke">u</text>
+   ${eye(430,150,30,8)}${eye(500,150,30,8)}
+   ${T(590,330,210,'ş',{f:SERIF,i:1,w:700,c:CREAM,st:INK,sw:12})}
+   <!-- Buldu: d büyüteç -->
+   ${T(255,560,170,'Bul',{c:GOLD,st:INK,sw:12})}
+   <g transform="translate(468,500)">
+     <circle r="62" fill="#CFE7E6" fill-opacity=".55" stroke="${INK}" stroke-width="14"/>
+     <circle r="62" fill="none" stroke="${GOLD}" stroke-width="7"/>
+     <path d="M-30,-28 Q-10,-48 18,-44" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round" opacity=".8"/>
+     <line x1="58" y1="-50" x2="58" y2="-135" stroke="${INK}" stroke-width="40" stroke-linecap="round"/>
+     <line x1="58" y1="-50" x2="58" y2="-135" stroke="${GOLD}" stroke-width="26" stroke-linecap="round"/>
+   </g>
+   ${T(610,560,170,'u',{c:GOLD,st:INK,sw:12})}
+   <g transform="translate(800,240) rotate(14)"><path d="M-16,-80 L16,-80 L10,10 L-10,10 Z" fill="${CORAL}" stroke="${INK}" stroke-width="7" stroke-linejoin="round"/><circle cy="40" r="16" fill="${CORAL}" stroke="${INK}" stroke-width="7"/></g>
+   ${T(450,680,34,'A · meraklı gözler + büyüteç',{f:SERIF,i:1,w:700,c:CREAM})}
+  </g>`;
+}
+
+// B) Patent mührü
+function B(){
+  let ticks=''; for(let i=0;i<48;i++){const a=i/48*6.283; ticks+=`<line x1="${450+Math.cos(a)*238}" y1="${350+Math.sin(a)*238}" x2="${450+Math.cos(a)*252}" y2="${350+Math.sin(a)*252}" stroke="${CORAL}" stroke-width="5"/>`;}
+  return `<g transform="translate(900,0)">
+   <rect width="900" height="750" fill="${PAPER}"/>
+   <defs><path id="arcT" d="M 270,350 A 180,180 0 0 1 630,350"/><path id="arcB" d="M 255,350 A 195,195 0 0 0 645,350"/></defs>
+   <g transform="rotate(-10 450 350)">
+     <circle cx="450" cy="350" r="260" fill="none" stroke="${CORAL}" stroke-width="14"/>
+     <circle cx="450" cy="350" r="226" fill="none" stroke="${CORAL}" stroke-width="5"/>
+     ${ticks}
+     <text font-family="${SANS}" font-weight="900" font-size="62" fill="${CORAL}" letter-spacing="14"><textPath href="#arcT" startOffset="50%" text-anchor="middle">BÜŞ BULDU</textPath></text>
+     <text font-family="${SERIF}" font-weight="700" font-style="italic" font-size="27" fill="${CORAL}" letter-spacing="2"><textPath href="#arcB" startOffset="50%" text-anchor="middle">her eşyanın bir icat hikâyesi var</textPath></text>
+     <!-- ampul -->
+     <g transform="translate(450,360)">
+       <path d="M-62,-10 C-62,-70 62,-70 62,-10 C62,25 30,40 26,70 L-26,70 C-30,40 -62,25 -62,-10 Z" fill="${GOLD}" stroke="${INK}" stroke-width="8" stroke-linejoin="round"/>
+       <rect x="-28" y="70" width="56" height="34" rx="6" fill="${TEAL}" stroke="${INK}" stroke-width="7"/>
+       <path d="M-10,-40 L10,-40 L6,20 L-6,20 Z" fill="${CORAL}" stroke="${INK}" stroke-width="5"/><circle cy="40" r="9" fill="${CORAL}" stroke="${INK}" stroke-width="5"/>
+       ${[0,1,2,3,4].map(i=>{const a=-2.6+i*0.55;return `<line x1="${Math.cos(a)*90}" y1="${Math.sin(a)*90-10}" x2="${Math.cos(a)*120}" y2="${Math.sin(a)*120-10}" stroke="${INK}" stroke-width="8" stroke-linecap="round"/>`}).join('')}
+     </g>
+   </g>
+   <rect width="900" height="750" fill="url(#none)"/>
+   ${T(450,700,34,'B · eski patent mührü',{f:SERIF,i:1,w:700,c:INK})}
+  </g>`;
+}
+
+// C) Büş karakteri (rozet / profil resmi)
+function C(){
+  return `<g transform="translate(0,750)">
+   <rect width="900" height="750" fill="${CORAL}"/>
+   <circle cx="300" cy="350" r="230" fill="${TEAL}" stroke="${INK}" stroke-width="10"/>
+   <g transform="translate(300,360)">
+     <!-- saç -->
+     <path d="M-120,10 C-130,-110 -40,-160 20,-150 C110,-140 140,-60 125,20 C110,-30 70,-70 10,-75 C-40,-78 -90,-50 -120,10 Z" fill="#7E3A22" stroke="${INK}" stroke-width="8"/>
+     <circle cx="70" cy="-150" r="42" fill="#7E3A22" stroke="${INK}" stroke-width="8"/>
+     <!-- yüz -->
+     <ellipse cx="0" cy="20" rx="105" ry="112" fill="#F1C9A8" stroke="${INK}" stroke-width="8"/>
+     <path d="M-105,10 C-100,-70 -30,-95 10,-80 C-40,-60 -80,-30 -105,10 Z" fill="#7E3A22"/>
+     <!-- göz (biri büyüteçle büyümüş) -->
+     <circle cx="-40" cy="10" r="14" fill="${INK}"/><circle cx="-35" cy="5" r="4.5" fill="#fff"/>
+     <circle cx="45" cy="10" r="58" fill="#CFE7E6" fill-opacity=".45" stroke="${INK}" stroke-width="10"/>
+     <circle cx="45" cy="10" r="58" fill="none" stroke="${GOLD}" stroke-width="5"/>
+     <circle cx="45" cy="12" r="26" fill="${INK}"/><circle cx="55" cy="0" r="8" fill="#fff"/>
+     <line x1="85" y1="52" x2="140" y2="118" stroke="${INK}" stroke-width="26" stroke-linecap="round"/>
+     <line x1="85" y1="52" x2="140" y2="118" stroke="${GOLD}" stroke-width="15" stroke-linecap="round"/>
+     <path d="M-45,-22 Q-30,-32 -15,-24" stroke="${INK}" stroke-width="6" fill="none" stroke-linecap="round"/>
+     <path d="M-25,70 Q5,92 30,68" stroke="${INK}" stroke-width="7" fill="none" stroke-linecap="round"/>
+     <ellipse cx="-70" cy="50" rx="18" ry="10" fill="${CORAL}" opacity=".45"/>
+   </g>
+   ${T(560,330,120,'Büş',{f:SERIF,i:1,w:700,c:CREAM,st:INK,sw:11,a:'start'})}
+   ${T(555,460,96,'Buldu!',{c:GOLD,st:INK,sw:10,a:'start'})}
+   ${T(450,700,34,'C · Büş karakteri, büyüteçle bakıyor',{f:SERIF,i:1,w:700,c:CREAM})}
+  </g>`;
+}
+
+// D) Hazine sandığı / çekmece: kapaktan fırlayan !
+function D(){
+  return `<g transform="translate(900,750)">
+   <rect width="900" height="750" fill="${TEALD}"/>
+   <g transform="translate(450,430)">
+     <rect x="-210" y="-10" width="420" height="190" rx="14" fill="#9C6A2A" stroke="${INK}" stroke-width="10"/>
+     <rect x="-210" y="-10" width="420" height="40" fill="#7A4F1E" stroke="${INK}" stroke-width="8"/>
+     <rect x="-40" y="60" width="80" height="44" rx="10" fill="${GOLD}" stroke="${INK}" stroke-width="7"/>
+     <g transform="rotate(-24 -210 -10)"><rect x="-210" y="-80" width="420" height="70" rx="14" fill="#B07A34" stroke="${INK}" stroke-width="10"/></g>
+     ${[ -150,-80,0,80,150].map((x,i)=>`<line x1="${x*0.6}" y1="-40" x2="${x*1.25}" y2="-170" stroke="${GOLD}" stroke-width="10" stroke-linecap="round" opacity=".85"/>`).join('')}
+     <g transform="translate(30,-250) rotate(10)"><path d="M-22,-110 L22,-110 L14,20 L-14,20 Z" fill="${CORAL}" stroke="${INK}" stroke-width="9" stroke-linejoin="round"/><circle cy="58" r="22" fill="${CORAL}" stroke="${INK}" stroke-width="9"/></g>
+   </g>
+   ${T(450,130,110,'Büş Buldu',{f:SERIF,i:1,w:700,c:CREAM,st:INK,sw:11})}
+   ${T(450,700,34,'D · tarih sandığından fırlayan bilgi',{f:SERIF,i:1,w:700,c:CREAM})}
+  </g>`;
+}
+document.getElementById('sv').innerHTML=A()+B()+C()+D();
+</script></body></html>
