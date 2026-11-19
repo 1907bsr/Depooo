@@ -1,4 +1,4 @@
-# Konu Havuzu – Büş'ten Dinle (güncel: 2026-11-19, 52 konu)
+# Konu Havuzu – İcatbuldum (güncel: 2026-11-19, 52 konu)
 
 ÖNEMLİ: "Kanca" sütunu yaygın anlatımdır, HENÜZ DOĞRULANMADI. Her konu sırası gelince /arastir ile
 iki kaynaktan kontrol edilir; efsane çıkarsa "efsane mi gerçek mi" malzemesi olur.

@@ -1,4 +1,4 @@
-# Maskot Fikirleri – Büş'ten Dinle
+# Maskot Fikirleri – İcatbuldum
 
 Amaç: Yüzü görünmeyen kanalda izleyicinin bağ kurduğu, kapakta anında tanınan bir karakter.
 Kural: Tamamen özgün, gerçek bir kişiye veya bilinen bir çizgi karaktere benzemeyecek.

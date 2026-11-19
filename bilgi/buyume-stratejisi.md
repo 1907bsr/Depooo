@@ -1,4 +1,4 @@
-# Büyüme Stratejisi – Büş'ten Dinle
+# Büyüme Stratejisi – İcatbuldum
 
 Hedef: Maksimum tıklanma + maksimum izlenme süresi + düzenli abone artışı.
 Bu dosya bir taslaktır; her /rapor ve /nis-analizi sonrası veriyle güncellenir.

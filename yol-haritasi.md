@@ -1,4 +1,4 @@
-# Yol Haritası – Büş'ten Dinle
+# Yol Haritası – İcatbuldum
 
 Şu anki faz: **Faz 0 – Kurulum** (başlangıç: 2026-11-17)
 
@@ -15,7 +15,8 @@
 - [ ] API denetimi (audit) başvurusu – herkese açık yayın için gerekli olabilir
 - [ ] Test videosu: `scripts/test_videosu.sh` → `scripts/yukle.py` ile "Özel" yükleme
 - [ ] Medya yedeği yöntemini seç (kurulum/yedekleme.md)
-- [x] Kanal adı (GEÇİCİ): **Büş'ten Dinle** (2026-11-19). [ ] @bustendinle: Instagram/TikTok kontrol · [ ] Büşra onayı
+- [x] Kanal adı: **İcatbuldum** (2026-11-19, kesin). YouTube + Instagram'da boş.
+- [ ] Yeni e-posta aç → aynı gün @icatbuldum adresini YouTube, Instagram, TikTok'ta al (kurulum/hesap-acma.md)
 - [x] Netleştir: mizah orta-yüksek, süre 8-12 dk, ses karşılaştırma testi
 - [x] İlk senaryo taslağı: konular/sutyen/senaryo.md (onay bekliyor)
 - [ ] Ses karşılaştırma testi (yapay ses vs kendi sesimiz, aynı 1 dk metin)
