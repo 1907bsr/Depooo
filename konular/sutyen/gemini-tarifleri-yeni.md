@@ -13,4 +13,5 @@ Wide 16:9 landscape image. The BACKGROUND must look almost photorealistic: a rea
 - [x] ADIM 2: Sahne 1 – New York gecesi (s01.png)
 - [x] ADIM 3: Sahne 2 – Mary aynanın önünde (s02.png)
 - [x] Sahne 3 – korse: GERÇEK Met korse fotoğrafı (met-157937, CC0) kullanılacak, üretim yok
-- [ ] ADIM 4: Sahne 4 – çubuk fırlıyor (2 hâl: A çubuk dışarıda, B bastırılmış)
+- [x] ADIM 4A: Sahne 4 – çubuk dışarıda, aynasız yakın çekim (s04A.png)
+- [ ] ADIM 4B: çubuk içeride
