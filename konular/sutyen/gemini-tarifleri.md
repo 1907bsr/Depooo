@@ -193,3 +193,8 @@ Scene: Atlantic City boardwalk, 1968, wooden planks. Cheerful women protesters i
 Wide 16:9 landscape. Same comic-book style, bold ink outlines, cel shading, warm earthy palette with petrol-teal accents. No text.
 Scene: A Victorian-era ornate porcelain toilet with a high pull-chain water tank, standing alone in a dark room under a dramatic spotlight, mysterious mood, as if it holds a big secret.
 ```
+
+### Sahne 14 – Antik mozaik (kendi çizimimiz; gerçek mozaik fotoğrafı kullanılmaz)
+```
+Wide 16:9 landscape. An original illustration in the style of an ancient Roman floor mosaic made of small stone tiles, earthy colors (ochre, terracotta, cream, petrol-teal), slightly weathered with a few missing tiles. No text. Family-friendly. Scene: a row of ancient Roman women doing sports: one with a ball, one with small hand weights, one running, wearing simple two-piece athletic outfits.
+```
