@@ -2,6 +2,7 @@
 <html><head><meta charset="utf-8">
 <style>
 @font-face{font-family:'Alegreya';src:url('../fontlar/Alegreya[wght].ttf');font-weight:400 900;font-style:normal}
+@font-face{font-family:'Caveat';src:url('../fontlar/Caveat[wght].ttf');font-weight:400 700}
 @font-face{font-family:'Alegreya';src:url('../fontlar/Alegreya-Italic[wght].ttf');font-weight:400 900;font-style:italic}
 html,body{margin:0;background:#000}svg{display:block}
 </style></head>
@@ -74,6 +75,32 @@ function etiket(e, t, c) { // elle yazılmış gibi kart + çizilerek gelen ok
     <rect width="${wbox}" height="${hbox}" rx="10" fill="${CREAM}" stroke="${INK}" stroke-width="6"/>
     ${lines.map((l, i) => `<text x="${pad}" y="${pad * .6 + fs * (i + .95)}" font-family="${SERIF}" font-weight="800" ${i ? 'font-style="italic"' : ''} font-size="${i ? fs * .8 : fs}" fill="${INK}">${esc(l)}</text>`).join('')}
   </g>`;
+}
+// ===== EL YAZISI (tebeşir/dolma kalem): yazı soldan sağa yazılarak belirir, kalın kutu yok =====
+let ELN = 0;
+function el(e, t, c, o = {}) {
+  const at = e.t * TS, lines = e.yazi.split('\n');
+  const fs = o.fs || (e.fs ? e.fs * 1.15 : 76), sure = o.sure || Math.max(.6, e.yazi.length * .045);
+  const k = clamp((t - at) / sure); if (t < at) return '';
+  const renk = o.renk || e.renk2 || '#F6F1E4', golge = o.golge || e.golge || 'rgba(25,15,8,.75)';
+  const w = Math.max(...lines.map(l => l.length)) * fs * .5 + 40, h = lines.length * fs * 1.05 + 20;
+  const x = o.x ?? e.x ?? 80, y = o.y ?? e.y ?? 70, rot = o.rot ?? (e.rot != null ? e.rot * .4 : -2);
+  const id = 'el' + (ELN++);
+  const ref = Math.round(at * 7) % 5;
+  let ciz = '';
+  if (o.alti) { const kk = clamp((t - at - sure) / .35); ciz = `<path d="M${x},${y + h - 4} q${w * .5},${10} ${w * kk},${-4}" fill="none" stroke="${renk}" stroke-width="${fs * .07}" stroke-linecap="round" filter="url(#teb)"/>`; }
+  let ok = '';
+  if (e.ok) {
+    const p = yer(c, e.ok[0], e.ok[1]), sx = x + w * .45, sy = p.y > y ? y + h : y;
+    const kd = clamp((t - at - sure * .6) / .5), L = 1400;
+    const mx = (sx + p.x) / 2 + 60, my = (sy + p.y) / 2 - 60, ang = Math.atan2(p.y - my, p.x - mx);
+    ok = `<path d="M${sx},${sy} Q${mx},${my} ${p.x},${p.y}" fill="none" stroke="${golge}" stroke-width="12" stroke-linecap="round" stroke-dasharray="${L}" stroke-dashoffset="${L * (1 - kd)}"/>
+          <path d="M${sx},${sy} Q${mx},${my} ${p.x},${p.y}" fill="none" stroke="${renk}" stroke-width="6" stroke-linecap="round" stroke-dasharray="${L}" stroke-dashoffset="${L * (1 - kd)}" filter="url(#teb)"/>
+          ${kd >= 1 ? `<path d="M${p.x},${p.y} l${Math.cos(ang + 2.6) * 30},${Math.sin(ang + 2.6) * 30} M${p.x},${p.y} l${Math.cos(ang - 2.6) * 30},${Math.sin(ang - 2.6) * 30}" stroke="${renk}" stroke-width="6" stroke-linecap="round"/>` : ''}`;
+  }
+  const yazi = lines.map((l, i) => `<text x="${x}" y="${y + fs * (i + .85)}" font-family="Caveat,cursive" font-weight="700" font-size="${i ? fs * .78 : fs}" fill="${renk}" stroke="${golge}" stroke-width="${fs * .12}" paint-order="stroke" stroke-linejoin="round" filter="url(#teb)">${esc(l)}</text>`).join('');
+  return `<defs><clipPath id="${id}"><rect x="${x - 20}" y="${y - 20}" width="${(w + 40) * k}" height="${h + 40}"/></clipPath></defs>
+    <g transform="rotate(${rot} ${x} ${y})"><g clip-path="url(#${id})">${yazi}</g>${ciz}</g>${ok}`;
 }
 function damga(e, t) { // büyük eğik mühür yazısı
   const at = e.t * TS, k = seg(t, at, at + .18);
@@ -178,6 +205,7 @@ function yuzKare(t) {
   return 0;
 }
 function render(t) {
+  ELN = 0;
   const c = kamera(t), s = 1920 / (c.w * IW);
   let x0 = -(c.cx - c.w / 2) * IW * s + c.shx, y0 = -(c.cy - c.h / 2) * IH * s + c.shy;
   let img;
@@ -188,16 +216,16 @@ function render(t) {
   let ust = '';
   for (const e of (S.fx || [])) {
     if (e.bit && t > e.bit * TS) continue;   // olayın bitiş zamanı
-    if (e.tip === 'etiket') ust += etiket(e, t, c);
-    else if (e.tip === 'damga') ust += damga(e, t);
+    if (e.tip === 'etiket') ust += el(e, t, c);
+    else if (e.tip === 'damga') ust += el(e, t, c, { x: e.x - e.yazi.length * 30, y: e.y - 80, fs: (e.fs || 150) * .9, renk: '#F6F1E4', alti: true });
     else if (e.tip === 'pat') ust += patlama(e, t);
-    else if (e.tip === 'kutu') ust += kutu(e, t);
+    else if (e.tip === 'kutu') ust += el(e, t, c, { x: 70, y: 50, fs: 70 });
     else if (e.tip === 'ter') ust += ter(e, t, c);
-    else if (e.tip === 'parilti') ust += parilti(e, t, c);
+    else if (e.tip === 'parilti') { /* KALDIRILDI (Büşra 2026-11-19) */ }
     else if (e.tip === 'gozyasi') ust += gozyasi(e, t, c);
     else if (e.tip === 'damla') ust += damla(e, t, c);
     else if (e.tip === 'hiz') ust += hiz(e, t);
-    else if (e.tip === 'isim') ust += isim(e, t);
+    else if (e.tip === 'isim') ust += el({ ...e, yazi: e.yazi + (e.alt ? '\n' + e.alt : '') }, t, c, { x: 80, y: (e.y || 760) + 20, fs: 96, alti: true });
     else if (e.tip === 'ucur') {
       const q = ucur(e, t);
       if (q !== null) img = `<rect width="1920" height="1080" fill="#3a2a1e"/><g transform="translate(${960 + q * 1500},${540 + q * 500}) rotate(${q * 140}) scale(${1 - q * .75}) translate(-960,-540)">${img}</g>`;
@@ -206,7 +234,7 @@ function render(t) {
   const fade = Math.min(clamp(t / .25), clamp((DUR - t) / .25));
   document.getElementById('sv').innerHTML = `${img}
     <defs><radialGradient id="v" cx="50%" cy="45%" r="75%"><stop offset="65%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#1a0f08" stop-opacity=".42"/></radialGradient></defs>
-    <rect width="1920" height="1080" fill="url(#v)"/>${ust}
+    <rect width="1920" height="1080" fill="url(#v)"/><defs><filter id="teb"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3"/></filter></defs>${ust}
     <rect width="1920" height="1080" fill="#000" opacity="${1 - fade}"/>`;
 }
 window.render = render; window.DUR = DUR;
