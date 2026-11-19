@@ -56,7 +56,7 @@ function etiket(e, t, c) { // elle yazılmış gibi kart + çizilerek gelen ok
   if (k <= 0) return '';
   const fs = (e.fs || 64) * 1.15, pad = 30;
   const lines = e.yazi.split('\n');
-  const wbox = Math.max(...lines.map(l => l.length)) * fs * .52 + pad * 2, hbox = lines.length * fs * 1.15 + pad * 1.2;
+  const wbox = Math.max(...lines.map(l => l.length)) * fs * .6 + pad * 2, hbox = lines.length * fs * 1.15 + pad * 1.2;
   let ok = '';
   if (e.ok) {
     const p = yer(c, e.ok[0], e.ok[1]);
@@ -187,6 +187,7 @@ function render(t) {
   } else img = `<image href="../../medya/sutyen/gorsel/2x/${S.cekimler ? cekim(t).c.img : (S.img || 's' + Q.get('s'))}.png" x="${x0}" y="${y0}" width="${IW * s}" height="${IH * s}" preserveAspectRatio="none"/>`;
   let ust = '';
   for (const e of (S.fx || [])) {
+    if (e.bit && t > e.bit * TS) continue;   // olayın bitiş zamanı
     if (e.tip === 'etiket') ust += etiket(e, t, c);
     else if (e.tip === 'damga') ust += damga(e, t);
     else if (e.tip === 'pat') ust += patlama(e, t);
