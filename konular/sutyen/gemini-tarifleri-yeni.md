@@ -10,4 +10,5 @@ Wide 16:9 landscape image. The BACKGROUND must look almost photorealistic: a rea
 - [x] Sahne 6 – hizmetçi (onaylı örnek; küçük düzeltmeler opsiyonel)
 - [x] ADIM 1a: Mary boy kartı (medya/sutyen/gorsel/yeni-stil/mary-kart-boy.png) – yüksek bel, dantel, katlı etek
 - [x] ADIM 1b: Mary yakın yüz kartı (mary-kart-yuz.png); boy kartı eldivenli sürümle güncellendi
-- [ ] ADIM 2: Sahne 1 – New York, 1910'lar gecesi
+- [x] ADIM 2: Sahne 1 – New York gecesi (s01.png)
+- [ ] ADIM 3: Sahne 2 – Mary aynanın önünde
