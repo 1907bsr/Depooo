@@ -197,6 +197,29 @@ gerekiyorsa tıklama tıklama tarif et.
   abone değişimi, trafik kaynakları. Önceki videolarla kıyas.
 - EK-1'deki izleyici tutma analizi. Sonunda 3 somut öneri.
 
+
+## 6. STANDART ÜRETİM SİSTEMİ (KARAR 2026-11-19 – bütün videolar böyle yapılır)
+Sütyen videosunda oturan sistem. Kullanıcı değiştirmedikçe aynen uygulanır.
+1. Araştırma → senaryo → okuma metni (bölüm 5 ve EK-4 kuralları).
+2. Sahne planı (konular/<konu>/sahne-plani.md) + Gemini tarifleri (gemini-tarifleri.md).
+3. Görseller: Gemini API (gemini-2.5-flash-image), çizgi roman/dergi illüstrasyonu stili (bilgi/gorsel-stil.md),
+   ana karakter referans görseliyle (aynı yüz). ÖNCE maliyet + adet söylenip onay alınır.
+   Bilgi hatası olan görsel yeniden üretilir (ör. yanlış dönem nesnesi, yakılan sütyen).
+4. Arşiv: Sadece kamu malı/CC0 (Met Open Access, ABD patentleri vb.); kanıt lisanslar.md'ye.
+5. Hareket (scripts/animasyon/): motor.html + sahneler_<konu>.js
+   - Kamera kayması/yakınlaşma, elle yazılmış etiket + ok, damga, çizgi roman sesleri ("çat!", "boing!"),
+     ter/gözyaşı/damla/parıltı/hız çizgisi efektleri, isim kartı, yer-zaman kutusu.
+   - Yazı tipleri: Alegreya + Inter (OFL). Ekran yazıları kodla (dil değişince değişsin).
+   - MİMİK: ARA SIRA – sahne başına EN FAZLA 1 kısa mimik (bir göz kırpma YA DA kısa ağız açma/tepki).
+     Sürekli oynatma YOK. Varyantlar Gemini ile (göz kapalı / ağız açık), otomatik hizalama + maske
+     (yuz_toplu.py), her biri gözle kontrol edilir; bozuk olan kullanılmaz. Konuşan ağız Mert'in sesine bağlanır.
+   - Duygusal/komik yakın planlar istenirse (ör. ağlayan karakter): yeni görsel + kodla gözyaşı/sarsılma/efekt.
+6. Ses: Mert'in kaydı (Claude temizler), fon müziği YOK, sadece Claude'un ürettiği efektler.
+7. Kurgu: klipler sese oturtulur, .srt altyazı, kapak (scripts/animasyon/kapak.html, 3 seçenek), başlık/açıklama.
+8. Önizleme: Video TAMAMEN bitince tek seferde gönderilir; parça parça gönderilmez (deneme gerekiyorsa önce sor).
+9. Yükleme "Özel"; 3 Shorts.
+Maliyet hedefi: video başına ~80-90 TL (35-40 sahne görseli + birkaç mimik varyantı). Her harcamadan önce onay.
+
 ## EK-1: Nişi ve izleyiciyi öğrenme
 /nis-analizi (ayda bir; her ayın ilk oturumunda hatırlat)
 - YouTube Data API ile Türkçe ve İngilizce "icatların tarihi / bu nasıl
@@ -307,3 +330,4 @@ Format: Kural – Kaynağı: video adı, tarih, hangi veri.)
 - 2026-11-19: Kanal adı GEÇİCİ olarak Büş'ten Dinle (@bustendinle). YouTube adres kontrolü artık buradan yapılabiliyor.
 - 2026-11-19: KANAL ADI KESİNLEŞTİ: İcatbuldum (@icatbuldum). Mert yeni e-posta açıp hesapları açacak.
 - 2026-11-19: Gemini API ödemesi açıldı (aylık sınır 200 TL). Sütyen videosunun 29 sahne görseli otomatik üretildi.
+- 2026-11-19: STANDART ÜRETİM SİSTEMİ kaydedildi (Gemini görsel + kod animasyon + ara sıra mimik). Her harcamadan önce onay kuralı.
