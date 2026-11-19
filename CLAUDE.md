@@ -216,6 +216,11 @@ Sütyen videosunda oturan sistem. Kullanıcı değiştirmedikçe aynen uygulanı
    - Çizgi roman yazıları ("boing!", "ÇAT!", "ASLA!") KULLANILMAZ; sadece ses + hareket. Bilgi yazısı az ve kısa.
    - Yazı tipleri: Alegreya + Inter (OFL). Ekran yazıları kodla.
    - Gerçek yürüme/uçma gibi akıcı hareket ücretli video aracı ister; şimdilik yok.
+   - BÜŞRA GERİ BİLDİRİMİ (2026-11-19, kesin): YILDIZ/PARILTI efekti YOK. Yakın çekimde kafa/yüz KESİLMEZ
+     (yüz tam görünür, üstte boşluk; aşırı zoom yok). Damga ("dan" diye vuran yazı) ve kalın kutulu yazı YOK →
+     yerine anlatımla eş zamanlı, kenarda ELLE YAZILAN tebeşir/dolma kalem yazısı + kalem/tebeşir sesi (font: Caveat, OFL).
+     Grup sahnelerinde herkes AYNI ifadede olmaz (biri meraklı, biri şüpheli, biri sevinçli...).
+     Garip/itici detaylara (dil çıkarmak, ağızda iğne) yakın çekim yapılmaz. Tarih geçişleri (zaman çizelgesi) beğenildi.
 6. Ses: Büşra'nın kaydı (Claude temizler), fon müziği YOK, sadece Claude'un ürettiği efektler.
 7. Kurgu: klipler sese oturtulur, .srt altyazı, kapak (scripts/animasyon/kapak.html, 3 seçenek), başlık/açıklama.
 8. Önizleme: Video TAMAMEN bitince tek seferde gönderilir; parça parça gönderilmez (deneme gerekiyorsa önce sor).
