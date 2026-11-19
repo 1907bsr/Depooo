@@ -1,0 +1,44 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:'Alegreya';src:url('../fontlar/Alegreya[wght].ttf');font-weight:400 900}
+html,body{margin:0;background:#000}svg{display:block}
+</style></head>
+<body><svg id="sv" xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"></svg>
+<script>
+// Kapak seçenekleri: kapak.html?k=1|2|3   (yazılar Inter Display / Alegreya – OFL)
+const K = new URLSearchParams(location.search).get('k') || '1';
+const INK = '#1A120D', TEAL = '#123C41', TEAL2 = '#1F5C63', GOLD = '#F2B53A', CREAM = '#FFF6E2', CORAL = '#E8563C';
+const G = '../../medya/sutyen/gorsel/';
+const yazi = (x, y, s, t, renk, o = {}) => `<text x="${x}" y="${y}" font-family="Inter Display,Inter,sans-serif" font-weight="900" font-size="${s}" fill="${renk}"
+  stroke="${INK}" stroke-width="${o.sw || 14}" paint-order="stroke" stroke-linejoin="round" text-anchor="${o.a || 'start'}" letter-spacing="${o.ls || -1}" ${o.rot ? `transform="rotate(${o.rot} ${x} ${y})"` : ''}>${t}</text>`;
+const zemin = `<rect width="1280" height="720" fill="${TEAL}"/>
+  <defs><radialGradient id="g" cx="70%" cy="45%" r="70%"><stop offset="0" stop-color="${TEAL2}"/><stop offset="1" stop-color="${TEAL}"/></radialGradient>
+  <linearGradient id="sol" x1="0" x2="1"><stop offset=".35" stop-color="${TEAL}" stop-opacity="1"/><stop offset=".62" stop-color="${TEAL}" stop-opacity="0"/></linearGradient></defs>
+  <rect width="1280" height="720" fill="url(#g)"/>`;
+const resim = (src, x, y, w, h, kx, ky, kw, kh) => `<svg x="${x}" y="${y}" width="${w}" height="${h}" viewBox="${kx} ${ky} ${kw} ${kh}" preserveAspectRatio="xMidYMid slice"><image href="${src}" width="1344" height="768"/></svg>`;
+const SECENEK = {
+  // 1: üzgün Mary + para farkı
+  '1': () => `${zemin}${resim(G + 'gemini/s37b-v5.png', 560, 0, 720, 720, 380, 40, 560, 560)}
+    <rect width="1280" height="720" fill="url(#sol)"/>
+    ${yazi(44, 180, 132, '2 MENDİL', GOLD)}
+    ${yazi(50, 300, 88, '= 15 MİLYON $', CREAM, { sw: 12 })}
+    <g transform="translate(60,370) rotate(-4)"><rect width="420" height="96" rx="14" fill="${CORAL}" stroke="${INK}" stroke-width="7"/>
+    ${yazi(210, 70, 62, 'ONA 1.500 $', CREAM, { a: 'middle', sw: 0 })}</g>`,
+  // 2: korse dehşeti
+  '2': () => `${zemin}${resim(G + 'gemini/s05.png', 430, 0, 850, 720, 300, 0, 760, 644)}
+    <rect width="1280" height="720" fill="url(#sol)"/>
+    ${yazi(48, 200, 128, 'NEFES', GOLD)}
+    ${yazi(48, 330, 128, 'YASAKTI', CREAM)}
+    <g transform="translate(60,400) rotate(-3)"><rect width="440" height="92" rx="14" fill="${CORAL}" stroke="${INK}" stroke-width="7"/>
+    ${yazi(220, 66, 54, 'SÜTYENDEN ÖNCE', CREAM, { a: 'middle', sw: 0 })}</g>`,
+  // 3: şatodan çıkan 500 yıllık sütyen
+  '3': () => `${zemin}${resim(G + 'gemini/s24.png', 500, 0, 780, 720, 230, 40, 600, 554)}
+    <rect width="1280" height="720" fill="url(#sol)"/>
+    ${yazi(48, 190, 150, '500 YIL', GOLD)}
+    ${yazi(52, 310, 96, 'ÖNCESİNDEN!', CREAM, { sw: 12 })}
+    <g transform="translate(60,380) rotate(-3)"><rect width="470" height="92" rx="14" fill="${CORAL}" stroke="${INK}" stroke-width="7"/>
+    ${yazi(235, 66, 54, 'ŞATODA BULUNDU', CREAM, { a: 'middle', sw: 0 })}</g>`,
+};
+document.getElementById('sv').innerHTML = SECENEK[K]() + `<rect x="6" y="6" width="1268" height="708" fill="none" stroke="${GOLD}" stroke-width="12"/>`;
+</script></body></html>

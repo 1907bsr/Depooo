@@ -22,6 +22,7 @@ def etiketle(a):  # bağlı bileşenler (küçük ızgara için BFS)
     return lab, n
 G = 'medya/sutyen/gorsel/gemini/'; O = 'medya/sutyen/gorsel/2x/'
 KIM = {  # sahnedeki yüzler (Gemini'ye ne değişeceğini söylemek için)
+ '04': 'the young woman',
  '05': 'the young woman', '06': 'the maid', '12': 'both Greek women', '13': 'the Roman lady',
  '17': 'both tailors', '18': 'the seated lady in the red dress', '19': 'the lady eating cake',
  '24': 'the female archaeologist and the bearded man', '27': 'the medieval woman and the modern man',

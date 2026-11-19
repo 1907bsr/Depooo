@@ -1,12 +1,19 @@
 // Sütyen videosu – sahne ayarları (motor.html okur)
 // cam: [[cx,cy,w] başlangıç, [cx,cy,w] bitiş]; fx: olaylar (t saniye); sfx: "efekt@saniye[@kazanç]"
 const SAHNELER = {
+  '01': { dur: 6, boyut: [2688, 1502], cam: [[.5, .5, .98], [.55, .45, .7]],
+    fx: [{ tip: 'kutu', t: .4, yazi: "New York, 1910'lar" }, { tip: 'parilti', t: 1.5, x: .55, y: .35, r: .15 }],
+    sfx: ['parilti@1.5@.5'] },
   '02': { dur: 5, cam: [[.5, .5, .98], [.42, .38, .62]],
     fx: [{ tip: 'parilti', t: 1.2, x: .4, y: .35, r: .1 }], sfx: ['parilti@1.2@.7'] },
   '03': { dur: 4.5, cam: [[.5, .45, .9], [.5, .45, .62]],
     fx: [{ tip: 'etiket', t: .6, x: 1200, y: 170, yazi: 'Balina kemiği çubuklar', fs: 54, ok: [.56, .3] },
          { tip: 'damga', t: 2.2, x: 960, y: 820, yazi: 'ÖZELLİK: IZDIRAP', fs: 110, rot: -8 }],
     sfx: ['gerilim@0@.6', 'kalem@.7', 'damga@2.2'] },
+  '04': { dur: 7, boyut: [2048, 1144], yuz: { kirp: [.9, 5.2], konus: [[2.4, 3.0]] }, cam: [[.51, .39, .74], [.55, .38, .55]],
+    fx: [{ tip: 'sars', t: 1.4 }, { tip: 'pat', t: 1.4, x: 1450, y: 260, yazi: 'boing!', fs: 110 },
+         { tip: 'sars', t: 3.9 }, { tip: 'pat', t: 3.9, x: 1450, y: 260, yazi: 'boing!', fs: 110 }],
+    sfx: ['boing@1.4', 'boing@3.9'] },
   '05': { dur: 4, yuz: { kirp: [3.2], konus: [[0.6, 2.4]] }, cam: [[.5, .4, .7], [.5, .32, .55]],
     fx: [{ tip: 'vur', t: .5, g: .1 }, { tip: 'sars', t: .5 }, { tip: 'pat', t: .6, x: 1450, y: 330, yazi: 'ASLA!', fs: 140, renk: '#D9A441' }],
     sfx: ['dundun@.45'] },
