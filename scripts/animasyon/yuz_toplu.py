@@ -68,6 +68,7 @@ def maske(base, v):
     d = np.abs(bl(v) - bl(base)) > 45   # bulanıklaştırınca 1 piksellik çizgi kaymaları yok sayılır
     H, W = d.shape; b = 16
     blk = d[:H // b * b, :W // b * b].reshape(H // b, b, W // b, b).mean((1, 3)) > .18
+    blk[:3, :] = blk[-3:, :] = False; blk[:, :3] = blk[:, -3:] = False   # kenarlar (hizalama boşluğu) hariç
     lab, n = etiketle(genis(blk))
     keep = np.zeros_like(blk)
     for i in range(1, n + 1):
@@ -76,14 +77,16 @@ def maske(base, v):
     keep = genis(keep)
     m = Image.fromarray((np.kron(keep, np.ones((b, b))) * 255).astype('uint8')).resize(base.size)
     return m.filter(ImageFilter.GaussianBlur(7)), keep.sum()
-for s in sys.argv[1:]:
-    uret(s)
+for arg in sys.argv[1:]:
+    s, _, sec = arg.partition(':')   # ör. 12:goz → sadece göz kırpma hizalanır, diğer kareler ana görsel olur
+    sec = sec.split(',') if sec else ['goz', 'yarim', 'agiz']
+    if not all(os.path.exists(f'{G}s{s}-{v}.png') for v in sec): uret(s)
     base = Image.open(kaynak(s)).convert('RGB')
     base.resize((base.width * 2, base.height * 2), Image.LANCZOS).save(f'{O}s{s}_k0.png')
     rap = []
     for k, v in enumerate(['goz', 'yarim', 'agiz'], 1):
         f = f'{G}s{s}-{v}.png'
-        if not os.path.exists(f): rap.append(f'{v}:YOK'); im = base
+        if v not in sec or not os.path.exists(f): rap.append(f'{v}:-'); im = base
         else:
             hf = f.replace('.png', '-h.png')
             if os.path.exists(hf): var = Image.open(hf).convert('RGB'); en = (0,)
