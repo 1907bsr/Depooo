@@ -28,6 +28,7 @@ Format: Tarih – Ne oldu – Neden – Bundan sonraki kural
 
 ## 2026-11-19 – Maliyet yine düşük tahmin edildi (350 TL sınırı doldu)
 - Claude "245 TL fazlasıyla yeter, 30 kare ~55-70 TL" dedi; referanslı ve uzun tarifli üretimler pahalıya geldi, 350 TL aylık sınır doldu.
-- Sebep: Görsel başı 1,7 TL en basit üretime göre; referans görsel + uzun tarif ek ücret (giriş birimi). Gerçek ~2,5-3 TL olabilir.
+- DÜZELTME (Spend verisiyle): 23:00'te 254,72 TL → 23:19'da 308,93 TL; aradaki ~33 görsel ≈ 54 TL → görsel başı ~1,65 TL (tahmin doğruymuş).
+  Asıl sebep: Google, sınıra YAKLAŞINCA (gecikmeli sayaç yüzünden ~%88'de) üretimi önceden durduruyor. Kumbarada ~190 TL kaldı.
 - KURAL: Ücretli üretimden önce Spend sayfasındaki GERÇEK rakamla görsel başı fiyatı hesapla; tahmini EN PAHALI senaryoya göre ver.
 - KURAL: Gerçek fiyat netleşene kadar ücretli üretim YOK.
