@@ -19,4 +19,6 @@ Wide 16:9 landscape image. The BACKGROUND must look almost photorealistic: a rea
 - [x] ADIM 6: Sahne 8 – şato (s08.png; fotoğraf gibi → ekranda 'temsilî görsel' notu şart, gerçek Lengberg değil)
 - [x] ADIM 7: Sahne 9 – gizemli Otto (s09.png)
 - [x] ADIM 8: Sahne 12 (s12A şüpheci, s12B şaşkın)
-- [ ] ADIM 9: Sahne 13 – Roma strophium
+- [x] ADIM 9: Sahne 13 (s13A normal, s13B göz kırpma)
+- [x] Sahne 14 + 16: mevcut mozaik görseli (mozaik dokusu, çizgi film değil) KALIYOR
+- [ ] ADIM 10: Sahne 15 – spor yapan Romalı kadınlar (A + B)
