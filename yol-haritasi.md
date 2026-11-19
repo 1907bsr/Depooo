@@ -15,7 +15,7 @@
 - [ ] API denetimi (audit) başvurusu – herkese açık yayın için gerekli olabilir
 - [ ] Test videosu: `scripts/test_videosu.sh` → `scripts/yukle.py` ile "Özel" yükleme
 - [ ] Medya yedeği yöntemini seç (kurulum/yedekleme.md)
-- [ ] Kanal adı: "NasılOldu?" YouTube'da müsait mi kontrol et
+- [ ] Kanal adı: "NasılOldu?" DOLU (aynı isimde kanal var). Aranan: Kim Buldu / İcat Çıkarma / Nereden Çıktı / Kim Bulmuş / Ufak Tefek Tarih dolu; İcatname BOŞ – Mert düşünüyor
 - [x] Netleştir: mizah orta-yüksek, süre 8-12 dk, ses karşılaştırma testi
 - [x] İlk senaryo taslağı: konular/sutyen/senaryo.md (onay bekliyor)
 - [ ] Ses karşılaştırma testi (yapay ses vs kendi sesimiz, aynı 1 dk metin)
@@ -57,6 +57,7 @@ Vaka havuzu, haftalık takvim, Shorts ritmi, yorum yönetimi.
 
 ## Faz 4 – Büyüme
 Partner Programı, seriler/oynatma listeleri, topluluk gönderileri.
+- [ ] (10-20 video sonra) İngilizce ses parçası: metin uyarlama + yapay zekâ sesi, YouTube çok dilli ses özelliği
 
 ## Aday fikirler
 - Sonraki kanallar: true crime (fikirler/true-crime-kanali.md) + 2-3 fikir daha (gelecek)

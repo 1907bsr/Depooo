@@ -58,6 +58,9 @@ izletilsin, izleyici ve abone sayısı günden güne hızla artsın. En iyisi is
 - Anlatım (KARAR 2026-11-18): Mert kendi sesiyle okur (telefon kaydı), Claude düzenler:
   hataları/tekrarları keser, sessizlikleri kısaltır, gürültüyü azaltır, seviyeyi eşitler,
   tını düzeltir. Yapay zekâ sesi kullanılmaz. Kayıt rehberi: kurulum/ses-kaydi.md
+- Dil (KARAR 2026-11-19): Kanal TÜRKÇE. 10-20 video sonra aynı videolara İngilizce ses parçası
+  eklenir (YouTube çok dilli ses özelliği; metin İngilizceye uyarlanır, ses yapay zekâyla).
+  Görsellerde kalıcı yazı minimum tutulur; ekran yazıları kodla eklenir ki dile göre değiştirilebilsin.
 - Hedef: Haftada 1 uzun video.
 - Aylık bütçe: 3000 TL (araçlar, abonelikler, API'ler dahil).
 - Durum: Kanal yeni, Faz 0'dayız (bkz. yol-haritasi.md).
@@ -221,7 +224,7 @@ Faz 3 – Düzen (10. videodan sonra): Konu havuzu, haftalık takvim,
   Shorts ritmi, yorum yönetimi.
 Faz 4 – Büyüme: Partner Programı başvurusu, seriler/oynatma
   listeleri (ör. "Mutfak icatları", "Banyo icatları"), topluluk
-  gönderileri. Sonra sıradaki kanal fikrine geçiş (fikirler/).
+  gönderileri, İngilizce ses parçası (çok dilli ses). Sonra sıradaki kanal fikrine geçiş (fikirler/).
 Her fazın sonunda Mert ve Büşra'ya özet sun, sonraki fazı
 birlikte onaylayalım. Yeni fikirleri plana "Aday" olarak ekle.
 
@@ -291,3 +294,4 @@ Format: Kural – Kaynağı: video adı, tarih, hangi veri.)
 - 2026-11-18: Onaylandı: mizah orta-yüksek, süre 8-12 dk, ses karşılaştırma testi. İlk senaryo (sütyen), maskot fikirleri, 20 konuluk havuz yazıldı.
 - 2026-11-18: 00. TELİF KURALI eklendi: telif riski olan hiçbir şey yok; sadece kamu malı/CC0, kendi üretimimiz, kendi yapay zekâ çıktılarımız.
 - 2026-11-18: Anlatım kararı: Mert'in kendi sesi + Claude düzenlemesi. Fon müziği yok, efekt kütüphanesi onaylı.
+- 2026-11-19: Dil kararı: Türkçe başla, 10-20 video sonra İngilizce ses parçası ekle. Konu havuzu 52 konu. Kanal adı aranıyor (NasılOldu? dolu; aday: İcatname).
