@@ -62,6 +62,6 @@ Mary her sahnede karakter kartıyla (referans görsel) üretilir.
 Not: Bu ortamdan patents.google.com'a erişim kapalı; patent çizimi için Wikimedia'daki kopya veya sizin indirmeniz gerekebilir.
 
 ## Ses ve müzik
-- Anlatım: yapay zekâ sesi (ElevenLabs – ödeme bekliyor) veya kendi sesiniz.
+- Anlatım: Mert'in kendi sesi (Claude düzenler).
 - Müzik: YOK (karar 2026-11-18). Sadece ses efektleri ve kısa vurgu sesleri.
 - Efektler: hepsini ben üretiyorum (telif yok).

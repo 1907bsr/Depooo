@@ -302,3 +302,4 @@ Format: Kural – Kaynağı: video adı, tarih, hangi veri.)
 - 2026-11-19: Kanal adı: Büş Buldu (Büşra'nın lakabı). Anlatıcı kadın sesi (Büşra ya da özgün yapay zekâ sesi) – karar bekliyor.
 - 2026-11-19: Kanal adı GEÇİCİ olarak Büş'ten Dinle (@bustendinle). YouTube adres kontrolü artık buradan yapılabiliyor.
 - 2026-11-19: KANAL ADI KESİNLEŞTİ: İcatbuldum (@icatbuldum). Mert yeni e-posta açıp hesapları açacak.
+- 2026-11-19: Gemini API ödemesi açıldı (aylık sınır 200 TL). Sütyen videosunun 29 sahne görseli otomatik üretildi.

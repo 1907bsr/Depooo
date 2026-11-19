@@ -15,3 +15,10 @@ KURAL: Bu listede sadece kamu malı / CC0 / kendi üretimimiz / kendi yapay zek�
 | Müzik: merak, gizem, zafer (medya/muzik) | Claude besteledi ve üretti – scripts/muzik/uret.py (notalar dosyada) | Kendi üretimimiz | Hayır | Hiçbir sanatçıdan/kütüphaneden parça yok |
 | Sinematik müzik: merak, gizem, zafer (medya/muzik/sinematik) | Beste ve düzenleme: Claude (scripts/muzik/orkestra.py). Enstrüman kayıtları: VSCO 2 Community Edition, Versilian Studios – github.com/sgossner/VSCO-2-CE | Beste: kendi üretimimiz · Kayıtlar: CC0 1.0 (LICENSE dosyası okunarak doğrulandı, 2026-11-18) | Hayır | Telif kuralına uygun |
 | Ses efekti kütüphanesi (medya/efekt, 15 efekt) | Claude üretti – scripts/muzik/efektler.py | Kendi üretimimiz | Hayır | Fon müziği yok kararı (2026-11-18) |
+
+## Gemini API ile üretilen sahne görselleri (2026-11-19)
+Sahneler 2, 3, 5, 6, 8, 9, 12-15, 17-19, 22-25, 27, 29-34, 37, 38, 41, 42, 44 – medya/sutyen/gorsel/gemini/
+Araç: Google Gemini API (gemini-2.5-flash-image), ücretli katman (Tier 1). Google şartlarına göre çıktılar
+kullanıcıya aittir, ticari kullanım serbesttir. Tariflerde marka, ünlü karakter, sanatçı tarzı veya gerçek fotoğraf kopyası yok.
+Sahne 14 gerçek mozaiğin fotoğrafı DEĞİL; özgün "mozaik tarzı" çizimdir.
+Yeniden üretilenler: s22 (Mısır lahdi çıkmıştı), s24 (elbise çıkmıştı), s42 (kibrit vardı – 1968'de hiçbir şey yakılmadı).
