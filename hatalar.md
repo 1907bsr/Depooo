@@ -21,3 +21,7 @@ Format: Tarih – Ne oldu – Neden – Bundan sonraki kural
 - KURAL: Claude'un ürettiği HER görsel ücretlidir (Gemini API). Ücretsiz yol sadece Büşra'nın telefonundaki
   Gemini uygulamasıdır. Onay cevabı belirsizse ("yap", "üret") üretmeden önce "Ücretli (X TL) mi, ücretsiz
   (sen uygulamadan) mı?" diye açıkça sor.
+
+## 2026-11-19 – Gemini ödeme türü yanlış anlatıldı
+- Claude "kumbara yok, ay sonu karttan çekilir" dedi; oysa hesap ÖN ÖDEMELİ (prepay). Kredi bitince API 402 veriyor.
+- KURAL: Bilmediğin ödeme/fatura bilgisini kesinmiş gibi söyleme; "kontrol edelim" de. Kalan krediyi Büşra AI Studio > Billing'den görür.
