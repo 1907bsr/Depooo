@@ -41,6 +41,7 @@ Sıradaki icadı sen seç: yorumlara yaz, en çok istenen konu sıradaki videola
 - National Geographic – Bra history: https://www.nationalgeographic.com/premium/article/bra-brassiere-history-strophion-corset
 - Snopes – Otto Titzling efsanesi: https://www.snopes.com/fact-check/bust-up/
 - Smithsonian Magazine – Bra yakma efsanesi nasıl yayıldı: https://www.smithsonianmag.com/blogs/smithsonian-books/2025/03/06/how-the-myth-of-feminist-bra-burning-spread/
+- UNESCO – Villa Romana del Casale (mozaiğin bugünkü yeri): https://whc.unesco.org/en/list/832
 - History.com – 1968 Miss America protestosu: https://www.history.com/this-day-in-history/september-7/protests-at-the-1968-miss-america-pageant
 
 🖼 Görseller

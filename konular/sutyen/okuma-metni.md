@@ -47,7 +47,7 @@ Evet, / kulağa öksürük şurubu gibi geliyor: / "Günde 2 apodesmos, / tok ka
 Romalılar da benzer bir bant kullanmışlar / ama adını **strophium** (strofyum) koymuşlar. /
 Yani mal aynı, / etiket yeni. / Pazarlamanın piri de / Romalılar. //
 
-Hatta Sicilya'da / 1.700 (bin yedi yüz) yıllık bir Roma villasında / bir mozaik var. /
+Hatta İtalya'da / Sicilya adasında / 1.700 (bin yedi yüz) yıllık bir Roma villası var: / Villa Romana del Casale (Villa Romana del Kazale). / Bu villanın zemininde / bir mozaik var. / Üstelik mozaik hâlâ yerinde duruyor. / Villa bugün UNESCO (Yunesko) Dünya Mirası listesinde. / İstersen gidip kendi gözünle görebilirsin. /
 Mozaikte bir grup kadın görüyorsun: / Göğüslerinde bant, / altlarında şort. / Kimi top oynuyor, / kimi ağırlık kaldırıyor. //
 Herkes buna "Bikinili Kızlar" diyor / ama bunlar mayo değil… / **spor kıyafeti.** /
 Yani 1.700 (bin yedi yüz) yıl önce bile / kadınlar "Spora giderken ne giysem?" derdindeymiş. [güler] //
