@@ -23,3 +23,7 @@ Wide 16:9 landscape image. The BACKGROUND must look almost photorealistic: a rea
 - [x] Sahne 14 + 16: mevcut mozaik görseli (mozaik dokusu, çizgi film değil) KALIYOR
 - [x] ADIM 10: Sahne 15A (s15A.png – mozaikteki tiplere benzer, taş halterler)
 - [ ] ADIM 10b: Sahne 15B – ağırlık kaldıranın zorlanma mimiği
+
+## Not (2026-11-19 22:53)
+Gemini uygulamasının ücretsiz günlük görsel sınırı doldu (sıfırlanma 20 Kasım 00:20). Bir günde ~15-20 görsel çıkıyor.
+Kalan: 15B, 17, 18, 19, 21 (gerçek Lengberg'e yakın), 22, 23, 24, 25, 27, 29, 30, 31, 32, 33, 34, 37, 37b, 38, 41, 42, 44 (+ birkaç B mimik).
