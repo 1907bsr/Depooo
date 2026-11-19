@@ -15,3 +15,12 @@
   bir görselde etek yarı saydam çıktı (aile dostu kuralına aykırı). Ayrıca daha fazla birim harcadı.
 - Karar önerisi: Kullanılmasın; ana model (gemini-2.5-flash-image) devam.
 - Imagen 4 Fast bu hesapta yok. Veo'nun Gemini API'si 22 Ekim 2026'da kapandı.
+
+## Referans klip: "görselden video" örneği (2026-11-20, Büşra'nın arkadaşı / araç ve plan BİLİNMİYOR)
+- Dosya: medya/sutyen/referans/arkadas-klip-1-mary-cubuk.mp4 (6 sn, 1024x576, 30 fps, sesli). SADECE REFERANS – videoya girmez.
+- Kaynak: ilk Gemini görselimiz (s04-mary-korse-gemini.png, eski çizgi film stili, petrol mavisi perde, yarı saydam etek).
+- İçerik: Mary çubuğu bastırıyor, kaş çatma, göz kayması, ter damlası, çubuk titremesi, kamera yaklaşma; ses = gerilim uğultusu + 3,5 sn'de metalik "tın".
+  3,5 sn'de: sarı "TINNN!" yazısı + hız çizgileri + beyaz parlama (flash); başta siyahtan açılış, sonda kararma. Filigran YOK.
+- Değerlendirme: Gerçek karakter hareketi (bizde olmayan şey) + iyi ses-görüntü eşleşmesi. Ama TINNN! yazısı, hız çizgisi ve beyaz parlama Büşra'nın yasakladığı öğeler;
+  görsel eski stil; telif/lisans durumu bilinmiyor (ücretsiz planlar genelde ticari kullanım vermez; ses de yapay zekâ üretimi) → olduğu gibi KULLANILMAZ.
+- Karar bekliyor: yeni stil görsellerden, yazısız ve sessiz, 6 sn klip(ler) isteyip kurguya yerleştirmek (yalnızca en komik 5-8 an).
