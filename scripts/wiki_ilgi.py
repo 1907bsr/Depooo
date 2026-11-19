@@ -9,11 +9,11 @@ EN = ["Brassiere","Flush toilet","Toilet paper","High-heeled shoe","Fork","Micro
  "Bubble wrap","Incandescent light bulb","Bicycle","Paper clip","Sandwich","Hamburger","Doughnut","Popcorn",
  "Potato chip","Safety pin","Corset","Bathtub","Tooth paste","Toothpaste","Diaper","Sliced bread","Vending machine","Alarm clock"]
 def get(url):
-    for i in range(4):
+    for i in range(6):
         try:
             with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30) as r: return json.load(r)
         except Exception as e:
-            time.sleep(2 + 3 * i); err = e
+            time.sleep(60 * (i + 1)); err = e
     print('HATA', url, err, file=sys.stderr); return None
 def views(project, title):
     t = urllib.parse.quote(title.replace(' ', '_'), safe='')
@@ -27,9 +27,11 @@ def tr_title(title):
     except Exception: return None
 rows = []
 for t in EN:
-    en = views('en.wikipedia', t); time.sleep(0.3)
-    tt = tr_title(t); time.sleep(0.3)
-    tr = views('tr.wikipedia', tt) if tt else None; time.sleep(0.3)
+    en = views('en.wikipedia', t); time.sleep(20)
+    tt = tr_title(t) if '--tr' in sys.argv else None
+    tr = views('tr.wikipedia', tt) if tt else None
     rows.append((t, en, tt, tr)); print(t, en, tt, tr, flush=True)
+    with open(sys.argv[1], 'w', newline='') as f:
+        w = csv.writer(f); w.writerow(['konu_en', 'dunya_12ay', 'konu_tr', 'turkiye_12ay']); w.writerows(rows)
 with open(sys.argv[1], 'w', newline='') as f:
     w = csv.writer(f); w.writerow(['konu_en', 'dunya_12ay', 'konu_tr', 'turkiye_12ay']); w.writerows(rows)
