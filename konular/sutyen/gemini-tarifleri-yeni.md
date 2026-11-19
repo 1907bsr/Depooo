@@ -27,3 +27,10 @@ Wide 16:9 landscape image. The BACKGROUND must look almost photorealistic: a rea
 ## Not (2026-11-19 22:53)
 Gemini uygulamasının ücretsiz günlük görsel sınırı doldu (sıfırlanma 20 Kasım 00:20). Bir günde ~15-20 görsel çıkıyor.
 Kalan: 15B, 17, 18, 19, 21 (gerçek Lengberg'e yakın), 22, 23, 24, 25, 27, 29, 30, 31, 32, 33, 34, 37, 37b, 38, 41, 42, 44 (+ birkaç B mimik).
+
+## Durum (2026-11-19 gece)
+- TAMAM (yeni stil): 1, 2, 4A/B, 5/5b, 6, 8, 9, 12A/B, 13A/B, 15A/B, 17, 18 (çay masası), 19, 21, 22/22B, 23, 24, 25, 27, 29/29B, 30, 31, 32, 33, 34/34B, 37, 37b, 38, 41, 42, 44
+- Gerçek arşiv: 3 (Met korse), 28 (Met Eyfel), 35 (patent). Mozaik 14/16 mevcut görsel.
+- İSTEĞE BAĞLI kalan mimikler: 24B (arkeolog), 37B (Mary göz seğirmesi), 42B (polis düdük) – aylık 350 TL sınırı doldu.
+- Not: 25 (müze sütyeni) fotoğraf gibi → "temsilî görsel" notu şart. 38'de kafe tabelasında yarım yazı var → kadrajla gizlenecek.
+- Tarifler: scripts/gorsel/sutyen_yeni_stil.py
