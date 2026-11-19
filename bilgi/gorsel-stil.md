@@ -1,4 +1,4 @@
-# Görsel Stil – Büş Buldu
+# Görsel Stil – Büş'ten Dinle
 
 ONAY (2026-11-18): Çizgi roman tarzı deneme (sahne + kapak, medya/deneme-cizgiroman/) beğenildi.
 Yön ve kapak formülü onaylı. Asıl kalite için yapay zekâ görsel aracı (Gemini) – ücretsiz uygulamayla deneme yapılacak.

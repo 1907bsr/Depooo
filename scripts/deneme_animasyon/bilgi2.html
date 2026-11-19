@@ -28,10 +28,10 @@ const SCENES={
    return `${DEFS}<rect width="1920" height="1080" fill="url(#tealbg)"/>
     <g opacity=".1">${Array.from({length:18},(_,i)=>`<path d="M960,500 L${960+Math.cos(i/18*6.283+t*.2)*1700},${500+Math.sin(i/18*6.283+t*.2)*1700}" stroke="#fff" stroke-width="60"/>`).join('')}</g>
     <g transform="translate(960,500) scale(${a})">
-      ${T(-90,40,190,'Büş',{f:SERIF,i:1,w:700,c:CREAM,st:INK,sw:12,a:'end'})}
-      ${T(-60,40,200,'Buldu',{c:GOLD,st:INK,sw:14,a:'start'})}
+      ${T(-20,40,190,'Büş’ten',{f:SERIF,i:1,w:700,c:CREAM,st:INK,sw:12,a:'end'})}
+      ${T(10,40,200,'Dinle',{c:GOLD,st:INK,sw:14,a:'start'})}
     </g>
-    <g transform="translate(1500,470) rotate(${wob}) scale(${q})">${T(0,60,300,'!',{c:CORAL,st:INK,sw:14})}</g>
+    <g transform="translate(1560,470) rotate(${wob}) scale(${q})">${T(0,60,300,'!',{c:CORAL,st:INK,sw:14})}</g>
     ${T(960,760,64,sub,{f:SERIF,i:1,w:700,c:CREAM})}
     <rect width="1920" height="1080" filter="url(#paper)"/>`; }},
 

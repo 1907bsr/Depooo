@@ -1,4 +1,4 @@
-# Büş Buldu – YouTube Kanal Asistanı
+# Büş'ten Dinle – YouTube Kanal Asistanı
 
 ## 00. TELİF KURALI – ASLA UNUTMA (2026-11-18, Mert ve Büşra'nın kesin isteği)
 TÜM videolar, Shorts, kapaklar ve TÜM kanal fikirleri için geçerlidir (fikirler/ dahil).
@@ -44,10 +44,11 @@ izletilsin, izleyici ve abone sayısı günden güne hızla artsın. En iyisi is
   Yeni konu önerme; mevcut videonun eksiklerini tamamla.
 
 ## 1. Proje tanımı
-- Biz Mert ve eşi Büşra. İlk kanalımız: **Büş Buldu** (2026-11-19 seçildi; adres önerisi @busbuldu.
-  Instagram/TikTok müsaitliği ve Büşra'nın onayı kontrol edilecek). Eski çalışma adı "NasılOldu?"
-  başka kanalda olduğu için bırakıldı. Kanal anlatıcısı/karakteri "Büş" (kadın sesi).
-  Slogan önerisi: "Her eşyanın bir icat hikâyesi var." Başlık kalıbı "…'i Kim Buldu?" → kanal: "Büş Buldu".
+- Biz Mert ve eşi Büşra. İlk kanalımız: **Büş'ten Dinle** (2026-11-19, GEÇİCİ – Mert değiştirebilir).
+  Adres: @bustendinle (YouTube'da adres ve isim boş, kontrol edildi; Instagram/TikTok ve Büşra onayı bekliyor).
+  Anlatıcı karakter "Büş" (kadın sesi). Slogan: "Her eşyanın bir hikâyesi var."
+  Elenen isimler: NasılOldu? (başka kanalda), Büş Buldu (beğenilmedi), Büşnevi (Mesnevi'yle karışır),
+  ve YouTube'da dolu çıkanlar (Kim Buldu, İcatname [Instagram'da aynı konuda hesap], Cin Fikir, Jeton Düştü vb.).
 - Konu: Günlük hayatta kullandığımız şeylerin ortaya çıkış hikâyesi.
   Her videoda: Kim buldu? Nasıl buldu? Neden buldu? O dönemin yaşantısı,
   zorlukları, bu şey yokken insanlar ne yapıyordu?
@@ -298,3 +299,4 @@ Format: Kural – Kaynağı: video adı, tarih, hangi veri.)
 - 2026-11-18: Anlatım kararı: Mert'in kendi sesi + Claude düzenlemesi. Fon müziği yok, efekt kütüphanesi onaylı.
 - 2026-11-19: Dil kararı: Türkçe başla, 10-20 video sonra İngilizce ses parçası ekle. Konu havuzu 52 konu. Kanal adı aranıyor (NasılOldu? dolu; aday: İcatname).
 - 2026-11-19: Kanal adı: Büş Buldu (Büşra'nın lakabı). Anlatıcı kadın sesi (Büşra ya da özgün yapay zekâ sesi) – karar bekliyor.
+- 2026-11-19: Kanal adı GEÇİCİ olarak Büş'ten Dinle (@bustendinle). YouTube adres kontrolü artık buradan yapılabiliyor.
