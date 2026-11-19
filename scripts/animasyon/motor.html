@@ -1,0 +1,161 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:'Alegreya';src:url('../fontlar/Alegreya[wght].ttf');font-weight:400 900;font-style:normal}
+@font-face{font-family:'Alegreya';src:url('../fontlar/Alegreya-Italic[wght].ttf');font-weight:400 900;font-style:italic}
+html,body{margin:0;background:#000}svg{display:block}
+</style></head>
+<body><svg id="sv" xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
+<script src="sahneler_sutyen.js"></script>
+<script>
+// Genel sahne motoru: motor.html?s=NN[&d=süre]
+// Kamera: [cx, cy, w] — görsel üzerinde 0-1 arası merkez ve kadraj genişliği (1 = tüm görsel)
+// Tüm yazılar Alegreya (OFL) ve Inter (OFL).
+const Q = new URLSearchParams(location.search);
+const S = SAHNELER[Q.get('s')];
+const DUR = parseFloat(Q.get('d') || S.dur);
+const IW = 2688, IH = 1536, AR = IW / IH;
+const INK = '#2A1D16', TEAL = '#1F5C63', GOLD = '#D9A441', CORAL = '#E06A50', CREAM = '#F8EED8';
+const SERIF = 'Alegreya,serif', SANS = 'Inter Display,Inter,sans-serif';
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const ease = k => k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+const back = k => { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(k - 1, 3) + c1 * Math.pow(k - 1, 2) };
+const seg = (t, a, b) => clamp((t - a) / (b - a));
+const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+// zaman ölçeği: sahne süresi değişirse olaylar orantılı kayar
+const TS = DUR / S.dur;
+
+function kamera(t) {
+  const k = ease(seg(t, 0, DUR));
+  const a = S.cam[0], b = S.cam[1] || S.cam[0];
+  let cx = a[0] + (b[0] - a[0]) * k, cy = a[1] + (b[1] - a[1]) * k, w = a[2] + (b[2] - a[2]) * k;
+  let shx = 0, shy = 0;
+  for (const e of (S.fx || [])) {
+    const at = e.t * TS;
+    if (e.tip === 'sars' && t > at && t < at + (e.sure || .35)) { const q = 1 - seg(t, at, at + (e.sure || .35)); shx += Math.sin(t * 97) * 14 * q * (e.g || 1); shy += Math.cos(t * 83) * 10 * q * (e.g || 1); }
+    if (e.tip === 'vur' && t > at) { const q = seg(t, at, at + .25); w *= 1 - (e.g || .12) * back(q) * (1 - seg(t, at + .25, at + 1.2) * 0); }
+  }
+  w = Math.min(w, 0.995);
+  const h = w * AR * 9 / 16; // görsel yüksekliği oranında kadraj yüksekliği
+  cx = clamp(cx, w / 2, 1 - w / 2); cy = clamp(cy, h / 2, 1 - h / 2);
+  return { cx, cy, w, h, shx, shy };
+}
+function yer(c, x, y) { // görsel koordinatı (0-1) → ekran
+  const s = 1920 / (c.w * IW);
+  return { x: (x - (c.cx - c.w / 2)) * IW * s + c.shx, y: (y - (c.cy - c.h / 2)) * IH * s + c.shy };
+}
+function etiket(e, t, c) { // elle yazılmış gibi kart + çizilerek gelen ok
+  const at = e.t * TS, k = seg(t, at, at + .35), kk = back(k);
+  if (k <= 0) return '';
+  const fs = (e.fs || 64) * 1.15, pad = 30;
+  const lines = e.yazi.split('\n');
+  const wbox = Math.max(...lines.map(l => l.length)) * fs * .52 + pad * 2, hbox = lines.length * fs * 1.15 + pad * 1.2;
+  let ok = '';
+  if (e.ok) {
+    const p = yer(c, e.ok[0], e.ok[1]);
+    const sx = e.x + wbox / 2, sy = e.y + (p.y > e.y ? hbox : 0);
+    const kd = seg(t, at + .25, at + .75), L = 900;
+    const mx = (sx + p.x) / 2 + (p.y - sy) * .25, my = (sy + p.y) / 2 - (p.x - sx) * .25;
+    const ang = Math.atan2(p.y - my, p.x - mx);
+    ok = `<path d="M${sx},${sy} Q${mx},${my} ${p.x},${p.y}" fill="none" stroke="${INK}" stroke-width="15" stroke-linecap="round" stroke-dasharray="${L}" stroke-dashoffset="${L * (1 - kd)}"/>
+          <path d="M${sx},${sy} Q${mx},${my} ${p.x},${p.y}" fill="none" stroke="${GOLD}" stroke-width="7" stroke-linecap="round" stroke-dasharray="${L}" stroke-dashoffset="${L * (1 - kd)}"/>
+          ${kd >= 1 ? `<path d="M${p.x},${p.y} l${Math.cos(ang + 2.6) * 38},${Math.sin(ang + 2.6) * 38} M${p.x},${p.y} l${Math.cos(ang - 2.6) * 38},${Math.sin(ang - 2.6) * 38}" stroke="${INK}" stroke-width="14" stroke-linecap="round"/>` : ''}`;
+  }
+  const rot = e.rot ?? -2;
+  return `${ok}<g transform="translate(${e.x + wbox / 2},${e.y + hbox / 2}) rotate(${rot}) scale(${kk}) translate(${-wbox / 2},${-hbox / 2})">
+    <rect x="12" y="12" width="${wbox}" height="${hbox}" rx="10" fill="${TEAL}"/>
+    <rect width="${wbox}" height="${hbox}" rx="10" fill="${CREAM}" stroke="${INK}" stroke-width="6"/>
+    ${lines.map((l, i) => `<text x="${pad}" y="${pad * .6 + fs * (i + .95)}" font-family="${SERIF}" font-weight="800" ${i ? 'font-style="italic"' : ''} font-size="${i ? fs * .8 : fs}" fill="${INK}">${esc(l)}</text>`).join('')}
+  </g>`;
+}
+function damga(e, t) { // büyük eğik mühür yazısı
+  const at = e.t * TS, k = seg(t, at, at + .18);
+  if (k <= 0) return '';
+  const sc = 1 + 1.6 * (1 - k), op = k;
+  const col = e.renk || CORAL, fs = e.fs || 150;
+  const w = e.yazi.length * fs * .66 + 90;
+  return `<g transform="translate(${e.x},${e.y}) rotate(${e.rot ?? -12}) scale(${sc})" opacity="${op}">
+    <rect x="${-w / 2}" y="${-fs * .78}" width="${w}" height="${fs * 1.2}" rx="14" fill="${CREAM}" fill-opacity=".82" stroke="${col}" stroke-width="16"/>
+    <text x="0" y="${fs * .18}" text-anchor="middle" font-family="${SANS}" font-weight="900" font-size="${fs}" fill="${col}" letter-spacing="6">${esc(e.yazi)}</text></g>`;
+}
+function patlama(e, t) { // çizgi roman sesi: "çat!", "boing!"
+  const at = e.t * TS, k = seg(t, at, at + (e.sure || 1.1));
+  if (k <= 0 || k >= 1) return '';
+  const sc = back(clamp(k * 4)) * (k > .8 ? (1 - k) / .2 : 1);
+  return `<g transform="translate(${e.x},${e.y}) rotate(${e.rot ?? -10}) scale(${sc})">
+    <text text-anchor="middle" font-family="${SERIF}" font-weight="900" font-style="italic" font-size="${e.fs || 120}" fill="${e.renk || CREAM}" stroke="${INK}" stroke-width="16" paint-order="stroke" stroke-linejoin="round">${esc(e.yazi)}</text></g>`;
+}
+function kutu(e, t) { // üst köşede yer/zaman kutusu
+  const at = e.t * TS, k = seg(t, at, at + .5); if (k <= 0) return '';
+  const fs = e.fs || 64, w = e.yazi.length * fs * .5 + 70;
+  return `<g transform="translate(70,${66 - 30 * (1 - ease(k))})" opacity="${k}">
+    <rect x="10" y="10" width="${w}" height="${fs * 1.75}" rx="8" fill="${TEAL}"/>
+    <rect width="${w}" height="${fs * 1.75}" rx="8" fill="${CREAM}" stroke="${INK}" stroke-width="5"/>
+    <text x="34" y="${fs * 1.18}" font-family="${SERIF}" font-weight="800" font-size="${fs}" fill="${INK}">${esc(e.yazi)}</text></g>`;
+}
+function ter(e, t, c) { // ter damlaları
+  const at = e.t * TS; if (t < at) return '';
+  const p = yer(c, e.x, e.y); let o = '';
+  for (let i = 0; i < 3; i++) { const q = ((t - at) * 1.1 + i * .33) % 1; o += `<path transform="translate(${p.x + i * 40 - 40},${p.y + q * 90}) scale(1.4)" d="M0,-22 C12,-4 14,6 0,14 C-14,6 -12,-4 0,-22 Z" fill="#CFE7F2" stroke="${INK}" stroke-width="4" opacity="${1 - q}"/>`; }
+  return o;
+}
+function parilti(e, t, c) {
+  const at = e.t * TS; if (t < at) return ''; let o = '';
+  for (let i = 0; i < 9; i++) {
+    const q = ((t - at) * .9 + i * .113) % 1, a = i * 2.4;
+    const p = yer(c, e.x + Math.cos(a) * (e.r || .12), e.y + Math.sin(a) * (e.r || .12) * 1.4);
+    const s = Math.sin(q * Math.PI) * 1.3;
+    o += `<path transform="translate(${p.x},${p.y}) scale(${s})" d="M0,-30 Q4,-4 30,0 Q4,4 0,30 Q-4,4 -30,0 Q-4,-4 0,-30 Z" fill="#FFF4C8" stroke="${GOLD}" stroke-width="3"/>`;
+  }
+  return o;
+}
+function hiz(e, t) { // hız çizgileri
+  const at = e.t * TS, bt = at + (e.sure || 2); if (t < at || t > bt) return ''; let o = '';
+  for (let i = 0; i < 22; i++) {
+    const a = i * 0.2856 + Math.floor(t * 12) * 0.7, r0 = 640 + ((i * 97 + Math.floor(t * 12) * 31) % 160);
+    o += `<line x1="${960 + Math.cos(a) * r0}" y1="${540 + Math.sin(a) * r0 * .62}" x2="${960 + Math.cos(a) * 1300}" y2="${540 + Math.sin(a) * 900}" stroke="${CREAM}" stroke-width="${6 + i % 3 * 4}" opacity=".75"/>`;
+  }
+  return o;
+}
+function isim(e, t) { // isim kartı (alt bant)
+  const at = e.t * TS, k = ease(seg(t, at, at + .5)); if (k <= 0) return '';
+  const tx = e.x ?? 90, x = -900 + (tx + 900) * k;
+  return `<g transform="translate(${x},${e.y || 760})">
+    <rect x="12" y="12" width="840" height="190" rx="10" fill="${INK}"/>
+    <rect width="840" height="190" rx="10" fill="${TEAL}" stroke="${INK}" stroke-width="6"/>
+    <rect x="0" y="0" width="22" height="190" fill="${GOLD}"/>
+    <text x="56" y="92" font-family="${SERIF}" font-weight="900" font-size="78" fill="${CREAM}">${esc(e.yazi)}</text>
+    <text x="58" y="152" font-family="${SERIF}" font-style="italic" font-weight="700" font-size="44" fill="${GOLD}">${esc(e.alt || '')}</text></g>`;
+}
+function ucur(e, t) { // görseli buruşturup kadraj dışına uçurma (bütün görsel)
+  const at = e.t * TS; return t < at ? null : ease(seg(t, at, at + .9));
+}
+
+function render(t) {
+  const c = kamera(t), s = 1920 / (c.w * IW);
+  let x0 = -(c.cx - c.w / 2) * IW * s + c.shx, y0 = -(c.cy - c.h / 2) * IH * s + c.shy;
+  let img = `<image href="../../medya/sutyen/gorsel/2x/s${Q.get('s')}.png" x="${x0}" y="${y0}" width="${IW * s}" height="${IH * s}" preserveAspectRatio="none"/>`;
+  let ust = '';
+  for (const e of (S.fx || [])) {
+    if (e.tip === 'etiket') ust += etiket(e, t, c);
+    else if (e.tip === 'damga') ust += damga(e, t);
+    else if (e.tip === 'pat') ust += patlama(e, t);
+    else if (e.tip === 'kutu') ust += kutu(e, t);
+    else if (e.tip === 'ter') ust += ter(e, t, c);
+    else if (e.tip === 'parilti') ust += parilti(e, t, c);
+    else if (e.tip === 'hiz') ust += hiz(e, t);
+    else if (e.tip === 'isim') ust += isim(e, t);
+    else if (e.tip === 'ucur') {
+      const q = ucur(e, t);
+      if (q !== null) img = `<rect width="1920" height="1080" fill="#3a2a1e"/><g transform="translate(${960 + q * 1500},${540 + q * 500}) rotate(${q * 140}) scale(${1 - q * .75}) translate(-960,-540)">${img}</g>`;
+    }
+  }
+  const fade = Math.min(clamp(t / .25), clamp((DUR - t) / .25));
+  document.getElementById('sv').innerHTML = `${img}
+    <defs><radialGradient id="v" cx="50%" cy="45%" r="75%"><stop offset="65%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#1a0f08" stop-opacity=".42"/></radialGradient></defs>
+    <rect width="1920" height="1080" fill="url(#v)"/>${ust}
+    <rect width="1920" height="1080" fill="#000" opacity="${1 - fade}"/>`;
+}
+window.render = render; window.DUR = DUR;
+window.SFX = (S.sfx || []).map(x => { const p = x.split('@'); p[1] = (parseFloat(p[1]) * TS).toFixed(2); return p.join('@'); });
+</script></body></html>
