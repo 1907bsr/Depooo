@@ -202,19 +202,20 @@ gerekiyorsa tıklama tıklama tarif et.
 Sütyen videosunda oturan sistem. Kullanıcı değiştirmedikçe aynen uygulanır.
 1. Araştırma → senaryo → okuma metni (bölüm 5 ve EK-4 kuralları).
 2. Sahne planı (konular/<konu>/sahne-plani.md) + Gemini tarifleri (gemini-tarifleri.md).
-3. Görseller: Gemini API (gemini-2.5-flash-image), çizgi roman/dergi illüstrasyonu stili (bilgi/gorsel-stil.md),
-   ana karakter referans görseliyle (aynı yüz). ÖNCE maliyet + adet söylenip onay alınır.
-   PETROL MAVİSİ KULLANILMAZ (2026-11-19, Büşra beğenmedi). Renkler soluk ve doğal olacak (yeni stil denemesi bekliyor).
-   Bilgi hatası olan görsel yeniden üretilir (ör. yanlış dönem nesnesi, yakılan sütyen).
-4. Arşiv: Sadece kamu malı/CC0 (Met Open Access, ABD patentleri vb.); kanıt lisanslar.md'ye.
-5. Hareket (scripts/animasyon/): motor.html + sahneler_<konu>.js
-   - Kamera kayması/yakınlaşma, elle yazılmış etiket + ok, damga, çizgi roman sesleri ("çat!", "boing!"),
-     ter/gözyaşı/damla/parıltı/hız çizgisi efektleri, isim kartı, yer-zaman kutusu.
-   - Yazı tipleri: Alegreya + Inter (OFL). Ekran yazıları kodla (dil değişince değişsin).
-   - MİMİK: ARA SIRA – sahne başına EN FAZLA 1 kısa mimik (bir göz kırpma YA DA kısa ağız açma/tepki).
-     Sürekli oynatma YOK. Varyantlar Gemini ile (göz kapalı / ağız açık), otomatik hizalama + maske
-     (yuz_toplu.py), her biri gözle kontrol edilir; bozuk olan kullanılmaz. Konuşan ağız Büşra'nın sesine bağlanır.
-   - Duygusal/komik yakın planlar istenirse (ör. ağlayan karakter): yeni görsel + kodla gözyaşı/sarsılma/efekt.
+3. Görseller (GÜNCEL KARAR 2026-11-19): "Gerçekçi arka plan + çizim karakter", soluk/doğal renkler, petrol mavisi YOK
+   (bilgi/gorsel-stil.md). Şimdilik Büşra Gemini UYGULAMASINDAN elle üretir (ücretsiz); Claude her sahne için
+   tarif yazar, sonucu kontrol eder (karakter, dönem, kıyafet, kapalılık, nesne). Karakter kartları referans olarak eklenir;
+   en garanti yol: aynı karakterin sahneleri AYNI Gemini sohbetinde. Tariflere duruma göre ABARTILI KOMİK mimik yazılır.
+   Ücretli üretim (Gemini API) sadece Büşra açıkça "ücretli" derse; önce adet + TL.
+4. Arşiv: Gerçek nesne/fotoğraf (Met Open Access CC0, ABD patentleri vb.) – Büşra çok beğendi (ör. açılışta gerçek
+   1885 korsesi). Mümkün olan her yerde gerçek arşiv parçası kullan; kanıt lisanslar.md'ye.
+5. Kurgu tarzı (ONAYLANDI 2026-11-19, "Böyle editler istiyorum"): scripts/animasyon/motor.html + sahneler_<konu>.js
+   - HIZLI KESMELER: aynı görselden geniş açı / yakın çekim, 1-2 sn'de bir açı değişir ('cekimler').
+   - İKİ HÂL GEÇİŞİ: aynı sohbette üretilen A/B görselleri (ör. çubuk dışarıda/içeride, sakin/göz devirme);
+     şakanın anında ani kesme + kısa sarsıntı + efekt sesi. Sahne başına 1-2 kez; sürekli oynatma YOK.
+   - Çizgi roman yazıları ("boing!", "ÇAT!", "ASLA!") KULLANILMAZ; sadece ses + hareket. Bilgi yazısı az ve kısa.
+   - Yazı tipleri: Alegreya + Inter (OFL). Ekran yazıları kodla.
+   - Gerçek yürüme/uçma gibi akıcı hareket ücretli video aracı ister; şimdilik yok.
 6. Ses: Büşra'nın kaydı (Claude temizler), fon müziği YOK, sadece Claude'un ürettiği efektler.
 7. Kurgu: klipler sese oturtulur, .srt altyazı, kapak (scripts/animasyon/kapak.html, 3 seçenek), başlık/açıklama.
 8. Önizleme: Video TAMAMEN bitince tek seferde gönderilir; parça parça gönderilmez (deneme gerekiyorsa önce sor).
@@ -334,3 +335,4 @@ Format: Kural – Kaynağı: video adı, tarih, hangi veri.)
 - 2026-11-19: STANDART ÜRETİM SİSTEMİ kaydedildi (Gemini görsel + kod animasyon + ara sıra mimik). Her harcamadan önce onay kuralı.
 - 2026-11-19: DÜZELTME: Ses kaydını Mert değil BÜŞRA yapıyor (anlatıcı kadın sesi). Kanalda Claude Büşra ile konuşuyor.
 - 2026-11-19: Büşra: petrol mavisi imza rengi iptal; mevcut renkler çizgi film gibi bulundu, soluk/doğal renk ve daha çok hareket isteniyor.
+- 2026-11-19: YENİ STİL ve KURGU onaylandı: gerçekçi arka plan + çizim karakter, hızlı kesme, A/B mimik, gerçek arşiv objesi, çizgi roman yazısı yok. Görseller şimdilik Büşra'nın elinden (ücretsiz).
