@@ -8,4 +8,5 @@ Wide 16:9 landscape image. The BACKGROUND must look almost photorealistic: a rea
 
 ## Durum
 - [x] Sahne 6 – hizmetçi (onaylı örnek; küçük düzeltmeler opsiyonel)
-- [ ] ADIM 1: Mary karakter kartı (bütün Mary sahneleri buna bakılarak yapılacak)
+- [x] ADIM 1a: Mary boy kartı (medya/sutyen/gorsel/yeni-stil/mary-kart-boy.png) – yüksek bel, dantel, katlı etek
+- [ ] ADIM 1b: Mary yakın yüz kartı
