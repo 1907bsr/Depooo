@@ -9,7 +9,7 @@ const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
 const ease=k=>k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;
 const back=k=>{const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(k-1,3)+c1*Math.pow(k-1,2)};
 const seg=(t,a,b)=>clamp((t-a)/(b-a));
-const INK='#2A1D16',TEAL='#1F5C63',TEALD='#123C41',GOLD='#D9A441',CORAL='#E06A50',CREAM='#F8EED8',PAPER='#EADBC0';
+const INK='#2A1D16',TEAL='#6B4A32',TEALD='#3B2A1E',GOLD='#D9A441',CORAL='#E06A50',CREAM='#F8EED8',PAPER='#EADBC0';
 const DEFS=`<defs>
  <filter id="paper"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="7"/><feColorMatrix values="0 0 0 0 .4  0 0 0 0 .3  0 0 0 0 .2  0 0 0 .15 0"/></filter>
  <radialGradient id="tealbg" cx="50%" cy="45%" r="80%"><stop offset="0" stop-color="#2C727A"/><stop offset=".7" stop-color="${TEAL}"/><stop offset="1" stop-color="#0F3237"/></radialGradient>

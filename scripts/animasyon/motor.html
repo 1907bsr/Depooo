@@ -15,7 +15,7 @@ const Q = new URLSearchParams(location.search);
 const S = SAHNELER[Q.get('s')];
 const DUR = parseFloat(Q.get('d') || S.dur);
 const IW = (S.boyut || [2688, 1536])[0], IH = (S.boyut || [2688, 1536])[1], AR = IW / IH;
-const INK = '#2A1D16', TEAL = '#1F5C63', GOLD = '#D9A441', CORAL = '#E06A50', CREAM = '#F8EED8';
+const INK = '#2A1D16', TEAL = '#6B4A32', GOLD = '#D9A441', CORAL = '#E06A50', CREAM = '#F8EED8';
 const SERIF = 'Alegreya,serif', SANS = 'Inter Display,Inter,sans-serif';
 const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
 const ease = k => k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;

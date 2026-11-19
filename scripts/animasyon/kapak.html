@@ -8,7 +8,7 @@ html,body{margin:0;background:#000}svg{display:block}
 <script>
 // Kapak seçenekleri: kapak.html?k=1|2|3   (yazılar Inter Display / Alegreya – OFL)
 const K = new URLSearchParams(location.search).get('k') || '1';
-const INK = '#1A120D', TEAL = '#123C41', TEAL2 = '#1F5C63', GOLD = '#F2B53A', CREAM = '#FFF6E2', CORAL = '#E8563C';
+const INK = '#1A120D', TEAL = '#3B2A1E', TEAL2 = '#5C4330', GOLD = '#F2B53A', CREAM = '#FFF6E2', CORAL = '#E8563C';
 const G = '../../medya/sutyen/gorsel/';
 const yazi = (x, y, s, t, renk, o = {}) => `<text x="${x}" y="${y}" font-family="Inter Display,Inter,sans-serif" font-weight="900" font-size="${s}" fill="${renk}"
   stroke="${INK}" stroke-width="${o.sw || 14}" paint-order="stroke" stroke-linejoin="round" text-anchor="${o.a || 'start'}" letter-spacing="${o.ls || -1}" ${o.rot ? `transform="rotate(${o.rot} ${x} ${y})"` : ''}>${t}</text>`;
