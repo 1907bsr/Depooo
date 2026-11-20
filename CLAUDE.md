@@ -213,6 +213,10 @@ Sütyen videosunda oturan sistem. Kullanıcı değiştirmedikçe aynen uygulanı
    - KAMERA (2026-11-20, Büşra: "fotoğraflar kayarken birden başka yere atlıyor"): Aynı görsel içinde SERT KESME YOK.
      Kamera sahne boyunca kesintisiz tek yumuşak yolda gezer (Hermite eğrisi, 'yol'); kayma ve yakınlaşma hız sınırlı.
      Kesme yalnızca sahne/görsel değişiminde ve A/B mimik geçişlerinde olur. Uzun dar fotoğraf/belgede tek yavaş tarama.
+   - SIRALAMA (2026-11-20, Büşra: "30. saniyede masa başındaki bordo elbiseli kadın orda olmamalıydı"): Görsel, ekranda o anda
+     anlatılan KİŞİ/DÖNEM/NESNEYLE eşleşir (şakanın kelimesine değil, kimden bahsedildiğine bak; "sen" = Mary). Görsel cümleden ÖNCE
+     değil, cümleyle birlikte gelir. Aynı görsel arka arkaya geliyorsa tek sahne yapılır (kamera atlamasın). Her önizlemeden önce
+     scripts/motor2/kurgu_listesi.py ile cümle↔görsel kontrol listesi üretilir, Claude tek tek okur ve Büşra'ya da gönderilir.
    - İKİ HÂL GEÇİŞİ: aynı sohbette üretilen A/B görselleri (ör. çubuk dışarıda/içeride, sakin/göz devirme);
      şakanın anında ani kesme + kısa sarsıntı + efekt sesi. Sahne başına 1-2 kez; sürekli oynatma YOK.
    - Çizgi roman yazıları ("boing!", "ÇAT!", "ASLA!") KULLANILMAZ; sadece ses + hareket. Bilgi yazısı az ve kısa.
@@ -343,3 +347,4 @@ Format: Kural – Kaynağı: video adı, tarih, hangi veri.)
 - 2026-11-19: DÜZELTME: Ses kaydını Mert değil BÜŞRA yapıyor (anlatıcı kadın sesi). Kanalda Claude Büşra ile konuşuyor.
 - 2026-11-19: Büşra: petrol mavisi imza rengi iptal; mevcut renkler çizgi film gibi bulundu, soluk/doğal renk ve daha çok hareket isteniyor.
 - 2026-11-19: YENİ STİL ve KURGU onaylandı: gerçekçi arka plan + çizim karakter, hızlı kesme, A/B mimik, gerçek arşiv objesi, çizgi roman yazısı yok. Görseller şimdilik Büşra'nın elinden (ücretsiz).
+- 2026-11-20: Kurgu motoru motor2 (canvas, kesintisiz kamera yolu, kelimeye bağlı zamanlama); cümle↔görsel kontrol listesi zorunlu; önizleme ~8 dk 47 sn.

@@ -7,14 +7,21 @@ tmp = M + 'parca/'; os.makedirs(tmp, exist_ok=True)
 shutil.copy(ROOT + 'scripts/fontlar/Caveat[wght].ttf', '/tmp/caveat.ttf')
 def run(*a): subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', *a], check=True)
 from PIL import Image, ImageDraw, ImageFont
-def katman(yol, metin, boy, renk, yf, tip='caveat'):
-    """960x540 saydam PNG: kalın (700) Caveat, koyu kontur. İnce hâlinde '5' rakamı 'S' gibi okunuyor."""
+def katman(yol, metin, boy, renk, yf, tip='caveat', kontur=(42, 29, 22, 255)):
+    """960x540 saydam PNG: kalın (700) Caveat/Alegreya İtalik; kontur=None ise konturlu değil. '5' rakamı Caveat'te S gibi okunur → rakamlı yazılarda Alegreya."""
     if tip == 'alegreya': f = ImageFont.truetype(ROOT + 'scripts/fontlar/Alegreya-Italic[wght].ttf', boy); f.set_variation_by_axes([800])
     else: f = ImageFont.truetype(ROOT + 'scripts/fontlar/Caveat[wght].ttf', boy); f.set_variation_by_axes([700])
     im = Image.new('RGBA', (960, 540), (0, 0, 0, 0)); d = ImageDraw.Draw(im); w = d.textlength(metin, font=f)
-    d.text(((960 - w) / 2, 540 * yf), metin, font=f, fill=renk, stroke_width=6, stroke_fill=(42, 29, 22, 255)); im.save(yol)
-def kaplama(vf_ana, t0, png):
-    return f"[0:v]{vf_ana}[b];[1:v]format=rgba,fade=t=in:st={t0:.2f}:d=0.5:alpha=1[o];[b][o]overlay=0:0:shortest=1[v]"
+    if kontur: d.text(((960 - w) / 2, 540 * yf), metin, font=f, fill=renk, stroke_width=6, stroke_fill=kontur)
+    else: d.text(((960 - w) / 2, 540 * yf), metin, font=f, fill=renk)
+    im.save(yol)
+def kaplama(vf_ana, ovs):
+    """ovs: [(t0, t1|None)] – her yazı kendi girdisinden gelir ([1:v], [2:v], ...); belirme 0,5 sn, kaybolma 0,35 sn."""
+    f = f"[0:v]{vf_ana}[b0]"
+    for i, (t0, t1) in enumerate(ovs, 1):
+        fx = f"format=rgba,fade=t=in:st={t0:.2f}:d=0.5:alpha=1" + (f",fade=t=out:st={max(t0 + .6, t1 - .35):.2f}:d=0.35:alpha=1" if t1 else "")
+        f += f";[{i}:v]{fx}[o{i}];[b{i - 1}][o{i}]overlay=0:0:shortest=1[b{i}]"
+    return f + f";[b{len(ovs)}]null[v]"
 liste = []
 for e in plan:
     ad = e['id']; D = e['dur']; hedef = tmp + ad + '.mp4'
@@ -22,12 +29,21 @@ for e in plan:
         kaynak = M + f'{ad}_960_15/{ad}.mp4'
         run('-i', kaynak, '-vf', f'fps=15,scale=960:540,format=yuv420p,tpad=stop_mode=clone:stop_duration=1,trim=0:{D}', '-an', '-c:v', 'libx264', '-crf', '20', '-preset', 'veryfast', hedef)
     else:
-        y = e.get('yazi'); png = None
-        if y:
-            t0 = max(.4, D * y['son']) if y.get('oran') else max(.4, D - y['son'])
-            png = tmp + ad + '-yazi.png'; katman(png, y['metin'], y['boy'], (224, 106, 80, 255), y['y'], y.get('tip', 'caveat'))
+        ovs = []   # (png, t0, t1)
+        lst = list(e.get('yazilar', [])) + ([e['yazi']] if e.get('yazi') else [])
+        for j, y in enumerate(lst):
+            if 't0' in y: t0, t1 = y['t0'], y.get('t1')
+            else:
+                t0 = max(.4, D * y['son']) if y.get('oran') else max(.4, D - y['son']); t1 = None
+            png = tmp + f'{ad}-yazi{j}.png'
+            kn = y.get('kontur', (42, 29, 22, 255)); kn = tuple(kn) if kn else None     # anahtar yoksa koyu kontur; None ise konturlu değil
+            katman(png, y['metin'], y['boy'], tuple(y.get('rgb', (224, 106, 80, 255))), y['y'], y.get('tip', 'caveat'), kn)
+            ovs.append((png, t0, t1))
         def cikis(girdi, vf_ana):
-            if png: run(*girdi, '-loop', '1', '-framerate', '15', '-i', png, '-filter_complex', kaplama(vf_ana, t0, png), '-map', '[v]', '-t', str(D), '-an', '-c:v', 'libx264', '-crf', '20', '-preset', 'veryfast', hedef)
+            if ovs:
+                gi = []
+                for pn, _, _ in ovs: gi += ['-loop', '1', '-framerate', '15', '-i', pn]
+                run(*girdi, *gi, '-filter_complex', kaplama(vf_ana, [(a, b) for _, a, b in ovs]), '-map', '[v]', '-t', str(D), '-an', '-c:v', 'libx264', '-crf', '20', '-preset', 'veryfast', hedef)
             else: run(*girdi, '-vf', vf_ana, '-t', str(D), '-an', '-c:v', 'libx264', '-crf', '20', '-preset', 'veryfast', hedef)
         if 'dondur' in e:   # tek kareyi dondur
             kare = tmp + ad + '.png'; run('-ss', str(e['dondur']), '-i', ROOT + e['yol'], '-frames:v', '1', kare)

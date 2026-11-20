@@ -2,57 +2,57 @@
  {
   "tur": "motor2",
   "id": "01-s01",
-  "dur": 4.16
+  "dur": 3.12
  },
  {
   "tur": "motor2",
   "id": "02-s02",
-  "dur": 11.37
+  "dur": 9.98
  },
  {
   "tur": "motor2",
   "id": "03-s03",
-  "dur": 11.37
+  "dur": 9.98
  },
  {
   "tur": "motor2",
-  "id": "04-s19b",
-  "dur": 6.71
+  "id": "04-s03b",
+  "dur": 5.58
  },
  {
   "tur": "motor2",
   "id": "05-s04",
-  "dur": 8.35
+  "dur": 7.12
  },
  {
   "tur": "motor2",
-  "id": "06-s05",
-  "dur": 6.77
+  "id": "06-s02c",
+  "dur": 3.6
  },
  {
   "tur": "motor2",
-  "id": "07-s06",
-  "dur": 9.17
+  "id": "07-s05",
+  "dur": 2.19
  },
  {
   "tur": "motor2",
-  "id": "08-s07",
-  "dur": 4.89
+  "id": "08-s06",
+  "dur": 11.52
  },
  {
   "tur": "motor2",
   "id": "09-s08",
-  "dur": 9.5
+  "dur": 9.05
  },
  {
   "tur": "motor2",
   "id": "10-s09",
-  "dur": 7.58
+  "dur": 6.35
  },
  {
   "tur": "klip",
   "id": "11-s10",
-  "dur": 3.71,
+  "dur": 3.4,
   "yol": "medya/sutyen/motor2/eski/s10-sessiz.mp4",
   "bas": 0,
   "bit": 3.4,
@@ -61,7 +61,7 @@
  {
   "tur": "klip",
   "id": "12-s11",
-  "dur": 8.27,
+  "dur": 6.64,
   "yol": "medya/sutyen/motor2/eski/s11-sessiz.mp4",
   "bas": 0,
   "bit": 5.0,
@@ -70,46 +70,41 @@
  {
   "tur": "motor2",
   "id": "13-s12",
-  "dur": 12.58
+  "dur": 10.74
  },
  {
   "tur": "motor2",
   "id": "14-s13",
-  "dur": 10.96
+  "dur": 9.59
  },
  {
   "tur": "motor2",
   "id": "15-s14",
-  "dur": 20.05
+  "dur": 22.95
  },
  {
   "tur": "motor2",
   "id": "16-s15",
-  "dur": 7.86
+  "dur": 14.87
  },
  {
   "tur": "motor2",
-  "id": "17-s16",
-  "dur": 13.44
+  "id": "17-s17",
+  "dur": 9.72
  },
  {
   "tur": "motor2",
-  "id": "18-s17",
-  "dur": 11.09
+  "id": "18-s18",
+  "dur": 7.51
  },
  {
   "tur": "motor2",
-  "id": "19-s18",
-  "dur": 8.76
- },
- {
-  "tur": "motor2",
-  "id": "20-s19",
-  "dur": 9.95
+  "id": "19-s19",
+  "dur": 9.05
  },
  {
   "tur": "klip",
-  "id": "21-s20",
+  "id": "20-s20",
   "dur": 3.2,
   "yol": "medya/sutyen/motor2/eski/s20-sessiz.mp4",
   "bas": 0,
@@ -118,33 +113,33 @@
  },
  {
   "tur": "motor2",
-  "id": "22-s21",
-  "dur": 5.75
+  "id": "21-s21",
+  "dur": 4.66
  },
  {
   "tur": "motor2",
-  "id": "23-s22",
-  "dur": 6.07
+  "id": "22-s22",
+  "dur": 5.36
  },
  {
   "tur": "motor2",
-  "id": "24-s23",
-  "dur": 12.22
+  "id": "23-s23",
+  "dur": 10.8
  },
  {
   "tur": "motor2",
-  "id": "25-s24",
-  "dur": 10.19
+  "id": "24-s24",
+  "dur": 9.27
  },
  {
   "tur": "motor2",
-  "id": "26-s25",
-  "dur": 12.99
+  "id": "25-s25",
+  "dur": 11.12
  },
  {
   "tur": "klip",
-  "id": "27-s26",
-  "dur": 3.87,
+  "id": "26-s26",
+  "dur": 3.28,
   "yol": "medya/sutyen/motor2/eski/s26-sessiz.mp4",
   "bas": 0,
   "bit": 2.65,
@@ -160,181 +155,208 @@
  },
  {
   "tur": "motor2",
-  "id": "28-s27",
-  "dur": 11.77
+  "id": "27-s27",
+  "dur": 10.35
  },
  {
   "tur": "motor2",
-  "id": "29-s18b",
-  "dur": 12.63
+  "id": "28-s18b",
+  "dur": 11.64
  },
  {
   "tur": "motor2",
-  "id": "30-s28",
-  "dur": 9.58
+  "id": "29-s28",
+  "dur": 4.98
  },
  {
   "tur": "motor2",
-  "id": "31-s29",
-  "dur": 7.7
+  "id": "30-s29",
+  "dur": 10.2
  },
  {
   "tur": "motor2",
-  "id": "32-s30",
-  "dur": 9.54
+  "id": "31-s30",
+  "dur": 8.66
  },
  {
   "tur": "motor2",
-  "id": "33-s29b",
-  "dur": 6.8
+  "id": "32-s29b",
+  "dur": 5.64
  },
  {
   "tur": "motor2",
-  "id": "34-s28b",
-  "dur": 11.62
+  "id": "33-s30b",
+  "dur": 4.82
  },
  {
   "tur": "motor2",
-  "id": "35-s29c",
-  "dur": 3.83
+  "id": "34-s29d",
+  "dur": 9.05
  },
  {
   "tur": "motor2",
-  "id": "36-s02b",
-  "dur": 7.06
+  "id": "35-s02b",
+  "dur": 5.88
  },
  {
   "tur": "motor2",
-  "id": "37-s31",
-  "dur": 7.34
+  "id": "36-s31",
+  "dur": 6.13
  },
  {
   "tur": "motor2",
-  "id": "38-s32",
-  "dur": 7.57
+  "id": "37-s32",
+  "dur": 7.22
  },
  {
   "tur": "motor2",
-  "id": "39-s33",
-  "dur": 9.32
+  "id": "38-s33",
+  "dur": 8.11
  },
  {
   "tur": "motor2",
-  "id": "40-s34",
-  "dur": 13.0
+  "id": "39-s34",
+  "dur": 11.52
  },
  {
   "tur": "motor2",
-  "id": "41-s35",
+  "id": "40-s35",
+  "dur": 21.45
+ },
+ {
+  "tur": "motor2",
+  "id": "41-s37d",
+  "dur": 4.94
+ },
+ {
+  "tur": "motor2",
+  "id": "42-s36",
+  "dur": 12.03
+ },
+ {
+  "tur": "motor2",
+  "id": "43-s37c",
+  "dur": 5.36
+ },
+ {
+  "tur": "motor2",
+  "id": "44-s37b",
+  "dur": 5.19
+ },
+ {
+  "tur": "motor2",
+  "id": "45-s38",
   "dur": 13.28
  },
  {
   "tur": "motor2",
-  "id": "42-s37a",
-  "dur": 16.59
+  "id": "46-n39",
+  "dur": 4.59
  },
  {
   "tur": "motor2",
-  "id": "43-s36",
-  "dur": 13.54
+  "id": "47-s41a",
+  "dur": 10.27
  },
  {
   "tur": "motor2",
-  "id": "44-s37c",
-  "dur": 5.62
+  "id": "48-s09b",
+  "dur": 5.11
  },
  {
   "tur": "motor2",
-  "id": "45-s37b",
-  "dur": 6.3
+  "id": "49-s41b",
+  "dur": 18.59
  },
  {
   "tur": "motor2",
-  "id": "46-s38",
-  "dur": 14.39
+  "id": "50-s42a",
+  "dur": 20.84
  },
  {
   "tur": "motor2",
-  "id": "47-n39",
-  "dur": 5.7
- },
- {
-  "tur": "motor2",
-  "id": "48-s41a",
-  "dur": 11.71
- },
- {
-  "tur": "motor2",
-  "id": "49-s09b",
-  "dur": 5.79
- },
- {
-  "tur": "motor2",
-  "id": "50-s41b",
-  "dur": 20.86
- },
- {
-  "tur": "motor2",
-  "id": "51-s42a",
-  "dur": 12.64
- },
- {
-  "tur": "motor2",
-  "id": "52-s42b",
-  "dur": 10.79
- },
- {
-  "tur": "motor2",
-  "id": "53-s42c",
-  "dur": 23.28
+  "id": "51-s42c",
+  "dur": 21.32
  },
  {
   "tur": "klip",
-  "id": "54-s43",
-  "dur": 24.64,
-  "yol": "medya/sutyen/motor2/eski/s43-sessiz.mp4",
+  "id": "52-s43",
+  "dur": 21.33,
+  "yol": "medya/sutyen/motor2/kart43/s43.mp4",
   "bas": 0,
-  "bit": 4.5,
-  "max": 4.2
+  "bit": 21.33,
+  "max": 1.0,
+  "yazilar": [
+   {
+    "metin": "Peki sütyeni kim buldu?",
+    "t0": 0.3,
+    "t1": 4.81,
+    "boy": 104,
+    "y": 0.1,
+    "rgb": [
+     42,
+     29,
+     22,
+     255
+    ],
+    "kontur": null
+   },
+   {
+    "metin": "Tek bir kişi değil.",
+    "t0": 2.82,
+    "t1": 4.81,
+    "boy": 96,
+    "y": 0.28,
+    "rgb": [
+     176,
+     70,
+     48,
+     255
+    ],
+    "kontur": null
+   }
+  ]
  },
  {
   "tur": "klip",
-  "id": "55-s43b",
-  "dur": 4.12,
-  "yol": "medya/sutyen/motor2/eski/s43-sessiz.mp4",
-  "dondur": 6.4,
+  "id": "53-s43b",
+  "dur": 3.95,
+  "yol": "medya/sutyen/motor2/kart43/s43b.mp4",
+  "bas": 0,
+  "bit": 3.95,
+  "max": 1.0,
   "yazi": {
    "metin": "bir İSYAN.",
    "renk": "0xE06A50",
    "boy": 120,
    "y": 0.1,
-   "son": 0.4,
+   "son": 0.673,
    "oran": true
   }
  },
  {
   "tur": "motor2",
-  "id": "56-s33b",
-  "dur": 5.22
+  "id": "54-s19c",
+  "dur": 4.11
  },
  {
   "tur": "motor2",
-  "id": "57-s41c",
-  "dur": 7.82
+  "id": "55-s41c",
+  "dur": 7.44
  },
  {
   "tur": "motor2",
-  "id": "58-s44a",
-  "dur": 6.61
+  "id": "56-s44a",
+  "dur": 13.33
  },
  {
   "tur": "motor2",
-  "id": "59-s44b",
-  "dur": 24.65
+  "id": "57-s44c",
+  "dur": 13.85
  },
  {
   "tur": "motor2",
-  "id": "60-s31b",
-  "dur": 6.14
+  "id": "58-s33b",
+  "dur": 5.48
  }
 ]
