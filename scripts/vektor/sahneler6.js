@@ -73,7 +73,7 @@ sahneS('s41a', (ctx, t) => {
 // ---------------- s09b: Otto Titzling hiç yaşamadı
 sahneS('s09b', (ctx, t) => {
   const id = 's09b', b = SAH[id].bas, d = SAH[id].dur, hic = W(id, 'hiç');
-  ctx.save(); const z = 1 + .04 * seg(t, b, b + d); ctx.translate(960, 540); ctx.scale(z, z); ctx.translate(-960, -540);
+  ctx.save(); const z = 1 + ZOOMK * .04 * seg(t, b, b + d); ctx.translate(960, 540); ctx.scale(z, z); ctx.translate(-960, -540);
   ottoFrame(ctx, t, b, hic, d);
   const sp = [['lady1', 230, 1], ['wig1', 620, -1], ['lady3', 1310, 1], ['wig2', 1690, -1]];
   sp.forEach(([lk, x, dd], i) => { const S = actor(lk, [[b, P({ f: { mouth: MOUTH.smile, look: [0, -.3], browL: [-8, 0, .3], browR: [-8, 0, .3], blush: .6 } })], [hic - .1, P({ f: { mouth: MOUTH.smile, look: [0, -.3] } })], [hic + .5, P({ headRoll: dd * 8, f: { mouth: MOUTH.flat, look: [dd * .8, -.2], browL: [-3, .3, .1], browR: [-3, -.3, .1], blush: .2 } }), bk]], t, { x, s: .75, bust: true, off: i * 1.1 }); S.y = 1395; drawMary(ctx, S); });

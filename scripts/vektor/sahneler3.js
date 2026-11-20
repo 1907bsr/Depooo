@@ -46,7 +46,7 @@ function hangerBra(ctx, x, y, s) { ctx.save(); ctx.translate(x, y); ctx.scale(s,
 // ---------------- s21: …2008'e kadar. Lengberg Şatosu
 sahneS('s21', (ctx, t) => {
   const id = 's21', b = SAH[id].bas, d = SAH[id].dur;
-  ctx.save(); const z = 1 + .04 * seg(t, b, b + d); ctx.translate(960, 540); ctx.scale(z, z); ctx.translate(-960, -540);
+  ctx.save(); const z = 1 + ZOOMK * .04 * seg(t, b, b + d); ctx.translate(960, 540); ctx.scale(z, z); ctx.translate(-960, -540);
   alpineBG(ctx, t); castle(ctx, 1320, 700, 1.05, t);
   for (let i = 0; i < 4; i++) { const bx = ((t * 70 + i * 520) % 2500) - 300, by = 180 + i * 70 + Math.sin(t * 2 + i) * 14, fl = Math.sin(t * 11 + i * 2) * 8; line(ctx, [[bx - 20, by + fl], [bx, by - 6], [bx + 20, by + fl]], 4, '#3b2a22'); }
   T(ctx, t, '…2008', 90, 260, 220, INK, b, b + .8, { fam: 'Alegreya', it: true, wt: 800 });

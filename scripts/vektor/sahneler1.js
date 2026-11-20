@@ -17,7 +17,7 @@ sahneS('s08', (ctx, t) => {
     // el yazısı: soru işareti
     T(ctx, t, '?', 1180, 300, 190, RED, W(id, 'sütyeni') + .3, W(id, 'sütyeni') + .6, { fam: 'Alegreya', it: true, wt: 800 });
   } else {
-    const t0 = tc, z = 1 + .06 * seg(t, t0, b + SAH[id].dur);
+    const t0 = tc, z = 1 + ZOOMK * .06 * seg(t, t0, b + SAH[id].dur);
     ctx.save(); ctx.translate(960, 540); ctx.scale(z, z); ctx.translate(-960, -540);
     skyGrad(ctx, '#cdbfcf', '#e8d3c4', '#f3e6d6', 760);
     ridge(ctx, 520, 170, .7, '#a89fb0', '#f4efe8'); ridge(ctx, 610, 120, 2.1, '#8c8a98', '#eee8e2'); ridge(ctx, 700, 80, 3.3, '#6f7a68', null);
@@ -43,7 +43,7 @@ sahneS('s08', (ctx, t) => {
 sahneS('s09', (ctx, t) => {
   const id = 's09', b = SAH[id].bas, tl = t - b;
   const hic = W(id, 'hiç');
-  ctx.save(); const z = 1 + .04 * seg(t, b, b + SAH[id].dur); ctx.translate(960, 540); ctx.scale(z, z); ctx.translate(-960, -540);
+  ctx.save(); const z = 1 + ZOOMK * .04 * seg(t, b, b + SAH[id].dur); ctx.translate(960, 540); ctx.scale(z, z); ctx.translate(-960, -540);
   curtainBG(ctx, t);
   const fade = 1 - seg(t, hic - .05, hic + .8);
   const cx = 960, cy = 440;
@@ -116,7 +116,7 @@ sahneS('s11', (ctx, t) => {
 // ---------------- s12: Antik Yunan – apodesmos
 sahneS('s12', (ctx, t) => {
   const id = 's12', b = SAH[id].bas;
-  ctx.save(); ctx.translate(960, 540); const z = 1 + .05 * seg(t, b, b + SAH[id].dur); ctx.scale(z, z); ctx.translate(-960, -540);
+  ctx.save(); ctx.translate(960, 540); const z = 1 + ZOOMK * .05 * seg(t, b, b + SAH[id].dur); ctx.scale(z, z); ctx.translate(-960, -540);
   greekSet(ctx, t);
   const tA = W(id, 'kumaştan'), tAp = W(id, 'apodesmos'), tCough = W(id, 'öksürük'), tG = W(id, 'günde'), tEnd = W(id, 'karnına') + .5;
   const hold = P({ armL: [-190, -520], armR: [190, -520], f: { mouth: MOUTH.talk, look: [.7, 0], turn: .4, browL: [-5, 0, .2], browR: [-5, 0, .2], blush: .5 } });
@@ -145,7 +145,7 @@ sahneS('s12', (ctx, t) => {
 // ---------------- s13: Romalılar – strophium, etiket değişti
 sahneS('s13', (ctx, t) => {
   const id = 's13', b = SAH[id].bas;
-  ctx.save(); ctx.translate(960, 540); const z = 1 + .05 * seg(t, b, b + SAH[id].dur); ctx.scale(z, z); ctx.translate(-960, -540);
+  ctx.save(); ctx.translate(960, 540); const z = 1 + ZOOMK * .05 * seg(t, b, b + SAH[id].dur); ctx.scale(z, z); ctx.translate(-960, -540);
   romanSet(ctx, t);
   const tR = W(id, 'romalılar'), tS = W(id, 'strophium'), tM = W(id, 'mal'), tP = W(id, 'pazarlamanın');
   const show = P({ armL: [-180, -600], armR: [180, -600], f: { mouth: MOUTH.talk, look: [0, 0], browL: [-5, 0, .2], browR: [-5, 0, .2], blush: .5 } });

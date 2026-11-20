@@ -23,7 +23,7 @@ const Q = new URLSearchParams(location.search);
 const cv = document.getElementById('c'); const ctx = cv.getContext('2d');
 window.init = async (opt) => {
   const W_ = opt.outW || 960, H = Math.round(W_ * 9 / 16); cv.width = W_; cv.height = H; window.SC = W_ / 1920;
-  window.IMG = {}; await Promise.all([['patent', '../../medya/sutyen/gorsel/arsiv/s35-patent-cizim-1.png'], ['met3', '../../medya/sutyen/gorsel/arsiv/met/met-173657.jpg'], ['met1', '../../medya/sutyen/gorsel/arsiv/met/met-157937.jpg'], ['met2', '../../medya/sutyen/gorsel/arsiv/met/met-158100.jpg'], ['eiffel', '../../medya/sutyen/gorsel/arsiv/met/met-271707.jpg']].map(([k, u]) => new Promise(r => { const im = new Image(); im.onload = () => { IMG[k] = im; r(); }; im.onerror = () => r(); im.src = u; })));
+  window.IMG = {}; await Promise.all([['patent', '../../medya/sutyen/gorsel/arsiv/s35-patent-cizim-1.png'], ['met3', '../../medya/sutyen/gorsel/arsiv/met/met-173657.jpg'], ['met1', '../../medya/sutyen/gorsel/arsiv/met/met-157937.jpg'], ['met2', '../../medya/sutyen/gorsel/arsiv/met/met-158100.jpg'], ['eiffel', '../../medya/sutyen/gorsel/arsiv/met/met-271707.jpg'], ['mozaik', '../../medya/sutyen/gorsel/gemini/s14.png'], ['sporA', '../../medya/sutyen/gorsel/yeni-stil/s15A.png'], ['sporB', '../../medya/sutyen/gorsel/yeni-stil/s15B.png']].map(([k, u]) => new Promise(r => { const im = new Image(); im.onload = () => { IMG[k] = im; r(); }; im.onerror = () => r(); im.src = u; })));
   await document.fonts.load("700 80px Caveat"); await document.fonts.load("italic 800 80px Alegreya"); await document.fonts.ready;
   return { W: W_, H };
 };

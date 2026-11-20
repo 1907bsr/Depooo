@@ -275,7 +275,7 @@ function overlays(ctx, t, S, s) {
 }
 
 function drawStreetShot(ctx, t) {
-  const ta = Math.min(t, 3.119), pan = ta * 25, z = 1 + ta * .035;
+  const ta = Math.min(t, 3.119), pan = ta * 25 * ZOOMK, z = 1 + ta * .035 * ZOOMK;
   ctx.save(); ctx.translate(960, 540); ctx.scale(z, z); ctx.translate(-960, -540); drawStreet(ctx, ta, { pan }); ctx.restore();
   const INKC = '#f7ecd2', SH = 'rgba(40,24,18,.6)';
   hand(ctx, 'Yıl', 170, 300, 130, INKC, seg(ta, 0.0, .45), { shadow: SH });

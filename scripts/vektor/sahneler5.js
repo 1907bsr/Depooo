@@ -99,7 +99,7 @@ sahneS('s33', (ctx, t) => {
 // ---------------- s34: balo – arkadaşlar etrafını sarıyor – jeton düştü – iş fikri
 sahneS('s34', (ctx, t) => {
   const id = 's34', b = SAH[id].bas, d = SAH[id].dur;
-  ctx.save(); const z = 1 + .03 * seg(t, b, b + d); ctx.translate(960, 560); ctx.scale(z, z); ctx.translate(-960, -560);
+  ctx.save(); const z = 1 + ZOOMK * .03 * seg(t, b, b + d); ctx.translate(960, 560); ctx.scale(z, z); ctx.translate(-960, -560);
   ballroom(ctx, t);
   const tJ = W(id, 'jeton'), tI = W(id, 'iş');
   const curious = (k, dir) => P({ armL: [-96, -410], armR: [96, -410], headRoll: dir * 4, f: { look: [dir, .3], turn: dir * .6, mouth: MOUTH.o, browL: [-10, -.2, .3], browR: [-10, -.2, .3], blush: .5 } });

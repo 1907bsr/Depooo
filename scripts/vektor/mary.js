@@ -176,7 +176,11 @@ function drawCorset(ctx, wst, bu, alpha, S) {
 }
 function drawArm(ctx, side, A) {
   const sx = side * (LK.male ? 108 : 92), sy = -566, l1 = 124, l2 = 118;
-  const r = ik(sx, sy, A.t[0], A.t[1], l1, l2, A.flip ?? (side > 0));
+  const fl = A.flip ?? (side > 0), r1 = ik(sx, sy, A.t[0], A.t[1], l1, l2, fl);
+  // El omuz hizasının üstüne çıkınca dirsek yukarı bakıp kol ters görünüyordu (Büşra, 2026-11-20): dirsek aşağı/dışarı bakan çözüme yumuşakça geçer.
+  const rise = clamp((sy - A.t[1] + 10) / 60, 0, 1), wg = rise * rise * (3 - 2 * rise);
+  let r = r1;
+  if (wg > 0) { const r2 = ik(sx, sy, A.t[0], A.t[1], l1, l2, !fl), ex = lerp(r1.e[0], r2.e[0], wg), ey = lerp(r1.e[1], r2.e[1], wg), wa = Math.atan2(A.t[1] - ey, A.t[0] - ex); r = { e: [ex, ey], w: [ex + Math.cos(wa) * l2, ey + Math.sin(wa) * l2] }; }
   const slv = LK.male ? LK.gown : LK.sleeve, slvD = LK.male ? LK.gownD : LK.sleeveD, hc = LK.male ? LK.skin : LK.hand;
   limb(ctx, [[sx, sy], r.e, r.w], [LK.male ? 48 : 42, LK.male ? 38 : 32, LK.male ? 30 : 25], slv, C.ink, 3.2, slvD);
   if (LK.male) { ell(ctx, r.w[0], r.w[1], 17, 17, '#f4efe3', C.ink, 2.6); }

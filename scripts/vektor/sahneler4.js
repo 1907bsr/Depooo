@@ -49,7 +49,7 @@ function corsetGuy(ctx, x, y, s, t, o = {}) {   // yüzlü, kollu korse (eski se
 // ---------------- s28: Yıl 1889 – Paris – Eyfel
 sahneS('s28', (ctx, t) => {
   const id = 's28', b = SAH[id].bas, d = SAH[id].dur;
-  ctx.save(); const z = 1 + .04 * seg(t, b, b + d); ctx.translate(960, 560); ctx.scale(z, z); ctx.translate(-960, -560);
+  ctx.save(); const z = 1 + ZOOMK * .04 * seg(t, b, b + d); ctx.translate(960, 560); ctx.scale(z, z); ctx.translate(-960, -560);
   skyGrad(ctx, '#d9b9a4', '#f0d2b0', '#f8e7cc', 900);
   cloudBlob(ctx, 400, 200, 1.3, '#fff', .5); cloudBlob(ctx, 1500, 150, 1.1, '#fff', .45);
   // Paris çatıları
@@ -69,7 +69,7 @@ sahneS('s28', (ctx, t) => {
 // ---------------- s29: küçük bir terzi dükkânı – Cadolle – makas: ortadan ikiye
 sahneS('s29', (ctx, t) => {
   const id = 's29', b = SAH[id].bas, d = SAH[id].dur;
-  ctx.save(); const z = 1 + .04 * seg(t, b, b + d); ctx.translate(960, 560); ctx.scale(z, z); ctx.translate(-960, -560);
+  ctx.save(); const z = 1 + ZOOMK * .04 * seg(t, b, b + d); ctx.translate(960, 560); ctx.scale(z, z); ctx.translate(-960, -560);
   shopSet(ctx, t);
   const tK = W(id, 'korseyi'), tY = W(id, 'yatırıyor'), tM = W(id, 'makası'), tO = W(id, 'ortadan'), tI = W(id, 'ikiye');
   const idle = P({ armL: [-96, -430], armR: [96, -430], f: { look: [1, 0], turn: .3, mouth: MOUTH.smile, browL: [-3, 0, .1], browR: [-3, 0, .1] } });
@@ -97,7 +97,7 @@ sahneS('s29', (ctx, t) => {
 // ---------------- s30: alt kısım beli sarıyor, üst kısım göğsü taşıyor – nefes isteğe bağlı olmaktan çıkıyor
 sahneS('s30', (ctx, t) => {
   const id = 's30', b = SAH[id].bas, d = SAH[id].dur;
-  ctx.save(); const z = 1 + .04 * seg(t, b, b + d); ctx.translate(960, 560); ctx.scale(z, z); ctx.translate(-960, -560);
+  ctx.save(); const z = 1 + ZOOMK * .04 * seg(t, b, b + d); ctx.translate(960, 560); ctx.scale(z, z); ctx.translate(-960, -560);
   shopSet(ctx, t, { window: false });
   const proud = P({ armL: [-96, -410], armR: [96, -410], headRoll: 3, f: { look: [1, 0], turn: .4, mouth: MOUTH.grin, browL: [-6, 0, .2], browR: [-6, 0, .2], blush: .6 } });
   const A = actor('cadolle', [[b, proud]], t, { x: 420, s: .9, k: 1.15 }); drawMary(ctx, A);
@@ -121,7 +121,7 @@ sahneS('s30', (ctx, t) => {
 // ---------------- s29b: ateşkes – fişini çekmiyor
 sahneS('s29b', (ctx, t) => {
   const id = 's29b', b = SAH[id].bas, d = SAH[id].dur;
-  ctx.save(); const z = 1 + .04 * seg(t, b, b + d); ctx.translate(960, 560); ctx.scale(z, z); ctx.translate(-960, -560);
+  ctx.save(); const z = 1 + ZOOMK * .04 * seg(t, b, b + d); ctx.translate(960, 560); ctx.scale(z, z); ctx.translate(-960, -560);
   shopSet(ctx, t, { window: false });
   const tF = W(id, 'fişini'), tA = W(id, 'ateşkes'), tS = W(id, 'imzalıyor');
   const stand = P({ armL: [-96, -410], armR: [96, -410], f: { look: [1, 0], turn: .5, mouth: MOUTH.flat, browL: [-3, 0, .1], browR: [-3, 0, .1] } });
@@ -146,7 +146,7 @@ sahneS('s29b', (ctx, t) => {
 // ---------------- s30b: üst parça ayrı satılıyor
 sahneS('s30b', (ctx, t) => {
   const id = 's30b', b = SAH[id].bas, d = SAH[id].dur;
-  ctx.save(); const z = 1 + .04 * seg(t, b, b + d); ctx.translate(960, 560); ctx.scale(z, z); ctx.translate(-960, -560);
+  ctx.save(); const z = 1 + ZOOMK * .04 * seg(t, b, b + d); ctx.translate(960, 560); ctx.scale(z, z); ctx.translate(-960, -560);
   shopSet(ctx, t, { window: false });
   tezgah(ctx);
   // takvim yaprakları dönüyor: birkaç yıl
@@ -165,7 +165,7 @@ sahneS('s30b', (ctx, t) => {
 // ---------------- s29d: marka bugün hâlâ Paris'te ve ailenin elinde – Cadolle mu buldu? Olabilir.
 sahneS('s29d', (ctx, t) => {
   const id = 's29d', b = SAH[id].bas, d = SAH[id].dur, tP = W(id, 'peki');
-  ctx.save(); const z = 1 + .04 * seg(t, b, b + d); ctx.translate(960, 560); ctx.scale(z, z); ctx.translate(-960, -560);
+  ctx.save(); const z = 1 + ZOOMK * .04 * seg(t, b, b + d); ctx.translate(960, 560); ctx.scale(z, z); ctx.translate(-960, -560);
   if (t < tP - .1) {
     skyGrad(ctx, '#d9b9a4', '#f0d2b0', '#f8e7cc', 900);
     for (let i = 0; i < 12; i++) { const bx = i * 170 - 60, bh = 200 + hash(i * 3.1) * 140; poly(ctx, [[bx, 900], [bx + 150, 900], [bx + 150, 900 - bh], [bx, 900 - bh]], i % 2 ? '#e4d6b8' : '#d9caa8', '#bfae88', { sw: 3, sx: -6, sy: 0 }); poly(ctx, [[bx - 8, 900 - bh], [bx + 158, 900 - bh], [bx + 128, 900 - bh - 50], [bx + 22, 900 - bh - 50]], '#6f6a78', '#55505e', { sw: 3, sx: -6, sy: -3 }); }
@@ -191,7 +191,7 @@ sahneS('s29d', (ctx, t) => {
 // ---------------- s02b: patentli modern sütyen deyince akla başka bir isim… Senin adın.
 sahneS('s02b', (ctx, t) => {
   const id = 's02b', b = SAH[id].bas, d = SAH[id].dur, tN = W(id, 'senin');
-  ctx.save(); ctx.translate(960, 560); const zz = 1 + .05 * seg(t, b, b + d); ctx.scale(zz, zz); ctx.translate(-960, -560);
+  ctx.save(); ctx.translate(960, 560); const zz = 1 + ZOOMK * .05 * seg(t, b, b + d); ctx.scale(zz, zz); ctx.translate(-960, -560);
   plainBG(ctx, '#efe3c9', '#d9c7a0');
   pinnedPaper(ctx, 960, 105, 1500, 170, -.01, '#f8efd9');
   T(ctx, t, '"patentli modern sütyen"', 960, 135, 96, INK, W(id, 'patentli') - .1, W(id, 'sütyen') + .6, { align: 'center', rot: -.01 });

@@ -101,3 +101,8 @@ function kanitKart(ctx, t, im, t0, t1, x, y, w, h, rot, cap) {
   if (cap) hand(ctx, cap, 0, ph / 2 + pad + 44, 44, INK, seg(t, t0 + .3, t0 + 1.1), { align: 'center' });
   ctx.restore();
 }
+
+// Tam ekran yapay zekâ çizimi (Gemini; "temsili çizim" ibaresiyle gerçek fotoğraf gibi sunulmaz). Kamera hareketi yok.
+function tamEkran(ctx, im) { if (!im) return false; const k = Math.max(1920 / im.width, 1080 / im.height), w = im.width * k, h = im.height * k; ctx.drawImage(im, (1920 - w) / 2, (1080 - h) / 2, w, h); return true; }
+function kirpEkran(ctx, im, sx, sy, sw, sh) { if (im) ctx.drawImage(im, sx, sy, sw, sh, 0, 0, 1920, 1080); }
+function temsili(ctx, t, t0) { T(ctx, t, 'temsili çizim', 1700, 1052, 40, '#f4ead2', t0, t0 + .5, { align: 'center', rot: -.01, shadow: 'rgba(20,12,6,.85)' }); }

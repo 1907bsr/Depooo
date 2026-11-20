@@ -66,3 +66,8 @@ Format: Tarih – Ne oldu – Neden – Bundan sonraki kural
   her sahnenin ORTASINDA ve YAZILAR TAMAMLANMIŞKEN (%92) kare üret, tek tek bak: (1) yazı yüzü/elleri örtüyor mu, (2) kare dışına taşıyor mu,
   (3) kontrast yeterli mi (açık zeminde beyaz, koyu zeminde kırmızı/koyu yazı yok), (4) iki etiket üst üste mi, (5) ok yüzün üstünden geçiyor mu.
   Okunmayan yazıyı kâğıt etiketle (pinnedPaper / tagAt) yap. Bu kontrol 3 saniye sürer, tam render 5 dakikadır: ÖNCE kontrol, SONRA render.
+
+## 2026-11-20 – Havaya kalkan kollar ters, boyut büyüyüp küçülüyor, "gerçek görüntü" yanlış anlaşıldı (Büşra izleyince yakaladı)
+- Kollar: ik() dirseği hep aynı tarafa koyuyordu; el omuz hizasının üstüne çıkınca dirsek yukarı bakıp kol ters görünüyordu. KURAL: el omuzdan yukarıdaysa dirsek aşağı/dışarı (mary.js drawArm, yumuşak karışım). Yeni poz eklerken havaya kalkan kolları görsel kontrol et.
+- Boyut: her sahnede %3-8 yavaş yakınlaşma + sahne sonunda kesme = "büyüyüp küçülüyor" izlenimi. KURAL: sahne içi yakınlaşma yok (ZOOMK=0).
+- Gerçek görüntü: Büşra v9'daki mozaik/spor Gemini çizimlerini "gerçek görüntü" sanıyordu ve onların yerine kod çizimini görünce şaşırdı. KURAL: Bir görseli değiştirirken ne olduğunu açıkça söyle ("Gemini çizimiydi, gerçek fotoğraf değildi, kod çizimi yaptım"); Büşra'nın beğendiği bir görseli ONAYSIZ başka görselle DEĞİŞTİRME.

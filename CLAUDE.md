@@ -201,7 +201,7 @@ gerekiyorsa tıklama tıklama tarif et.
 ## 6. STANDART ÜRETİM SİSTEMİ (KARAR 2026-11-19 – bütün videolar böyle yapılır)
 Sütyen videosunda oturan sistem. Kullanıcı değiştirmedikçe aynen uygulanır.
 GÜNCEL KARAR (2026-11-20, Büşra: "Bu daha güzel oldu… hareketli olması çok hoşuma gitti"; "Oradaki yaptığın görselleri kullan… sen kendini yap"):
-  Görseller TAMAMEN Claude'un kodla çizdiği hareketli figür ve sahnelerdir (scripts/vektor; 0 TL). Gemini ile üretilmiş görseller KULLANILMAZ.
+  Görseller Claude'un kodla çizdiği hareketli figür ve sahnelerdir (scripts/vektor; 0 TL). İSTİSNA (Büşra, 2026-11-20 gece): mozaik (gemini/s14.png) ve spor (yeni-stil/s15A,s15B) yapay zekâ çizimleri 'temsili çizim' ibaresiyle kullanılır; gerçek mozaik fotoğrafı CC BY olduğu için kullanılamaz.
   Gerçek arşiv parçaları (Met CC0 korse fotoğrafı, ABD patent çizimi) küçük "kanıt" olarak araya girebilir.
   EKRAN SAĞA-SOLA KAYMAZ (Büşra: "bir tık fazla olmuş"): kamera sabit + yavaş yakınlaşma; yer değişimi kesmeyle. Figür hareketi, mimik ve el yazısı notlar korunur.
   Önizleme: node scripts/vektor/render.js hepsi 960 24 → python3 scripts/vektor/birlestir.py cikis.mp4; kontrol listesi: python3 scripts/vektor/kurgu_listesi.py video.mp4 klasör
@@ -209,6 +209,8 @@ GÜNCEL KARAR (2026-11-20, Büşra: "Bu daha güzel oldu… hareketli olması ç
   GERÇEK KANITLAR + FİGÜR BOYUTU (2026-11-20 gece, Büşra): Patentin resmi gibi gerçek kanıtlar videoda kullanılır (lisansı belgeli olanlar: ABD patenti, Met CC0 korseleri, Eyfel fotoğrafı;
   kodda "kanıt kartı" = dekor2.js kanitKart; yerleri konular/sutyen/lisanslar.md'de). Mary ve diğer figürler daha büyük çizilir (sahne.js buyut(): geniş çekimlerde ×1,22, diğerlerinde ×1,0–1,15;
   baş/yüz asla kesilmez, yakın çekimlerde büyütme yok).
+  KAMERA/BOYUT (Büşra, 2026-11-20 gece: "bazı yerlerde boyut yine büyüyüp küçülüyor"): sahne içi yavaş yakınlaşma YOK (sahne.js ZOOMK = 0); kamera sabit, yer değişimi kesmeyle. Haritada Sicilya'ya yakınlaşma gibi anlatıya bağlı tek seferlik hareketler dışında zoom yapma.
+  KOLLAR (Büşra: "kollar havaya kalkınca ters oluyor"): el omuz hizasının üstüne çıkınca dirsek aşağı/dışarı bakar (mary.js drawArm, yumuşak geçiş). Havaya kalkan kol içeren her yeni sahnede kontrol et.
   Aşağıdaki 2-5. maddelerdeki Gemini/motor2 anlatımı bu karardan sonra geçersizdir (kayıt için duruyor).
 1. Araştırma → senaryo → okuma metni (bölüm 5 ve EK-4 kuralları).
 2. Sahne planı (konular/<konu>/sahne-plani.md) + Gemini tarifleri (gemini-tarifleri.md).
@@ -364,3 +366,4 @@ Format: Kural – Kaynağı: video adı, tarih, hangi veri.)
 - 2026-11-20 (gece): v11 hazır: 58 sahne kodla çizildi, çakışma/okunurluk turu (25 düzeltme), sessiz önizleme 8 dk 47 sn, 0 TL; Büşra'ya tek seferde gönderilecek.
 - 2026-11-20 (gece, geç): Büşra: gerçek kanıtlar kullanılsın, Mary ve diğer figürler büyütülsün. Figürler büyütüldü (sahne bazlı katsayı), 4 yeni gerçek kanıt kartı (açılış 1885 korsesi, s18 1890 korsesi, s28 Eyfel; s35 patent, s37d korse zaten vardı), durağan sahnelere hareket eklendi; v13 önizleme hazırlanıyor.
 - 2026-11-20 (gece, en son): Büşra v13 görsel önizlemesini ONAYLADI ("Onaylıyorum"). Görseller kilitli (medya/sutyen/kurgu/onizleme-v13-cizim.mp4; kod: son commit). Sıradaki: Büşra'nın ses kaydı (kurulum/ses-kaydi.md), sonra zaman ayarı + sessiz efektler + altyazı, kapak (3 seçenek), başlık/açıklama, "Özel" yükleme, 3 Shorts.
+- 2026-11-20 (gece, v14): Büşra izlerken: mozaik/spor görselleri kod-çizim yerine v9'daki yapay zekâ çizimleri olmalı (geri kondu, 'temsili çizim'), havaya kalkan kollar ters (dirsek düzeltildi), boyut büyüyüp küçülüyor (yavaş yakınlaşmalar kapatıldı). Patent 5:14'te, Korse A.Ş. korsesi 5:36'da.

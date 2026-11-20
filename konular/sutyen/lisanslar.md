@@ -49,3 +49,10 @@ Hepsi yukarıdaki lisans kayıtlarıyla belgelidir (Met Open Access = CC0; ABD p
 | s35 patent | ABD Patent No. 1.115.674 çizimi (3 Kasım 1914) | arsiv/s35-patent-cizim-1.png |
 | s37d "Korse A.Ş." | Korse, ca. 1885 (Worcester Corset Co.) | met-173657.jpg |
 Lisansı belgesiz hiçbir gerçek görsel kullanılmaz (ör. Lengberg buluntuları çizili kalır).
+
+## Videoda kullanılan yapay zekâ çizimleri (kod-çizim sürümü, 2026-11-20 gece – Büşra'nın isteği)
+| Sahne | Dosya | Not |
+|---|---|---|
+| s14 mozaik ("Villa Romana del Casale") | medya/sutyen/gorsel/gemini/s14.png | Gemini çizimi, GERÇEK MOZAİK FOTOĞRAFI DEĞİL. Videoda "temsili çizim" ibaresi var. Gerçek fotoğrafların bulunduğu sürüm CC BY (atıf şartlı) → telif kuralımıza aykırı, kullanılmaz. |
+| s15 spor kıyafeti (top/ağırlık) | medya/sutyen/gorsel/yeni-stil/s15A.png, s15B.png | Gemini çizimi. "temsili çizim" ibaresi var. |
+Google şartlarına göre çıktılar kullanıcıya aittir, ticari kullanım serbesttir (yukarıdaki Gemini bölümüne bak).

@@ -7,7 +7,9 @@ function sahne(id, bas, dur, fn) { SAH[id] = { id, bas, dur, draw: fn }; }
 function W(sid, word, n = 1) { let c = 0; for (const [w, t] of ZAMAN[sid].w) { if (w === word && ++c === n) return t; } throw new Error('kelime yok: ' + sid + ' ' + word); }
 function kam(ctx, c) { ctx.translate(960, 540); ctx.scale(c.z, c.z); ctx.translate(-c.x, -c.y); }
 // sabit merkez, yavaş yakınlaşma: z0→z1, t0..t1 arası
-function zc(x, y, z0, z1, t, t0, t1) { return { x, y, z: lerp(z0, z1, sm(seg(t, t0, t1))) }; }
+// Büşra (2026-11-20): "bazı yerlerde boyut büyüyüp küçülüyor" → sahne içi yavaş yakınlaşmalar kapalı (ZOOMK = 0). Kamera sabit; yer değişimi kesmeyle.
+const ZOOMK = 0;
+function zc(x, y, z0, z1, t, t0, t1) { return { x, y, z: lerp(z0, z0 + (z1 - z0) * ZOOMK, sm(seg(t, t0, t1))) }; }
 const bk = k => back(k, 1.2);
 const clone = o => JSON.parse(JSON.stringify(o));
 function merge(a, b) { for (const k in b) { if (b[k] && typeof b[k] === 'object' && !Array.isArray(b[k])) merge(a[k], b[k]); else a[k] = b[k]; } return a; }

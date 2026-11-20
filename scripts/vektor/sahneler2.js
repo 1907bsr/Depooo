@@ -94,12 +94,10 @@ sahneS('s14', (ctx, t) => {
     T(ctx, t, 'Villa Romana del Casale', 960, 130, 120, INK, W(id, 'villa'), W(id, 'casale') + .6, { align: 'center', rot: -.01, shadow: 'rgba(255,245,225,.6)' });
     T(ctx, t, '1.700 yıllık', 960, 1000, 130, '#fff', W(id, 'bin') - .1, W(id, 'roma') + .6, { align: 'center', fam: 'Alegreya', it: true, wt: 800, shadow: 'rgba(30,18,10,.7)' });
   } else if (t < c3) {   // zemindeki mozaik
-    plainBG(ctx, '#d9c79a', '#a67c52');
-    ctx.save(); const z = 1 + .08 * seg(t, c2, c3); ctx.translate(960, 560); ctx.scale(z, z); ctx.translate(-960, -560);
-    mosaicDraw(ctx, 120, 110, 120, 56, 14, o => mosaicPanel(o, 120, 56, t, 'idle'));
-    ctx.restore();
-    T(ctx, t, 'mozaik', 260, 112, 120, '#fff', W(id, 'mozaik'), W(id, 'mozaik') + .6, { rot: -.03, shadow: 'rgba(30,18,10,.8)' });
-    T(ctx, t, 'hâlâ yerinde!', 1300, 1040, 120, '#fff', W(id, 'yerinde') - .2, W(id, 'duruyor') + .5, { rot: -.02, shadow: 'rgba(30,18,10,.8)' });
+    plainBG(ctx, '#d9c79a', '#a67c52'); tamEkran(ctx, IMG.mozaik);
+    tagAt(ctx, t, W(id, 'mozaik'), 300, 96, 330, 116, -.03); T(ctx, t, 'mozaik', 300, 128, 100, INK, W(id, 'mozaik'), W(id, 'mozaik') + .6, { align: 'center', rot: -.03 });
+    tagAt(ctx, t, W(id, 'yerinde') - .2, 1340, 984, 640, 116, .02); T(ctx, t, 'hâlâ yerinde!', 1340, 1016, 100, INK, W(id, 'yerinde') - .2, W(id, 'duruyor') + .5, { align: 'center', rot: .02 });
+    temsili(ctx, t, c2 + .5);
   } else if (t < c4) {   // UNESCO
     plainBG(ctx, '#efe3c6', '#d9c79a');
     pinnedPaper(ctx, 960, 480, 1200, 640, -.015, '#f8efd9');
@@ -109,15 +107,12 @@ sahneS('s14', (ctx, t) => {
     T(ctx, t, 'istersen gidip gör!', 960, 900, 120, INK, W(id, 'istersen'), W(id, 'görebilirsin') + .3, { align: 'center', rot: -.02 });
     ctx.save(); ctx.translate(1540, 880 + Math.sin(t * 5) * 6); line(ctx, [[0, 0], [0, 40]], 6, C.ink); ell(ctx, 0, -10, 24, 24, '#b4503a', C.ink, 4); ctx.restore();
   } else {   // kadınlar: bant + şort
-    plainBG(ctx, '#d9c79a', '#a67c52');
-    const k = sm(seg(t, c4, b + d)); ctx.save(); const z = lerp(1.0, 1.7, k), fx = lerp(960, 470, k), fy2 = lerp(560, 420, k); ctx.translate(960, 560); ctx.scale(z, z); ctx.translate(-fx, -fy2);
-    mosaicDraw(ctx, 120, 110, 120, 56, 14, o => mosaicPanel(o, 120, 56, t, 'idle'));
-    ctx.restore();
+    plainBG(ctx, '#d9c79a', '#a67c52'); kirpEkran(ctx, IMG.mozaik, 330, 0, 680, 383); temsili(ctx, t, c4);
     // etiketler ekran uzayında
-    tagAt(ctx, t, W(id, 'bant'), 1420, 320, 300, 150, -.03); T(ctx, t, 'bant', 1420, 352, 112, INK, W(id, 'bant') - .1, W(id, 'bant') + .5, { align: 'center', rot: -.03 });
-    pen(ctx, curve([1290, 340], [1200, 420], [1110, 470], 18), seg(t, W(id, 'bant') + .2, W(id, 'bant') + .7), 7, INK, { arrow: 20 });
-    tagAt(ctx, t, W(id, 'şort'), 1440, 880, 300, 150, -.03); T(ctx, t, 'şort', 1440, 912, 112, INK, W(id, 'şort') - .2, W(id, 'şort') + .5, { align: 'center', rot: -.03 });
-    pen(ctx, curve([1300, 870], [1220, 830], [1120, 800], 18), seg(t, W(id, 'şort') + .1, W(id, 'şort') + .6), 7, INK, { arrow: 20 });
+    tagAt(ctx, t, W(id, 'bant'), 1560, 230, 320, 150, -.03); T(ctx, t, 'bant', 1560, 262, 112, INK, W(id, 'bant') - .1, W(id, 'bant') + .5, { align: 'center', rot: -.03 });
+    pen(ctx, curve([1400, 270], [1250, 310], [1060, 335], 18), seg(t, W(id, 'bant') + .2, W(id, 'bant') + .7), 7, INK, { arrow: 20 });
+    tagAt(ctx, t, W(id, 'şort'), 1560, 700, 320, 150, -.03); T(ctx, t, 'şort', 1560, 732, 112, INK, W(id, 'şort') - .2, W(id, 'şort') + .5, { align: 'center', rot: -.03 });
+    pen(ctx, curve([1400, 690], [1250, 620], [1050, 560], 18), seg(t, W(id, 'şort') + .1, W(id, 'şort') + .6), 7, INK, { arrow: 20 });
   }
 });
 
@@ -138,12 +133,9 @@ sahneS('s15', (ctx, t) => {
   const id = 's15', b = SAH[id].bas, d = SAH[id].dur;
   const tH = W(id, 'herkes') - .1, tY = W(id, 'yani') - .1;
   if (t < tY) {
-    plainBG(ctx, '#d9c79a', '#a67c52');
-    ctx.save(); const z = 1.0 + .05 * seg(t, b, tY); ctx.translate(960, 560); ctx.scale(z, z); ctx.translate(-960, -560);
-    mosaicDraw(ctx, 120, 50, 120, 56, 14, o => mosaicPanel(o, 120, 56, t, 'act'));
-    ctx.restore();
-    tagAt(ctx, t, W(id, 'top'), 280, 92, 250, 120, -.03); T(ctx, t, 'top', 280, 124, 104, INK, W(id, 'top') - .1, W(id, 'top') + .5, { align: 'center', rot: -.03 });
-    tagAt(ctx, t, W(id, 'ağırlık'), 1380, 92, 380, 120, .03); T(ctx, t, 'ağırlık', 1380, 124, 104, INK, W(id, 'ağırlık') - .1, W(id, 'ağırlık') + .5, { align: 'center', rot: .03 });
+    plainBG(ctx, '#d9c79a', '#a67c52'); tamEkran(ctx, t >= W(id, 'ağırlık') - .1 && !(t > tH) ? IMG.sporB : IMG.sporA); temsili(ctx, t, b + .5);
+    tagAt(ctx, t, W(id, 'top'), 290, 100, 250, 120, -.03); T(ctx, t, 'top', 290, 132, 104, INK, W(id, 'top') - .1, W(id, 'top') + .5, { align: 'center', rot: -.03 });
+    tagAt(ctx, t, W(id, 'ağırlık'), 800, 100, 380, 120, .03); T(ctx, t, 'ağırlık', 800, 132, 104, INK, W(id, 'ağırlık') - .1, W(id, 'ağırlık') + .5, { align: 'center', rot: .03 });
     if (t > tH) { pinnedPaper(ctx, 960, 940, 1500, 200, -.01, '#f8efd9'); T(ctx, t, '"Bikinili Kızlar"', 640, 965, 100, INK, W(id, 'bikinili') - .1, W(id, 'kızlar') + .4, { align: 'center' }); T(ctx, t, 'mayo', 1180, 940, 84, INK, W(id, 'mayo') - .1, W(id, 'mayo') + .3, { align: 'center' }); crossOut(ctx, 1090, 900, 1270, 960, seg(t, W(id, 'değil') - .1, W(id, 'değil') + .3)); T(ctx, t, 'spor kıyafeti', 1500, 965, 84, '#5f6b4a', W(id, 'spor'), W(id, 'kıyafeti') + .4, { align: 'center' }); }
   } else {
     plainBG(ctx, '#e9dcc0', '#cdb98f');
@@ -171,7 +163,7 @@ function workshop(ctx, t) {
 }
 sahneS('s17', (ctx, t) => {
   const id = 's17', b = SAH[id].bas, d = SAH[id].dur;
-  ctx.save(); const z = 1 + .05 * seg(t, b, b + d); ctx.translate(960, 560); ctx.scale(z, z); ctx.translate(-960, -560);
+  ctx.save(); const z = 1 + ZOOMK * .05 * seg(t, b, b + d); ctx.translate(960, 560); ctx.scale(z, z); ctx.translate(-960, -560);
   workshop(ctx, t);
   const tZ = W(id, 'nasıl'), tR = W(id, 'rahat');
   const ponder = (k) => P({ armL: [-60, -470], armR: [60, -470], headRoll: k * 5, f: { look: [k, -.4], mouth: MOUTH.flat, browL: [-8, -.1, .3], browR: [-12, -.3, .4], lid: .1 } });
@@ -252,7 +244,7 @@ sahneS('s18', (ctx, t) => {
 // ---------------- s19: 300 yıl – kimse çıkıp demedi
 sahneS('s19', (ctx, t) => {
   const id = 's19', b = SAH[id].bas, d = SAH[id].dur;
-  ctx.save(); const z = 1 + .04 * seg(t, b, b + d); ctx.translate(960, 560); ctx.scale(z, z); ctx.translate(-960, -560);
+  ctx.save(); const z = 1 + ZOOMK * .04 * seg(t, b, b + d); ctx.translate(960, 560); ctx.scale(z, z); ctx.translate(-960, -560);
   ctx.fillStyle = '#6b5440'; ctx.fillRect(-100, -100, 2120, 1300); for (let i = 0; i < 18; i++) { ctx.fillStyle = i % 2 ? '#725944' : '#634b39'; ctx.fillRect(i * 120 - 20, -100, 118, 1300); }
   for (const x of [380, 1540]) { line(ctx, [[x, 120], [x, 190]], 8, C.goldD); shape(ctx, [[x - 26, 40], [x + 26, 40], [x + 20, 120], [x - 20, 120]], '#f4dca8', '#d9b66e', { sw: 3, seed: 600 + x }); glow(ctx, x, 80, 260, 'rgba(255,214,140,A)', .4); }
   const tK = W(id, 'kimse'), tD = W(id, 'demedi');
