@@ -38,3 +38,14 @@ Dosyalar: medya/sutyen/gorsel/arsiv/met/
 
 ## Kod-çizim animasyon denemesi (2026-11-20)
 scripts/vektor/ – karakter, oda, sokak, proplar ve notlar Claude tarafından kodla çizildi; dış görsel/ses/müzik yok. Yazı tipleri: Caveat, Alegreya (SIL OFL). Çıktı: medya/sutyen/kurgu/ornek-kod-cizim-acilis.mp4 (sessiz).
+
+## Gerçek arşiv parçalarının videodaki yeri (kod-çizim sürümü, 2026-11-20 – Büşra: "gerçek kanıtlar kullanılacak")
+Hepsi yukarıdaki lisans kayıtlarıyla belgelidir (Met Open Access = CC0; ABD patenti = kamu malı). Kodda "kanıt kartı" olarak çizilir (scripts/vektor/dekor2.js: kanitKart).
+| Sahne | Parça | Dosya |
+|---|---|---|
+| Açılış, korse röntgeni (0:13–0:23) | Korse, ca. 1885 (Ball's) | met-157937.jpg |
+| s18 "Ve korse sahneye çıktı" | Korse, ca. 1890 (Corset Parisien) | met-158100.jpg |
+| s28 "Yıl 1889. Paris." | Eyfel Kulesi, 1890'lar fotoğrafı | met-271707.jpg |
+| s35 patent | ABD Patent No. 1.115.674 çizimi (3 Kasım 1914) | arsiv/s35-patent-cizim-1.png |
+| s37d "Korse A.Ş." | Korse, ca. 1885 (Worcester Corset Co.) | met-173657.jpg |
+Lisansı belgesiz hiçbir gerçek görsel kullanılmaz (ör. Lengberg buluntuları çizili kalır).

@@ -88,3 +88,16 @@ function drawBottle(ctx, label) {
 function plainBG(ctx, col1 = '#efe4cd', col2 = '#e2d3b3') { const g = ctx.createRadialGradient(960, 520, 100, 960, 540, 1100); g.addColorStop(0, col1); g.addColorStop(1, col2); ctx.fillStyle = g; ctx.fillRect(-100, -100, 2120, 1300); }
 function pinnedPaper(ctx, x, y, w, h, rot, col = '#f6ecd4') { ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.fillStyle = 'rgba(40,25,20,.28)'; rrect(ctx, -w / 2 + 8, -h / 2 + 10, w, h, 6); ctx.fill(); rrect(ctx, -w / 2, -h / 2, w, h, 6); ctx.fillStyle = col; ctx.fill(); ctx.lineWidth = 3; ctx.strokeStyle = C.ink; ctx.stroke(); ctx.restore(); }
 function crossOut(ctx, x0, y0, x1, y1, p) { pen(ctx, [[x0, y0], [x1, y1 - 4], [x0 + 6, y1 + 8], [x1, y0 + 4]], p, 7, '#8a2f2c'); }
+
+// Gerçek arşiv "kanıt kartı": lisansı belgeli gerçek fotoğraf/çizim, bantlı kâğıt kart + elle yazılmış açıklama (Büşra: "gerçek kanıtlar kullanılacak").
+function kanitKart(ctx, t, im, t0, t1, x, y, w, h, rot, cap) {
+  if (!im) return; const u = bk(seg(t, t0, t0 + .45)) * (1 - seg(t, t1 - .3, t1)); if (u <= 0) return;
+  const k = Math.min(w / im.width, h / im.height), pw = im.width * k, ph = im.height * k, pad = 16, capH = cap ? 66 : 0;
+  ctx.save(); ctx.translate(x, y); ctx.rotate(rot + Math.sin(t * 1.4) * .006); ctx.scale(u, u);
+  ctx.fillStyle = 'rgba(30,18,10,.35)'; ctx.fillRect(-pw / 2 - pad + 9, -ph / 2 - pad + 12, pw + 2 * pad, ph + 2 * pad + capH);
+  ctx.fillStyle = '#f6ecd4'; ctx.fillRect(-pw / 2 - pad, -ph / 2 - pad, pw + 2 * pad, ph + 2 * pad + capH);
+  ctx.drawImage(im, -pw / 2, -ph / 2, pw, ph); ctx.lineWidth = 3; ctx.strokeStyle = C.ink; ctx.strokeRect(-pw / 2, -ph / 2, pw, ph);
+  for (const sx of [-1, 1]) { ctx.save(); ctx.translate(sx * (pw / 2 - 6), -ph / 2 - pad + 4); ctx.rotate(sx * .55); ctx.fillStyle = 'rgba(232,214,160,.88)'; ctx.fillRect(-42, -13, 84, 26); ctx.restore(); }
+  if (cap) hand(ctx, cap, 0, ph / 2 + pad + 44, 44, INK, seg(t, t0 + .3, t0 + 1.1), { align: 'center' });
+  ctx.restore();
+}

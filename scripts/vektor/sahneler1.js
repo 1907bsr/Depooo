@@ -11,7 +11,7 @@ sahneS('s08', (ctx, t) => {
     const stop = P({ armR: [150, -650], armL: [-96, -410], headDY: -4, f: { mouth: { w: 12, open: .3, smile: .1, shape: '' }, browL: [-10, -.1, .3], browR: [-10, -.1, .3], look: [0, 0], lid: 0 } });
     const self = P({ armR: [26, -520], armL: [-96, -410], headRoll: -4, f: { mouth: MOUTH.o, browL: [-12, -.2, .35], browR: [-12, -.2, .35], bulge: .5, look: [0, .2] } });
     const no = P({ armR: [150, -470], armL: [-150, -470], f: { mouth: { w: 14, open: .2, smile: -.5, shape: '' }, browL: [-8, .25, .2], browR: [-8, .25, .2], sweat: .4, look: [0, 0] } });
-    const S = actor('mary', [[b, stop], [W(id, 'sütyeni') - .15, stop], [W(id, 'sütyeni') + .1, self, bk], [W(id, 'sen') - .1, self], [W(id, 'sen') + .15, no, bk], [tc, no]], t, { x: 1500 });
+    const S = actor('mary', [[b, stop], [W(id, 'sütyeni') - .15, stop], [W(id, 'sütyeni') + .1, self, bk], [W(id, 'sen') - .1, self], [W(id, 'sen') + .15, no, bk], [tc, no]], t, { x: 1500, k: 1 });
     if (t > W(id, 'sen') + .2) S.headRoll += Math.sin((t - W(id, 'sen')) * 11) * 6 * (1 - seg(t, W(id, 'değilsin') + .3, tc));
     ctx.save(); kam(ctx, zc(1500, 545, 1.35, 1.45, t, b, tc)); drawRoom(ctx, { t, camx: 1500, canapes: 0 }); drawMary(ctx, S); ctx.restore();
     // el yazısı: soru işareti
@@ -124,21 +124,21 @@ sahneS('s12', (ctx, t) => {
   const point = P({ armL: [-250, -620], armR: [96, -410], headRoll: 3, f: { mouth: MOUTH.grin, look: [.8, -.1], turn: .5, browL: [-8, -.1, .3], browR: [-8, -.1, .3], blush: .7 } });
   const doc = P({ armL: [-110, -560], armR: [150, -540], f: { mouth: MOUTH.grin, look: [.8, 0], turn: .5, browL: [-8, -.1, .3], browR: [-8, -.1, .3], blush: .6 } });
   const laugh = P({ armL: [-96, -410], armR: [96, -410], headRoll: -5, headDY: -8, chest: 1, f: { lid: .8, mouth: MOUTH.grin, browL: [-6, -.1, .3], browR: [-6, -.1, .3], blush: .9 } });
-  const A = actor('greek', [[b, hold], [tA - .2, hold], [tA + .6, wrap, sm], [W(id, 'sarıyordu') + .5, wrap], [tAp - .2, point, bk], [tCough - .3, point], [tCough + .1, doc, bk], [tG + 1.2, doc], [tEnd, laugh, bk]], t, { x: 800, s: .85 });
+  const A = actor('greek', [[b, hold], [tA - .2, hold], [tA + .6, wrap, sm], [W(id, 'sarıyordu') + .5, wrap], [tAp - .2, point, bk], [tCough - .3, point], [tCough + .1, doc, bk], [tG + 1.2, doc], [tEnd, laugh, bk]], t, { x: 800, s: .85, k: 1.15 });
   if (t > tEnd) A.headDY += Math.sin(t * 15) * 4;
   const wp = clamp(seg(t, tA + .15, W(id, 'sarıyordu') + .35));
   A.torsoFx = (c, L) => { for (let i = 0; i < 3; i++) { const k = clamp(wp * 3 - i); if (k <= 0) continue; const y = -552 + i * 30; line(c, [[-84 * k + 4, y + 6], [0, y - 6 + 8], [84 * k - 4, y + 6]], 30, C.ink); line(c, [[-84 * k + 4, y + 6], [0, y + 2], [84 * k - 4, y + 6]], 24, '#f4ecd8'); line(c, [[-80 * k, y + 8], [80 * k, y + 8]], 3, '#d6c8aa'); } };
   const holdSpoon = t > tCough - .1 && t < tEnd; if (holdSpoon) { A.armR.hold = (c) => drawSpoon(c, true); A.armL.hold = (c) => drawBottle(c, true); }
-  const Bs = actor('greek2', [[b, P({ armL: [-96, -410], armR: [96, -410], f: { mouth: MOUTH.smile, turn: -.5, look: [-1, 0], browL: [-3, 0, .1], browR: [-3, 0, .1] } })], [tAp - .1, P({ armL: [-96, -410], armR: [96, -410], f: { mouth: MOUTH.flat, turn: -.5, look: [-1, 0], browL: [-10, .3, .1], browR: [-10, -.2, .4], lid: .2 } }), sm], [tCough, P({ armR: [60, -600], armL: [-96, -410], headDY: 6, f: { mouth: MOUTH.o, turn: -.5, look: [-1, .3], browL: [-8, -.3, .2], browR: [-8, -.3, .2], bulge: .4 } }), bk], [tG, P({ armR: [96, -410], armL: [-96, -410], f: { mouth: MOUTH.sad, turn: -.5, look: [-1, 0], browL: [-6, -.3, .2], browR: [-6, -.3, .2], sweat: .5 } }), sm]], t, { x: 1230, s: .85, off: 2.3 });
+  const Bs = actor('greek2', [[b, P({ armL: [-96, -410], armR: [96, -410], f: { mouth: MOUTH.smile, turn: -.5, look: [-1, 0], browL: [-3, 0, .1], browR: [-3, 0, .1] } })], [tAp - .1, P({ armL: [-96, -410], armR: [96, -410], f: { mouth: MOUTH.flat, turn: -.5, look: [-1, 0], browL: [-10, .3, .1], browR: [-10, -.2, .4], lid: .2 } }), sm], [tCough, P({ armR: [60, -600], armL: [-96, -410], headDY: 6, f: { mouth: MOUTH.o, turn: -.5, look: [-1, .3], browL: [-8, -.3, .2], browR: [-8, -.3, .2], bulge: .4 } }), bk], [tG, P({ armR: [96, -410], armL: [-96, -410], f: { mouth: MOUTH.sad, turn: -.5, look: [-1, 0], browL: [-6, -.3, .2], browR: [-6, -.3, .2], sweat: .5 } }), sm]], t, { x: 1230, s: .85, off: 2.3, k: 1.15 });
   if (t > tCough && t < tCough + 1.4) Bs.headDY += Math.sin((t - tCough) * 22) * 5;
   drawMary(ctx, A); drawMary(ctx, Bs);
   // bant eller arasında (sarmadan önce)
   if (t > b + .1 && t < tA + .8) { const hl = handPos(A, A.armL), hr = handPos(A, A.armR); const sag = 40 + Math.sin(t * 4) * 6; drawBand(ctx, [[hl[0], hl[1]], [(hl[0] * 2 + hr[0]) / 3, hl[1] + sag], [(hl[0] + hr[0] * 2) / 3, hl[1] + sag], [hr[0], hr[1]]], 34, 1); }
   // yazılar
-  const lx = 470, ly = 175;
+  const lx = 215, ly = 250;
   T(ctx, t, 'apodesmos', lx, ly, 130, INK, tAp, tAp + .8, { rot: -.03, shadow: 'rgba(255,245,225,.6)' });
   if (t > tCough + .1 && t < tCough + 1.4) for (let i = 0; i < 3; i++) { const k = (t - tCough - .1 + i * .15) % .5; pen(ctx, [[1290 + i * 16, 520 - i * 18], [1320 + i * 16 + k * 40, 508 - i * 18 - k * 20]], 1, 5, INK); }
-  if (t > tG - .1) { pinnedPaper(ctx, 1370, 130, 560, 170, -.03, '#f6ecd4'); T(ctx, t, 'Günde 2 apodesmos,', 1370, 125, 58, INK, tG, tG + .9, { align: 'center', rot: -.03 }); T(ctx, t, 'tok karnına.', 1370, 190, 58, RED, W(id, 'tok'), W(id, 'karnına') + .3, { align: 'center', rot: -.03 }); }
+  if (t > tG - .1) { pinnedPaper(ctx, 1610, 130, 520, 170, -.03, '#f6ecd4'); T(ctx, t, 'Günde 2 apodesmos,', 1610, 125, 56, INK, tG, tG + .9, { align: 'center', rot: -.03 }); T(ctx, t, 'tok karnına.', 1610, 190, 56, RED, W(id, 'tok'), W(id, 'karnına') + .3, { align: 'center', rot: -.03 }); }
   ctx.restore();
 });
 
@@ -151,7 +151,7 @@ sahneS('s13', (ctx, t) => {
   const show = P({ armL: [-180, -600], armR: [180, -600], f: { mouth: MOUTH.talk, look: [0, 0], browL: [-5, 0, .2], browR: [-5, 0, .2], blush: .5 } });
   const shrug = P({ armL: [-200, -470], armR: [200, -470], headRoll: 5, f: { mouth: MOUTH.grin, lid: .3, browL: [-8, -.1, .3], browR: [-8, .1, .3], blush: .6, look: [0, 0] } });
   const sign = P({ armL: [-96, -410], armR: [250, -700], headRoll: -4, headDY: -6, f: { mouth: MOUTH.grin, lid: .4, browL: [-10, -.1, .3], browR: [-10, -.1, .3], blush: .8 } });
-  const A = actor('roman', [[b, show], [tM - .1, show], [tM + .2, shrug, bk], [tP - .1, shrug], [tP + .3, sign, bk]], t, { x: 960, s: .85 });
+  const A = actor('roman', [[b, show], [tM - .1, show], [tM + .2, shrug, bk], [tP - .1, shrug], [tP + .3, sign, bk]], t, { x: 960, s: .85, k: 1.1 });
   if (t > tP + .3) A.armR.hold = (c) => { c.save(); c.translate(0, 10); line(c, [[0, 0], [0, 140]], 8, C.ink); c.restore(); };
   drawMary(ctx, A);
   // bant (iki elde) + etiket

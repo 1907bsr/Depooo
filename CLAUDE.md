@@ -206,6 +206,9 @@ GÜNCEL KARAR (2026-11-20, Büşra: "Bu daha güzel oldu… hareketli olması ç
   EKRAN SAĞA-SOLA KAYMAZ (Büşra: "bir tık fazla olmuş"): kamera sabit + yavaş yakınlaşma; yer değişimi kesmeyle. Figür hareketi, mimik ve el yazısı notlar korunur.
   Önizleme: node scripts/vektor/render.js hepsi 960 24 → python3 scripts/vektor/birlestir.py cikis.mp4; kontrol listesi: python3 scripts/vektor/kurgu_listesi.py video.mp4 klasör
   Render'dan ÖNCE çakışma kontrolü: scripts/vektor/araclar/ozet_kareler.js (sahnelerin %50 ve %92'sinde kare) – yazı yüzü örtmesin, kare dışına taşmasın, kontrast yeterli olsun (hatalar.md).
+  GERÇEK KANITLAR + FİGÜR BOYUTU (2026-11-20 gece, Büşra): Patentin resmi gibi gerçek kanıtlar videoda kullanılır (lisansı belgeli olanlar: ABD patenti, Met CC0 korseleri, Eyfel fotoğrafı;
+  kodda "kanıt kartı" = dekor2.js kanitKart; yerleri konular/sutyen/lisanslar.md'de). Mary ve diğer figürler daha büyük çizilir (sahne.js buyut(): geniş çekimlerde ×1,22, diğerlerinde ×1,0–1,15;
+  baş/yüz asla kesilmez, yakın çekimlerde büyütme yok).
   Aşağıdaki 2-5. maddelerdeki Gemini/motor2 anlatımı bu karardan sonra geçersizdir (kayıt için duruyor).
 1. Araştırma → senaryo → okuma metni (bölüm 5 ve EK-4 kuralları).
 2. Sahne planı (konular/<konu>/sahne-plani.md) + Gemini tarifleri (gemini-tarifleri.md).
@@ -359,3 +362,4 @@ Format: Kural – Kaynağı: video adı, tarih, hangi veri.)
 - 2026-11-20: Büşra "görseller elimizde olmasa kendi bildiğin gibi video yapar mısın?" dedi: scripts/vektor/ ile kodla çizilmiş (0 TL) 41 sn açılış örneği yapıldı (Mary, oda, korse röntgeni, çubuklar, ayna). Aynı 41 sn için güçlü hareketli saniye v9 %5 → %39. Karar bekliyor.
 - 2026-11-20 (akşam): Büşra örneği çok beğendi (figür hareketi), yan kaymaları azaltmamı istedi ve TAMAMININ kodla çizilmesini onayladı. 58 sahnenin tamamı scripts/vektor ile çizildi (0 TL); Gemini görselleri kullanılmadı.
 - 2026-11-20 (gece): v11 hazır: 58 sahne kodla çizildi, çakışma/okunurluk turu (25 düzeltme), sessiz önizleme 8 dk 47 sn, 0 TL; Büşra'ya tek seferde gönderilecek.
+- 2026-11-20 (gece, geç): Büşra: gerçek kanıtlar kullanılsın, Mary ve diğer figürler büyütülsün. Figürler büyütüldü (sahne bazlı katsayı), 4 yeni gerçek kanıt kartı (açılış 1885 korsesi, s18 1890 korsesi, s28 Eyfel; s35 patent, s37d korse zaten vardı), durağan sahnelere hareket eklendi; v13 önizleme hazırlanıyor.

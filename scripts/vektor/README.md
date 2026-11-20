@@ -17,3 +17,6 @@ Büşra'nın ses kaydı gelince kelime zamanları (zaman.py) gerçek sese göre 
 - kare.js      – seçilen anların tek kare PNG'leri
 - kurgu_listesi.py – cümle↔görsel kontrol listesi sayfaları (metin_hibrit.json)
 - araclar/ozet_kareler.js + ozet_sayfa.py – bütün sahnelerde yazı/figür çakışma kontrolü (sahnenin %50 ve %92'sinde kare)
+
+Figür boyutu: sahne.js `buyut(S, {k})` (FIGK 1,15 varsayılan, FIGO 1,22 açılış geniş çekimleri; actor(..., { k: 1 }) büyütmeyi kapatır). Baş üstü boşluk ≥ 80 px kalacak şekilde ayaklar aşağı iner.
+Gerçek kanıt kartı: dekor2.js `kanitKart(ctx, t, IMG.x, t0, t1, x, y, w, h, rot, 'açıklama')`; görseller vektor.html'deki IMG yükleyicisinde (patent, met1, met2, met3, eiffel).

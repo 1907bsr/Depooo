@@ -63,6 +63,7 @@ sahneS('s28', (ctx, t) => {
   T(ctx, t, 'Yıl 1889.', 140, 200, 150, INK, W(id, 'yıl'), W(id, '1889') + .8, { fam: 'Alegreya', it: true, wt: 800, rot: -.02 });
   T(ctx, t, 'Paris.', 190, 330, 130, '#7a5c3e', W(id, 'paris') - .1, W(id, 'paris') + .5, { rot: -.02 });
   ctx.restore();
+  kanitKart(ctx, t, IMG.eiffel, W(id, 'dikilen') - .1, b + d, 1500, 340, 600, 400, .04, "gerçek fotoğraf: Eyfel, 1890'lar");
 });
 
 // ---------------- s29: küçük bir terzi dükkânı – Cadolle – makas: ortadan ikiye
@@ -75,7 +76,7 @@ sahneS('s29', (ctx, t) => {
   const hello = P({ armL: [-96, -430], armR: [140, -560], headRoll: 3, f: { look: [0, 0], mouth: MOUTH.grin, browL: [-6, 0, .2], browR: [-6, 0, .2], blush: .6 } });
   const hold = P({ armL: [-60, -480], armR: [150, -520], f: { look: [0, .6], mouth: MOUTH.talk, browL: [-4, 0, .1], browR: [-4, 0, .1] } });
   const cut = P({ armL: [-60, -480], armR: [190, -500], headDY: 4, f: { look: [1, .5], mouth: { w: 14, open: .2, smile: .2, shape: '' }, lid: .15, browL: [-3, .25, 0], browR: [-3, .25, 0] } });
-  const A = actor('cadolle', [[b, idle], [W(id, 'herminie') - .2, idle], [W(id, 'herminie'), hello, bk], [tK - .2, hello], [tK + .1, hold, sm], [tM - .2, hold], [tM, cut, bk], [tI + .4, hello, bk]], t, { x: 560, s: .9 });
+  const A = actor('cadolle', [[b, idle], [W(id, 'herminie') - .2, idle], [W(id, 'herminie'), hello, bk], [tK - .2, hello], [tK + .1, hold, sm], [tM - .2, hold], [tM, cut, bk], [tI + .4, hello, bk]], t, { x: 560, s: .9, k: 1.12 });
   drawMary(ctx, A);
   tezgah(ctx);
   // korse tezgâhta
@@ -85,8 +86,9 @@ sahneS('s29', (ctx, t) => {
     ctx.restore(); }
   // makas: sağdan sola ilerler, kesiyor
   if (t > tM - .3 && t < tI + 1.1) { const px = lerp(1330, 880, cutP), snap = Math.abs(Math.sin(t * 16)) * .32 + .02; ctx.save(); ctx.globalAlpha = 1 - seg(t, tI + .6, tI + 1.1); bigScissors(ctx, px + 30, 700, 1.0, snap, -Math.PI / 2 - .1); ctx.restore(); }
-  T(ctx, t, 'Herminie Cadolle', 560, 118, 84, INK, W(id, 'herminie') - .1, W(id, 'cadolle') + .6, { align: 'center', rot: -.02 });
-  if (t > W(id, 'herminie') + .1) pen(ctx, [[330, 130], [440, 124], [560, 132], [680, 124], [790, 130]], seg(t, W(id, 'cadolle') + .3, W(id, 'cadolle') + .8), 5, INK);
+  tagAt(ctx, t, W(id, 'herminie'), 215, 190, 400, 230, -.03);
+  T(ctx, t, 'Herminie', 60, 170, 84, INK, W(id, 'herminie') - .1, W(id, 'herminie') + .5, { rot: -.02 }); T(ctx, t, 'Cadolle', 90, 262, 92, INK, W(id, 'cadolle') - .1, W(id, 'cadolle') + .6, { rot: -.02 });
+  if (t > W(id, 'herminie') + .1) pen(ctx, [[84, 284], [190, 278], [290, 288], [350, 280]], seg(t, W(id, 'cadolle') + .3, W(id, 'cadolle') + .8), 5, INK);
   T(ctx, t, 'Ortadan ikiye!', 1550, 560, 110, RED, tO - .1, tI + .5, { align: 'center', rot: -.04, shadow: 'rgba(255,245,225,.6)' });
   T(ctx, t, 'küçük bir terzi dükkânı', 1090, 110, 84, '#7a5c3e', W(id, 'küçük') - .1, W(id, 'dükkânına') + .5, { rot: .02 });
   ctx.restore();
@@ -98,7 +100,7 @@ sahneS('s30', (ctx, t) => {
   ctx.save(); const z = 1 + .04 * seg(t, b, b + d); ctx.translate(960, 560); ctx.scale(z, z); ctx.translate(-960, -560);
   shopSet(ctx, t, { window: false });
   const proud = P({ armL: [-96, -410], armR: [96, -410], headRoll: 3, f: { look: [1, 0], turn: .4, mouth: MOUTH.grin, browL: [-6, 0, .2], browR: [-6, 0, .2], blush: .6 } });
-  const A = actor('cadolle', [[b, proud]], t, { x: 420, s: .9 }); drawMary(ctx, A);
+  const A = actor('cadolle', [[b, proud]], t, { x: 420, s: .9, k: 1.15 }); drawMary(ctx, A);
   // manken + iki parça yerleşiyor
   const tA = W(id, 'alt'), tU = W(id, 'üst');
   dressForm(ctx, 1000, 930, 1.45);
@@ -126,7 +128,7 @@ sahneS('s29b', (ctx, t) => {
   const no = P({ armL: [-96, -410], armR: [200, -560], headRoll: -3, f: { look: [1, 0], turn: .5, mouth: MOUTH.talk, browL: [-6, .1, .2], browR: [-6, .1, .2] } });
   const sign = P({ armL: [-96, -410], armR: [180, -470], headDY: 6, f: { look: [0, .6], turn: .2, mouth: MOUTH.smile, browL: [-3, 0, .1], browR: [-3, 0, .1] } });
   const giggle = P({ armL: [-96, -410], armR: [96, -410], headRoll: 4, headDY: -6, f: { lid: .8, mouth: MOUTH.grin, blush: .9, browL: [-6, -.1, .3], browR: [-6, -.1, .3] } });
-  const A = actor('cadolle', [[b, stand], [tF - .2, stand], [tF + .1, no, bk], [tA - .1, no], [tA + .2, sign, sm], [tS + .4, giggle, bk]], t, { x: 560, s: .9 }); if (t > tS + .4) A.headDY += Math.sin(t * 15) * 4; drawMary(ctx, A);
+  const A = actor('cadolle', [[b, stand], [tF - .2, stand], [tF + .1, no, bk], [tA - .1, no], [tA + .2, sign, sm], [tS + .4, giggle, bk]], t, { x: 560, s: .9, k: 1.15 }); if (t > tS + .4) A.headDY += Math.sin(t * 15) * 4; drawMary(ctx, A);
   tezgah(ctx);
   // priz + kablo + fiş (çekilmez)
   rr(ctx, 1640, 560, 80, 120, '#efe3c9'); ctx.lineWidth = 4; ctx.strokeStyle = C.ink; ctx.strokeRect(1640, 560, 80, 120); ell(ctx, 1666, 620, 7, 7, C.ink, null); ell(ctx, 1694, 620, 7, 7, C.ink, null);
@@ -156,7 +158,7 @@ sahneS('s30b', (ctx, t) => {
   const tg = W(id, 'ayrı'); const u = bk(seg(t, tg - .1, tg + .4)); ctx.save(); ctx.translate(1300, 380); ctx.rotate(-.08); ctx.scale(u, u); line(ctx, [[-90, -60], [-110, -120]], 3, C.ink); rrect(ctx, -140, -60, 280, 120, 8); ctx.fillStyle = '#f8efd9'; ctx.fill(); ctx.lineWidth = 4; ctx.strokeStyle = C.ink; ctx.stroke(); hand(ctx, 'AYRI satılır', 0, 12, 50, RED, 1, { align: 'center', fam: 'Alegreya', it: true, wt: 800 }); ctx.restore();
   // müşteri
   const want = P({ armL: [-96, -410], armR: [200, -540], f: { look: [-1, 0], turn: -.4, mouth: MOUTH.grin, blush: .7, browL: [-8, -.1, .3], browR: [-8, -.1, .3] } });
-  const S = actor('friendA', [[b, P({ armL: [-96, -410], armR: [96, -410], f: { look: [-1, 0], turn: -.4, mouth: MOUTH.smile } })], [W(id, 'satılmaya') - .2, want, bk]], t, { x: 1620, s: .85, flip: false }); drawMary(ctx, S);
+  const S = actor('friendA', [[b, P({ armL: [-96, -410], armR: [96, -410], f: { look: [-1, 0], turn: -.4, mouth: MOUTH.smile } })], [W(id, 'satılmaya') - .2, want, bk]], t, { x: 1620, s: .85, flip: false, k: 1.15 }); drawMary(ctx, S);
   ctx.restore();
 });
 
@@ -179,7 +181,7 @@ sahneS('s29d', (ctx, t) => {
     plainBG(ctx, '#efe3c9', '#d9c7a0'); shape(ctx, [[-100, 930], [2020, 930], [2020, 1100], [-100, 1100]], C.wood, C.woodD, { sw: 0, seed: 861 });
     const think = P({ armL: [-96, -410], armR: [40, -520], headRoll: -4, f: { look: [.8, -.3], mouth: MOUTH.flat, browL: [-6, -.1, .3], browR: [-10, -.3, .4], lid: .1 } });
     const maybe = P({ armL: [-190, -470], armR: [190, -470], headRoll: 6, f: { look: [0, -.2], mouth: MOUTH.grin, lid: .3, browL: [-8, -.1, .3], browR: [-8, .1, .3], blush: .6 } });
-    const A = actor('cadolle', [[tP - .1, think], [W(id, 'olabilir') - .2, think], [W(id, 'olabilir') + .1, maybe, bk]], t, { x: 760, s: 1.0 }); drawMary(ctx, A);
+    const A = actor('cadolle', [[tP - .1, think], [W(id, 'olabilir') - .2, think], [W(id, 'olabilir') + .1, maybe, bk]], t, { x: 760, s: 1.0, k: 1 }); drawMary(ctx, A);
     T(ctx, t, 'Peki sütyeni', 1180, 360, 96, INK, tP, W(id, 'sütyeni') + .5, { rot: -.02 }); T(ctx, t, 'Cadolle mu buldu?', 1180, 470, 110, RED, W(id, 'cadolle') - .1, W(id, 'buldu') + .5, { rot: -.02 });
     T(ctx, t, 'Olabilir…', 1300, 700, 130, '#5f6b4a', W(id, 'olabilir'), W(id, 'olabilir') + .6, { rot: -.03 });
   }
@@ -191,15 +193,15 @@ sahneS('s02b', (ctx, t) => {
   const id = 's02b', b = SAH[id].bas, d = SAH[id].dur, tN = W(id, 'senin');
   ctx.save(); ctx.translate(960, 560); const zz = 1 + .05 * seg(t, b, b + d); ctx.scale(zz, zz); ctx.translate(-960, -560);
   plainBG(ctx, '#efe3c9', '#d9c7a0');
-  pinnedPaper(ctx, 960, 150, 1500, 200, -.01, '#f8efd9');
-  T(ctx, t, '"patentli modern sütyen"', 960, 180, 104, INK, W(id, 'patentli') - .1, W(id, 'sütyen') + .6, { align: 'center', rot: -.01 });
+  pinnedPaper(ctx, 960, 105, 1500, 170, -.01, '#f8efd9');
+  T(ctx, t, '"patentli modern sütyen"', 960, 135, 96, INK, W(id, 'patentli') - .1, W(id, 'sütyen') + .6, { align: 'center', rot: -.01 });
   // sahne ışığı + Mary silüeti → belirir
   const lit = sm(seg(t, tN - .3, tN + .5));
   ctx.save(); const g = ctx.createRadialGradient(960, 700, 40, 960, 700, 560); g.addColorStop(0, `rgba(255,236,180,${.7 + Math.sin(t * 4) * .12})`); g.addColorStop(1, 'rgba(255,236,180,0)'); ctx.fillStyle = g; ctx.fillRect(300, 300, 1320, 800); ctx.restore();
   shape(ctx, [[-100, 930], [2020, 930], [2020, 1100], [-100, 1100]], C.wood, C.woodD, { sw: 0, seed: 870 });
   const self = P({ armL: [-96, -410], armR: [30, -520], headRoll: -4, f: { look: [0, 0], mouth: MOUTH.grin, browL: [-12, -.2, .35], browR: [-12, -.2, .35], blush: .8, bulge: .3 } });
   const wonder = P({ armL: [-96, -410], armR: [96, -410], f: { look: [0, 0], mouth: MOUTH.smile, browL: [-4, 0, .2], browR: [-4, 0, .2] } });
-  const S = actor('mary', [[b, wonder], [tN - .2, wonder], [tN + .2, self, bk]], t, { x: 960, y: 30, s: .82 });
+  const S = actor('mary', [[b, wonder], [tN - .2, wonder], [tN + .2, self, bk]], t, { x: 960, y: 30, s: .82, k: 1.1 });
   ctx.save(); drawMary(ctx, S); ctx.globalAlpha = 1 - lit; ctx.fillStyle = '#3a2c24'; ctx.restore();
   if (lit < 1) { ctx.save(); ctx.globalCompositeOperation = 'source-atop'; ctx.restore(); }
   T(ctx, t, 'Senin adın.', 1480, 700, 140, RED, tN, W(id, 'adın') + .5, { align: 'center', rot: -.03 });

@@ -152,7 +152,7 @@ sahneS('s15', (ctx, t) => {
     const hold = (k) => P({ armL: [-190 + k * 20, -540], armR: [190 - k * 20, -540], headRoll: k * 6, f: { look: [k * 1, 0], mouth: MOUTH.flat, browL: [-8, -.1, .3], browR: [-8, .1, .3], lid: .1, sweat: .2 } });
     const giggle = P({ armL: [-190, -540], armR: [190, -540], headRoll: 4, headDY: -6, f: { lid: .8, mouth: MOUTH.grin, browL: [-6, -.1, .3], browR: [-6, -.1, .3], blush: .9 } });
     const tG = W(id, 'derdindeymiş') + .15;
-    const S = actor('w68d', [[tY, hold(-1)], [W(id, 'spora') - .1, hold(-1)], [W(id, 'giderken'), hold(1), sm], [W(id, 'giysem'), hold(-1), sm], [tG, giggle, bk]], t, { x: 800, s: .85 });
+    const S = actor('w68d', [[tY, hold(-1)], [W(id, 'spora') - .1, hold(-1)], [W(id, 'giderken'), hold(1), sm], [W(id, 'giysem'), hold(-1), sm], [tG, giggle, bk]], t, { x: 800, s: .85, k: 1.15 });
     if (t > tG) S.headDY += Math.sin(t * 15) * 4;
     S.armL.hold = (c) => { c.save(); c.translate(0, 8); line(c, [[0, 0], [0, 14], [-26, 36], [26, 36], [0, 14]], 3, '#d9d2c4'); shape(c, [[-30, 36], [30, 36], [26, 120], [-26, 120]], '#8a9a5b', null, { sw: 3, seed: 550 }); c.restore(); };
     S.armR.hold = (c) => { c.save(); c.translate(0, 8); line(c, [[0, 0], [0, 14], [-26, 36], [26, 36], [0, 14]], 3, '#d9d2c4'); shape(c, [[-30, 36], [30, 36], [34, 100], [-34, 100]], '#b4583a', null, { sw: 3, seed: 551 }); c.restore(); };
@@ -213,20 +213,21 @@ sahneS('s18', (ctx, t) => {
     ctx.restore();
     glow(ctx, 960, 560, 700, 'rgba(255,224,150,A)', .22 * u);
     T(ctx, t, 'KORSE', 960, 190, 190, CREAM, b + .5, b + 1.2, { align: 'center', fam: 'Alegreya', it: true, wt: 800, shadow: 'rgba(20,8,8,.8)' });
+    kanitKart(ctx, t, IMG.met2, b + .9, tB + .2, 1590, 560, 360, 360, .05, 'gerçeği (~1890)');
   } else {
     plainBG(ctx, '#efe3c9', '#d9c7a0'); shape(ctx, [[-100, 930], [2020, 930], [2020, 1100], [-100, 1100]], C.wood, C.woodD, { sw: 0, seed: 571 });
     const stiff = (extra = {}) => P(Object.assign({ armL: [-96, -410], armR: [96, -410], f: { mouth: MOUTH.flat, look: [0, 0], browL: [-3, 0, .1], browR: [-3, 0, .1] } }, extra));
     if (t < tS) {   // eğilmek yasak
       const k = t - tB;
       const bend = stiff({ lean: -14, armL: [-120, -60], headDY: 10, f: { look: [-.8, .8], mouth: { w: 9, open: .15, smile: -.5, shape: '' }, bulge: .6, browL: [-8, -.4, .2], browR: [-8, -.4, .2], sweat: .7, puff: .5 } });
-      const S = actor('vic', [[tB, stiff()], [tB + .3, bend, eio], [tB + .8, bend], [tS - .1, bend]], t, { x: 960, s: .85 }); S.shake = 0; S.x += Math.sin(t * 50) * 3 * seg(t, tB + .6, tB + 1.2);
+      const S = actor('vic', [[tB, stiff()], [tB + .3, bend, eio], [tB + .8, bend], [tS - .1, bend]], t, { x: 960, s: .85, k: 1 }); S.shake = 0; S.x += Math.sin(t * 50) * 3 * seg(t, tB + .6, tB + 1.2);
       drawMary(ctx, S);
       pen(ctx, epts(1420, 520, 120, 120, 24).concat([[1420 + 120, 520]]), seg(t, W(id, 'yasak') - .2, W(id, 'yasak') + .3), 14, '#b4503a'); pen(ctx, [[1336, 604], [1504, 436]], seg(t, W(id, 'yasak') + .1, W(id, 'yasak') + .5), 14, '#b4503a');
       T(ctx, t, 'yasak', 1420, 760, 120, '#b4503a', W(id, 'yasak') - .1, W(id, 'yasak') + .5, { align: 'center', rot: -.03 });
     } else if (t < tM) {   // oturmak mühendislik projesi: vinç + baret + sandalye
       drawChair(ctx, 1000, ZEMIN);
       const lowerK = sm(seg(t, tS + .3, tM - .3));
-      const S = actor('vic', [[tS, stiff()], [tM, stiff({ f: { mouth: MOUTH.sad, look: [0, .4], sweat: .6, browL: [-6, -.3, .2], browR: [-6, -.3, .2] } })]], t, { x: 1000, s: .85 }); S.y = ZEMIN - 230 * (1 - lowerK) - 6; LOOK.vic.acc = 'hardhat'; LOOK.vic.accC = '#d9a93b'; LOOK.vic.accD = '#a8802a';
+      const S = actor('vic', [[tS, stiff()], [tM, stiff({ f: { mouth: MOUTH.sad, look: [0, .4], sweat: .6, browL: [-6, -.3, .2], browR: [-6, -.3, .2] } })]], t, { x: 1000, s: .85, k: 1 }); S.y = ZEMIN - 230 * (1 - lowerK) - 6; LOOK.vic.acc = 'hardhat'; LOOK.vic.accC = '#d9a93b'; LOOK.vic.accD = '#a8802a';
       // vinç kolu
       line(ctx, [[1000, -40], [1000, S.y - 480 * S.s]], 8, '#3b2a22'); shape(ctx, [[960, S.y - 500 * S.s], [1040, S.y - 500 * S.s], [1030, S.y - 470 * S.s], [970, S.y - 470 * S.s]], '#b9a07a', '#8a7552', { sw: 3, seed: 575 });
       drawMary(ctx, S); LOOK.vic.acc = 'none';
@@ -239,7 +240,7 @@ sahneS('s18', (ctx, t) => {
       LOOK.vic.acc = 'hardhat'; LOOK.vic.accC = '#b4503a'; LOOK.vic.accD = '#8a3a2a';
       const climb = P({ armL: [-100, -520], armR: [190, -690], lean: 4, f: { mouth: MOUTH.grin, look: [1, -.4], browL: [-6, .25, .1], browR: [-6, .25, .1], sweat: .4 } });
       const up = P({ armL: [-190, -690], armR: [100, -520], lean: -3, f: { mouth: MOUTH.o, look: [1, -.5], browL: [-8, .1, .1], browR: [-8, .1, .1], sweat: .6, bulge: .3 } });
-      const S = actor('vic', [[tM, climb], [W(id, 'ekstrem') - .3, up, sm], [W(id, 'spor') + .5, climb, sm]], t, { x: 760, s: .85 });
+      const S = actor('vic', [[tM, climb], [W(id, 'ekstrem') - .3, up, sm], [W(id, 'spor') + .5, climb, sm]], t, { x: 760, s: .85, k: 1 });
       S.armR.hold = (c) => { c.save(); line(c, [[0, 10], [10, -120]], 8, '#6b4d36'); shape(c, [[-28, -120], [12, -136], [24, -112], [-14, -102]], '#b7b0a2', '#8f897d', { sw: 3, seed: 590 }); c.restore(); };
       drawMary(ctx, S); LOOK.vic.acc = 'none';
       line(ctx, [[760 - 30, ZEMIN - 440 * .85], [1100, 740], [1400, 620], [1560, 500]], 5, '#a9794a');

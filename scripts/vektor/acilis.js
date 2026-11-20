@@ -125,8 +125,9 @@ function quillProp(t) { return (c) => { c.save(); c.translate(0, 8); c.rotate(.5
 
 function drawOpening(ctx, t) {
   const cam = camOf(t);
-  const p = maryState(t), S = pose2state(p, t, { s: .78 });
-  const s = .78;
+  const gk = cam.z < 1.15 ? FIGO : 1;   // geniş çekimlerde figürler büyür; yakın çekimler aynı (yüz kesilmesin)
+  const p = maryState(t), S = buyut(pose2state(p, t, { s: .78 }), { k: gk });
+  const s = S.s;
   const R = { t, camx: cam.x, canapes: t < 25.62 ? 3 : t < 25.98 ? 2 : t < 26.34 ? 1 : 0, mirrorX: 2850 };
   // yürüme zıplaması
   const v = (maryState(t + .05).x - maryState(t - .05).x) / .1;
@@ -150,7 +151,7 @@ function drawOpening(ctx, t) {
   drawRoom(ctx, R);
   if (t >= 23.08 && t < DT) drawInvite(ctx, 930, ZEMIN + 34, .14, .62, true);
   if (s06) {
-    const mS = pose2state(maidState(t), t, { s: .78, look: 'maid', off: 1.3, flipL: false, flipR: true });
+    const mS = buyut(pose2state(maidState(t), t, { s: .78, look: 'maid', off: 1.3, flipL: false, flipR: true }), { k: gk });
     mS.x = maidState(t).x; mS.face.turn = maidState(t).f.turn;
     const mv = (maidState(t + .05).x - maidState(t - .05).x) / .1; mS.y -= Math.min(1, Math.abs(mv) / 120) * Math.abs(Math.sin(t * TAU * 1.8)) * 7;
     maidLayer(ctx, t, S, mS);
@@ -158,6 +159,8 @@ function drawOpening(ctx, t) {
   if (t >= W('s02', 'cebinde') + .25 && t < 13.1) { const hx = S.x + (S.armR.t[0] + 4) * s, hy = ZEMIN + (S.armR.t[1] - 12) * s; const u = back(seg(t, W('s02', 'cebinde') + .15, W('s02', 'cebinde') + .55)); drawInvite(ctx, hx + 6, hy - 40 * (1 - u), -.12, .6 * Math.max(.2, u)); }
   overlays(ctx, t, S, s);
   ctx.restore();
+  // gerçek kanıt: 1885 korsesi (The Met, CC0)
+  if (t >= 13.1 && t < 23.08) kanitKart(ctx, t, IMG.met1, W('s03', 'korse') - .1, 22.9, 1665, 640, 380, 380, .05, 'gerçek bir korse (~1885)');
   // G: alıntı ekran uzayında
   if (t >= W('s05', 'ben') - .05 && t < 41.57) {
     hand(ctx, 'Ben bununla', 50, 190, 88, INK, seg(t, W('s05', 'ben'), W('s05', 'dans') + .1), { rot: -.04, shadow: 'rgba(255,245,225,.55)' });
@@ -183,13 +186,13 @@ function maidLayer(ctx, t, S, mS) {
     ctx.restore();
   }
   // düşünce balonu (hizmetçinin üstünde)
-  const bx = mS.x + 170, by = 262;
+  const bx = mS.x - 250, by = 200;
   if (t > s06('düşünüyor') - .1 && t < s06('ama') + .35) {
     const grow = bk(seg(t, s06('düşünüyor'), s06('düşünüyor') + .35)), pop = seg(t, s06('ama'), s06('ama') + .25);
     const sc = grow * (1 + pop * .5) * 1.1, al = 1 - pop;
     ctx.save(); ctx.globalAlpha = al; ctx.translate(bx, by); ctx.scale(sc, sc);
     const cl = [[-110, -10, 70], [-40, -70, 78], [50, -64, 72], [112, -6, 66], [40, 50, 70], [-50, 54, 68]];
-    for (const [cx, cy, r] of [[-96, 150, 12], [-62, 118, 17], [-28, 82, 24]]) ell(ctx, cx, cy, r, r, '#f8f1e2', C.ink, 3);
+    for (const [cx, cy, r] of [[96, 150, 12], [62, 118, 17], [28, 82, 24]]) ell(ctx, cx, cy, r, r, '#f8f1e2', C.ink, 3);
     ctx.lineWidth = 7; ctx.strokeStyle = C.ink; for (const [cx, cy, r] of cl) { ctx.beginPath(); ctx.arc(cx, cy, r, 0, TAU); ctx.stroke(); }
     ctx.fillStyle = '#f8f1e2'; for (const [cx, cy, r] of cl) { ctx.beginPath(); ctx.arc(cx, cy, r, 0, TAU); ctx.fill(); }
     // içeride ağlayan Mary (büst)

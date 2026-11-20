@@ -51,4 +51,8 @@ const INK = '#3b2a22', RED = '#8a2f2c', CREAM = '#f4ead2';
 // sahne kaydı kısayolu: bas/dur SAHNE_LISTE'den
 function sahneS(sid, fn) { const r = SAHNE_LISTE.find(x => x.sid === sid); sahne(sid, r.bas, r.dur, fn); }
 // oyuncu: poz dizisinden çizim durumu. o: {x, y, s, off, flip, bust}
-function actor(look, seq, t, o = {}) { const p = tr(seq, t); const S = pose2state(p, t, Object.assign({ look, s: .78, off: 1.7 }, o)); if (o.x !== undefined) S.x = o.x; if (o.y !== undefined) S.y = ZEMIN + o.y; return S; }
+// Tam boy figürlerin genel büyütmesi (Büşra, 2026-11-20: "Mary biraz küçük kalmış, Mary'yi ve diğer insanları büyüt").
+// k:1 → büyütme yok. Baş hep görünsün diye gerekirse ayaklar aşağı iner (baş üstü boşluk ≥ 80 px).
+const FIGO = 1.22, FIGK = 1.15;
+function buyut(S, o = {}) { if (S.bust || o.k === 1) return S; const k = o.k || FIGK; S.s *= k; const need = 80 + 880 * S.s; if (S.y < need && !o.fixY) S.y = need; return S; }
+function actor(look, seq, t, o = {}) { const p = tr(seq, t); const S = pose2state(p, t, Object.assign({ look, s: .78, off: 1.7 }, o)); if (o.x !== undefined) S.x = o.x; if (o.y !== undefined) S.y = ZEMIN + o.y; return buyut(S, o); }
