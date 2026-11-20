@@ -7,21 +7,33 @@ html,body{margin:0;background:#000}canvas{display:block}
 <script src="cekirdek.js"></script>
 <script src="mary.js"></script>
 <script src="dekor.js"></script>
-<script src="zaman_acilis.js"></script>
+<script src="zaman_tum.js"></script>
+<script src="sahne.js"></script>
+<script src="kadro.js"></script>
 <script src="acilis.js"></script>
+<script src="sahneler1.js"></script>
 <script>
-// Kullanım: vektor.html?mod=test  → mimik/poz deneme levhası; varsayılan: açılış sahnesi
 const Q = new URLSearchParams(location.search);
 const cv = document.getElementById('c'); const ctx = cv.getContext('2d');
 window.init = async (opt) => {
-  const W = opt.outW || 1280, H = Math.round(W * 9 / 16); cv.width = W; cv.height = H; window.SC = W / 1920;
+  const W_ = opt.outW || 960, H = Math.round(W_ * 9 / 16); cv.width = W_; cv.height = H; window.SC = W_ / 1920;
   await document.fonts.load("700 80px Caveat"); await document.fonts.load("italic 800 80px Alegreya"); await document.fonts.ready;
-  return { W, H };
+  return { W: W_, H };
 };
+// sahne kareleri: id + sahne içi zaman
+window.renderScene = (id, tl) => {
+  const sc = SAH[id]; const t = sc.bas + tl; G.t = t; const k = window.SC;
+  ctx.setTransform(k, 0, 0, k, 0, 0); ctx.fillStyle = '#111'; ctx.fillRect(0, 0, 1920, 1080);
+  sc.draw(ctx, t);
+  vignette(ctx, 1920, 1080, .42); grainOverlay(ctx, 1920, 1080, .1);
+  ctx.setTransform(1, 0, 0, 1, 0, 0); return true;
+};
+window.sceneInfo = id => ({ bas: SAH[id].bas, dur: SAH[id].dur });
+window.sceneIds = () => Object.keys(SAH);
+// eski test kipleri
 window.renderAt = (t, mod) => {
   G.t = t; const k = window.SC; ctx.setTransform(k, 0, 0, k, 0, 0);
-  const m = mod || Q.get('mod'); (m === 'test' || m === 'yuz' || m === 'oda') ? testSheet(ctx, t, m) : acilisCiz(ctx, t);
-  ctx.setTransform(1, 0, 0, 1, 0, 0);
-  return true;
+  const m = mod || Q.get('mod'); if (typeof testSheet === 'function') testSheet(ctx, t, m);
+  ctx.setTransform(1, 0, 0, 1, 0, 0); return true;
 };
 </script></body></html>
