@@ -35,3 +35,10 @@ Bizde: durağan resim + yavaş kamera. Kodla bu farkın tamamı kapanmaz.
    kaldır… Başka hiçbir şeyi değiştirme.") + birkaç A/B mimik çifti. Etki: orta-yüksek.
 3. Gerçek hareket (ücretli ya da arkadaşın aracı): 8-10 kilit espri anında 5-6 sn'lik görselden-video klibi. Kaba tahmin 150-250 TL/video
    (hedef 80-90 TL'nin üstü; araca göre değişir). Önce 1-2 örnek + net fiyat + ticari kullanım şartı kontrolü. Etki: en yüksek.
+
+## Kodla hareket denemesi: tek Gemini resmi (2026-11-20 gece)
+Soru (Büşra): "Gemini resimlerini kodla hareket ettiremiyor musun?" → s37b (ağlayan Mary) üzerinde 5 sn: nefes, 2 hıçkırık (omuz kalkması + sarsılma), baş eğme/eğilme,
+dudak titremesi, eller+para titremesi, kayan gözyaşları. Yöntem: resmi kesmeden yumuşak bölge bükmeleri (kafa/gövde/eller/ağız maskeleri) + kodla çizilen gözyaşı (scripts/hareket/resim_hareket_deneme.py).
+Ölçüm (aynı yöntem: 160x90 gri, 15 kare/sn): kare farkı ort. 1,21 (en yüksek 5,08); Böcek-3 kayıtları 3,66–6,26; bizim v9 1,93.
+Sonuç: yerel hareket bozulmadan çalışıyor (yüz, saç, boyun kenarlarında kopma yok) ama sakin kalıyor; yürüme/dönme/koşma/yüz çevirme resimde olmadığı için yapılamaz → büyük hareket için yapay zekâ video modeli gerekir.
+
