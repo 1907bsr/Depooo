@@ -75,5 +75,5 @@ Partner Programı, seriler/oynatma listeleri, topluluk gönderileri.
 - ✅ 58 sahnenin tamamı kodla çizildi (scripts/vektor), 0 TL; Gemini görselleri kullanılmıyor (Büşra'nın kararı).
 - ✅ Kamera sağa-sola kaymıyor (sabit kamera + yavaş yakınlaşma); figür hareketi, mimik, el yazısı notlar korundu.
 - ✅ Çakışma/okunurluk kontrol turu: 25 düzeltme (hatalar.md'ye kural yazıldı). Sessiz önizleme v11: 8 dk 47 sn.
-- ⏳ Büşra'nın geri bildirimi → gerekirse sahne düzeltmeleri.
-- ⏳ Büşra'nın ses kaydı → zamanları gerçek sese oturt, ses efektleri (sessiz/kısa), altyazı (.srt), kapak (3 seçenek), "Özel" yükleme, 3 Shorts (dikey yeniden çizim).
+- ✅ Büşra v13 görsel önizlemesini onayladı (2026-11-20). Görseller kilitli; figürler büyütüldü, gerçek kanıt kartları (1885/1890 korse, Eyfel, patent, Korse A.Ş.) eklendi.
+- ⏳ SIRADAKİ (Büşra): ses kaydı, 7 bölüm, önce 30 sn deneme (kurulum/ses-kaydi.md). Sonra: zamanları gerçek sese oturt, ses efektleri (sessiz/kısa), altyazı (.srt), kapak (3 seçenek), "Özel" yükleme, 3 Shorts (dikey yeniden çizim).
