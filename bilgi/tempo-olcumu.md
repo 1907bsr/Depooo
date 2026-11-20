@@ -61,3 +61,4 @@ Kontrol: dinlenme pozunda orijinalle fark ort. 0,26 (kenarlar 8x büyütüldü, 
 Ölçüm (160x90, 15 kare/sn kare farkı): tüm klip ort. 0,38; el sallama bölümü 0,52 (idle hareketi 0,24 idi). Böcek-3 kayıtları 3,66–6,26: oran doğrudan kıyaslanamaz (figür karenin ~%25'i) ama hâlâ çok daha sakin.
 Sınırlar: uzun etek bacakları örttüğü için bacak/yürüme yok; dönme yok; kollar gövdenin ARKASINDA katmanlandığı için el gövdenin önüne (belde, göğüste) gelemez.
 Eklem dostu kaynak resim (önden, tam boy, düz arka plan, kollar ~30° açık, eller açık, bacaklar hafif aralık; yürüme için yan görünüş) ile tam hareket mümkün: bkz. scripts/hareket/kukla/README.md.
+Güncelleme (2026-11-20 gece): kol kalkınca koltuk altı açık kalıyordu (Büşra yakaladı) → üst kol omuzdan yumuşak bükülecek şekilde değiştirildi (omuz sabit, 70 px'te tam açı); koltuk altı artık kapalı ve yuvarlak (iki kol, 20-50° kontrol). Güncel klip: medya/hareket/karakter2/kukla-el-sallama-v2.mp4.

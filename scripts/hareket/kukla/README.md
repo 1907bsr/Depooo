@@ -37,3 +37,4 @@ Yürüme için aynı karakterin yan görünüşü ayrıca gerekir.
 - Yuvarlak eklem kapaklarının kenarı 3 px yumuşatılır (noktalı halka çıkmasın).
 - Kolların arkasında kalan etek konturu ölçülüp yeniden çizilir; plaka dolgusu "tam" duvar dolgusundan alınır.
 - Gövdenin alt kenarı yumuşak biter (nefes hareketinde dikiş çizgisi görünmesin); boyun derisi çenenin altına uzatılır.
+- Üst kol sert döndürülmez: omuz sabit, dönme açısı omuzdan aşağı 70 px boyunca yumuşakça artar (`rig.py _render_bent`); aksi halde kol kalkınca koltuk altı açık/yarım kalır.

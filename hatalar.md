@@ -88,3 +88,8 @@ Format: Tarih – Ne oldu – Neden – Bundan sonraki kural
 - Gövde alt kenarı sert kesilince nefes hareketinde belin altında açık renk dikiş çizgisi göründü. KURAL: alt kenar yumuşak biter, katman biraz aşağı uzar.
 - Uzun süren üretim betiğini `| head` ile borulamak betiği yarıda kesti (BrokenPipe) ve eski dosyalarla devam edildi. KURAL: üretim betiklerini boruya sokma; çıktıyı dosyaya yaz.
 - Yeni düzeneği her zaman TEMİZ klasörde baştan çalıştırıp çıktının aynı olduğunu doğrula (yapıldı: fark 0).
+
+## 2026-11-20 gece – Kol kalkınca koltuk altı "yarım" görünüyor (Büşra yakaladı)
+- Üst kolu omuz merkezinden sert bir parça gibi döndürünce koltuk altında kol ile gövde arasında omuz-askı hizasına kadar uzanan gri bir boşluk açıldı; kolun iç çizgisi askının arkasına kaçıp çizgi yarım kaldı.
+  KURAL: Üst kol sert dönmez; omuz sabit kalır, dönme açısı omuzdan aşağı 70 px boyunca 0'dan tam açıya yumuşakça artar (rig.py _render_bent). Koltuk altı gövdeye bağlı kalır, yuvarlak kapanır.
+  Her yeni kukla/rig için kolu 20°, 35°, 50° kaldırıp koltuk altını 8-10x büyütüp bak (iki kol).
