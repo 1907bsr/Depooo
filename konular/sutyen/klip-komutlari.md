@@ -1,5 +1,5 @@
 # Klip komutları (görselden video) – Sütyen videosu
-Amaç (2026-11-20, Büşra: "Hadi deniyelim"): Böcek-3 tarzı akıcı hareketi 2 deneme klibiyle ölçmek. Yeni para harcanmaz; klibi Büşra elindeki araçla (arkadaşın aracı / Gemini uygulaması) üretir, Claude komutu yazar ve sonucu kontrol eder.
+Amaç (2026-11-20, Büşra: "Hadi deniyelim"): Böcek-3 tarzı akıcı hareketi 2 deneme klibiyle ölçmek. DURUM: Büşra'nın elinde video aracı YOK; Gemini anahtarımızda Veo yok (11 model adı denendi, hepsi 404), makinede GPU yok, video servis siteleri ağ izni dışında. Klibi üretmenin yolları: (A) Google Flow'da ücretsiz kredi varsa Büşra tıklar (resmi yükler, komutu yapıştırır, indirir), Claude komut yazar/kontrol eder; (B) arkadaşın aracı; (C) ileride otomatik: servis hesabı + anahtar + ağ izni + her harcama için onay. Yeni para harcanmaz.
 Komutlar İngilizce yazılır (araçlar en iyi onu anlıyor). Hiçbir komutta sanatçı, kanal, marka veya ünlü karakter adı geçmez (CLAUDE.md 00.3).
 
 ## Ortak son ek (her komutun sonuna)

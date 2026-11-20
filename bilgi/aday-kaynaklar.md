@@ -25,4 +25,4 @@ Yeni bulunan kaynaklar önce buraya yazılır, onaydan sonra kaynaklar.md'ye ta�
 - Lisans: Her araçta ticari kullanım şartı kontrol edilir (CLAUDE.md 00.3). Gerçekçi görünen klip gerçek gibi sunulmaz; gerekirse YouTube'da yapay içerik işaretlenir.
 - Maliyet: video başına 8–10 klip + yeniden denemeler ≈ 250–400 TL (hedef 80–90 TL'nin üstü). Gemini aylık sınırı: bu ay ~309 TL harcandı, sınır 350 TL.
 - Risk: kalite/tutarlılık, yeniden deneme maliyeti, bütçe. Önce 2 deneme klibi, sonra karar.
-
+- Durum 2026-11-20: Büşra'nın elinde video aracı yok. Gemini anahtarında Veo yok, makinede GPU yok, video servis siteleri (Replicate, fal, Kling, Runway) bu ortamdan açılmıyor. Deneme için önerilen yol: Google Flow'da ücretsiz kredi kontrolü (arama sonuçlarına göre ücretsiz kredi var, güncel durum doğrulanmadı) ya da arkadaşın aracı. Gemini uygulamasında fotoğraftan video ücretli plan istiyor (arama sonuçlarına göre).
