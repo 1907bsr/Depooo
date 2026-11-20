@@ -349,3 +349,4 @@ Format: Kural – Kaynağı: video adı, tarih, hangi veri.)
 - 2026-11-19: YENİ STİL ve KURGU onaylandı: gerçekçi arka plan + çizim karakter, hızlı kesme, A/B mimik, gerçek arşiv objesi, çizgi roman yazısı yok. Görseller şimdilik Büşra'nın elinden (ücretsiz).
 - 2026-11-20: Kurgu motoru motor2 (canvas, kesintisiz kamera yolu, kelimeye bağlı zamanlama); cümle↔görsel kontrol listesi zorunlu; önizleme ~8 dk 47 sn.
 - 2026-11-20: Tempo ölçümü (bilgi/tempo-olcumu.md): v9’da güçlü hareketli saniye %12, Böcek-3 örneklerinde %47-60; son 1,5 dk ve açılış donuk. Büşra’ya 3 seçenek sunuldu (tempo paketi / kişisiz arka plan derinliği / gerçek hareket klipleri); karar bekleniyor, onaysız üretim yok.
+- 2026-11-20: Büşra "görseller elimizde olmasa kendi bildiğin gibi video yapar mısın?" dedi: scripts/vektor/ ile kodla çizilmiş (0 TL) 41 sn açılış örneği yapıldı (Mary, oda, korse röntgeni, çubuklar, ayna). Aynı 41 sn için güçlü hareketli saniye v9 %5 → %39. Karar bekliyor.

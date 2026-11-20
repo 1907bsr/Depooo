@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+@font-face{font-family:'Caveat';src:url('../fontlar/Caveat[wght].ttf');font-weight:400 700}
+@font-face{font-family:'Alegreya';src:url('../fontlar/Alegreya-Italic[wght].ttf');font-style:italic;font-weight:400 900}
+html,body{margin:0;background:#000}canvas{display:block}
+</style></head><body><canvas id="c"></canvas>
+<script src="cekirdek.js"></script>
+<script src="mary.js"></script>
+<script src="dekor.js"></script>
+<script src="zaman_acilis.js"></script>
+<script src="acilis.js"></script>
+<script>
+// Kullanım: vektor.html?mod=test  → mimik/poz deneme levhası; varsayılan: açılış sahnesi
+const Q = new URLSearchParams(location.search);
+const cv = document.getElementById('c'); const ctx = cv.getContext('2d');
+window.init = async (opt) => {
+  const W = opt.outW || 1280, H = Math.round(W * 9 / 16); cv.width = W; cv.height = H; window.SC = W / 1920;
+  await document.fonts.load("700 80px Caveat"); await document.fonts.load("italic 800 80px Alegreya"); await document.fonts.ready;
+  return { W, H };
+};
+window.renderAt = (t, mod) => {
+  G.t = t; const k = window.SC; ctx.setTransform(k, 0, 0, k, 0, 0);
+  const m = mod || Q.get('mod'); (m === 'test' || m === 'yuz' || m === 'oda') ? testSheet(ctx, t, m) : acilisCiz(ctx, t);
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  return true;
+};
+</script></body></html>

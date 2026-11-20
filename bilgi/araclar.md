@@ -24,3 +24,9 @@
 - Değerlendirme: Gerçek karakter hareketi (bizde olmayan şey) + iyi ses-görüntü eşleşmesi. Ama TINNN! yazısı, hız çizgisi ve beyaz parlama Büşra'nın yasakladığı öğeler;
   görsel eski stil; telif/lisans durumu bilinmiyor (ücretsiz planlar genelde ticari kullanım vermez; ses de yapay zekâ üretimi) → olduğu gibi KULLANILMAZ.
 - Karar bekliyor: yeni stil görsellerden, yazısız ve sessiz, 6 sn klip(ler) isteyip kurguya yerleştirmek (yalnızca en komik 5-8 an).
+
+## Kod-çizim 2B animasyon (scripts/vektor) – deneme 2026-11-20
+- Ne: karakter/oda/proplar kodla çizilir ve canlandırılır (yürüme, mimik, kamera, el yazısı). Maliyet: 0 TL (API yok). Lisans: tamamen özgün + OFL yazı tipleri.
+- Artı: gerçek karakter hareketi, istenen mimik, kolay düzenleme, aynı sahnenin dikey (Shorts) yeniden düzeni, sese göre yeniden zamanlama.
+- Eksi: fotoğraf gibi gerçekçi değil (düz renkli kitap illüstrasyonu); her yeni karakter/oda için çizim emeği gerekir.
+- Durum: 41 sn'lik açılış örneği yapıldı; Büşra'nın kararı bekleniyor.

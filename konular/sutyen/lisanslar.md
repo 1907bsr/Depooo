@@ -35,3 +35,6 @@ Dosyalar: medya/sutyen/gorsel/arsiv/met/
 | met-157937.jpg | Corset (ca. 1885) | Ball's | The Met Open Access – CC0 (isPublicDomain: True) | https://www.metmuseum.org/art/collection/search/157937 |
 | met-158100.jpg | Corset (ca. 1890) | Corset Parisien | The Met Open Access – CC0 (isPublicDomain: True) | https://www.metmuseum.org/art/collection/search/158100 |
 | met-173657.jpg | Corset (ca. 1885) | Worcester Corset Company | The Met Open Access – CC0 (isPublicDomain: True) | https://www.metmuseum.org/art/collection/search/173657 |
+
+## Kod-çizim animasyon denemesi (2026-11-20)
+scripts/vektor/ – karakter, oda, sokak, proplar ve notlar Claude tarafından kodla çizildi; dış görsel/ses/müzik yok. Yazı tipleri: Caveat, Alegreya (SIL OFL). Çıktı: medya/sutyen/kurgu/ornek-kod-cizim-acilis.mp4 (sessiz).
