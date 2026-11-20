@@ -77,3 +77,4 @@ Partner Programı, seriler/oynatma listeleri, topluluk gönderileri.
 - ✅ Çakışma/okunurluk kontrol turu: 25 düzeltme (hatalar.md'ye kural yazıldı). Sessiz önizleme v11: 8 dk 47 sn.
 - ✅ Büşra v13 görsel önizlemesini onayladı (2026-11-20). Görseller kilitli; figürler büyütüldü, gerçek kanıt kartları (1885/1890 korse, Eyfel, patent, Korse A.Ş.) eklendi.
 - ⏳ SIRADAKİ (Büşra): ses kaydı, 7 bölüm, önce 30 sn deneme (kurulum/ses-kaydi.md). Sonra: zamanları gerçek sese oturt, ses efektleri (sessiz/kısa), altyazı (.srt), kapak (3 seçenek), "Özel" yükleme, 3 Shorts (dikey yeniden çizim).
+- ⏳ KARAR (Büşra): hareketli klip yöntemi – Böcek-3 tarzı akıcı hareket için 2 deneme klibi (bilgi/aday-kaynaklar.md: "Görselden video"). Sonra ses kaydı.

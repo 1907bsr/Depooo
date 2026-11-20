@@ -13,3 +13,16 @@ Yeni bulunan kaynaklar önce buraya yazılır, onaydan sonra kaynaklar.md'ye ta�
 - Erişim: collectionapi.metmuseum.org (v1.1 arama), images.metmuseum.org.
 ## Library of Congress (eklendi 2026-11-19, ONAY BEKLİYOR)
 - 1929 öncesi yayımlanmış, "No known restrictions" ibareli eserler. Her eserin hak beyanı ayrıca kontrol edilir.
+
+## Görselden video (hareketli klip) araçları (eklendi 2026-11-20, ONAY BEKLİYOR – karar Büşra'nın)
+- Ne: Gemini görsellerimizi 5–6 sn'lik hareketli kliplere çevirmek (Böcek-3 tarzı akıcı hareket).
+- Seçenekler:
+  1. Arkadaşın aracı: bir deneme klibi geldi (medya/sutyen/referans/arkadas-klip-1-mary-cubuk.mp4); fiyat/şartlar bilinmiyor.
+  2. Gemini uygulamasında video seçeneği (Büşra'nın planına bağlı; elle üretim, ben komut yazarım).
+  3. Google Veo (Gemini API): ŞU AN YOK. Anahtarımızın model listesinde Veo görünmüyor (2026-11-20 kontrolü). Fiyat yaklaşık 0,10 $/sn
+     (üçüncü taraf kaynaklara göre, resmi sayfadan doğrulanmadı) → 6 sn klip ≈ 30 TL.
+  4. Diğer ücretli araçlar (Kling, Runway vb.): fiyat, ticari kullanım şartı ve yapay zekâ etiketi ayrıca kontrol edilir.
+- Lisans: Her araçta ticari kullanım şartı kontrol edilir (CLAUDE.md 00.3). Gerçekçi görünen klip gerçek gibi sunulmaz; gerekirse YouTube'da yapay içerik işaretlenir.
+- Maliyet: video başına 8–10 klip + yeniden denemeler ≈ 250–400 TL (hedef 80–90 TL'nin üstü). Gemini aylık sınırı: bu ay ~309 TL harcandı, sınır 350 TL.
+- Risk: kalite/tutarlılık, yeniden deneme maliyeti, bütçe. Önce 2 deneme klibi, sonra karar.
+
