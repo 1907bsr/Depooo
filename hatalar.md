@@ -71,3 +71,11 @@ Format: Tarih – Ne oldu – Neden – Bundan sonraki kural
 - Kollar: ik() dirseği hep aynı tarafa koyuyordu; el omuz hizasının üstüne çıkınca dirsek yukarı bakıp kol ters görünüyordu. KURAL: el omuzdan yukarıdaysa dirsek aşağı/dışarı (mary.js drawArm, yumuşak karışım). Yeni poz eklerken havaya kalkan kolları görsel kontrol et.
 - Boyut: her sahnede %3-8 yavaş yakınlaşma + sahne sonunda kesme = "büyüyüp küçülüyor" izlenimi. KURAL: sahne içi yakınlaşma yok (ZOOMK=0).
 - Gerçek görüntü: Büşra v9'daki mozaik/spor Gemini çizimlerini "gerçek görüntü" sanıyordu ve onların yerine kod çizimini görünce şaşırdı. KURAL: Bir görseli değiştirirken ne olduğunu açıkça söyle ("Gemini çizimiydi, gerçek fotoğraf değildi, kod çizimi yaptım"); Büşra'nın beğendiği bir görseli ONAYSIZ başka görselle DEĞİŞTİRME.
+
+## 2026-11-20 gece – Resim bükme (warp) hareketinde yırtılma/katlanma ve kayan maskeler (kendi kontrolümde yakaladım, Büşra görmeden)
+- Kol uzun bir kaldıraçtır: omuzda 3° dönme elde ~19 px yer değiştirme yapar; maske kenarında alan katlanır → eller yırtıldı, dışarıda koyu leke çıktı (ilk sürümde 63/72 karede).
+  KURAL: bükme alanı kesin olarak scripts/hareket/katlanma_olc.py ile ölçülür (çizgili yerlerde Jacobian determinantı ≥ 0,4); eller/uzun parçalar için dönme yerine "elde en çok" yanal sarkma ≤ 3 px kullan.
+- Maskeleri kaynak resimde çizip hareket alanını çıktı pikseline okursan salınma maskeleri kaydırır (asimetrik gülümseme, kaçan iris). KURAL: alan kaynak noktasının gittiği yeri verir; ters koordinat sabit nokta yinelemesiyle bulunur (karakter_hareketlendir.py backward()).
+- Saç bukle maskesine yüz/çene çizgisi girerse koyu çizgi sürüklenip leke yapar. KURAL: cilt bölgesini 5 px genişletip maskeden çıkar, geçişi yumuşat.
+- Yarı saydam yama (RGBA) bulanıklaştırılırsa kenarda koyu halka çıkar (göz kırpmada "halka halka göz"). KURAL: göz çevresini cilt rengiyle difüzyonla doldurup temiz kapak yap, kapak kenarını çizerek ekle; yamayı RGB olarak harmanla.
+- Görsel kontrol yetmez: 6 karelik küçük özet elleri/kenarları göstermiyor. KURAL: hareketli bir resim teslim etmeden önce eller, saç uçları ve kenarlar 4-5x büyütülüp en uç hareket karelerinde bakılır.

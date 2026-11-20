@@ -32,3 +32,9 @@ Seçilen kıyafet: lavanta saten gecelik (V yaka, dantel, belde kurdele) + pembe
 Kart: 4 ifade (uykulu/esniyor, şaşkın, gülüyor, şüpheli) → medya/karakterler/gece/gece_karti_v3.png (depoya girmez). Üretim: node scripts/vektor/araclar/karakter_karti.js <çıktı.png> 1920 gece
 Açık: kullanılacağı video/sahne ve kıyafet (gecelik mi, iç çamaşırı seti mi) Büşra'dan bekleniyor. Adı henüz yok.
 
+
+## Kombinezonlu kadın (Büşra'nın gönderdiği resim, 2026-11-20 gece)
+Koyu kahve topuz + yan buklelar, kahverengi göz, dantelli krem kombinezon, çıplak ayak, gri duvar/ahşap zemin (686x1024).
+Kodla hareketlendirildi (bilgi/tempo-olcumu.md; medya/hareket/karakter2/). Adı yok.
+AÇIK (Büşra'ya soruldu): resmin hangi araçla üretildiği (CLAUDE.md 00. kural: yapay zekâ çıktısı ancak aracın şartları ticari kullanıma izin veriyorsa; Gemini uygulamasıysa sorun yok),
+ve hangi video/sahne için olduğu (kod çizim figürlerle stil uyumu). Önceki "gece kıyafetli" tarif (platin sarısı saç, yeşil göz) bu resimden farklı; hangisi kalıcı olacak, bekliyor.

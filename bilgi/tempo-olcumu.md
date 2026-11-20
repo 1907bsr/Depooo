@@ -42,3 +42,13 @@ dudak titremesi, eller+para titremesi, kayan gözyaşları. Yöntem: resmi kesme
 Ölçüm (aynı yöntem: 160x90 gri, 15 kare/sn): kare farkı ort. 1,21 (en yüksek 5,08); Böcek-3 kayıtları 3,66–6,26; bizim v9 1,93.
 Sonuç: yerel hareket bozulmadan çalışıyor (yüz, saç, boyun kenarlarında kopma yok) ama sakin kalıyor; yürüme/dönme/koşma/yüz çevirme resimde olmadığı için yapılamaz → büyük hareket için yapay zekâ video modeli gerekir.
 
+
+## Tek karakter resmini kodla hareketlendirme: kombinezonlu kadın (2026-11-20 gece)
+Resim: Büşra'nın gönderdiği ayakta duran kadın (koyu kahve topuz, krem kombinezon; 686x1024). Yöntem: resmi parçalara ayırmadan yumuşak bölge bükmeleri
+(scripts/hareket/karakter_hareketlendir.py). 6 sn, 24 kare/sn, kusursuz döngü (kare 144 = kare 0).
+Hareketler: nefes, ağırlık verme (hafif salınma), baş eğme, saç bukleleri, kol sarkması (elde ±3 px), etek sallanması, göz kırpma (3 kez), bakış kayması,
+kaş kalkması, gülümseme. Çıktı: medya/hareket/karakter2/hareket-v5.mp4 (depoya girmez).
+Ölçüm (aynı yöntem: 160x90 gri, 15 kare/sn): kare farkı ort. 0,24 (en yüksek 0,42). Karşılaştırma: Böcek-3 kayıtları 3,66–6,26; ağlayan Mary denemesi 1,21; bizim v9 1,93.
+Sonuç: "canlı duruş" seviyesinde (nefes alan, göz kırpan, gülümseyen karakter), akıcı aksiyon seviyesinin yaklaşık 15-25 kat altında. El sallama, yürüme, dönme bu resimde yapılamaz
+(kol/bacak ayrı parça değil). Sonraki seviye için: kolu ayrı parçaya kesip arkasını doldurma denemesi (riskli) ya da yapay zekâ video modeli ya da karakteri kod sistemimize (scripts/vektor) taşıma.
+Katlanma ölçümü: scripts/hareket/katlanma_olc.py – 144 karenin hiçbirinde çizgili yerde determinant 0,4'ün altına düşmüyor (kontrolsüz ilk sürümde eller 63/72 karede katlanıyordu).

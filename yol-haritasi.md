@@ -78,3 +78,4 @@ Partner Programı, seriler/oynatma listeleri, topluluk gönderileri.
 - ✅ Büşra v13 görsel önizlemesini onayladı (2026-11-20). Görseller kilitli; figürler büyütüldü, gerçek kanıt kartları (1885/1890 korse, Eyfel, patent, Korse A.Ş.) eklendi.
 - ⏳ SIRADAKİ (Büşra): ses kaydı, 7 bölüm, önce 30 sn deneme (kurulum/ses-kaydi.md). Sonra: zamanları gerçek sese oturt, ses efektleri (sessiz/kısa), altyazı (.srt), kapak (3 seçenek), "Özel" yükleme, 3 Shorts (dikey yeniden çizim).
 - ⏳ KARAR (Büşra): hareketli klip yöntemi – Böcek-3 tarzı akıcı hareket için 2 deneme klibi (bilgi/aday-kaynaklar.md: "Görselden video"). Sonra ses kaydı.
+- ✅ Büşra'nın gönderdiği kombinezonlu kadın resmi kodla hareketlendirildi (6 sn döngü, 0 TL; scripts/hareket/karakter_hareketlendir.py). Ölçüm: kare farkı 0,24 (Böcek-3 3,66–6,26) → "canlı duruş", büyük hareket değil. Karar bekleniyor: bu seviye yeterli mi, değilse kolu ayırma denemesi / karakteri kod sistemine taşıma / video aracı.
