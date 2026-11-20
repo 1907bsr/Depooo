@@ -122,6 +122,12 @@ sahneS('s42a', (ctx, t) => {
   // iskele zemini
   for (let i = 0; i < 12; i++) poly(ctx, [[-100, 690 + i * 36], [2020, 690 + i * 36], [2020, 722 + i * 36], [-100, 722 + i * 36]], i % 2 ? '#a98462' : '#9a7656', '#7a573b', { sw: 2.4, sx: 0, sy: -3 });
   line(ctx, [[-100, 700], [2020, 700]], 10, '#6b4d36'); for (let i = 0; i < 18; i++) line(ctx, [[i * 120, 700], [i * 120, 620]], 8, '#6b4d36'); line(ctx, [[-100, 620], [2020, 620]], 8, '#6b4d36');
+  // martılar
+  for (let i = 0; i < 3; i++) { const bx = ((t * 80 + i * 700) % 2400) - 240, by = 250 + i * 80 + Math.sin(t * 1.5 + i) * 18, fl = Math.sin(t * 9 + i * 2) * 10; line(ctx, [[bx - 24, by + fl], [bx, by - 4], [bx + 24, by + fl]], 4, '#5a4a48'); }
+  // uzaktaki kalabalık: iskelede küçük figürler tabela sallıyor
+  [['friendA', 1130, 0], ['wig1', 1250, 1], ['friendC', 1370, 2], ['lady2', 1700, 3], ['quiz', 1830, 4]].forEach(([lk, x, i]) => {
+    const cs = actor(lk, [[b, P({ armL: [-96, -410], armR: [150, -640 + Math.sin(t * 6 + i * 1.3) * 70], headRoll: Math.sin(t * 4 + i) * 5, f: { mouth: MOUTH.grin, look: [0, 0], blush: .5 } })]], t, { x, y: -200, s: .27, off: i * .7 }); cs.y -= Math.abs(Math.sin(t * 5 + i)) * 9;
+    cs.armR.hold = (c) => { c.save(); line(c, [[0, 10], [0, 140]], 9, '#6b4d36'); poly(c, [[-70, 140], [70, 140], [70, 220], [-70, 220]], '#f8efd9', '#e0d3b4', { sw: 4 }); c.restore(); }; drawMary(ctx, cs); });
   // çöp kutusu
   const tB = W(id, 'özgürlük'); ctx.save(); ctx.translate(1000, 930); poly(ctx, [[-120, 0], [120, 0], [100, -230], [-100, -230]], '#b9b2a2', '#8f897d', { sw: 5, sx: -8, sy: -4 }); for (const x of [-60, 0, 60]) line(ctx, [[x, -20], [x * .85, -210]], 3, '#8f897d'); poly(ctx, [[-110, -230], [110, -230], [118, -260], [-118, -260]], '#cfc9ba', '#a39d8e', { sw: 4, sx: -4, sy: -3 }); ctx.restore();
   const ul = bk(seg(t, tB - .2, tB + .4)); if (ul > 0) { ctx.save(); ctx.translate(1000, 780); ctx.scale(ul, ul); poly(ctx, [[-170, -50], [170, -50], [170, 40], [-170, 40]], '#f8efd9', '#e0d3b4', { sw: 4, sx: -4, sy: -3 }); hand(ctx, 'Özgürlük', 0, -4, 52, RED, 1, { align: 'center' }); hand(ctx, 'Çöp Kutusu', 0, 38, 52, INK, 1, { align: 'center' }); ctx.restore(); }
@@ -132,7 +138,7 @@ sahneS('s42a', (ctx, t) => {
   const tt = [W(id, 'sütyenlerini'), W(id, 'korselerini'), W(id, 'kirpiklerini')];
   const women = [['w68a', 300, 0], ['w68b', 540, 1], ['w68c', 780, 2]];
   const items = ['bra', 'corset', 'lash'];
-  women.forEach(([lk, x, i]) => { const S = actor(lk, [[b, stand(i)], [tt[i] - .3, stand(i)], [tt[i] + .05, tossP, bk], [tt[i] + .5, stand(i), sm], [W(id, 'ama') + .3, sad, sm]], t, { x, s: .8, off: i * .8 }); if (t < tt[i] - .2 || (t > tt[i] + .6 && t < W(id, 'ama') + .2)) { S.armR.hold = (c) => { c.save(); line(c, [[0, 10], [0, 150]], 7, '#6b4d36'); poly(c, [[-80, 150], [80, 150], [80, 240], [-80, 240]], '#f8efd9', '#e0d3b4', { sw: 3 }); hand(c, ['ÖZGÜRLÜK', 'EŞİTLİK', 'HAKLARIMIZ'][i], 0, 208, 28, RED, 1, { align: 'center', fam: 'Alegreya', it: true, wt: 800 }); c.restore(); }; } drawMary(ctx, S);
+  women.forEach(([lk, x, i]) => { const S = actor(lk, [[b, stand(i)], [tt[i] - .3, stand(i)], [tt[i] + .05, tossP, bk], [tt[i] + .5, stand(i), sm], [W(id, 'ama') + .3, sad, sm]], t, { x, s: .8, off: i * .8 }); if (t < tt[i] - .2) { S.headRoll += Math.sin(t * 5 + i) * 3; S.y -= Math.abs(Math.sin(t * 5 + i)) * 7; } else if (t > W(id, 'ama') + .3) { S.headRoll += Math.sin(t * 2.2 + i) * 3; } if (t < tt[i] - .2 || (t > tt[i] + .6 && t < W(id, 'ama') + .2)) { S.armR.hold = (c) => { c.save(); line(c, [[0, 10], [0, 150]], 7, '#6b4d36'); poly(c, [[-80, 150], [80, 150], [80, 240], [-80, 240]], '#f8efd9', '#e0d3b4', { sw: 3 }); hand(c, ['ÖZGÜRLÜK', 'EŞİTLİK', 'HAKLARIMIZ'][i], 0, 208, 28, RED, 1, { align: 'center', fam: 'Alegreya', it: true, wt: 800 }); c.restore(); }; } drawMary(ctx, S);
     const u = seg(t, tt[i] + .1, tt[i] + .8); if (u > 0 && u < 1) { const sx = x + 150, sy = 460, ex = 960 + i * 20, ey = 640; const ix = lerp(sx, ex, u), iy = lerp(sy, ey, u * u) - Math.sin(u * Math.PI) * 160; ctx.save(); ctx.translate(ix, iy); ctx.rotate(u * 8); if (items[i] === 'bra') { ctx.scale(.28, .28); linenBra(ctx, 0, 0, 1, t); } else if (items[i] === 'corset') { ctx.scale(.55, .55); corsetPiece(ctx, 'full'); } else { line(ctx, [[-30, 0], [0, -12], [30, 0]], 6, C.ink); for (let k = -3; k <= 3; k++) line(ctx, [[k * 8, -6 + Math.abs(k)], [k * 10, -22]], 3, C.ink); } ctx.restore(); } });
   // polis
   const tP = W(id, 'polis'), tI = W(id, 'izin');
@@ -161,7 +167,7 @@ sahneS('s42c', (ctx, t) => {
   } else if (t < c3) {
     plainBG(ctx, '#efe3c9', '#d9c7a0'); shape(ctx, [[-100, 930], [2020, 930], [2020, 1100], [-100, 1100]], C.wood, C.woodD, { sw: 0, seed: 970 });
     const dream = P({ armL: [-96, -410], armR: [96, -410], headRoll: -3, f: { look: [.8, -.6], mouth: MOUTH.smile, lid: .2, browL: [-6, -.1, .3], browR: [-10, -.2, .4] } });
-    const S = actor('quiz', [[c2, dream]], t, { x: 560, s: .95 }); drawMary(ctx, S);
+    const S = actor('quiz', [[c2, dream]], t, { x: 560, s: .95 }); S.headRoll += Math.sin(t * 1.7) * 3; S.lean += Math.sin(t * 1.4) * 1.2; drawMary(ctx, S);
     // hayal gücü bulutu + alev
     const u = bk(seg(t, W(id, 'bir', 2) - .2, W(id, 'gazetecinin') + .4)); if (u > 0) { ctx.save(); ctx.translate(1080, 360); ctx.scale(u * 1.2, u * 1.2); const cl = [[-110, 10, 70], [-30, -50, 78], [60, -44, 72], [122, 6, 66], [50, 60, 70], [-50, 64, 68]]; ctx.lineWidth = 7; ctx.strokeStyle = C.ink; for (const [cx, cy, r] of cl) { ctx.beginPath(); ctx.arc(cx, cy, r, 0, TAU); ctx.stroke(); } ctx.fillStyle = '#f8f1e2'; for (const [cx, cy, r] of cl) { ctx.beginPath(); ctx.arc(cx, cy, r, 0, TAU); ctx.fill(); }
       const fl = Math.sin(t * 12) * 6; shape(ctx, [[0, 70], [-40, 20], [-20, -30 - fl], [0, -70 - fl * 2], [22, -26], [44, 22]], '#e0753a', '#b4503a', { sw: 4, seed: 980, sx: -4, sy: -3 }); shape(ctx, [[0, 70], [-18, 30], [0, -8 - fl], [20, 30]], '#f6dc8a', null, { sw: 0, seed: 981 }); ctx.restore(); }
@@ -170,7 +176,7 @@ sahneS('s42c', (ctx, t) => {
   } else if (t < c4) {
     plainBG(ctx, '#efe3c9', '#d9c7a0'); shape(ctx, [[-100, 930], [2020, 930], [2020, 1100], [-100, 1100]], C.wood, C.woodD, { sw: 0, seed: 971 });
     const hmm = P({ armL: [-96, -410], armR: [40, -640], headRoll: -5, f: { look: [.8, -.4], mouth: MOUTH.flat, browL: [-6, -.1, .3], browR: [-12, -.3, .4] } });
-    const S = actor('wig2', [[c3, hmm]], t, { x: 560, s: .95, off: .2 }); S.face.look = [.8, -.4]; drawMary(ctx, S);
+    const S = actor('wig2', [[c3, hmm]], t, { x: 560, s: .95, off: .2 }); S.face.look = [.8, -.4]; S.headRoll += Math.sin(t * 2.2) * 4; S.armR.t[1] += Math.sin(t * 3) * 14; drawMary(ctx, S);
     ctx.save(); ctx.translate(1300, 930); poly(ctx, [[-90, 0], [90, 0], [74, -170], [-74, -170]], '#b9b2a2', '#8f897d', { sw: 5, sx: -8, sy: -4 }); ctx.restore();
     const du = W(id, 'duman'); for (let i = 0; i < 4; i++) { const q = ((t - du + i * .4) % 1.6) / 1.6; if (t > du - .2 && q >= 0) { ctx.save(); ctx.globalAlpha = (1 - q) * .8; ell(ctx, 1300 + Math.sin(q * 5 + i) * 30, 740 - q * 260, 22 + q * 40, 22 + q * 36, '#d9d4cb', C.ink, 2.4); ctx.restore(); } }
     T(ctx, t, 'biraz duman…?', 1000, 330, 120, INK, W(id, 'biraz') - .1, W(id, 'duman') + .5, { align: 'center', rot: -.03 }); T(ctx, t, 'yıllar sonra bir muhabir', 960, 1030, 80, '#7a5c3e', W(id, 'muhabir') - .3, W(id, 'söylemiş') + .3, { align: 'center', rot: -.01 });
@@ -180,6 +186,9 @@ sahneS('s42c', (ctx, t) => {
     T(ctx, t, '"sokakta sütyen yakma"', 960, 330, 110, INK, W(id, 'meşhur') - .1, W(id, 'sahnesi') + .4, { align: 'center', rot: -.01 });
     T(ctx, t, 'büyük ölçüde', 960, 700, 100, '#7a5c3e', W(id, 'büyük') - .1, W(id, 'ölçüde') + .4, { align: 'center', rot: -.01 }); T(ctx, t, 'bir manşetin eseri!', 960, 830, 120, RED, W(id, 'gazete', 2) - .1, W(id, 'eseri') + .5, { align: 'center', rot: -.02 });
     pen(ctx, [[430, 880], [560, 860], [700, 892], [860, 868], [1040, 900], [1220, 868], [1400, 892], [1500, 880]], seg(t, W(id, 'eseri'), W(id, 'eseri') + .6), 7, INK);
+    // gazeteci: manşetiyle gurur duyar
+    const proud = P({ armL: [-150, -470], armR: [150, -470], headRoll: -4, f: { look: [-1, 0], turn: -.5, mouth: MOUTH.grin, lid: .25, blush: .6, browL: [-6, 0, .2], browR: [-6, 0, .2] } });
+    const R4 = actor('wig2', [[c4, proud]], t, { x: 1740, s: 1.05, bust: true, off: .8 }); R4.y = 1560; R4.headRoll += Math.sin(t * 2.6) * 4; drawMary(ctx, R4);
   }
 });
 
@@ -190,17 +199,26 @@ sahneS('s43', (ctx, t) => {
   T(ctx, t, 'Peki sütyeni kim buldu?', 960, 170, 120, INK, b, W(id, 'buldu') + .5, { align: 'center', fam: 'Alegreya', it: true, wt: 800, rot: -.01 });
   T(ctx, t, 'Tek bir kişi değil.', 960, 290, 110, RED, W(id, 'tek') - .1, W(id, 'değil') + .4, { align: 'center', rot: -.01 });
   const nodes = [[240, W(id, 'antik'), 'Antik Yunan', 'bant'], [600, W(id, 'romalılar'), 'Roma', 'etiket'], [960, W(id, 'orta'), 'Orta Çağ', 'çöp'], [1320, W(id, 'cadolle'), 'Cadolle', 'ateşkes'], [1680, W(id, 'mary'), 'Mary', '1.500 $']];
-  const y = 700; line(ctx, [[160, y], [1760, y]], 8, '#b9a985'); line(ctx, [[160, y], [lerp(160, 1680, clamp(seg(t, nodes[0][1], nodes[4][1] + .6))), y]], 12, '#e06a50');
+  // işaretçi (Mary rozeti) düğümden düğüme zıplar; her düğümün kelimesinde oraya varır
+  const kp = [[b, 160], ...nodes.map(([x, t0]) => [t0 - .05, x])];
+  let tipX = kp[kp.length - 1][1], moving = false;
+  if (t <= kp[0][0]) tipX = kp[0][1]; else for (let i = 1; i < kp.length; i++) { const [t1, x1] = kp[i], [tp, xp] = kp[i - 1]; if (t <= t1) { const ta = Math.max(tp, t1 - 1.3), k = seg(t, ta, t1); tipX = lerp(xp, x1, sm(k)); moving = k > 0 && k < 1; break; } }
+  const y = 700; line(ctx, [[160, y], [1760, y]], 8, '#b9a985'); line(ctx, [[160, y], [tipX, y]], 12, '#e06a50');
   nodes.forEach(([x, t0, nm, sub], i) => {
     const u = bk(seg(t, t0 - .1, t0 + .4)); if (u <= 0) return; ctx.save(); ctx.translate(x, y); ctx.scale(u * (1 + Math.sin(t * 3 + i) * .03), u * (1 + Math.sin(t * 3 + i) * .03)); ell(ctx, 0, 0, 26, 26, ['#8a2f2c', '#8a2f2c', '#7a5c3e', '#c8a043', '#c8a043'][i], C.ink, 5);
     hand(ctx, nm, 0, 90, 66, INK, 1, { align: 'center', fam: 'Alegreya', it: true, wt: 800 }); hand(ctx, sub, 0, 150, 52, '#7a5c3e', 1, { align: 'center' });
-    ctx.save(); ctx.translate(0, -170); ctx.rotate(Math.sin(t * 2.2 + i) * .07);
-    if (i === 0) { drawBand(ctx, [[-90, 10], [-30, -20], [30, 14], [90, -10]], 36, 1); }
+    ctx.save(); ctx.translate(0, -170); ctx.rotate(Math.sin(t * 2.6 + i) * (i === 1 ? .13 : .08));
+    if (i === 0) { const w = k => Math.sin(t * 5 + k) * 12; drawBand(ctx, [[-90, 10 + w(0)], [-30, -20 + w(1)], [30, 14 + w(2)], [90, -10 + w(3)]], 36, 1); }
     if (i === 1) { line(ctx, [[0, 40], [0, -40]], 3, C.ink); rrect(ctx, -80, -80, 160, 56, 6); ctx.fillStyle = '#f6ecd4'; ctx.fill(); ctx.lineWidth = 3; ctx.strokeStyle = C.ink; ctx.stroke(); hand(ctx, 'strophium', 0, -42, 34, RED, 1, { align: 'center' }); }
-    if (i === 2) { ctx.save(); ctx.scale(.28, .28); linenBra(ctx, 0, 0, 1, t); ctx.restore(); line(ctx, [[-70, 50], [-50, 80], [50, 80], [70, 50]], 6, C.ink); }
+    if (i === 2) { ctx.save(); ctx.translate(0, Math.sin(t * 4) * 9); ctx.scale(.28, .28); linenBra(ctx, 0, 0, 1, t); ctx.restore(); line(ctx, [[-70, 50], [-50, 80], [50, 80], [70, 50]], 6, C.ink); }
     if (i === 3) { bigScissors(ctx, 0, 40, .34, .18 + Math.abs(Math.sin(t * 6)) * .1, 0); }
-    if (i === 4) { for (const sd of [-1, 1]) poly(ctx, [[sd * 10, -40], [sd * 90, -40], [sd * 50, 30]], '#f8f1e2', '#e0d6bf', { sw: 3 }); line(ctx, [[-10, -40], [10, -40]], 6, '#d9a0a0'); coin(ctx, 110, 30, .8); }
-    ctx.restore(); ctx.restore(); });
+    if (i === 4) { for (const sd of [-1, 1]) poly(ctx, [[sd * 10, -40], [sd * 90, -40], [sd * 50, 30]], '#f8f1e2', '#e0d6bf', { sw: 3 }); line(ctx, [[-10, -40], [10, -40]], 6, '#d9a0a0'); ctx.save(); ctx.translate(110, 30); ctx.scale(Math.cos(t * 4), 1); coin(ctx, 0, 0, .8); ctx.restore(); }
+    ctx.restore(); ctx.restore();
+    const q = seg(t, t0, t0 + .9); if (q > 0 && q < 1) { ctx.save(); ctx.globalAlpha = (1 - q) * .8; ctx.beginPath(); ctx.arc(x, y, 30 + q * 80, 0, TAU); ctx.lineWidth = 6 * (1 - q) + 1; ctx.strokeStyle = '#e06a50'; ctx.stroke(); ctx.restore(); } });
+  { const pu = bk(seg(t, b + .2, b + .8)); if (pu > 0) { const hop = moving ? -Math.abs(Math.sin(t * 10)) * 26 : Math.sin(t * 3) * 3; ctx.save(); ctx.translate(tipX, y - 76 + hop); ctx.scale(pu * 1.22, pu * 1.22); ctx.rotate(moving ? Math.sin(t * 10) * .1 : Math.sin(t * 2) * .05);
+      ell(ctx, 0, 0, 62, 62, '#c8a043', C.ink, 5); ctx.save(); ctx.beginPath(); ctx.arc(0, 0, 52, 0, TAU); ctx.clip(); ctx.fillStyle = '#efe3c9'; ctx.fillRect(-60, -60, 120, 120);
+      const A = actor('mary', [[b, P({ headRoll: moving ? 0 : Math.sin(t * 2) * 6, f: { mouth: (moving || t > kp[1][0]) ? MOUTH.grin : MOUTH.flat, look: [moving ? 1 : Math.sin(t * 1.6), 0], blush: .5, browL: [-6, 0, .2], browR: [-6, 0, .2] } })]], t, { x: 0, s: .34, bust: true, off: .5 }); A.y = 262; drawMary(ctx, A); ctx.restore(); ctx.restore();
+      if (t < kp[1][0] - .6) T(ctx, t, '?', tipX + 90, y - 100 + Math.sin(t * 5) * 8, 110, RED, b + .8, b + 1.2, { fam: 'Alegreya', it: true, wt: 800, rot: .06 }); } }
 });
 
 // ---------------- s43b: sütyen bir icat değil… bir isyan
@@ -233,7 +251,7 @@ sahneS('s19c', (ctx, t) => {
 // ---------------- s41c: Reyburn bir kitap daha yazdı
 sahneS('s41c', (ctx, t) => {
   const id = 's41c', b = SAH[id].bas, d = SAH[id].dur;
-  const R = reyburnDesk(ctx, t, b, { seq: [[b, P({ armL: [-70, -420], armR: [70, -420 + Math.sin(t * 16) * 8], headDY: 6, f: { look: [0, .8], mouth: MOUTH.smile, lid: .2 } })], [W(id, 'o') + .2, P({ armL: [-70, -420], armR: [170, -560], headRoll: 5, f: { look: [1, 0], mouth: MOUTH.grin, lid: .5, browL: [-4, .2, .2], browR: [-10, -.2, .3], blush: .3 } }), bk]] });
+  const R = reyburnDesk(ctx, t, b, { seq: [[b, P({ armL: [-70, -420 + Math.sin(t * 16 + 2.5) * 20], armR: [70, -420 + Math.sin(t * 16) * 24], headDY: 6 + Math.sin(t * 8) * 3, f: { look: [0, .8], mouth: MOUTH.smile, lid: .2 } })], [W(id, 'o') + .2, P({ armL: [-70, -420], armR: [170, -560], headRoll: 5, f: { look: [1, 0], mouth: MOUTH.grin, lid: .5, browL: [-4, .2, .2], browR: [-10, -.2, .3], blush: .3 } }), bk]] });
   // Otto hayaleti köşeden el sallar
   const gh = bk(seg(t, W(id, 'ottoyu') - .1, W(id, 'ottoyu') + .5)); if (gh > 0) { ctx.save(); ctx.globalAlpha = .55; ctx.translate(1700, 450); ctx.scale(gh, gh); const o = actor('otto', [[b, P({ armR: [200, -620], f: { mouth: MOUTH.grin, look: [-1, 0] } })]], t, { x: 0, s: .55, bust: true, off: 1 }); o.y = 330; o.armR.t[0] += Math.sin(t * 8) * 30; drawMary(ctx, o); ctx.restore(); }
   // ikinci kitap belirir
@@ -247,7 +265,7 @@ sahneS('s44a', (ctx, t) => {
   const id = 's44a', b = SAH[id].bas, d = SAH[id].dur, c = W(id, 'bir') - .2;
   if (t < c) {   // dünya yanlış biliyor
     plainBG(ctx, '#efe3c9', '#d9c7a0'); shape(ctx, [[-100, 930], [2020, 930], [2020, 1100], [-100, 1100]], C.wood, C.woodD, { sw: 0, seed: 1000 });
-    ctx.save(); ctx.translate(560, 560); ell(ctx, 0, 0, 230, 230, '#e6d4a6', C.ink, 7); for (const ry of [.4, .75]) { ctx.beginPath(); ctx.ellipse(0, 0, 230, 230 * ry, 0, 0, TAU); ctx.lineWidth = 3; ctx.strokeStyle = '#a58f66'; ctx.stroke(); } ell(ctx, -70, -30, 24, 28, C.white, C.ink, 4); ell(ctx, 70, -30, 24, 28, C.white, C.ink, 4); ell(ctx, -66 + Math.sin(t * 2) * 4, -26, 10, 10, C.ink, null); ell(ctx, 74 + Math.sin(t * 2) * 4, -26, 10, 10, C.ink, null); line(ctx, [[-50, 60], [0, 90], [50, 60]], 7, C.ink); ctx.restore();
+    ctx.save(); ctx.translate(560, 560 + Math.sin(t * 2.4) * 10); ctx.rotate(Math.sin(t * 1.8) * .05); ell(ctx, 0, 0, 230, 230, '#e6d4a6', C.ink, 7); for (const ry of [.4, .75]) { ctx.beginPath(); ctx.ellipse(0, 0, 230, 230 * ry, 0, 0, TAU); ctx.lineWidth = 3; ctx.strokeStyle = '#a58f66'; ctx.stroke(); } ell(ctx, -70, -30, 24, 28, C.white, C.ink, 4); ell(ctx, 70, -30, 24, 28, C.white, C.ink, 4); ell(ctx, -66 + Math.sin(t * 2) * 4, -26, 10, 10, C.ink, null); ell(ctx, 74 + Math.sin(t * 2) * 4, -26, 10, 10, C.ink, null); line(ctx, [[-50, 60], [0, 90], [50, 60]], 7, C.ink); ctx.restore();
     pinnedPaper(ctx, 1280, 460, 760, 360, .03, '#f8efd9'); T(ctx, t, '"Tuvaleti ... icat etti."', 1280, 440, 66, INK, W(id, 'tuvaleti') - .1, W(id, 'ettiğini') + .3, { align: 'center', rot: .03 }); crossOut(ctx, 1000, 380, 1560, 500, seg(t, W(id, 'yanlış') - .1, W(id, 'yanlış') + .4));
     T(ctx, t, 'yanlış biliyor!', 1280, 700, 130, RED, W(id, 'yanlış') - .1, W(id, 'biliyor') + .5, { align: 'center', rot: -.03 });
     T(ctx, t, 'o kitap yüzünden', 960, 190, 100, INK, b, W(id, 'yüzünden') + .4, { align: 'center', rot: -.01 });
@@ -255,11 +273,11 @@ sahneS('s44a', (ctx, t) => {
     ctx.fillStyle = '#1b1514'; ctx.fillRect(-100, -100, 2120, 1300);
     const g = ctx.createRadialGradient(960, 560, 40, 960, 560, 640); g.addColorStop(0, 'rgba(255,230,170,.55)'); g.addColorStop(1, 'rgba(255,230,170,0)'); ctx.fillStyle = g; ctx.fillRect(-100, -100, 2120, 1300);
     // yüksek rezervuarlı eski tuvalet
-    ctx.save(); ctx.translate(960, 930); poly(ctx, [[-90, -700], [90, -700], [90, -600], [-90, -600]], '#e6dcc5', '#cdc2a8', { sw: 5, sx: -8, sy: -4 }); line(ctx, [[0, -600], [0, -520], [30, -430]], 12, C.ink); line(ctx, [[0, -600], [0, -520], [30, -430]], 7, '#b7b0a2'); const ch = 40 + 0; for (let i = 0; i < 6; i++) ell(ctx, 30 + Math.sin(i) * 3, -430 + i * 14, 6, 8, '#8f897d', C.ink, 2); ell(ctx, 32, -340, 18, 18, '#e6dcc5', C.ink, 4);
+    ctx.save(); ctx.translate(960, 930); poly(ctx, [[-90, -700], [90, -700], [90, -600], [-90, -600]], '#e6dcc5', '#cdc2a8', { sw: 5, sx: -8, sy: -4 }); const swg = Math.sin((t - W(id, 'sifonu')) * 4.5) * 26 * Math.exp(-Math.max(0, t - W(id, 'sifonu')) * .25), cx2 = 30 + swg; line(ctx, [[0, -600], [0, -520], [cx2, -430]], 12, C.ink); line(ctx, [[0, -600], [0, -520], [cx2, -430]], 7, '#b7b0a2'); for (let i = 0; i < 6; i++) ell(ctx, cx2 + Math.sin(i) * 3 + swg * i * .06, -430 + i * 14, 6, 8, '#8f897d', C.ink, 2); ell(ctx, cx2 + 2 + swg * .4, -340, 18, 18, '#e6dcc5', C.ink, 4);
     shape(ctx, [[-110, -140], [110, -140], [96, -50], [60, 0], [-60, 0], [-96, -50]], '#efe8d6', '#d6ccb4', { sw: 5, seed: 1001, sx: -8, sy: -4 }); ell(ctx, 0, -146, 110, 24, '#d6ccb4', C.ink, 4); ctx.restore();
     // el: zincire uzanır, iki kez tereddüt eder
     const tt = [W(id, 'sifonu') + .2, W(id, '2') + .1]; let hy = 0; const reach = 1 - .2 * Math.abs(Math.sin((t - W(id, 'sifonu')) * 4)); const ap = seg(t, W(id, 'sifonu') - .2, W(id, 'sifonu') + .5);
-    ctx.save(); ctx.translate(lerp(1400, 1040 - 30 * Math.abs(Math.sin((t - W(id, 'sifonu')) * 3.2)), sm(ap)), 590 + Math.sin((t - W(id, 'sifonu')) * 3.2) * 20); ctx.rotate(.15); shape(ctx, [[-30, 20], [-34, -14], [-18, -40], [10, -44], [30, -24], [34, 10], [20, 30]], '#ecc5a4', '#d3a07f', { sw: 3.6, seed: 1002, sx: -4, sy: -3 }); line(ctx, [[30, 10], [140, 40]], 36, C.ink); line(ctx, [[30, 10], [140, 40]], 28, '#ecc5a4'); ctx.restore();
+    ctx.save(); ctx.translate(lerp(1400, 1040 - 70 * Math.abs(Math.sin((t - W(id, 'sifonu')) * 3.2)), sm(ap)), 590 + Math.sin((t - W(id, 'sifonu')) * 3.2) * 46); ctx.rotate(.15); shape(ctx, [[-30, 20], [-34, -14], [-18, -40], [10, -44], [30, -24], [34, 10], [20, 30]], '#ecc5a4', '#d3a07f', { sw: 3.6, seed: 1002, sx: -4, sy: -3 }); line(ctx, [[30, 10], [140, 40]], 36, C.ink); line(ctx, [[30, 10], [140, 40]], 28, '#ecc5a4'); ctx.restore();
     T(ctx, t, 'sana söz veriyorum:', 400, 270, 90, CREAM, W(id, 'sana') - .1, W(id, 'veriyorum') + .4, { align: 'center', rot: -.03, shadow: 'rgba(0,0,0,.6)' });
     T(ctx, t, 'Tuvaletin gerçek hikâyesi', 1500, 880, 84, '#f6dc8a', W(id, 'tuvaletin') - .1, W(id, 'hikâyesi') + .5, { align: 'center', rot: .03, shadow: 'rgba(0,0,0,.6)' });
     T(ctx, t, 'bir sonraki videoda', 1500, 770, 76, CREAM, c + .1, W(id, 'videoda') + .4, { align: 'center', rot: .03, shadow: 'rgba(0,0,0,.6)' });
@@ -277,14 +295,15 @@ sahneS('s44c', (ctx, t) => {
   opts.forEach(([txt, t0, y], i) => { chalk(ctx, t, txt, 300, y, 72, t0 - .05, t0 + .9, { rot: -.01 }); chalk(ctx, t, String(i + 1) + '.', 170, y, 72, t0 - .05, t0 + .3, { fam: 'Alegreya', it: true, wt: 800, col: '#f6dc8a' }); });
   // ikonlar
   const ic = (i, x, y) => { const u = bk(seg(t, opts[i][1] + .3, opts[i][1] + .8)); if (u <= 0) return; ctx.save(); ctx.translate(x, y); ctx.scale(u, u); ctx.strokeStyle = '#f1ece0'; ctx.lineWidth = 6; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    if (i === 0) ctx.rotate(Math.sin(t * 4) * .14); if (i === 1) ctx.translate(0, Math.sin(t * 5) * 9); if (i === 2) ctx.rotate(Math.sin(t * 2.5) * .12);
     if (i === 0) { ctx.beginPath(); ctx.moveTo(-60, -20); ctx.lineTo(-10, -20); ctx.lineTo(50, 30); ctx.lineTo(70, 30); ctx.lineTo(70, 46); ctx.lineTo(-60, 46); ctx.closePath(); ctx.stroke(); line(ctx, [[-50, 46], [-50, 70]], 6, '#f1ece0'); }
     if (i === 1) { line(ctx, [[0, 70], [0, -10]], 7, '#f1ece0'); for (const x2 of [-24, -8, 8, 24]) line(ctx, [[x2, -10], [x2, -64]], 6, '#f1ece0'); ctx.beginPath(); ctx.arc(0, -10, 24, 0, Math.PI); ctx.stroke(); }
-    if (i === 2) { ctx.beginPath(); ctx.ellipse(0, 0, 50, 56, 0, 0, TAU); ctx.stroke(); ctx.beginPath(); ctx.ellipse(0, 0, 18, 20, 0, 0, TAU); ctx.stroke(); line(ctx, [[50, 20], [92, 40]], 6, '#f1ece0'); }
+    if (i === 2) { ctx.beginPath(); ctx.ellipse(0, 0, 50, 56, 0, 0, TAU); ctx.stroke(); ctx.beginPath(); ctx.ellipse(0, 0, 18, 20, 0, 0, TAU); ctx.stroke(); ctx.beginPath(); ctx.moveTo(50, 20); ctx.quadraticCurveTo(70 + Math.sin(t * 4) * 8, 46, 94 + Math.sin(t * 4 + 1) * 10, 34 + Math.sin(t * 3) * 10); ctx.stroke(); }
     ctx.restore(); };
   ic(0, 1380, 450); ic(1, 1380, 620); ic(2, 1380, 790);
   const pt = k => P({ armL: [-270, -600 + k * 70], armR: [96, -410], headRoll: -4, f: { look: [-1, -.2 + k * .25], turn: -.5, mouth: MOUTH.grin, blush: .6, browL: [-6, 0, .2], browR: [-6, 0, .2] } });
   const wav = P({ armL: [-96, -410], armR: [200, -690 + Math.sin(t * 9) * 40], headRoll: 4, f: { mouth: MOUTH.grin, blush: .8, lid: .15 } });
-  const yy0 = W(id, 'yorumlara'); const H = actor('mary', [[b, pt(0)], [opts[0][1] - .2, pt(0)], [opts[1][1] - .1, pt(1), sm], [opts[2][1] - .1, pt(2), sm], [yy0 - .2, pt(2)], [yy0 + .2, wav, bk]], t, { x: 1730, s: 1.1, bust: true }); H.y = 1600; drawMary(ctx, H);
+  const yy0 = W(id, 'yorumlara'); const H = actor('mary', [[b, pt(0)], [opts[0][1] - .2, pt(0)], [opts[1][1] - .1, pt(1), sm], [opts[2][1] - .1, pt(2), sm], [yy0 - .2, pt(2)], [yy0 + .2, wav, bk]], t, { x: 1730, s: 1.1, bust: true }); H.y = 1600; H.headRoll += Math.sin(t * 3) * 3; if (t < yy0 - .2) H.armL.t[1] += Math.sin(t * 6) * 22; drawMary(ctx, H);
   const yy = W(id, 'yorumlara'); chalk(ctx, t, 'Yorumlara yaz!', 960, 930, 100, yy - .1, W(id, 'yaz') + .5, { align: 'center', col: '#a9c58a', rot: -.01 });
   const u = bk(seg(t, yy + .2, yy + .7)); if (u > 0) { ctx.save(); ctx.translate(1460, 925); ctx.scale(u, u); ctx.strokeStyle = '#a9c58a'; ctx.lineWidth = 6; rrect(ctx, -80, -50, 160, 100, 22); ctx.stroke(); line(ctx, [[-30, 50], [-50, 90], [10, 50]], 6, '#a9c58a'); for (const x of [-34, 0, 34]) ell(ctx, x, 0, 6, 6, '#a9c58a', null); ctx.restore(); }
 });

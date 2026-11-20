@@ -54,6 +54,7 @@ sahneS('s32', (ctx, t) => {
   const down = (side) => P({ armL: [-90, -400], armR: [90, -400], f: { look: [side * .3, .8], mouth: MOUTH.smile, browL: [-4, 0, .1], browR: [-4, 0, .1], lid: .2 } });
   const M = actor('mary', [[b, down(1)]], t, { x: 700, s: 1.35, bust: true, off: .2 }); M.y = 1500;
   const A = actor('maid', [[b, P({ armL: [-90, -400], armR: [90, -400], f: { look: [-.3, .8], mouth: { w: 14, open: 0, smile: -.05, shape: '' }, browL: [-3, 0, .1], browR: [-3, 0, .1], lid: .2 } })]], t, { x: 1250, s: 1.35, bust: true, off: 1.4 }); A.y = 1500;
+  M.headDY += Math.sin(t * 4) * 4; A.headDY += Math.sin(t * 4 + 1.3) * 4; M.headRoll += Math.sin(t * 2.1) * 3; A.headRoll += Math.sin(t * 2.1 + 2) * 3;
   drawMary(ctx, M); drawMary(ctx, A);
   poly(ctx, [[-100, 790], [2020, 790], [2020, 1100], [-100, 1100]], '#8d6a4c', '#6b4d36', { sw: 4, sx: 0, sy: -8 });
   const mit = (x, y, rot, col) => { ctx.save(); ctx.translate(x, y); ctx.rotate(rot); shape(ctx, [[-30, 24], [-34, -14], [-18, -40], [10, -44], [30, -24], [34, 10], [20, 30]], col, '#d3a07f', { sw: 3.6, seed: 960, sx: -4, sy: -3 }); ctx.save(); ctx.translate(-34, -6); ctx.rotate(-.7); shape(ctx, [[-8, 0], [-4, -24], [8, -26], [10, 0]], col, null, { sw: 3, seed: 961 }); ctx.restore(); ctx.restore(); };
@@ -65,7 +66,7 @@ sahneS('s32', (ctx, t) => {
   const rb = seg(t, tK - .1, tK + .4); if (rb > 0 && asm < .98) { line(ctx, [[1000, 930], [1070, 900], [1130, 940], [1200, 910]], 16, '#d9a0a0'); line(ctx, [[1000, 930], [1070, 900], [1130, 940], [1200, 910]], 7, '#efc0c0'); }
   const nd = seg(t, tI - .1, tI + .4); if (nd > 0) { ctx.save(); ctx.translate(1380, 880); ctx.rotate(-.5); line(ctx, [[0, 0], [90, 0]], 5, '#d9d2c4'); ell(ctx, 6, 0, 6, 2.4, C.ink, null); ctx.restore(); ell(ctx, 1460, 900, 22, 22, '#c8a043', C.ink, 3); ell(ctx, 1460, 900, 10, 10, '#3a2c24', null); }
   if (asm > 0) { ctx.save(); ctx.translate(960, 900 - 20 * asm); ctx.scale(asm * 1.5, asm * 1.5); for (const sd of [-1, 1]) { poly(ctx, [[sd * 20, -50], [sd * 110, -50], [sd * 70, 40]], '#f8f1e2', '#e0d6bf', { sw: 3.4, sx: -4, sy: -3 }); } line(ctx, [[-20, -50], [20, -50]], 8, '#d9a0a0'); line(ctx, [[-110, -50], [-130, -110]], 6, '#d9a0a0'); line(ctx, [[110, -50], [130, -110]], 6, '#d9a0a0'); ctx.restore(); }
-  { const st = Math.sin(t * 9) * 14; mit(840, 880 + st, .3, '#ecc5a4'); mit(1080, 880 - st, -.3, '#e2b794'); line(ctx, [[1060, 850 - st], [1120, 830 + st]], 4, '#d9d2c4'); }
+  { const st = Math.sin(t * 9) * 32; mit(840, 880 + st, .3, '#ecc5a4'); mit(1080, 880 - st, -.3, '#e2b794'); line(ctx, [[1060, 850 - st], [1120, 830 + st]], 4, '#d9d2c4'); }
   T(ctx, t, '2 mendil', 140, 250, 100, INK, tM - .1, tM + .5, { rot: -.03, fam: 'Caveat' }); T(ctx, t, '1 kurdele', 140, 360, 100, INK, tK - .1, tK + .5, { rot: -.03 }); T(ctx, t, 'iğne iplik', 140, 470, 100, INK, tI - .1, W(id, 'iplik') + .4, { rot: -.03 });
   // kronometre
   const tc = W(id, 'birkaç'); if (t > tc - .2) { ctx.save(); ctx.translate(1700, 330); ctx.scale(bk(seg(t, tc - .2, tc + .3)), bk(seg(t, tc - .2, tc + .3))); ell(ctx, 0, 0, 90, 90, '#f4ead2', C.ink, 6); rr(ctx, -12, -116, 24, 20, '#8f897d'); const a = (t - tc) * 7; line(ctx, [[0, 0], [Math.sin(a) * 66, -Math.cos(a) * 66]], 6, '#b4503a'); ell(ctx, 0, 0, 7, 7, C.ink, null); ctx.restore(); T(ctx, t, 'birkaç dakika', 1700, 500, 70, INK, tc, tc + .5, { align: 'center', rot: -.02 }); }

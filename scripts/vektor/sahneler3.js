@@ -105,8 +105,9 @@ sahneS('s23', (ctx, t) => {
   // orta çağ kadını
   const throwP = P({ armL: [-96, -410], armR: [190, -560], headRoll: 3, f: { mouth: MOUTH.smile, look: [1, .2], turn: .5, browL: [-3, 0, .1], browR: [-3, 0, .1] } });
   const shrug = P({ armL: [-200, -470], armR: [200, -470], headRoll: -4, f: { mouth: MOUTH.grin, lid: .35, look: [1, 0], turn: .5, browL: [-8, -.1, .3], browR: [-8, .1, .3], blush: .6 } });
-  const seq = [[b, shrug]]; toss.forEach(tt => { seq.push([tt - .15, shrug], [tt + .1, throwP, bk], [tt + .4, shrug, sm]); });
-  const S = actor('medieval', seq, t, { x: 560, y: -230, s: .72, off: .6 }); drawMary(ctx, S);
+  const pick = P({ armL: [-96, -410], armR: [130, -240], headDY: 12, f: { mouth: MOUTH.smile, look: [.5, 1], turn: .4, lid: .15, browL: [-3, 0, .1], browR: [-3, 0, .1] } });
+  const seq = [[b, shrug]]; let lastT = b; toss.forEach(tt => { [[tt - .75, shrug, undefined], [tt - .45, pick, sm], [tt - .05, pick, undefined], [tt + .1, throwP, bk], [tt + .4, shrug, sm]].forEach(([x, p, e]) => { const tx = Math.max(x, lastT + .02); seq.push(e ? [tx, p, e] : [tx, p]); lastT = tx; }); });
+  const S = actor('medieval', seq, t, { x: 560, y: -230, s: .72, off: .6 }); S.lean += Math.sin(t * 1.9) * 1.2; drawMary(ctx, S);
   // etiket: 500 yıllık
   const t5 = W(id, '500');
   if (t > t5 - .2) { const u = bk(seg(t, t5 - .2, t5 + .3)); ctx.save(); ctx.translate(1560, 820); ctx.rotate(-.06); ctx.scale(u * 1.3, u * 1.3); line(ctx, [[0, 0], [0, 90]], 6, C.ink); rrect(ctx, -170, -90, 340, 100, 8); ctx.fillStyle = '#f6ecd4'; ctx.fill(); ctx.lineWidth = 4; ctx.strokeStyle = C.ink; ctx.stroke(); hand(ctx, '500 yıllık', 0, -22, 70, RED, 1, { align: 'center', fam: 'Alegreya', it: true, wt: 800 }); ctx.restore(); }
@@ -191,7 +192,7 @@ sahneS('s27', (ctx, t) => {
   const id = 's27', b = SAH[id].bas, d = SAH[id].dur;
   plainBG(ctx, '#efe3c9', '#d9c7a0'); shape(ctx, [[-100, 930], [2020, 930], [2020, 1100], [-100, 1100]], C.wood, C.woodD, { sw: 0, seed: 810 });
   // racon kesen kitap
-  ctx.save(); ctx.translate(380, 700); const bob = Math.sin(t * 2) * 4; ctx.translate(0, bob);
+  ctx.save(); ctx.translate(380, 700); const bob = Math.sin(t * 2) * 4; ctx.translate(0, bob); ctx.rotate(Math.sin(t * 2.4) * .035);
   poly(ctx, [[150, -370], [190, -356], [190, 244], [150, 230]], '#efe3c9', '#d3c5a4', { sw: 4, sx: -3, sy: 0 }); for (let i = 0; i < 6; i++) line(ctx, [[158, -330 + i * 95], [184, -322 + i * 95]], 2, '#bfae88'); poly(ctx, [[-150, -380], [150, -380], [150, 230], [-150, 230]], '#6f3f2a', '#4d2a1c', { sw: 5, sx: -10, sy: -6 }); line(ctx, [[-120, -380], [-120, 230]], 6, '#5a3320');
   hand(ctx, 'TARİH', 0, -270, 92, '#e8d9b0', 1, { align: 'center', fam: 'Alegreya', it: true, wt: 800 }); line(ctx, [[-96, -240], [96, -240]], 5, '#c8a043');
   for (const sd of [-1, 1]) { shape(ctx, [[sd * 20, -70], [sd * 96, -70], [sd * 96, -26], [sd * 60, -14], [sd * 20, -26]], '#2a1f16', null, { sw: 4, seed: 811 + sd }); } line(ctx, [[-20, -50], [20, -50]], 5, C.ink);
@@ -199,7 +200,16 @@ sahneS('s27', (ctx, t) => {
   ctx.restore();
   const sy = W(id, 'sütyen'); T(ctx, t, '"Sütyen 1900\'lerde', 110, 190, 84, INK, sy - .1, W(id, 'icat') + .4, { rot: -.02 }); T(ctx, t, 'icat edildi."', 170, 280, 84, INK, W(id, 'icat'), W(id, 'edildi') + .4, { rot: -.02 });
   // orta çağ kadını (sağda, küçük) ve dört adım
-  const S = actor('medieval', [[b, P({ armL: [-96, -410], armR: [96, -410], f: { mouth: MOUTH.smile, look: [-1, 0], turn: -.4 } })], [W(id, 'kadın'), P({ armL: [-120, -470], armR: [120, -470], headRoll: 3, f: { mouth: MOUTH.grin, lid: .3, look: [-1, 0], turn: -.4, blush: .6 } }), sm]], t, { x: 1000, s: .8, off: .5 }); drawMary(ctx, S);
+  const fb = { mouth: MOUTH.grin, lid: .3, look: [-1, 0], turn: -.4, blush: .6 };
+  const standP = P({ armL: [-120, -470], armR: [120, -470], headRoll: 3, f: fb });
+  const mimes = [P({ armL: [-60, -540], armR: [60, -540], headRoll: 4, headDY: -4, f: fb }), P({ armL: [-30, -470], armR: [30, -470], headRoll: -3, f: fb }), P({ armL: [-230, -480], armR: [230, -480], headRoll: -5, f: fb }), P({ armL: [-96, -410], armR: [230, -620], headRoll: 5, f: fb })];
+  const tv = [W(id, 'giymiş'), W(id, 'yıkamış'), W(id, 'eskitmiş'), W(id, 'çöpe')];
+  const seq27 = [[b, P({ armL: [-96, -410], armR: [96, -410], f: { mouth: MOUTH.smile, look: [-1, 0], turn: -.4 } })], [W(id, 'kadın'), standP, sm]]; let l27 = W(id, 'kadın');
+  tv.forEach((x, i) => { [[x - .25, standP, sm], [x + .1, mimes[i], bk], [x + .85, standP, sm]].forEach(([tx, p, e]) => { const tt = Math.max(tx, l27 + .02); seq27.push([tt, p, e]); l27 = tt; }); });
+  const S = actor('medieval', seq27, t, { x: 1000, s: .8, off: .5 });
+  if (t > tv[1] - .05 && t < tv[1] + .95) { S.armL.t[0] += Math.sin(t * 18) * 16; S.armR.t[0] -= Math.sin(t * 18) * 16; }
+  if (t > tv[2] && t < tv[2] + 1) { S.armL.t[0] -= Math.sin(t * 12) * 10; S.armR.t[0] += Math.sin(t * 12) * 10; }
+  S.lean += Math.sin(t * 1.8) * 1; drawMary(ctx, S);
   const steps = [['giymiş', W(id, 'giymiş'), 1450, 290], ['yıkamış', W(id, 'yıkamış'), 1740, 290], ['eskitmiş', W(id, 'eskitmiş'), 1450, 640], ['çöpe atmış', W(id, 'çöpe'), 1740, 640]];
   steps.forEach(([nm, t0, x, y], i) => {
     const u = bk(seg(t, t0 - .05, t0 + .35)); if (u <= 0) return; ctx.save(); ctx.translate(x, y); ctx.scale(u, u); pinnedPaper(ctx, 0, 0, 270, 270, (i - 1.5) * .03, '#f8efd9');
@@ -215,18 +225,22 @@ sahneS('s27', (ctx, t) => {
 sahneS('s18b', (ctx, t) => {
   const id = 's18b', b = SAH[id].bas, d = SAH[id].dur, tK = W(id, 'korse'), tD = W(id, 'hem') - .1;
   if (t < tD) {   // moda tarihi: tek cümle
-    plainBG(ctx, '#efe3c9', '#d9c7a0'); pinnedPaper(ctx, 960, 520, 1300, 700, -.01, '#f8efd9');
-    hand(ctx, 'Moda tarihi', 960, 260, 110, '#7a5c3e', seg(t, W(id, 'moda') - .1, W(id, 'tarihi') + .4), { align: 'center', fam: 'Alegreya', it: true, wt: 800 });
-    for (let i = 0; i < 4; i++) line(ctx, [[330, 340 + i * 70], [1590, 340 + i * 70 + (i % 2) * 4]], 3, '#e0d3b4');
-    T(ctx, t, 'Korse geri döndü.', 960, 620, 150, RED, tK - .1, W(id, 'döndü') + .6, { align: 'center', rot: -.01 });
-    if (t > W(id, 'peki')) T(ctx, t, 'neden unutuldu?', 960, 880, 96, INK, W(id, 'neden') - .1, W(id, 'unutuldu') + .4, { align: 'center', rot: -.02 });
+    plainBG(ctx, '#efe3c9', '#d9c7a0'); pinnedPaper(ctx, 1150, 520, 1300, 700, -.01 + Math.sin(t * 1.3) * .004, '#f8efd9');
+    hand(ctx, 'Moda tarihi', 1150, 260, 110, '#7a5c3e', seg(t, W(id, 'moda') - .1, W(id, 'tarihi') + .4), { align: 'center', fam: 'Alegreya', it: true, wt: 800 });
+    for (let i = 0; i < 4; i++) line(ctx, [[520, 340 + i * 70], [1780, 340 + i * 70 + (i % 2) * 4]], 3, '#e0d3b4');
+    T(ctx, t, 'Korse geri döndü.', 1150, 620, 150, RED, tK - .1, W(id, 'döndü') + .6, { align: 'center', rot: -.01 });
+    if (t > W(id, 'peki')) T(ctx, t, 'neden unutuldu?', 1150, 880, 96, INK, W(id, 'neden') - .1, W(id, 'unutuldu') + .4, { align: 'center', rot: -.02 });
+    // tarihçi: düşünür, kâğıdı gösterir, omuz silker
+    const thinkP = P({ armL: [-96, -410], armR: [50, -560], headRoll: -4, f: { look: [.9, -.3], turn: .5, mouth: MOUTH.flat, browL: [-6, -.1, .3], browR: [-10, -.2, .4] } });
+    const pointP = P({ armL: [-96, -410], armR: [260, -560], headRoll: 3, f: { look: [.9, 0], turn: .5, mouth: MOUTH.talk, browL: [-6, 0, .2], browR: [-6, 0, .2] } });
+    const shrugP = P({ armL: [-200, -470], armR: [200, -470], headRoll: 5, f: { look: [0, 0], mouth: MOUTH.grin, lid: .3, browL: [-8, -.1, .3], browR: [-8, .1, .3], blush: .5 } });
+    const Hh = actor('quiz', [[b, thinkP], [W(id, 'tek') - .2, thinkP], [W(id, 'tek') + .15, pointP, bk], [tK - .3, pointP], [tK, shrugP, bk]], t, { x: 300, s: 1.3, bust: true, off: .4 }); Hh.y = 1560; Hh.headRoll += Math.sin(t * 2.2) * 2.5; drawMary(ctx, Hh);
   } else {   // kapıdaki eski sevgili
     ctx.fillStyle = '#6b5440'; ctx.fillRect(-100, -100, 2120, 1300); for (let i = 0; i < 18; i++) { ctx.fillStyle = i % 2 ? '#725944' : '#634b39'; ctx.fillRect(i * 120 - 20, -100, 118, 1300); }
     shape(ctx, [[-100, 930], [2020, 930], [2020, 1100], [-100, 1100]], C.woodD, C.wood, { sw: 0, seed: 820 });
     // kapı boşluğu (dışarısı: gece)
     const dx = 1080, dw = 520, dy = 140, dh = 790;
     ctx.fillStyle = '#2f2430'; ctx.fillRect(dx, dy, dw, dh); glow(ctx, dx + dw / 2, dy + 200, 600, 'rgba(255,214,140,A)', .25);
-    for (let i = 0; i < 20; i++) ell(ctx, dx + 30 + hash(i) * (dw - 60), dy + 30 + hash(i + 9) * 300, 3, 3, '#f6dc8a', null);
     const open = sm(seg(t, W(id, 'hem') - .1, W(id, 'hem') + .5));
     // eski sevgili korse (kapıda)
     const c = clamp(seg(t, W(id, 'hem') + .1, W(id, 'hem') + .6)), shy = Math.sin(t * 5) * 6;
