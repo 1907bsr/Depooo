@@ -86,5 +86,5 @@ Format: Tarih – Ne oldu – Neden – Bundan sonraki kural
 - Eklem yuvarlak kapaklarının kenarı sertken noktalı halka göründü. KURAL: kapak kenarını 3 px yumuşat.
 - Plaka dolgusunda "orijinal pikseller + duvar" karışımı kullanınca el çevresinde artık çizgi parçaları kaldı. KURAL: bölgeyi tam duvar dolgusundan al; kolun arkasında kalan etek konturunu ölçüp yeniden çiz (koyuluk ağırlıklı merkezle).
 - Gövde alt kenarı sert kesilince nefes hareketinde belin altında açık renk dikiş çizgisi göründü. KURAL: alt kenar yumuşak biter, katman biraz aşağı uzar.
-- Her sahnenin ilk bakışında "uzun süren betiği `| head` ile borulama" betiği yarıda kesti (BrokenPipe) ve eski dosyalarla devam edildi. KURAL: üretim betiklerini boruya sokma; çıktıyı dosyaya yaz.
+- Uzun süren üretim betiğini `| head` ile borulamak betiği yarıda kesti (BrokenPipe) ve eski dosyalarla devam edildi. KURAL: üretim betiklerini boruya sokma; çıktıyı dosyaya yaz.
 - Yeni düzeneği her zaman TEMİZ klasörde baştan çalıştırıp çıktının aynı olduğunu doğrula (yapıldı: fark 0).
