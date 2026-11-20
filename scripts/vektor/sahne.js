@@ -48,3 +48,7 @@ function pose2state(p, t, o = {}) {
 function L2W(S, lx, ly) { return [S.x + lx * S.s, S.y + ly * S.s]; }
 function textW(ctx, txt, size, fam = 'Caveat', wt = 700) { ctx.save(); ctx.font = `${wt} ${size}px ${fam}`; const w = ctx.measureText(txt).width; ctx.restore(); return w; }
 const INK = '#3b2a22', RED = '#8a2f2c', CREAM = '#f4ead2';
+// sahne kaydı kısayolu: bas/dur SAHNE_LISTE'den
+function sahneS(sid, fn) { const r = SAHNE_LISTE.find(x => x.sid === sid); sahne(sid, r.bas, r.dur, fn); }
+// oyuncu: poz dizisinden çizim durumu. o: {x, y, s, off, flip, bust}
+function actor(look, seq, t, o = {}) { const p = tr(seq, t); const S = pose2state(p, t, Object.assign({ look, s: .78, off: 1.7 }, o)); if (o.x !== undefined) S.x = o.x; if (o.y !== undefined) S.y = ZEMIN + o.y; return S; }

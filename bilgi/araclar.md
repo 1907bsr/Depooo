@@ -30,3 +30,4 @@
 - Artı: gerçek karakter hareketi, istenen mimik, kolay düzenleme, aynı sahnenin dikey (Shorts) yeniden düzeni, sese göre yeniden zamanlama.
 - Eksi: fotoğraf gibi gerçekçi değil (düz renkli kitap illüstrasyonu); her yeni karakter/oda için çizim emeği gerekir.
 - Durum: 41 sn'lik açılış örneği yapıldı; Büşra'nın kararı bekleniyor.
+- Durum güncellemesi (2026-11-20): Büşra örneği beğendi; tüm video (58 sahne) kodla çizildi.

@@ -146,6 +146,9 @@ function accessory(ctx) {
     shape(ctx, [[-64, -42], [-58, -88], [0, -98], [58, -88], [64, -42], [0, -34]], L.accC, L.accD, { seed: 15, sx: -5, sy: -4, sw: 3 });
     shape(ctx, [[-60, -44], [60, -44], [52, -30], [-52, -30]], '#24211f', null, { sw: 2.6, seed: 16 });
     ell(ctx, 0, -66, 11, 11, L.sash, C.ink, 2.4);
+  } else if (a === 'hardhat') {
+    shape(ctx, [[-66, -40], [-60, -84], [-30, -108], [0, -114], [30, -108], [60, -84], [66, -40]], L.accC, L.accD, { seed: 17, sx: -6, sy: -5, sw: 3 });
+    shape(ctx, [[-86, -38], [86, -38], [80, -26], [-80, -26]], L.accC, L.accD, { seed: 18, sx: -4, sy: -3, sw: 3 }); line(ctx, [[0, -112], [0, -44]], 6, L.accD);
   } else if (a === 'headband') {
     line(ctx, [[-70, -20], [-66, -66], [-40, -88], [0, -96], [40, -88], [66, -66], [70, -20]], 9, L.accC);
   }
@@ -251,6 +254,7 @@ function drawMary(ctx, S) {
     }
     ctx.restore();
   }
+  if (S.torsoFx) S.torsoFx(ctx, L);
   // çıkıntı yapan çubuklar
   for (const r of (S.rods || [])) {
     if (r.len < 1) continue;

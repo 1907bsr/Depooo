@@ -69,6 +69,15 @@ function shape(ctx, pts, base, dark, o = {}) {
   if (sw) { ctx.beginPath(); sp(ctx, pts, closed, seed); ctx.lineWidth = sw; ctx.strokeStyle = o.ink || C.ink; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.stroke(); }
   ctx.restore();
 }
+// düz kenarlı çokgen (köşeli): çatı, bina, tabela
+function poly(ctx, pts, base, dark, o = {}) {
+  const sx = o.sx ?? -8, sy = o.sy ?? -5, sw = o.sw ?? 3.2;
+  ctx.save(); const path = () => { ctx.beginPath(); pts.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])); ctx.closePath(); };
+  path(); ctx.fillStyle = dark || base; ctx.fill();
+  if (dark) { ctx.save(); path(); ctx.clip(); ctx.translate(sx, sy); path(); ctx.fillStyle = base; ctx.fill(); ctx.restore(); }
+  if (sw) { path(); ctx.lineWidth = sw; ctx.strokeStyle = o.ink || C.ink; ctx.lineJoin = 'round'; ctx.stroke(); }
+  ctx.restore();
+}
 function line(ctx, pts, w, col, closed = false, seed = 0) {
   ctx.save(); ctx.beginPath(); sp(ctx, pts, closed, seed); ctx.lineWidth = w; ctx.strokeStyle = col; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.stroke(); ctx.restore();
 }

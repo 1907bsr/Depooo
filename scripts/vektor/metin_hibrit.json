@@ -1,0 +1,524 @@
+[
+ {
+  "no": 1,
+  "id": "01-s01",
+  "sid": "s01",
+  "bas": 0.0,
+  "dur": 3.12,
+  "metin": "Yıl 1913. New York (Nyu York).",
+  "gorsel": "çizim: sokak: New York 1913 (araba, Eyfel değil, yazı: Yıl 1913)"
+ },
+ {
+  "no": 2,
+  "id": "02-s02",
+  "sid": "s02",
+  "bas": 3.12,
+  "dur": 9.98,
+  "metin": "Sen 20 yaşında, sosyetenin göz bebeği bir kızsın. Bu akşam şehrin en havalı balosu var. Davetiye cebinde, elbisen hazır, özgüvenin tavan.",
+  "gorsel": "çizim: Mary odada: baloya hazır, davetiye, elbise, özgüven ölçeri taşıyor"
+ },
+ {
+  "no": 3,
+  "id": "03-s03",
+  "sid": "s03",
+  "bas": 13.1,
+  "dur": 9.98,
+  "metin": "Tek bir pürüz var: Üstündeki korse. Balina kemiğinden, metal telden ve bağcıktan yapılmış bu alet nefes almayı \"isteğe bağlı\" hâle getiriyor.",
+  "gorsel": "çizim: korse röntgeni: balina kemiği, metal tel, bağcık; nefes isteğe bağlı kutusu"
+ },
+ {
+  "no": 4,
+  "id": "04-s03b",
+  "sid": "s03b",
+  "bas": 23.08,
+  "dur": 5.58,
+  "metin": "Eğilemiyorsun, oturamıyorsun. 3 lokma fazla yesen dikişler grev ilan eder. [güler]",
+  "gorsel": "çizim: eğilemiyor, oturamıyor, 3 lokma → dikişler GREV tabelası"
+ },
+ {
+  "no": 5,
+  "id": "05-s04",
+  "sid": "s04",
+  "bas": 28.66,
+  "dur": 7.12,
+  "metin": "Üstelik çubuklar ince elbisenin altından cartlı curtlu dışarı fırlamış. Sanki elbisenin içinde şemsiye taşıyorsun.",
+  "gorsel": "çizim: çubuklar elbiseyi delip fırlıyor; şemsiye iskeleti çizimi"
+ },
+ {
+  "no": 6,
+  "id": "06-s02c",
+  "sid": "s02c",
+  "bas": 35.78,
+  "dur": 3.6,
+  "metin": "Aynaya bakıyorsun ve tarihe geçecek o lafı patlatıyorsun:",
+  "gorsel": "çizim: Mary aynaya bakıyor (yansıma)"
+ },
+ {
+  "no": 7,
+  "id": "07-s05",
+  "sid": "s05",
+  "bas": 39.38,
+  "dur": 2.19,
+  "metin": "\"Ben bununla dans etmem!\"",
+  "gorsel": "çizim: göz deviriyor: \"Ben bununla dans etmem!\""
+ },
+ {
+  "no": 8,
+  "id": "08-s06",
+  "sid": "s06",
+  "bas": 41.57,
+  "dur": 11.52,
+  "metin": "Hizmetçini çağırıyorsun: \"Bana 2 mendil getir. Bir de kurdele.\" Kadıncağız muhtemelen şöyle düşünüyor: \"Eyvah, hanımefendi ağlayacak.\" Ama hayır. Hanımefendi ağlamayacak. Hanımefendi… tarih yazacak.",
+  "gorsel": "çizim: hizmetçi: 2 mendil + kurdele, düşünce balonu, TARİH defteri"
+ },
+ {
+  "no": 9,
+  "id": "09-s08",
+  "sid": "s08",
+  "bas": 53.09,
+  "dur": 9.05,
+  "metin": "Yalnız bir dakika. Sütyeni ilk bulan aslında sen değilsin. Avusturya'da bir şatonun altında 500 yıldır bekleyen bir sır var.",
+  "gorsel": "çizim: Mary \"yalnız bir dakika\" → Alp şatosu, toprak altında 500 yıllık bohça"
+ },
+ {
+  "no": 10,
+  "id": "10-s09",
+  "sid": "s09",
+  "bas": 62.14,
+  "dur": 6.35,
+  "metin": "Bir de bütün dünyayı kandıran Otto adında bir mucit var… üstelik kendisi hiç yaşamadı.",
+  "gorsel": "çizim: Otto portresi, seyirciler kanıyor, hiç yaşamadı"
+ },
+ {
+  "no": 11,
+  "id": "11-s10",
+  "sid": "s10",
+  "bas": 68.49,
+  "dur": 3.4,
+  "metin": "Bugün İcatbuldum'da: Sütyeni gerçekten kim buldu?",
+  "gorsel": "çizim: logo: İcatbuldum! + soru"
+ },
+ {
+  "no": 12,
+  "id": "12-s11",
+  "sid": "s11",
+  "bas": 71.89,
+  "dur": 6.64,
+  "metin": "Şimdi düşün: Sütyen yokken kadınlar ne yapıyordu? Cevap basit: Bir bez buluyorlardı. [güler]",
+  "gorsel": "çizim: Geri saralım: yıl göstergesi, bir bez"
+ },
+ {
+  "no": 13,
+  "id": "13-s12",
+  "sid": "s12",
+  "bas": 78.53,
+  "dur": 10.74,
+  "metin": "Antik Yunan'da kadınlar göğüslerine kumaştan bir bant sarıyordu. Adı: apodesmos. Evet, kulağa öksürük şurubu gibi geliyor: \"Günde 2 apodesmos, tok karnına.\" [güler]",
+  "gorsel": "çizim: Antik Yunan: apodesmos, öksürük şurubu esprisi"
+ },
+ {
+  "no": 14,
+  "id": "14-s13",
+  "sid": "s13",
+  "bas": 89.27,
+  "dur": 9.59,
+  "metin": "Romalılar da benzer bir bant kullanmışlar ama adını strophium (strofyum) koymuşlar. Yani mal aynı, etiket yeni. Pazarlamanın piri de Romalılar.",
+  "gorsel": "çizim: Roma: strophium etiketi, mal aynı etiket yeni, YENİ! tabelası"
+ },
+ {
+  "no": 15,
+  "id": "15-s14",
+  "sid": "s14",
+  "bas": 98.86,
+  "dur": 22.95,
+  "metin": "Hatta İtalya'da Sicilya adasında 1.700 (bin yedi yüz) yıllık bir Roma villası var: Villa Romana del Casale (Villa Romana del Kazale). Bu villanın zemininde bir mozaik var. Üstelik mozaik hâlâ yerinde duruyor. Villa bugün UNESCO (Yunesko) Dünya Mirası listesinde. İstersen gidip kendi gözünle görebilirsin. Mozaikte bir grup kadın görüyorsun: Göğüslerinde bant, altlarında şort.",
+  "gorsel": "çizim: harita (İtalya/Sicilya) → villa → mozaik → UNESCO → bant ve şort"
+ },
+ {
+  "no": 16,
+  "id": "16-s15",
+  "sid": "s15",
+  "bas": 121.81,
+  "dur": 14.87,
+  "metin": "Kimi top oynuyor, kimi ağırlık kaldırıyor. Herkes buna \"Bikinili Kızlar\" diyor ama bunlar mayo değil… spor kıyafeti. Yani 1.700 (bin yedi yüz) yıl önce bile kadınlar \"Spora giderken ne giysem?\" derdindeymiş. [güler]",
+  "gorsel": "çizim: mozaik: top/ağırlık, Bikinili Kızlar → spor kıyafeti, dolap önünde kadın"
+ },
+ {
+  "no": 17,
+  "id": "17-s17",
+  "sid": "s17",
+  "bas": 136.68,
+  "dur": 9.72,
+  "metin": "Peki sonra ne oldu? Avrupa yüzyıllarca oturdu ve şunu düşündü: \"Bu bant çok rahat. Bunu nasıl daha zor hâle getiririz?\"",
+  "gorsel": "çizim: atölyede iki bilgin: bant çok rahat → daha zor (korseye dönüşür)"
+ },
+ {
+  "no": 18,
+  "id": "18-s18",
+  "sid": "s18",
+  "bas": 146.4,
+  "dur": 7.51,
+  "metin": "Ve korse sahneye çıktı. Eğilmek yasak. Oturmak bir mühendislik projesi. Merdiven çıkmak mı? Ekstrem spor.",
+  "gorsel": "çizim: korse sahnede; eğilmek yasak, oturmak mühendislik, merdiven ekstrem spor"
+ },
+ {
+  "no": 19,
+  "id": "19-s19",
+  "sid": "s19",
+  "bas": 153.91,
+  "dur": 9.05,
+  "metin": "Velhâsıl kelâm, bu işkence tam 300 yıl sürdü. 300 yıl boyunca kimse çıkıp \"Arkadaşlar… biz bunu neden giyiyoruz?\" demedi.",
+  "gorsel": "çizim: 300 yıl: yemek masası, söylenmeyen cümle"
+ },
+ {
+  "no": 20,
+  "id": "20-s20",
+  "sid": "s20",
+  "bas": 162.96,
+  "dur": 3.2,
+  "metin": "Ta ki…",
+  "gorsel": "çizim: saat: Ta ki…"
+ },
+ {
+  "no": 21,
+  "id": "21-s21",
+  "sid": "s21",
+  "bas": 166.16,
+  "dur": 4.66,
+  "metin": "…2008 yılına kadar. Avusturya. Doğu Tirol. Lengberg Şatosu.",
+  "gorsel": "çizim: Lengberg Şatosu (Avusturya, Doğu Tirol)"
+ },
+ {
+  "no": 22,
+  "id": "22-s22",
+  "sid": "s22",
+  "bas": 170.82,
+  "dur": 5.36,
+  "metin": "Şatoda tadilat var. İşçiler bir zemini kaldırıyor ve altından… çöp çıkıyor.",
+  "gorsel": "çizim: tadilat: zemin tahtaları kalkıyor, altından çöp"
+ },
+ {
+  "no": 23,
+  "id": "23-s23",
+  "sid": "s23",
+  "bas": 176.18,
+  "dur": 10.8,
+  "metin": "Ama öyle sıradan bir çöp değil. 500 yıllık, halis muhlis Orta Çağ çöpü. Yani Orta Çağ'ın \"Bunu sonra atarız.\" dediği ne varsa. [güler]",
+  "gorsel": "çizim: Orta Çağ çöpü: \"Bunu sonra atarız.\""
+ },
+ {
+  "no": 24,
+  "id": "24-s24",
+  "sid": "s24",
+  "bas": 186.98,
+  "dur": 9.27,
+  "metin": "Yaklaşık 2.700 (iki bin yedi yüz) parça kumaş çıkıyor. Arkeologlar bunları tek tek inceliyorlar ve bir tanesini görünce donup kalıyorlar.",
+  "gorsel": "çizim: arkeologlar: 2.700 parça kumaş, bir tanesini görünce donup kalıyorlar"
+ },
+ {
+  "no": 25,
+  "id": "25-s25",
+  "sid": "s25",
+  "bas": 196.25,
+  "dur": 11.12,
+  "metin": "Çünkü ellerindeki şey… düpedüz bir sütyen. Keten. 2 kaplı. Askılı. Bugün bir mağazada görsen \"Biraz retro ama fena değil.\" dersin, indirimdeyse kaparsın. [güler]",
+  "gorsel": "çizim: keten sütyen (2 kaplı, askılı) + mağazada indirim"
+ },
+ {
+  "no": 26,
+  "id": "26-s26",
+  "sid": "s26",
+  "bas": 207.37,
+  "dur": 3.28,
+  "metin": "Karbon testi yapılıyor. Sonuç: 15. yüzyıl.",
+  "gorsel": "çizim: karbon testi → 15. yüzyıl, 500 yıl"
+ },
+ {
+  "no": 27,
+  "id": "27-s27",
+  "sid": "s27",
+  "bas": 210.65,
+  "dur": 10.35,
+  "metin": "Yani tarih kitapları \"Sütyen 1900'lerde icat edildi.\" diye racon keserken Orta Çağ'da bir kadın bunu çoktan giymiş, yıkamış, eskitmiş ve çöpe atmış. [güler]",
+  "gorsel": "çizim: tarih kitabı racon kesiyor; Orta Çağ kadını giymiş, yıkamış, eskitmiş, atmış"
+ },
+ {
+  "no": 28,
+  "id": "28-s18b",
+  "sid": "s18b",
+  "bas": 221.0,
+  "dur": 11.64,
+  "metin": "Peki bu fikir neden unutuldu? Çünkü moda tarihi tek cümleden ibaret: Korse geri döndü. Hem de kötü bir eski sevgili gibi, hiç çağrılmadan. [güler]",
+  "gorsel": "çizim: korse geri döndü: kapıda kötü eski sevgili"
+ },
+ {
+  "no": 29,
+  "id": "29-s28",
+  "sid": "s28",
+  "bas": 232.64,
+  "dur": 4.98,
+  "metin": "Yıl 1889. Paris. Bütün şehir yeni dikilen Eyfel Kulesi'ne bakıyor.",
+  "gorsel": "çizim: Paris 1889: Eyfel yükseliyor, kalabalık bakıyor"
+ },
+ {
+  "no": 30,
+  "id": "30-s29",
+  "sid": "s29",
+  "bas": 237.62,
+  "dur": 10.2,
+  "metin": "Biz ise küçük bir terzi dükkânına bakacağız. Herminie Cadolle (Ermini Kadol) adında bir kadın korseyi tezgâha yatırıyor ve makası basıyor: Ortadan ikiye!",
+  "gorsel": "çizim: Cadolle: terzi dükkânı, makas, korse ortadan ikiye"
+ },
+ {
+  "no": 31,
+  "id": "31-s30",
+  "sid": "s30",
+  "bas": 247.82,
+  "dur": 8.66,
+  "metin": "Alt kısım beli sarıyor, üst kısım göğsü taşıyor. Ve tarihte ilk kez nefes almak \"isteğe bağlı\" olmaktan çıkıyor.",
+  "gorsel": "çizim: iki parça: bel/göğüs; nefes artık isteğe bağlı değil"
+ },
+ {
+  "no": 32,
+  "id": "32-s29b",
+  "sid": "s29b",
+  "bas": 256.48,
+  "dur": 5.64,
+  "metin": "Yani Cadolle (Kadol) korsenin fişini çekmiyor ama onunla bir ateşkes imzalıyor. [güler]",
+  "gorsel": "çizim: Cadolle ve korse: ateşkes imzası"
+ },
+ {
+  "no": 33,
+  "id": "33-s30b",
+  "sid": "s30b",
+  "bas": 262.12,
+  "dur": 4.82,
+  "metin": "Birkaç yıl içinde o üst parça ayrı olarak satılmaya başlıyor.",
+  "gorsel": "çizim: üst parça ayrı satılıyor (vitrin)"
+ },
+ {
+  "no": 34,
+  "id": "34-s29d",
+  "sid": "s29d",
+  "bas": 266.94,
+  "dur": 9.05,
+  "metin": "Üstelik Cadolle'un (Kadol'un) kurduğu marka bugün hâlâ Paris'te ve hâlâ ailesinin elinde. Peki sütyeni Cadolle (Kadol) mu buldu? Olabilir.",
+  "gorsel": "çizim: marka bugün hâlâ Paris'te, ailesinin elinde; \"Cadolle mu buldu? Olabilir.\""
+ },
+ {
+  "no": 35,
+  "id": "35-s02b",
+  "sid": "s02b",
+  "bas": 275.99,
+  "dur": 5.88,
+  "metin": "Ama \"patentli modern sütyen\" deyince akla başka bir isim geliyor. Senin adın.",
+  "gorsel": "çizim: patentli modern sütyen… senin adın"
+ },
+ {
+  "no": 36,
+  "id": "36-s31",
+  "sid": "s31",
+  "bas": 281.87,
+  "dur": 6.13,
+  "metin": "Açılıştaki baloya dönelim. Evet, o kız sensin: Mary Phelps Jacob (Meri Felps Ceykıb).",
+  "gorsel": "çizim: Mary Phelps Jacob: o kız sensin"
+ },
+ {
+  "no": 37,
+  "id": "37-s32",
+  "sid": "s32",
+  "bas": 288.0,
+  "dur": 7.22,
+  "metin": "2 mendil, bir kurdele, biraz da iğne iplik. Hizmetçinle birlikte birkaç dakikada bir şey dikiyorsun.",
+  "gorsel": "çizim: Mary ve hizmetçi: mendil, kurdele, iğne iplik dikimi"
+ },
+ {
+  "no": 38,
+  "id": "38-s33",
+  "sid": "s33",
+  "bas": 295.22,
+  "dur": 8.11,
+  "metin": "Giyiyorsun ve… oluyor! Çubuk yok, tel yok, ızdırap yok. Ciğerlerin işe geri dönüyor. [güler]",
+  "gorsel": "çizim: giyiyorsun: nefes, çubuk/tel/ızdırap yok, ciğerler işe dönüyor"
+ },
+ {
+  "no": 39,
+  "id": "39-s34",
+  "sid": "s34",
+  "bas": 303.33,
+  "dur": 11.52,
+  "metin": "Anlatılana göre baloda arkadaşların etrafını sarıyor: \"Bu ne? Bana da yapar mısın?\" İşte o an jeton düşüyor: Bu bir elbise meselesi değil, bir iş fikri.",
+  "gorsel": "çizim: balo: arkadaşlar etrafını sarıyor, jeton düşüyor, iş fikri"
+ },
+ {
+  "no": 40,
+  "id": "40-s35",
+  "sid": "s35",
+  "bas": 314.85,
+  "dur": 21.45,
+  "metin": "12 Şubat 1914'te patent başvurusu yapıyorsun. Aynı yılın kasım ayında patent onaylanıyor. Patentin adı tek kelime: \"Brassière\" (Brasiyer). Yani… sütyen. Kısa, net, iddialı. Ama bir fikrin patentini almak başka, onu bütün dünyaya satmak başka. Sonunda patenti büyük bir şirkete satıyorsun: Warner Brothers'a (Vorner Bradırs'a).",
+  "gorsel": "çizim: patent başvurusu, Brassière (gerçek ABD patent çizimi), şirkete satış"
+ },
+ {
+  "no": 41,
+  "id": "41-s37d",
+  "sid": "s37d",
+  "bas": 336.3,
+  "dur": 4.94,
+  "metin": "Bir korse şirketine. Yani patenti resmen düşmana satıyorsun. [güler]",
+  "gorsel": "çizim: korse şirketi (Met korse fotoğrafı): patenti düşmana satmak"
+ },
+ {
+  "no": 42,
+  "id": "42-s36",
+  "sid": "s36",
+  "bas": 341.24,
+  "dur": 12.03,
+  "metin": "Fiyatı mı? Sıkı dur… 1.500 dolar (bin beş yüz dolar). Söylenene göre şirket bu patentten sonraki 30 yılda 15.000.000 dolardan (on beş milyon dolardan) fazla kazanıyor.",
+  "gorsel": "çizim: fiyat: 1.500 $ ↔ 15.000.000 $ (30 yıl)"
+ },
+ {
+  "no": 43,
+  "id": "43-s37c",
+  "sid": "s37c",
+  "bas": 353.27,
+  "dur": 5.36,
+  "metin": "Yani senin cebine giren para onların kazandığının binde biri bile değil.",
+  "gorsel": "çizim: senin payın binde bir"
+ },
+ {
+  "no": 44,
+  "id": "44-s37b",
+  "sid": "s37b",
+  "bas": 358.63,
+  "dur": 5.19,
+  "metin": "Bunu okuyunca senin yerine biz sinirlendik. Hem de bayağı. [güler]",
+  "gorsel": "çizim: Mary ağlıyor, izleyiciler sinirleniyor"
+ },
+ {
+  "no": 45,
+  "id": "45-s38",
+  "sid": "s38",
+  "bas": 363.82,
+  "dur": 13.28,
+  "metin": "Ama üzülme. Sonra adını Caresse Crosby (Kares Krosbi) yapıyorsun, Paris'e yerleşiyorsun ve son derece bohem, son derece renkli bir hayat sürüyorsun. O hikâye de başlı başına bir video.",
+  "gorsel": "çizim: Mary → Caresse Crosby: Paris'te bohem hayat"
+ },
+ {
+  "no": 46,
+  "id": "46-n39",
+  "sid": "n39",
+  "bas": 377.1,
+  "dur": 4.59,
+  "metin": "Şimdi biraz oyun oynayalım: Efsane mi, gerçek mi? 1:",
+  "gorsel": "çizim: Efsane mi, gerçek mi? (tahta)"
+ },
+ {
+  "no": 47,
+  "id": "47-s41a",
+  "sid": "s41a",
+  "bas": 381.69,
+  "dur": 10.27,
+  "metin": "\"Sütyeni Otto Titzling (Otto Titsling) adında bir Alman buldu.\" Bunu bir sürü yerde okuyabilirsin. Ünlü bir bilgi yarışması oyununda soru olarak bile çıktı.",
+  "gorsel": "çizim: Otto Titzling her yerde yazıyor; bilgi yarışması"
+ },
+ {
+  "no": 48,
+  "id": "48-s09b",
+  "sid": "s09b",
+  "bas": 391.96,
+  "dur": 5.11,
+  "metin": "Tek bir sorun var: Otto Titzling (Otto Titsling)… hiç yaşamadı.",
+  "gorsel": "çizim: Otto hiç yaşamadı"
+ },
+ {
+  "no": 49,
+  "id": "49-s41b",
+  "sid": "s41b",
+  "bas": 397.07,
+  "dur": 18.59,
+  "metin": "1971'de Wallace Reyburn (Volıs Reybırn) adında bir mizahçı tamamen uydurma bir kitap yazdı. Kitabın kahramanının adı da İngilizcede… diyelim ki biraz açık saçık bir kelime oyunu. Yani adam şaka yaptı, dünya ciddiye aldı. İnternetten önceki zamanların sahte haberi. [güler] 2:",
+  "gorsel": "çizim: Reyburn: uydurma kitap, şaka, sahte haber"
+ },
+ {
+  "no": 50,
+  "id": "50-s42a",
+  "sid": "s42a",
+  "bas": 415.66,
+  "dur": 20.84,
+  "metin": "\"1968'de feministler sokakta sütyen yaktı.\" O yıl Amerika'da bir güzellik yarışması protesto ediliyor. Kadınlar sütyenlerini, korselerini, takma kirpiklerini bir \"Özgürlük Çöp Kutusu\"na atıyor. Plan şu: Kutuyu ateşe vermek. Ama polis diyor ki: \"Hanımlar, burası tahta bir iskele. Yakarsanız bütün sahili yakarsınız.\" Ve izin vermiyor.",
+  "gorsel": "çizim: 1968: Özgürlük Çöp Kutusu, polis izin vermiyor"
+ },
+ {
+  "no": 51,
+  "id": "51-s42c",
+  "sid": "s42c",
+  "bas": 436.5,
+  "dur": 21.32,
+  "metin": "Sonra bir gazete \"Sütyen yakanlar\" diye manşet atıyor… ve efsane doğuyor. Yani o gün yanan tek şey… bir gazetecinin hayal gücüydü. [güler] Gerçi bir muhabir yıllar sonra kutudan biraz duman çıktığını hatırladığını söylemiş. Ama o meşhur \"sokakta sütyen yakma\" sahnesi büyük ölçüde bir gazete manşetinin eseri.",
+  "gorsel": "çizim: gazete manşeti: hayal gücü, duman, manşetin eseri"
+ },
+ {
+  "no": 52,
+  "id": "52-s43",
+  "sid": "s43",
+  "bas": 457.82,
+  "dur": 21.33,
+  "metin": "Peki sütyeni kim buldu? Kısa cevap: Tek bir kişi değil. Antik Yunanlılar bandı buldu. Romalılar etiketini değiştirdi. Orta Çağ'da biri kaplısını dikti ve çöpe attı. Cadolle (Kadol) korseyle ateşkes imzaladı. Mary (Meri) de 2 mendille patenti aldı… ve 1.500 dolara (bin beş yüz dolara) sattı.",
+  "gorsel": "çizim: özet zaman çizelgesi"
+ },
+ {
+  "no": 53,
+  "id": "53-s43b",
+  "sid": "s43b",
+  "bas": 479.15,
+  "dur": 3.95,
+  "metin": "Yani sütyen bir icat değil… bir isyan.",
+  "gorsel": "çizim: bir isyan"
+ },
+ {
+  "no": 54,
+  "id": "54-s19c",
+  "sid": "s19c",
+  "bas": 483.1,
+  "dur": 4.11,
+  "metin": "Yüzyıllar boyunca \"Bu korse beni öldürecek!\" diyen kadınların isyanı.",
+  "gorsel": "çizim: korse beni öldürecek diyen kadınların isyanı"
+ },
+ {
+  "no": 55,
+  "id": "55-s41c",
+  "sid": "s41c",
+  "bas": 487.21,
+  "dur": 7.44,
+  "metin": "Bu arada… Otto'yu uyduran Wallace Reyburn'ü (Volıs Reybırn'ü) hatırladın mı? O adam bir kitap daha yazdı.",
+  "gorsel": "çizim: Reyburn bir kitap daha yazdı"
+ },
+ {
+  "no": 56,
+  "id": "56-s44a",
+  "sid": "s44a",
+  "bas": 494.65,
+  "dur": 13.33,
+  "metin": "Ve o kitap yüzünden dünya hâlâ tuvaleti kimin icat ettiğini yanlış biliyor. Bir sonraki videoda: Tuvaletin gerçek hikâyesi. Sana söz veriyorum: Sifonu çekmeden önce 2 kere düşüneceksin. [güler]",
+  "gorsel": "çizim: tuvaleti yanlış biliyoruz; sifon 2 kere"
+ },
+ {
+  "no": 57,
+  "id": "57-s44c",
+  "sid": "s44c",
+  "bas": 507.98,
+  "dur": 13.85,
+  "metin": "Ondan sonrakini de sen seç! Topuklu ayakkabıyı kim buldu? Çatalı kim buldu? Yoksa tuvalet kâğıdı icat edilmeden önce insanlar ne kullanıyordu? Yorumlara yaz; en çok istenen konu sıradaki videolardan biri olacak.",
+  "gorsel": "çizim: sen seç tahtası"
+ },
+ {
+  "no": 58,
+  "id": "58-s33b",
+  "sid": "s33b",
+  "bas": 521.83,
+  "dur": 5.48,
+  "metin": "Görüşmek üzere. Ve unutma: Nefes almak… isteğe bağlı değildir. [güler]",
+  "gorsel": "çizim: Mary: nefes almak isteğe bağlı değildir"
+ }
+]
