@@ -45,3 +45,7 @@ mk('exec', { male: true, skin: '#e8c3a0', skinD: '#cfa27e', lip: '#a4504e', hair
   gown: '#2f2c2c', gownD: '#1e1c1c', gownL: '#4a4646', neck: 'm', tie: '#7d3c3e', earrings: false, lash: false, browW: 10, head: 1.22, jaw: 2, skirt: 'none' });
 mk('quiz', { male: true, skin: '#ecc5a4', skinD: '#d3a07f', lip: '#a4504e', hair: '#c9a45a', hairD: '#a07f33', hairL: '#dcc07e', hairStyle: 'short', acc: 'none',
   gown: '#b39349', gownD: '#8f7332', gownL: '#cfb36c', neck: 'm', tie: '#f4efe3', earrings: false, lash: false, browW: 8, head: 1.25, jaw: 0, skirt: 'none' });
+// Gece kıyafetli kadın (Büşra, 2026-11-20): orta boylu, orta kilolu (poz içinde waist 1,18 + dolgun kol/bacak), platin sarısı uzun saç, yeşil göz, saten gecelik + terlik
+mk('gece', { skin: '#f2d2b8', skinD: '#dcae90', lip: '#c9666c', blushC: '#e8a090', hair: '#f1ecdb', hairD: '#c8c0a4', hairL: '#fffdf3', hairStyle: 'xlong', browC: '#b9ae8e', acc: 'none', iris: '#4f9a5a',
+  gown: '#c8b6dc', gownD: '#a692bd', gownL: '#ddd0ec', sleeve: '#f2d2b8', sleeveD: '#dcae90', hand: '#f2d2b8', sashOn: true, sash: '#b49fcb', sashD: '#9783b0', accC: '#fbf5ea', neck: 'scoop', trim: '#fbf5ea', skirt: 'mid', hem: 'none', seamless: true,
+  legs: true, stock: '#f2d2b8', shoes: '#f0c4d0', earrings: false, lash: true, legW: 1.3, armW: 1.15 });

@@ -25,3 +25,10 @@ Kural: Tamamen özgün, gerçek bir kişiye veya bilinen bir çizgi karaktere be
 - Seçenek A: Bir çizere tek seferlik karakter seti (5-10 poz/ifade) yaptırmak.
 - Seçenek B: Yapay zekâ görsel aracıyla tasarlamak (aylık abonelik).
 Maliyet ve lisans araştırılıp onaya sunulacak.
+
+## Gece kıyafetli kadın (taslak v3, 2026-11-20 – Büşra'nın isteği)
+Orta boylu, orta kilolu; platin sarısı uzun saç; yeşil göz; üstünde yalnızca gece kıyafeti. Kodla çizildi (LOOK.gece, scripts/vektor/kadro.js; uzun saç 'xlong' stili mary.js'de).
+Seçilen kıyafet: lavanta saten gecelik (V yaka, dantel, belde kurdele) + pembe terlik. Kuralımız gereği abartısız, mizahi çizgi film tarzı (CLAUDE.md: müstehcenliğe kaçma).
+Kart: 4 ifade (uykulu/esniyor, şaşkın, gülüyor, şüpheli) → medya/karakterler/gece/gece_karti_v3.png (depoya girmez). Üretim: node scripts/vektor/araclar/karakter_karti.js <çıktı.png> 1920 gece
+Açık: kullanılacağı video/sahne ve kıyafet (gecelik mi, iç çamaşırı seti mi) Büşra'dan bekleniyor. Adı henüz yok.
+

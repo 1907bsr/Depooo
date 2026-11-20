@@ -31,7 +31,7 @@ function drawEye(ctx, side, F) {
   if ((F.rollAmt || 0) > 0) { const th = lerp(Math.PI * .93, Math.PI * .07, F.roll ?? .5); lx = lerp(lx, Math.cos(th) * .95, F.rollAmt); ly = lerp(ly, -Math.sin(th) * 1.0, F.rollAmt); }
   const ix = lx * (rx - 9), iy = ly * (ry - 10);
   ctx.save(); ctx.beginPath(); ctx.ellipse(0, 0, rx - 1, ry - 1, 0, 0, TAU); ctx.clip();
-  ell(ctx, ix, iy, 9.6, 10.6, C.iris, null);
+  ell(ctx, ix, iy, 9.6, 10.6, LK.iris || C.iris, null);
   ell(ctx, ix, iy, 5.2, 5.8, '#1d120e', null);
   ell(ctx, ix - 3, iy - 4, 2.5, 2.5, '#fff', null);
   ctx.restore();
@@ -100,12 +100,18 @@ function hairBack(ctx) {
   if (st === 'pouf') shape(ctx, [[0, -106], [44, -100], [78, -72], [86, -30], [76, 8], [62, 42], [40, 68], [0, 72], [-40, 68], [-62, 42], [-76, 8], [-86, -30], [-78, -72], [-44, -100]], L.hair, L.hairD, { seed: 3, sx: -8, sy: -6 });
   else if (st === 'bun') { shape(ctx, [[0, -92], [40, -86], [66, -56], [72, -10], [62, 30], [40, 56], [0, 60], [-40, 56], [-62, 30], [-72, -10], [-66, -56], [-40, -86]], L.hair, L.hairD, { seed: 3, sx: -8, sy: -6 }); shape(ctx, epts(0, -106, 30, 24), L.hair, L.hairD, { seed: 4, sx: -5, sy: -4 }); }
   else if (st === 'bob') shape(ctx, [[0, -98], [48, -92], [76, -60], [82, -10], [80, 40], [70, 66], [44, 72], [0, 62], [-44, 72], [-70, 66], [-80, 40], [-82, -10], [-76, -60], [-48, -92]], L.hair, L.hairD, { seed: 3, sx: -8, sy: -6 });
+  else if (st === 'xlong') shape(ctx, [[0, -98], [48, -92], [78, -60], [84, -10], [82, 40], [72, 70], [44, 76], [0, 66], [-44, 76], [-72, 70], [-82, 40], [-84, -10], [-78, -60], [-48, -92]], L.hair, L.hairD, { seed: 3, sx: -8, sy: -6 });
   else if (st === 'beehive') shape(ctx, [[0, -150], [46, -140], [78, -100], [86, -40], [78, 10], [64, 40], [0, 52], [-64, 40], [-78, 10], [-86, -40], [-78, -100], [-46, -140]], L.hair, L.hairD, { seed: 3, sx: -8, sy: -6 });
   else if (st === 'long') shape(ctx, [[0, -98], [48, -92], [78, -60], [84, -10], [86, 60], [80, 130], [50, 160], [0, 150], [-50, 160], [-80, 130], [-86, 60], [-84, -10], [-78, -60], [-48, -92]], L.hair, L.hairD, { seed: 3, sx: -8, sy: -6 });
   else if (st === 'wig') {
     shape(ctx, [[0, -112], [56, -102], [92, -62], [102, 0], [98, 52], [86, 90], [50, 98], [0, 72], [-50, 98], [-86, 90], [-98, 52], [-102, 0], [-92, -62], [-56, -102]], L.hair, L.hairD, { seed: 3, sx: -8, sy: -6 });
     for (const sd of [-1, 1]) for (const yy of [8, 44]) ell(ctx, sd * 86, yy, 20, 13, L.hair, C.ink, 2.6);
   }
+}
+function hairBehind(ctx) {   // gövdenin ARKASINDA kalan uzun saç (omuz yanlarından belin hizasına)
+  const L = LK;
+  shape(ctx, [[0, -98], [48, -92], [78, -60], [86, -10], [92, 60], [98, 140], [96, 215], [80, 262], [40, 276], [0, 270], [-40, 276], [-80, 262], [-96, 215], [-98, 140], [-92, 60], [-86, -10], [-78, -60], [-48, -92]], L.hair, L.hairD, { seed: 3, sx: -8, sy: -6 });
+  for (const sd of [-1, 1]) line(ctx, [[sd * 80, 70], [sd * 86, 150], [sd * 82, 225]], 2.4, L.hairL);
 }
 function hairFront(ctx) {
   const L = LK, st = L.hairStyle;
@@ -120,6 +126,8 @@ function hairFront(ctx) {
     line(ctx, [[0, -50], [-24, -72], [-46, -78]], 2.4, L.hairL); line(ctx, [[0, -50], [24, -72], [46, -78]], 2.4, L.hairL);
   } else if (st === 'bob') {
     part([[-66, 20], [-76, -30], [-52, -84], [0, -98], [52, -84], [76, -30], [66, 20], [54, -6], [44, -30], [30, -42], [0, -44], [-30, -42], [-44, -30], [-54, -6]], 7);
+  } else if (st === 'xlong') {
+    part([[-66, 20], [-76, -30], [-52, -84], [0, -98], [52, -84], [76, -30], [66, 20], [56, -4], [46, -32], [24, -52], [0, -46], [-24, -52], [-46, -32], [-56, -4]], 7);
   } else if (st === 'long') {
     part([[-66, 20], [-76, -30], [-52, -84], [0, -98], [52, -84], [76, -30], [66, 20], [56, -4], [46, -32], [24, -52], [0, -46], [-24, -52], [-46, -32], [-56, -4]], 7);
   } else if (st === 'short') {
@@ -182,7 +190,7 @@ function drawArm(ctx, side, A) {
   let r = r1;
   if (wg > 0) { const r2 = ik(sx, sy, A.t[0], A.t[1], l1, l2, !fl), ex = lerp(r1.e[0], r2.e[0], wg), ey = lerp(r1.e[1], r2.e[1], wg), wa = Math.atan2(A.t[1] - ey, A.t[0] - ex); r = { e: [ex, ey], w: [ex + Math.cos(wa) * l2, ey + Math.sin(wa) * l2] }; }
   const slv = LK.male ? LK.gown : LK.sleeve, slvD = LK.male ? LK.gownD : LK.sleeveD, hc = LK.male ? LK.skin : LK.hand;
-  limb(ctx, [[sx, sy], r.e, r.w], [LK.male ? 48 : 42, LK.male ? 38 : 32, LK.male ? 30 : 25], slv, C.ink, 3.2, slvD);
+  const aw = LK.armW || 1; limb(ctx, [[sx, sy], r.e, r.w], [(LK.male ? 48 : 42) * aw, (LK.male ? 38 : 32) * aw, (LK.male ? 30 : 25) * aw], slv, C.ink, 3.2, slvD);
   if (LK.male) { ell(ctx, r.w[0], r.w[1], 17, 17, '#f4efe3', C.ink, 2.6); }
   const d = [r.w[0] - r.e[0], r.w[1] - r.e[1]], dl = Math.hypot(d[0], d[1]) || 1, ux = d[0] / dl, uy = d[1] / dl;
   const hx = r.w[0] + ux * 17, hy = r.w[1] + uy * 17, rot = Math.atan2(uy, ux) - Math.PI / 2;
@@ -198,7 +206,7 @@ function drawLegs(ctx, S) {
   for (const sd of [-1, 1]) {
     const ph = sd * sw, top = [sd * 40, -352], knee = [sd * 42 + ph * 14, -190], foot = [sd * 46 + ph * 26, -22];
     const col = L.male ? L.trou : (L.stock || L.skin);
-    limb(ctx, [top, knee, foot], L.male ? [66, 54, 44] : [44, 34, 28], col, C.ink, 3, null);
+    const lw = L.legW || 1; limb(ctx, [top, knee, foot], (L.male ? [66, 54, 44] : [44, 34, 28]).map(v => v * lw), col, C.ink, 3, null);
     ell(ctx, foot[0] + sd * 6, foot[1] + 10, 28, 13, L.shoes, C.ink, 2.6);
   }
 }
@@ -229,6 +237,7 @@ function drawMary(ctx, S) {
   }
   // üst gövde (bele dönme noktası = kalça)
   ctx.save(); ctx.translate(0, -350); ctx.rotate((S.lean || 0) * Math.PI / 180); ctx.translate(0, 350);
+  if (L.hairStyle === 'xlong' && !S.bust) { ctx.save(); ctx.translate((S.headDX || 0), -714 + (S.headDY || 0)); ctx.rotate((S.headRoll || 0) * Math.PI / 180); ctx.scale(L.head, L.head); hairBehind(ctx); ctx.restore(); }
   if (male) {
     const tp = [[-112, -578], [-106, -500], [-100, -420], [-98, -350], [0, -340], [98, -350], [100, -420], [106, -500], [112, -578], [0, -592]];
     shape(ctx, tp, L.gown, L.gownD, { seed: 42, sx: -10, sy: -4 });
@@ -246,6 +255,7 @@ function drawMary(ctx, S) {
       shape(ctx, [[-wst - 4, -458], [wst + 4, -458], [wst + 3, -428], [-wst - 3, -428]], L.sash, L.sashD, { seed: 43, sw: 2.8, sx: -4, sy: -2 });
       ell(ctx, wst - 6, -443, 11, 11, L.gownL, C.ink, 2.6); ell(ctx, wst - 6, -443, 4.2, 4.2, L.accC, C.ink, 1.6);
     }
+    if (L.seamless) { ctx.beginPath(); ctx.moveTo(-84, -374); ctx.lineTo(84, -374); ctx.lineTo(86, -338); ctx.lineTo(-86, -338); ctx.closePath(); ctx.fillStyle = L.gown; ctx.fill(); }
     if (L.neck === 'scoop') {
       shape(ctx, [[-60, -592], [60, -592], [52, -566], [0, -536], [-52, -566]], L.skin, L.skinD, { seed: 44, sw: 2.8, sx: -4, sy: -3 });
       line(ctx, [[-58, -572], [-26, -548], [0, -537], [26, -548], [58, -572]], 9, L.trim); line(ctx, [[-58, -572], [-26, -548], [0, -537], [26, -548], [58, -572]], 2.2, C.ink);
