@@ -135,11 +135,10 @@ sahneS('s12', (ctx, t) => {
   // bant eller arasında (sarmadan önce)
   if (t > b + .1 && t < tA + .8) { const hl = handPos(A, A.armL), hr = handPos(A, A.armR); const sag = 40 + Math.sin(t * 4) * 6; drawBand(ctx, [[hl[0], hl[1]], [(hl[0] * 2 + hr[0]) / 3, hl[1] + sag], [(hl[0] + hr[0] * 2) / 3, hl[1] + sag], [hr[0], hr[1]]], 34, 1); }
   // yazılar
-  const lx = 560, ly = 230;
+  const lx = 470, ly = 175;
   T(ctx, t, 'apodesmos', lx, ly, 130, INK, tAp, tAp + .8, { rot: -.03, shadow: 'rgba(255,245,225,.6)' });
-  pen(ctx, curve([lx + 230, ly + 16], [lx + 260, ly + 120], [830, 520], 18), seg(t, tAp + .5, tAp + 1.0), 6, INK, { arrow: 18 });
   if (t > tCough + .1 && t < tCough + 1.4) for (let i = 0; i < 3; i++) { const k = (t - tCough - .1 + i * .15) % .5; pen(ctx, [[1290 + i * 16, 520 - i * 18], [1320 + i * 16 + k * 40, 508 - i * 18 - k * 20]], 1, 5, INK); }
-  if (t > tG - .1) { pinnedPaper(ctx, 1050, 135, 640, 170, -.03, '#f6ecd4'); T(ctx, t, 'Günde 2 apodesmos,', 1050, 130, 64, INK, tG, tG + .9, { align: 'center', rot: -.03 }); T(ctx, t, 'tok karnına.', 1050, 195, 64, RED, W(id, 'tok'), W(id, 'karnına') + .3, { align: 'center', rot: -.03 }); }
+  if (t > tG - .1) { pinnedPaper(ctx, 1370, 130, 560, 170, -.03, '#f6ecd4'); T(ctx, t, 'Günde 2 apodesmos,', 1370, 125, 58, INK, tG, tG + .9, { align: 'center', rot: -.03 }); T(ctx, t, 'tok karnına.', 1370, 190, 58, RED, W(id, 'tok'), W(id, 'karnına') + .3, { align: 'center', rot: -.03 }); }
   ctx.restore();
 });
 

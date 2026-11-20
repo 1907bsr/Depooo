@@ -55,3 +55,14 @@ Format: Tarih – Ne oldu – Neden – Bundan sonraki kural
 - KURAL: Önizlemeden önce kontrol listesi (kurgu_listesi.py) üret, tek tek oku: (1) kişi/dönem/nesne aynı mı, (2) görsel cümleyle birlikte mi geliyor,
   (3) aynı görsel arka arkaya mı. Listeyi Büşra'ya da gönder.
 - KURAL: Süre tahmininde satır sonundaki '//' duraklamasını ikinci kez sayma (video 9,96 dk görünüyordu, gerçek tahmin ~8,8 dk).
+
+## 2026-11-20 – Kod-çizim videoda yazı/figür çakışmaları (önizlemeden önce yakalandı)
+- Ilk sürümde (v10) şunlar vardı: yazı figürün yüzünü/saçını örtüyor (Cadolle etiketi, "senin yerine biz sinirlendik" + "hem de bayağı", "Mary Phelps Jacob"),
+  yazı kare dışına taşıyor ("ekstrem spor", "küçük bir terzi dükkânı"), açık zeminde BEYAZ yazı okunmuyor (mozaikte top/ağırlık/bant/şort),
+  kırmızı yazı yeşil/kahve zeminde okunmuyor ("Lengberg Şatosu", "düşman!"), etiket başka etiketin üstüne biniyor (apodesmos ↔ not kâğıdı, polisin tabelası ↔ başlık),
+  kol/el yazının üstüne biniyor (s44a), kart ızgarası kare dışına taşıyor (s27), tabela kâğıdına sığmayan yazı (AYRI satılır), yüze giden ok (apodesmos, Cadolle).
+- Neden kaçtı: kontrol listesi sahnenin %40'ındaki tek kareyi gösterir; el yazıları o anda yarım olduğu için çakışma görünmez.
+- KURAL: Önizlemeden önce `node scripts/vektor/araclar/ozet_kareler.js 0.5,0.92 <klasör> 640` + `python3 scripts/vektor/araclar/ozet_sayfa.py <klasör> 92 <önek>` ile
+  her sahnenin ORTASINDA ve YAZILAR TAMAMLANMIŞKEN (%92) kare üret, tek tek bak: (1) yazı yüzü/elleri örtüyor mu, (2) kare dışına taşıyor mu,
+  (3) kontrast yeterli mi (açık zeminde beyaz, koyu zeminde kırmızı/koyu yazı yok), (4) iki etiket üst üste mi, (5) ok yüzün üstünden geçiyor mu.
+  Okunmayan yazıyı kâğıt etiketle (pinnedPaper / tagAt) yap. Bu kontrol 3 saniye sürer, tam render 5 dakikadır: ÖNCE kontrol, SONRA render.

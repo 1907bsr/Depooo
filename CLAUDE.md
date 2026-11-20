@@ -204,7 +204,8 @@ GÜNCEL KARAR (2026-11-20, Büşra: "Bu daha güzel oldu… hareketli olması ç
   Görseller TAMAMEN Claude'un kodla çizdiği hareketli figür ve sahnelerdir (scripts/vektor; 0 TL). Gemini ile üretilmiş görseller KULLANILMAZ.
   Gerçek arşiv parçaları (Met CC0 korse fotoğrafı, ABD patent çizimi) küçük "kanıt" olarak araya girebilir.
   EKRAN SAĞA-SOLA KAYMAZ (Büşra: "bir tık fazla olmuş"): kamera sabit + yavaş yakınlaşma; yer değişimi kesmeyle. Figür hareketi, mimik ve el yazısı notlar korunur.
-  Önizleme: node scripts/vektor/render.js hepsi 960 24 → python3 scripts/vektor/birlestir.py cikis.mp4; kontrol listesi: python3 scripts/vektor/kurgu_listesi.py video.mp4 klasör.
+  Önizleme: node scripts/vektor/render.js hepsi 960 24 → python3 scripts/vektor/birlestir.py cikis.mp4; kontrol listesi: python3 scripts/vektor/kurgu_listesi.py video.mp4 klasör
+  Render'dan ÖNCE çakışma kontrolü: scripts/vektor/araclar/ozet_kareler.js (sahnelerin %50 ve %92'sinde kare) – yazı yüzü örtmesin, kare dışına taşmasın, kontrast yeterli olsun (hatalar.md).
   Aşağıdaki 2-5. maddelerdeki Gemini/motor2 anlatımı bu karardan sonra geçersizdir (kayıt için duruyor).
 1. Araştırma → senaryo → okuma metni (bölüm 5 ve EK-4 kuralları).
 2. Sahne planı (konular/<konu>/sahne-plani.md) + Gemini tarifleri (gemini-tarifleri.md).
@@ -357,3 +358,4 @@ Format: Kural – Kaynağı: video adı, tarih, hangi veri.)
 - 2026-11-20: Tempo ölçümü (bilgi/tempo-olcumu.md): v9’da güçlü hareketli saniye %12, Böcek-3 örneklerinde %47-60; son 1,5 dk ve açılış donuk. Büşra’ya 3 seçenek sunuldu (tempo paketi / kişisiz arka plan derinliği / gerçek hareket klipleri); karar bekleniyor, onaysız üretim yok.
 - 2026-11-20: Büşra "görseller elimizde olmasa kendi bildiğin gibi video yapar mısın?" dedi: scripts/vektor/ ile kodla çizilmiş (0 TL) 41 sn açılış örneği yapıldı (Mary, oda, korse röntgeni, çubuklar, ayna). Aynı 41 sn için güçlü hareketli saniye v9 %5 → %39. Karar bekliyor.
 - 2026-11-20 (akşam): Büşra örneği çok beğendi (figür hareketi), yan kaymaları azaltmamı istedi ve TAMAMININ kodla çizilmesini onayladı. 58 sahnenin tamamı scripts/vektor ile çizildi (0 TL); Gemini görselleri kullanılmadı.
+- 2026-11-20 (gece): v11 hazır: 58 sahne kodla çizildi, çakışma/okunurluk turu (25 düzeltme), sessiz önizleme 8 dk 47 sn, 0 TL; Büşra'ya tek seferde gönderilecek.

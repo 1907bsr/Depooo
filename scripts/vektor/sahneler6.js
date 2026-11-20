@@ -44,6 +44,8 @@ sahneS('n39', (ctx, t) => {
   chalk(ctx, t, '1:', 140, 190, 120, W(id, '1') - .1, W(id, '1') + .4, { fam: 'Alegreya', it: true, wt: 800, col: '#f6dc8a' });
   // tebeşir tozu
   ctx.fillStyle = 'rgba(241,236,224,.5)'; for (let i = 0; i < 6; i++) ctx.fillRect(300 + i * 220, 975 + hash(i) * 10, 18, 5);
+  const host = P({ armL: [-96, -410], armR: [210, -620 + Math.sin(t * 6) * 30], headRoll: 3 + Math.sin(t * 4) * 3, f: { mouth: MOUTH.grin, blush: .7, look: [-1, 0], turn: -.4, browL: [-8, -.1, .3], browR: [-8, -.1, .3] } });
+  const H = actor('mary', [[b, host]], t, { x: 1740, s: 1.0, bust: true }); H.y = 1620; drawMary(ctx, H);
 });
 
 // ---------------- s41a: Otto Titzling buldu – bir sürü yerde – bilgi yarışması
@@ -138,10 +140,10 @@ sahneS('s42a', (ctx, t) => {
   const cx = lerp(2200, 1560, sm(seg(t, tP - 1.4, tP + .2)));
   const C_ = pose2state(copP, t, { look: 'cop', s: .85, off: 1.3 }); C_.x = cx; if (t > tI + .3) C_.headRoll += Math.sin(t * 9) * 8; drawMary(ctx, C_);
   // kibrit
-  if (t > W(id, 'plan') && t < tP + .3) { ctx.save(); ctx.translate(960, 540); const a = Math.sin(t * 6) * .1; ctx.rotate(a); poly(ctx, [[-26, -16], [26, -16], [26, 16], [-26, 16]], '#e0cfa3', '#b9a985', { sw: 3 }); line(ctx, [[26, 0], [60, -20]], 5, '#8a6a4a'); ell(ctx, 66, -24, 6, 6, '#b4503a', C.ink, 2); ctx.restore(); T(ctx, t, 'ateşe vermek!', 700, 270, 100, RED, W(id, 'ateşe') - .1, W(id, 'vermek') + .4, { align: 'center', rot: -.03 }); }
+  if (t > W(id, 'plan') && t < tP + .3) { ctx.save(); ctx.translate(960, 540); const a = Math.sin(t * 6) * .1; ctx.rotate(a); poly(ctx, [[-26, -16], [26, -16], [26, 16], [-26, 16]], '#e0cfa3', '#b9a985', { sw: 3 }); line(ctx, [[26, 0], [60, -20]], 5, '#8a6a4a'); ell(ctx, 66, -24, 6, 6, '#b4503a', C.ink, 2); ctx.restore(); T(ctx, t, 'ateşe vermek!', 1150, 440, 100, RED, W(id, 'ateşe') - .1, W(id, 'vermek') + .4, { align: 'center', rot: -.03 }); }
   T(ctx, t, '1968', 90, 140, 130, INK, b, W(id, '1968de') + .5, { fam: 'Alegreya', it: true, wt: 800, rot: -.02 });
-  T(ctx, t, 'güzellik yarışması protestosu', 760, 150, 84, INK, W(id, 'güzellik') - .1, W(id, 'ediliyor') + .4, { align: 'center', rot: -.02 });
-  if (t > tP + .3) { pinnedPaper(ctx, 1400, 150, 700, 210, -.02, '#f8efd9'); T(ctx, t, '"Hanımlar, burası tahta', 1400, 130, 52, INK, W(id, 'hanımlar') - .1, W(id, 'iskele') + .3, { align: 'center', rot: -.02 }); T(ctx, t, 'bir iskele. Yakarsanız bütün', 1400, 184, 52, INK, W(id, 'yakarsanız') - .1, W(id, 'sahili') + .2, { align: 'center', rot: -.02 }); T(ctx, t, 'sahili yakarsınız."', 1400, 236, 52, RED, W(id, 'sahili') - .1, W(id, 'yakarsınız') + .4, { align: 'center', rot: -.03 }); }
+  T(ctx, t, 'güzellik yarışması protestosu', 700, 150, 78, INK, W(id, 'güzellik') - .1, W(id, 'ediliyor') + .4, { align: 'center', rot: -.02 });
+  if (t > tP + .3) { pinnedPaper(ctx, 1570, 150, 640, 210, -.02, '#f8efd9'); T(ctx, t, '"Hanımlar, burası tahta', 1570, 130, 50, INK, W(id, 'hanımlar') - .1, W(id, 'iskele') + .3, { align: 'center', rot: -.02 }); T(ctx, t, 'bir iskele. Yakarsanız bütün', 1570, 184, 50, INK, W(id, 'yakarsanız') - .1, W(id, 'sahili') + .2, { align: 'center', rot: -.02 }); T(ctx, t, 'sahili yakarsınız."', 1570, 236, 50, RED, W(id, 'sahili') - .1, W(id, 'yakarsınız') + .4, { align: 'center', rot: -.03 }); }
   if (t > tI) T(ctx, t, 'İZİN YOK!', 960, 1030, 130, RED, tI, tI + .5, { align: 'center', rot: -.02 });
 });
 
@@ -190,9 +192,9 @@ sahneS('s43', (ctx, t) => {
   const nodes = [[240, W(id, 'antik'), 'Antik Yunan', 'bant'], [600, W(id, 'romalılar'), 'Roma', 'etiket'], [960, W(id, 'orta'), 'Orta Çağ', 'çöp'], [1320, W(id, 'cadolle'), 'Cadolle', 'ateşkes'], [1680, W(id, 'mary'), 'Mary', '1.500 $']];
   const y = 700; line(ctx, [[160, y], [1760, y]], 8, '#b9a985'); line(ctx, [[160, y], [lerp(160, 1680, clamp(seg(t, nodes[0][1], nodes[4][1] + .6))), y]], 12, '#e06a50');
   nodes.forEach(([x, t0, nm, sub], i) => {
-    const u = bk(seg(t, t0 - .1, t0 + .4)); if (u <= 0) return; ctx.save(); ctx.translate(x, y); ctx.scale(u, u); ell(ctx, 0, 0, 26, 26, ['#8a2f2c', '#8a2f2c', '#7a5c3e', '#c8a043', '#c8a043'][i], C.ink, 5);
+    const u = bk(seg(t, t0 - .1, t0 + .4)); if (u <= 0) return; ctx.save(); ctx.translate(x, y); ctx.scale(u * (1 + Math.sin(t * 3 + i) * .03), u * (1 + Math.sin(t * 3 + i) * .03)); ell(ctx, 0, 0, 26, 26, ['#8a2f2c', '#8a2f2c', '#7a5c3e', '#c8a043', '#c8a043'][i], C.ink, 5);
     hand(ctx, nm, 0, 90, 66, INK, 1, { align: 'center', fam: 'Alegreya', it: true, wt: 800 }); hand(ctx, sub, 0, 150, 52, '#7a5c3e', 1, { align: 'center' });
-    ctx.save(); ctx.translate(0, -170);
+    ctx.save(); ctx.translate(0, -170); ctx.rotate(Math.sin(t * 2.2 + i) * .07);
     if (i === 0) { drawBand(ctx, [[-90, 10], [-30, -20], [30, 14], [90, -10]], 36, 1); }
     if (i === 1) { line(ctx, [[0, 40], [0, -40]], 3, C.ink); rrect(ctx, -80, -80, 160, 56, 6); ctx.fillStyle = '#f6ecd4'; ctx.fill(); ctx.lineWidth = 3; ctx.strokeStyle = C.ink; ctx.stroke(); hand(ctx, 'strophium', 0, -42, 34, RED, 1, { align: 'center' }); }
     if (i === 2) { ctx.save(); ctx.scale(.28, .28); linenBra(ctx, 0, 0, 1, t); ctx.restore(); line(ctx, [[-70, 50], [-50, 80], [50, 80], [70, 50]], 6, C.ink); }
@@ -207,8 +209,14 @@ sahneS('s43b', (ctx, t) => {
   plainBG(ctx, '#efe3c9', '#d9c7a0'); pinnedPaper(ctx, 960, 540, 1700, 700, .008, '#f8efd9');
   T(ctx, t, 'Yani sütyen bir icat değil…', 960, 330, 120, INK, b, W(id, 'değil') + .4, { align: 'center', rot: -.01 });
   const u = bk(seg(t, W(id, 'isyan') - .15, W(id, 'isyan') + .4)); ctx.save(); ctx.translate(960, 640); ctx.scale(u, u); hand(ctx, 'bir İSYAN!', 0, 0, 230, RED, 1, { align: 'center', fam: 'Alegreya', it: true, wt: 800 }); ctx.restore();
-  // yumruk
-  if (u > 0) { ctx.save(); ctx.translate(1560, 840); ctx.scale(u, u); ctx.rotate(-.1); line(ctx, [[0, 110], [0, 0]], 40, C.ink); line(ctx, [[0, 110], [0, 0]], 32, '#ecc5a4'); shape(ctx, [[-40, 10], [-40, -50], [-10, -66], [30, -62], [44, -30], [38, 10]], '#ecc5a4', '#d3a07f', { sw: 4, seed: 990, sx: -5, sy: -3 }); for (const x of [-22, -4, 14, 30]) line(ctx, [[x, -50], [x, -20]], 3, '#b5805f'); ctx.restore(); }
+  // havaya kalkmış yumruk (kol manşetiyle)
+  if (u > 0) { ctx.save(); ctx.translate(1590, lerp(1180, 800, u)); ctx.scale(1.4, 1.4); ctx.rotate(-.06 + Math.sin(t * 7) * .02);
+    poly(ctx, [[-36, 260], [36, 260], [32, 60], [-32, 60]], '#8a6a8f', '#6a4d6f', { sw: 4, sx: -4, sy: -3 });
+    poly(ctx, [[-42, 52], [42, 52], [40, 84], [-40, 84]], '#f1e8d0', '#d6c8aa', { sw: 3.4, sx: -3, sy: -2 });
+    shape(ctx, [[-50, 40], [-56, -10], [-46, -44], [-20, -58], [20, -58], [46, -44], [56, -10], [50, 40], [30, 52], [-30, 52]], '#ecc5a4', '#d3a07f', { sw: 4.4, seed: 990, sx: -5, sy: -3 });
+    for (let i = 0; i < 4; i++) { const fx = -39 + i * 26; shape(ctx, [[fx - 12, -62], [fx - 13, -20], [fx + 13, -20], [fx + 12, -62]], '#f3d2b6', '#d3a07f', { sw: 3.4, seed: 991 + i, sx: -3, sy: -2 }); }
+    shape(ctx, [[-58, 6], [-56, 34], [-30, 48], [22, 46], [30, 22], [-22, 12], [-28, -4]], '#ecc5a4', '#d3a07f', { sw: 4, seed: 996, sx: -4, sy: -3 });
+    ctx.restore(); }
 });
 
 // ---------------- s19c: bu korse beni öldürecek diyen kadınların isyanı
@@ -227,11 +235,11 @@ sahneS('s41c', (ctx, t) => {
   const id = 's41c', b = SAH[id].bas, d = SAH[id].dur;
   const R = reyburnDesk(ctx, t, b, { seq: [[b, P({ armL: [-70, -420], armR: [70, -420 + Math.sin(t * 16) * 8], headDY: 6, f: { look: [0, .8], mouth: MOUTH.smile, lid: .2 } })], [W(id, 'o') + .2, P({ armL: [-70, -420], armR: [170, -560], headRoll: 5, f: { look: [1, 0], mouth: MOUTH.grin, lid: .5, browL: [-4, .2, .2], browR: [-10, -.2, .3], blush: .3 } }), bk]] });
   // Otto hayaleti köşeden el sallar
-  const gh = bk(seg(t, W(id, 'ottoyu') - .1, W(id, 'ottoyu') + .5)); if (gh > 0) { ctx.save(); ctx.globalAlpha = .55; ctx.translate(1560, 560); ctx.scale(gh, gh); const o = actor('otto', [[b, P({ armR: [200, -620], f: { mouth: MOUTH.grin, look: [-1, 0] } })]], t, { x: 0, s: .55, bust: true, off: 1 }); o.y = 330; o.armR.t[0] += Math.sin(t * 8) * 30; drawMary(ctx, o); ctx.restore(); }
+  const gh = bk(seg(t, W(id, 'ottoyu') - .1, W(id, 'ottoyu') + .5)); if (gh > 0) { ctx.save(); ctx.globalAlpha = .55; ctx.translate(1700, 450); ctx.scale(gh, gh); const o = actor('otto', [[b, P({ armR: [200, -620], f: { mouth: MOUTH.grin, look: [-1, 0] } })]], t, { x: 0, s: .55, bust: true, off: 1 }); o.y = 330; o.armR.t[0] += Math.sin(t * 8) * 30; drawMary(ctx, o); ctx.restore(); }
   // ikinci kitap belirir
   const k = bk(seg(t, W(id, 'kitap') - .1, W(id, 'daha') + .4)); if (k > 0) { ctx.save(); ctx.translate(1400, 840); ctx.rotate(-.1); ctx.scale(k, k); poly(ctx, [[-110, -150], [110, -150], [110, 70], [-110, 70]], '#7a5c3e', '#5a4128', { sw: 5, sx: -8, sy: -5 }); hand(ctx, 'KİTAP 2', 0, -60, 56, '#e8d9b0', 1, { align: 'center', fam: 'Alegreya', it: true, wt: 800 }); ctx.restore(); }
   T(ctx, t, 'Wallace Reyburn', 960, 150, 110, CREAM, W(id, 'wallace') - .1, W(id, 'reyburnü') + .5, { align: 'center', rot: -.02, shadow: 'rgba(30,18,10,.8)' });
-  T(ctx, t, 'bir kitap daha!', 1480, 640, 100, '#f6dc8a', W(id, 'bir') - .1, W(id, 'yazdı') + .5, { align: 'center', rot: .03, shadow: 'rgba(30,18,10,.8)' });
+  T(ctx, t, 'bir kitap daha!', 1330, 600, 100, '#f6dc8a', W(id, 'bir') - .1, W(id, 'yazdı') + .5, { align: 'center', rot: .03, shadow: 'rgba(30,18,10,.8)' });
 });
 
 // ---------------- s44a: dünya tuvaleti yanlış biliyor – bir sonraki videoda: tuvaletin gerçek hikâyesi – sifon 2 kere
@@ -253,8 +261,8 @@ sahneS('s44a', (ctx, t) => {
     const tt = [W(id, 'sifonu') + .2, W(id, '2') + .1]; let hy = 0; const reach = 1 - .2 * Math.abs(Math.sin((t - W(id, 'sifonu')) * 4)); const ap = seg(t, W(id, 'sifonu') - .2, W(id, 'sifonu') + .5);
     ctx.save(); ctx.translate(lerp(1400, 1040 - 30 * Math.abs(Math.sin((t - W(id, 'sifonu')) * 3.2)), sm(ap)), 590 + Math.sin((t - W(id, 'sifonu')) * 3.2) * 20); ctx.rotate(.15); shape(ctx, [[-30, 20], [-34, -14], [-18, -40], [10, -44], [30, -24], [34, 10], [20, 30]], '#ecc5a4', '#d3a07f', { sw: 3.6, seed: 1002, sx: -4, sy: -3 }); line(ctx, [[30, 10], [140, 40]], 36, C.ink); line(ctx, [[30, 10], [140, 40]], 28, '#ecc5a4'); ctx.restore();
     T(ctx, t, 'sana söz veriyorum:', 400, 270, 90, CREAM, W(id, 'sana') - .1, W(id, 'veriyorum') + .4, { align: 'center', rot: -.03, shadow: 'rgba(0,0,0,.6)' });
-    T(ctx, t, 'Tuvaletin gerçek hikâyesi', 1480, 760, 90, '#f6dc8a', W(id, 'tuvaletin') - .1, W(id, 'hikâyesi') + .5, { align: 'center', rot: .03, shadow: 'rgba(0,0,0,.6)' });
-    T(ctx, t, 'bir sonraki videoda', 1480, 650, 80, CREAM, c + .1, W(id, 'videoda') + .4, { align: 'center', rot: .03, shadow: 'rgba(0,0,0,.6)' });
+    T(ctx, t, 'Tuvaletin gerçek hikâyesi', 1500, 880, 84, '#f6dc8a', W(id, 'tuvaletin') - .1, W(id, 'hikâyesi') + .5, { align: 'center', rot: .03, shadow: 'rgba(0,0,0,.6)' });
+    T(ctx, t, 'bir sonraki videoda', 1500, 770, 76, CREAM, c + .1, W(id, 'videoda') + .4, { align: 'center', rot: .03, shadow: 'rgba(0,0,0,.6)' });
     T(ctx, t, '2 kere düşüneceksin!', 960, 1030, 110, CREAM, W(id, 'çekmeden') - .1, W(id, 'düşüneceksin') + .5, { align: 'center', rot: -.01, shadow: 'rgba(0,0,0,.6)' });
     for (let i = 0; i < 2; i++) { const t0 = tt[i] + (i ? .8 : 0); if (t > t0) T(ctx, t, '…', 760 + i * 100, 560, 120, '#f6dc8a', t0, t0 + .3, { fam: 'Alegreya', it: true, wt: 800 }); }
   }
@@ -266,16 +274,19 @@ sahneS('s44c', (ctx, t) => {
   chalkboard(ctx);
   chalk(ctx, t, 'Sen seç!', 960, 250, 200, b, W(id, 'seç') + .4, { align: 'center', col: '#f6dc8a', rot: -.02 });
   const opts = [['Topuklu ayakkabıyı kim buldu?', W(id, 'topuklu'), 470], ['Çatalı kim buldu?', W(id, 'çatalı'), 630], ['Tuvalet kâğıdı yokken ne kullanıyorlardı?', W(id, 'yoksa'), 790]];
-  opts.forEach(([txt, t0, y], i) => { chalk(ctx, t, txt, 330, y, 84, t0 - .05, t0 + .9, { rot: -.01 }); chalk(ctx, t, String(i + 1) + '.', 190, y, 84, t0 - .05, t0 + .3, { fam: 'Alegreya', it: true, wt: 800, col: '#f6dc8a' }); });
+  opts.forEach(([txt, t0, y], i) => { chalk(ctx, t, txt, 300, y, 72, t0 - .05, t0 + .9, { rot: -.01 }); chalk(ctx, t, String(i + 1) + '.', 170, y, 72, t0 - .05, t0 + .3, { fam: 'Alegreya', it: true, wt: 800, col: '#f6dc8a' }); });
   // ikonlar
   const ic = (i, x, y) => { const u = bk(seg(t, opts[i][1] + .3, opts[i][1] + .8)); if (u <= 0) return; ctx.save(); ctx.translate(x, y); ctx.scale(u, u); ctx.strokeStyle = '#f1ece0'; ctx.lineWidth = 6; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
     if (i === 0) { ctx.beginPath(); ctx.moveTo(-60, -20); ctx.lineTo(-10, -20); ctx.lineTo(50, 30); ctx.lineTo(70, 30); ctx.lineTo(70, 46); ctx.lineTo(-60, 46); ctx.closePath(); ctx.stroke(); line(ctx, [[-50, 46], [-50, 70]], 6, '#f1ece0'); }
     if (i === 1) { line(ctx, [[0, 70], [0, -10]], 7, '#f1ece0'); for (const x2 of [-24, -8, 8, 24]) line(ctx, [[x2, -10], [x2, -64]], 6, '#f1ece0'); ctx.beginPath(); ctx.arc(0, -10, 24, 0, Math.PI); ctx.stroke(); }
     if (i === 2) { ctx.beginPath(); ctx.ellipse(0, 0, 50, 56, 0, 0, TAU); ctx.stroke(); ctx.beginPath(); ctx.ellipse(0, 0, 18, 20, 0, 0, TAU); ctx.stroke(); line(ctx, [[50, 20], [92, 40]], 6, '#f1ece0'); }
     ctx.restore(); };
-  ic(0, 1560, 450); ic(1, 1560, 620); ic(2, 1560, 790);
+  ic(0, 1380, 450); ic(1, 1380, 620); ic(2, 1380, 790);
+  const pt = k => P({ armL: [-270, -600 + k * 70], armR: [96, -410], headRoll: -4, f: { look: [-1, -.2 + k * .25], turn: -.5, mouth: MOUTH.grin, blush: .6, browL: [-6, 0, .2], browR: [-6, 0, .2] } });
+  const wav = P({ armL: [-96, -410], armR: [200, -690 + Math.sin(t * 9) * 40], headRoll: 4, f: { mouth: MOUTH.grin, blush: .8, lid: .15 } });
+  const yy0 = W(id, 'yorumlara'); const H = actor('mary', [[b, pt(0)], [opts[0][1] - .2, pt(0)], [opts[1][1] - .1, pt(1), sm], [opts[2][1] - .1, pt(2), sm], [yy0 - .2, pt(2)], [yy0 + .2, wav, bk]], t, { x: 1730, s: 1.1, bust: true }); H.y = 1600; drawMary(ctx, H);
   const yy = W(id, 'yorumlara'); chalk(ctx, t, 'Yorumlara yaz!', 960, 930, 100, yy - .1, W(id, 'yaz') + .5, { align: 'center', col: '#a9c58a', rot: -.01 });
-  const u = bk(seg(t, yy + .2, yy + .7)); if (u > 0) { ctx.save(); ctx.translate(1600, 910); ctx.scale(u, u); ctx.strokeStyle = '#a9c58a'; ctx.lineWidth = 6; rrect(ctx, -80, -50, 160, 100, 22); ctx.stroke(); line(ctx, [[-30, 50], [-50, 90], [10, 50]], 6, '#a9c58a'); for (const x of [-34, 0, 34]) ell(ctx, x, 0, 6, 6, '#a9c58a', null); ctx.restore(); }
+  const u = bk(seg(t, yy + .2, yy + .7)); if (u > 0) { ctx.save(); ctx.translate(1460, 925); ctx.scale(u, u); ctx.strokeStyle = '#a9c58a'; ctx.lineWidth = 6; rrect(ctx, -80, -50, 160, 100, 22); ctx.stroke(); line(ctx, [[-30, 50], [-50, 90], [10, 50]], 6, '#a9c58a'); for (const x of [-34, 0, 34]) ell(ctx, x, 0, 6, 6, '#a9c58a', null); ctx.restore(); }
 });
 
 // ---------------- s33b: görüşmek üzere – nefes almak isteğe bağlı değildir
@@ -285,7 +296,7 @@ sahneS('s33b', (ctx, t) => {
   const wave = P({ armL: [-96, -410], armR: [200, -690 + Math.sin(t * 9) * 40], headRoll: 4, f: { mouth: MOUTH.grin, blush: .8, lid: .15 } });
   const breath = P({ armL: [-230, -640], armR: [230, -640], chest: 2.8, headDY: -14, headRoll: 3, f: { lid: .75, mouth: MOUTH.grin, blush: .9, browL: [-8, -.1, .3], browR: [-8, -.1, .3] } });
   const S = actor('mary', [[b, wave], [tN - .5, wave], [tN, breath, bk]], t, { x: 1500 }); S.chest += Math.sin(t * 2.2) * .6 * seg(t, tN, tN + 1); if (t < tN) S.lean += Math.sin(t * 5) * 1.2; drawMary(ctx, S); ctx.restore();
-  T(ctx, t, 'Görüşmek üzere!', 100, 160, 110, INK, b, W(id, 'üzere') + .5, { rot: -.02 });
+  pinnedPaper(ctx, 350, 150, 560, 170, -.02, '#f6ecd4'); T(ctx, t, 'Görüşmek üzere!', 100, 175, 90, INK, b, W(id, 'üzere') + .5, { rot: -.02 });
   if (t > tN - .1) { pinnedPaper(ctx, 1560, 700, 700, 330, -.02, '#f8efd9'); hand(ctx, 'nefes almak:', 1280, 620, 62, INK, seg(t, tN, tN + .4)); pen(ctx, [[1290, 650], [1328, 650], [1328, 688], [1290, 688], [1290, 650]], seg(t, tN + .3, tN + .55), 4, INK); hand(ctx, 'zorunlu', 1352, 686, 54, INK, seg(t, tN + .3, tN + .6)); pen(ctx, [[1290, 724], [1328, 724], [1328, 762], [1290, 762], [1290, 724]], seg(t, tN + .3, tN + .55), 4, INK); hand(ctx, 'isteğe bağlı', 1352, 760, 54, INK, seg(t, tN + .3, tN + .6));
     crossOut(ctx, 1340, 722, 1640, 770, seg(t, W(id, 'değildir') - .2, W(id, 'değildir') + .3)); pen(ctx, [[1294, 676], [1308, 690], [1342, 646]], seg(t, W(id, 'değildir') + .1, W(id, 'değildir') + .5), 8, '#5f6b4a'); }
 });

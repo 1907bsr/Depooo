@@ -48,11 +48,12 @@ sahneS('s21', (ctx, t) => {
   const id = 's21', b = SAH[id].bas, d = SAH[id].dur;
   ctx.save(); const z = 1 + .04 * seg(t, b, b + d); ctx.translate(960, 540); ctx.scale(z, z); ctx.translate(-960, -540);
   alpineBG(ctx, t); castle(ctx, 1320, 700, 1.05, t);
+  for (let i = 0; i < 4; i++) { const bx = ((t * 70 + i * 520) % 2500) - 300, by = 180 + i * 70 + Math.sin(t * 2 + i) * 14, fl = Math.sin(t * 11 + i * 2) * 8; line(ctx, [[bx - 20, by + fl], [bx, by - 6], [bx + 20, by + fl]], 4, '#3b2a22'); }
   T(ctx, t, '…2008', 90, 260, 220, INK, b, b + .8, { fam: 'Alegreya', it: true, wt: 800 });
   T(ctx, t, 'yılına kadar', 120, 350, 100, INK, W(id, 'yılına') - .1, W(id, 'kadar') + .4, { rot: -.02 });
-  const lab = (txt, x, y, key, col) => { T(ctx, t, txt, x, y, 96, col, W(id, key) - .05, W(id, key) + .5, { rot: -.02 }); };
-  lab('Avusturya', 90, 520, 'avusturya', '#4a3a4a'); lab('Doğu Tirol', 90, 630, 'doğu', '#4a3a4a'); lab('Lengberg Şatosu', 90, 760, 'lengberg', RED);
-  pen(ctx, curve([760, 740], [900, 640], [1100, 600], 18), seg(t, W(id, 'lengberg') + .4, W(id, 'lengberg') + .9), 6, RED, { arrow: 18 });
+  const lab = (txt, x, y, key, col, sh) => { T(ctx, t, txt, x, y, 96, col, W(id, key) - .05, W(id, key) + .5, { rot: -.02, shadow: sh }); };
+  lab('Avusturya', 90, 520, 'avusturya', '#4a3a4a'); lab('Doğu Tirol', 90, 630, 'doğu', '#4a3a4a'); lab('Lengberg Şatosu', 90, 780, 'lengberg', '#fff3cf', 'rgba(25,35,15,.85)');
+  pen(ctx, curve([800, 750], [920, 650], [1100, 610], 18), seg(t, W(id, 'lengberg') + .4, W(id, 'lengberg') + .9), 6, '#fff3cf', { arrow: 18 });
   ctx.restore();
 });
 
@@ -199,7 +200,7 @@ sahneS('s27', (ctx, t) => {
   const sy = W(id, 'sütyen'); T(ctx, t, '"Sütyen 1900\'lerde', 110, 190, 84, INK, sy - .1, W(id, 'icat') + .4, { rot: -.02 }); T(ctx, t, 'icat edildi."', 170, 280, 84, INK, W(id, 'icat'), W(id, 'edildi') + .4, { rot: -.02 });
   // orta çağ kadını (sağda, küçük) ve dört adım
   const S = actor('medieval', [[b, P({ armL: [-96, -410], armR: [96, -410], f: { mouth: MOUTH.smile, look: [-1, 0], turn: -.4 } })], [W(id, 'kadın'), P({ armL: [-120, -470], armR: [120, -470], headRoll: 3, f: { mouth: MOUTH.grin, lid: .3, look: [-1, 0], turn: -.4, blush: .6 } }), sm]], t, { x: 1000, s: .8, off: .5 }); drawMary(ctx, S);
-  const steps = [['giymiş', W(id, 'giymiş'), 1500, 290], ['yıkamış', W(id, 'yıkamış'), 1790, 290], ['eskitmiş', W(id, 'eskitmiş'), 1500, 640], ['çöpe atmış', W(id, 'çöpe'), 1790, 640]];
+  const steps = [['giymiş', W(id, 'giymiş'), 1450, 290], ['yıkamış', W(id, 'yıkamış'), 1740, 290], ['eskitmiş', W(id, 'eskitmiş'), 1450, 640], ['çöpe atmış', W(id, 'çöpe'), 1740, 640]];
   steps.forEach(([nm, t0, x, y], i) => {
     const u = bk(seg(t, t0 - .05, t0 + .35)); if (u <= 0) return; ctx.save(); ctx.translate(x, y); ctx.scale(u, u); pinnedPaper(ctx, 0, 0, 270, 270, (i - 1.5) * .03, '#f8efd9');
     if (i === 0) { ctx.save(); ctx.scale(.42, .42); ctx.translate(0, 40); linenBra(ctx, 0, 0, 1, t); ctx.restore(); }

@@ -1,13 +1,19 @@
-# scripts/vektor – kodla çizilen 2B animasyon (denemesi, 2026-11-20)
+# scripts/vektor – kodla çizilen 2B animasyon (Sütyen videosunun tamamı, 2026-11-20)
 
 Hiçbir dış görsel, ses veya ücretli araç yok: karakter, oda, sokak, proplar ve el yazısı notlar tamamen kodla çizilir (0 TL).
-Yazı tipleri: Caveat, Alegreya (OFL). Büşra'nın ses kaydı gelince zamanlar sese göre ayarlanır.
+Gerçek arşiv parçaları yalnızca küçük "kanıt" olarak girer (ABD patent çizimi, Met CC0 korse fotoğrafı; kanıtlar konular/sutyen/lisanslar.md).
+Yazı tipleri: Caveat, Alegreya, Inter (OFL). Kamera kuralı: sağa-sola kayma yok; sabit kamera + yavaş yakınlaşma, yer değişimi kesmeyle.
+Büşra'nın ses kaydı gelince kelime zamanları (zaman.py) gerçek sese göre değiştirilir.
 
-- cekirdek.js  – matematik, yumuşak şekil çizimi, kalem/el yazısı, kâğıt dokusu
-- mary.js      – Mary karakteri (yüz mimikleri, kollar, korse röntgeni, çubuklar)
-- dekor.js     – oda, sokak, mobilyalar, aynası, proplar (+ test levhaları: ?mod=yuz | oda | test)
-- acilis.js    – açılış sahnesi (0–41,6 sn): poz dizileri, kamera yolları, el yazısı notlar
-- zaman.py     – okuma metninden kelime zamanları (hece ağırlıklı) → zaman_acilis.js
-- kare.js      – seçilen anların tek kare PNG'leri (gözle kontrol)
-- render.js    – tüm sahneyi kare kare render edip sessiz mp4 yapar:
-                 node scripts/vektor/render.js medya/sutyen/vektor/k1 0 41.57 24 1280
+- cekirdek.js  – matematik, yumuşak şekil çizimi, kalem/el yazısı (hand/pen), kâğıt dokusu
+- mary.js      – karakter iskeleti (LOOK paletleri: saç, aksesuar, gözlük, bıyık; mimikler; kollar; korse röntgeni)
+- kadro.js     – oyuncu kadrosu (Mary, hizmetçi, Cadolle, Otto, Reyburn, ... paletleri)
+- sahne.js     – sahne kaydı (sahneS), poz sistemi (P/actor), kelime zamanı W(sahne, kelime)
+- dekor.js, dekor2.js – oda, sokak, mobilya, props, kâğıt/etiket yardımcıları (pinnedPaper, crossOut, ...)
+- acilis.js, sahneler1-6.js – 58 sahnenin tamamı (acilis = s01–s06; sahneler1: s08–s13 … sahneler6: n39–s33b)
+- zaman.py     – okuma metninden kelime zamanları (hece ağırlıklı) → zaman_tum.js
+- render.js    – sahneleri kare kare çizip sessiz mp4 yapar (kod değişmediyse önbellekten): node scripts/vektor/render.js hepsi 960 24
+- birlestir.py – sahne klipleri → tek önizleme: python3 scripts/vektor/birlestir.py cikis.mp4 --sadece-cizim
+- kare.js      – seçilen anların tek kare PNG'leri
+- kurgu_listesi.py – cümle↔görsel kontrol listesi sayfaları (metin_hibrit.json)
+- araclar/ozet_kareler.js + ozet_sayfa.py – bütün sahnelerde yazı/figür çakışma kontrolü (sahnenin %50 ve %92'sinde kare)

@@ -70,3 +70,10 @@ Partner Programı, seriler/oynatma listeleri, topluluk gönderileri.
 - ✅ 3 kapak seçeneği, başlık/açıklama taslağı 2 (kullanıcıya gösterilecek).
 - ⏳ BEKLENEN: Büşra'nın mikrofonla ses kaydı → kurgu (sahneleri sese oturtma, ağzı sese bağlama), altyazı.
 - ⏳ BEKLENEN: @icatbuldum hesapları, YouTube API kurulumu, Özel yükleme. Sonra 3 Shorts.
+
+## 2026-11-20 (gece) – Sütyen videosu: kod-çizim sürümü hazır
+- ✅ 58 sahnenin tamamı kodla çizildi (scripts/vektor), 0 TL; Gemini görselleri kullanılmıyor (Büşra'nın kararı).
+- ✅ Kamera sağa-sola kaymıyor (sabit kamera + yavaş yakınlaşma); figür hareketi, mimik, el yazısı notlar korundu.
+- ✅ Çakışma/okunurluk kontrol turu: 25 düzeltme (hatalar.md'ye kural yazıldı). Sessiz önizleme v11: 8 dk 47 sn.
+- ⏳ Büşra'nın geri bildirimi → gerekirse sahne düzeltmeleri.
+- ⏳ Büşra'nın ses kaydı → zamanları gerçek sese oturt, ses efektleri (sessiz/kısa), altyazı (.srt), kapak (3 seçenek), "Özel" yükleme, 3 Shorts (dikey yeniden çizim).

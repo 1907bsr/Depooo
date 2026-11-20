@@ -6,9 +6,11 @@ Karar (Büşra): TAMAMI kodla çizilen hareketli figürlerle (Gemini görselleri
 - python3 scripts/vektor/birlestir.py medya/sutyen/kurgu/<cikis>.mp4   (çizimi olmayan sahne = v9'dan)
 - python3 scripts/vektor/kurgu_listesi.py <video> <klasör>   (cümle↔görsel kontrol listesi; metin_hibrit.json)
 - node scripts/vektor/kare.js <sahne> <küresel_sn,...> <önek> 960   (tek kare kontrol)
+- node scripts/vektor/araclar/ozet_kareler.js 0.5,0.92 <klasör> 640 → python3 scripts/vektor/araclar/ozet_sayfa.py <klasör> 92 <önek>   (bütün sahnelerde yazı/figür çakışma kontrolü; 3 sn; render'dan ÖNCE yap)
 - python3 scripts/vektor/zaman.py   (kelime zamanları → zaman_tum.js; ses kaydı gelince gerçek zamanlarla değiştirilecek)
 ## Dosyalar
 cekirdek.js mary.js(rig; LOOK paletleri) kadro.js(karakterler) dekor.js dekor2.js sahne.js(kayıt, poz sistemi) acilis.js sahneler1-6.js zaman.py render.js kare.js birlestir.py
 ## Durum
 - 58 sahnenin tamamı çizildi ✓ (acilis=s01–s06, sahneler1: s08–s13, 2: s14–s20, 3: s21–s27+s18b, 4: s28–s02b, 5: s31–s38, 6: n39–s33b)
+- v11 (2026-11-20 gece): çakışma kontrol turu yapıldı (25 düzeltme), 51 klip yeniden çizildi, medya/sutyen/kurgu/onizleme-v11-cizim.mp4 = 527,3 sn, 960x540@24, sessiz, 0 TL.
 - Yapılacak: ses kaydı gelince zamanlama, ses efektleri (Büşra'nın promptu), altyazı, kapak, yükleme (Özel), Shorts (dikey düzen yeniden çizilir).

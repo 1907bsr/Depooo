@@ -98,7 +98,7 @@ sahneS('s14', (ctx, t) => {
     ctx.save(); const z = 1 + .08 * seg(t, c2, c3); ctx.translate(960, 560); ctx.scale(z, z); ctx.translate(-960, -560);
     mosaicDraw(ctx, 120, 110, 120, 56, 14, o => mosaicPanel(o, 120, 56, t, 'idle'));
     ctx.restore();
-    T(ctx, t, 'mozaik', 260, 100, 120, '#fff', W(id, 'mozaik'), W(id, 'mozaik') + .6, { rot: -.03, shadow: 'rgba(30,18,10,.8)' });
+    T(ctx, t, 'mozaik', 260, 112, 120, '#fff', W(id, 'mozaik'), W(id, 'mozaik') + .6, { rot: -.03, shadow: 'rgba(30,18,10,.8)' });
     T(ctx, t, 'hâlâ yerinde!', 1300, 1040, 120, '#fff', W(id, 'yerinde') - .2, W(id, 'duruyor') + .5, { rot: -.02, shadow: 'rgba(30,18,10,.8)' });
   } else if (t < c4) {   // UNESCO
     plainBG(ctx, '#efe3c6', '#d9c79a');
@@ -114,13 +114,15 @@ sahneS('s14', (ctx, t) => {
     mosaicDraw(ctx, 120, 110, 120, 56, 14, o => mosaicPanel(o, 120, 56, t, 'idle'));
     ctx.restore();
     // etiketler ekran uzayında
-    T(ctx, t, 'bant', 1150, 330, 140, '#fff', W(id, 'bant') - .1, W(id, 'bant') + .5, { rot: -.03, shadow: 'rgba(30,18,10,.85)' });
-    pen(ctx, curve([1160, 360], [1000, 420], [760, 470], 18), seg(t, W(id, 'bant') + .2, W(id, 'bant') + .7), 7, '#fff', { arrow: 20 });
-    T(ctx, t, 'şort', 1150, 860, 140, '#fff', W(id, 'şort') - .2, W(id, 'şort') + .5, { rot: -.03, shadow: 'rgba(30,18,10,.85)' });
-    pen(ctx, curve([1160, 840], [1000, 780], [740, 720], 18), seg(t, W(id, 'şort') + .1, W(id, 'şort') + .6), 7, '#fff', { arrow: 20 });
+    tagAt(ctx, t, W(id, 'bant'), 1420, 320, 300, 150, -.03); T(ctx, t, 'bant', 1420, 352, 112, INK, W(id, 'bant') - .1, W(id, 'bant') + .5, { align: 'center', rot: -.03 });
+    pen(ctx, curve([1290, 340], [1200, 420], [1110, 470], 18), seg(t, W(id, 'bant') + .2, W(id, 'bant') + .7), 7, INK, { arrow: 20 });
+    tagAt(ctx, t, W(id, 'şort'), 1440, 880, 300, 150, -.03); T(ctx, t, 'şort', 1440, 912, 112, INK, W(id, 'şort') - .2, W(id, 'şort') + .5, { align: 'center', rot: -.03 });
+    pen(ctx, curve([1300, 870], [1220, 830], [1120, 800], 18), seg(t, W(id, 'şort') + .1, W(id, 'şort') + .6), 7, INK, { arrow: 20 });
   }
 });
 
+// kâğıt etiket: kelimeyle birlikte belirir (açık renkli zeminde okunur)
+function tagAt(ctx, t, t0, x, y, w, h, rot) { const u = bk(seg(t, t0 - .15, t0 + .3)); if (u <= 0) return; ctx.save(); ctx.translate(x, y); ctx.scale(u, u); pinnedPaper(ctx, 0, 0, w, h, rot, '#f8efd9'); ctx.restore(); }
 // ---------------- s15: top/ağırlık, "Bikinili Kızlar", spora giderken ne giysem
 function wardrobe(ctx, x, y, t) {
   ctx.save(); ctx.translate(x, y);
@@ -140,8 +142,8 @@ sahneS('s15', (ctx, t) => {
     ctx.save(); const z = 1.0 + .05 * seg(t, b, tY); ctx.translate(960, 560); ctx.scale(z, z); ctx.translate(-960, -560);
     mosaicDraw(ctx, 120, 50, 120, 56, 14, o => mosaicPanel(o, 120, 56, t, 'act'));
     ctx.restore();
-    T(ctx, t, 'top', 260, 110, 120, '#fff', W(id, 'top') - .1, W(id, 'top') + .5, { rot: -.03, shadow: 'rgba(30,18,10,.85)' });
-    T(ctx, t, 'ağırlık', 1300, 110, 120, '#fff', W(id, 'ağırlık') - .1, W(id, 'ağırlık') + .5, { rot: .03, shadow: 'rgba(30,18,10,.85)' });
+    tagAt(ctx, t, W(id, 'top'), 280, 92, 250, 120, -.03); T(ctx, t, 'top', 280, 124, 104, INK, W(id, 'top') - .1, W(id, 'top') + .5, { align: 'center', rot: -.03 });
+    tagAt(ctx, t, W(id, 'ağırlık'), 1380, 92, 380, 120, .03); T(ctx, t, 'ağırlık', 1380, 124, 104, INK, W(id, 'ağırlık') - .1, W(id, 'ağırlık') + .5, { align: 'center', rot: .03 });
     if (t > tH) { pinnedPaper(ctx, 960, 940, 1500, 200, -.01, '#f8efd9'); T(ctx, t, '"Bikinili Kızlar"', 640, 965, 100, INK, W(id, 'bikinili') - .1, W(id, 'kızlar') + .4, { align: 'center' }); T(ctx, t, 'mayo', 1180, 940, 84, INK, W(id, 'mayo') - .1, W(id, 'mayo') + .3, { align: 'center' }); crossOut(ctx, 1090, 900, 1270, 960, seg(t, W(id, 'değil') - .1, W(id, 'değil') + .3)); T(ctx, t, 'spor kıyafeti', 1500, 965, 84, '#5f6b4a', W(id, 'spor'), W(id, 'kıyafeti') + .4, { align: 'center' }); }
   } else {
     plainBG(ctx, '#e9dcc0', '#cdb98f');
@@ -155,7 +157,8 @@ sahneS('s15', (ctx, t) => {
     S.armL.hold = (c) => { c.save(); c.translate(0, 8); line(c, [[0, 0], [0, 14], [-26, 36], [26, 36], [0, 14]], 3, '#d9d2c4'); shape(c, [[-30, 36], [30, 36], [26, 120], [-26, 120]], '#8a9a5b', null, { sw: 3, seed: 550 }); c.restore(); };
     S.armR.hold = (c) => { c.save(); c.translate(0, 8); line(c, [[0, 0], [0, 14], [-26, 36], [26, 36], [0, 14]], 3, '#d9d2c4'); shape(c, [[-30, 36], [30, 36], [34, 100], [-34, 100]], '#b4583a', null, { sw: 3, seed: 551 }); c.restore(); };
     drawMary(ctx, S);
-    T(ctx, t, '"Spora giderken ne giysem?"', 700, 190, 100, INK, W(id, 'spora') - .1, W(id, 'giysem') + .5, { rot: -.02 });
+    T(ctx, t, '"Spora giderken', 110, 170, 100, INK, W(id, 'spora') - .1, W(id, 'giderken') + .4, { rot: -.02 });
+    T(ctx, t, 'ne giysem?"', 150, 285, 100, INK, W(id, 'giderken') + .2, W(id, 'giysem') + .5, { rot: -.02 });
   }
 });
 
@@ -240,7 +243,7 @@ sahneS('s18', (ctx, t) => {
       S.armR.hold = (c) => { c.save(); line(c, [[0, 10], [10, -120]], 8, '#6b4d36'); shape(c, [[-28, -120], [12, -136], [24, -112], [-14, -102]], '#b7b0a2', '#8f897d', { sw: 3, seed: 590 }); c.restore(); };
       drawMary(ctx, S); LOOK.vic.acc = 'none';
       line(ctx, [[760 - 30, ZEMIN - 440 * .85], [1100, 740], [1400, 620], [1560, 500]], 5, '#a9794a');
-      T(ctx, t, 'ekstrem spor', 1380, 250, 130, INK, W(id, 'ekstrem') - .1, W(id, 'spor') + .5, { rot: -.03 });
+      T(ctx, t, 'ekstrem spor', 1110, 250, 130, INK, W(id, 'ekstrem') - .1, W(id, 'spor') + .5, { rot: -.03 });
     }
   }
 });
