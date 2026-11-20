@@ -79,3 +79,12 @@ Format: Tarih – Ne oldu – Neden – Bundan sonraki kural
 - Saç bukle maskesine yüz/çene çizgisi girerse koyu çizgi sürüklenip leke yapar. KURAL: cilt bölgesini 5 px genişletip maskeden çıkar, geçişi yumuşat.
 - Yarı saydam yama (RGBA) bulanıklaştırılırsa kenarda koyu halka çıkar (göz kırpmada "halka halka göz"). KURAL: göz çevresini cilt rengiyle difüzyonla doldurup temiz kapak yap, kapak kenarını çizerek ekle; yamayı RGB olarak harmanla.
 - Görsel kontrol yetmez: 6 karelik küçük özet elleri/kenarları göstermiyor. KURAL: hareketli bir resim teslim etmeden önce eller, saç uçları ve kenarlar 4-5x büyütülüp en uç hareket karelerinde bakılır.
+
+## 2026-11-20 gece – Kukla (kesip-bölme) düzeneğinde yakalanan hatalar (Büşra görmeden, büyütülmüş karelerle)
+- Katman alfasını bulanıklaştırmak ve 1 px genişletmek: kenarlar merdiven gibi/kesik çizgili göründü, parçalar arasında duvar renginde dikiş çıktı (dinlenme pozu farkı 1,97). KURAL: iç kenarlar sert (alfa 1); duvara bakan dış kenar duvar rengine göre "mat" çıkarılır (fark 0,26).
+- Kol sahipliği "3 px içindeki her şey" olunca etek tarafındaki krem halka kolla taşındı. KURAL: çekirdek + 3 px içindeki ÇİZGİ + 1 px saçak.
+- Eklem yuvarlak kapaklarının kenarı sertken noktalı halka göründü. KURAL: kapak kenarını 3 px yumuşat.
+- Plaka dolgusunda "orijinal pikseller + duvar" karışımı kullanınca el çevresinde artık çizgi parçaları kaldı. KURAL: bölgeyi tam duvar dolgusundan al; kolun arkasında kalan etek konturunu ölçüp yeniden çiz (koyuluk ağırlıklı merkezle).
+- Gövde alt kenarı sert kesilince nefes hareketinde belin altında açık renk dikiş çizgisi göründü. KURAL: alt kenar yumuşak biter, katman biraz aşağı uzar.
+- Her sahnenin ilk bakışında "uzun süren betiği `| head` ile borulama" betiği yarıda kesti (BrokenPipe) ve eski dosyalarla devam edildi. KURAL: üretim betiklerini boruya sokma; çıktıyı dosyaya yaz.
+- Yeni düzeneği her zaman TEMİZ klasörde baştan çalıştırıp çıktının aynı olduğunu doğrula (yapıldı: fark 0).

@@ -38,3 +38,5 @@ Koyu kahve topuz + yan buklelar, kahverengi göz, dantelli krem kombinezon, çı
 Kodla hareketlendirildi (bilgi/tempo-olcumu.md; medya/hareket/karakter2/). Adı yok.
 AÇIK (Büşra'ya soruldu): resmin hangi araçla üretildiği (CLAUDE.md 00. kural: yapay zekâ çıktısı ancak aracın şartları ticari kullanıma izin veriyorsa; Gemini uygulamasıysa sorun yok),
 ve hangi video/sahne için olduğu (kod çizim figürlerle stil uyumu). Önceki "gece kıyafetli" tarif (platin sarısı saç, yeşil göz) bu resimden farklı; hangisi kalıcı olacak, bekliyor.
+
+Kukla (eklemli) sürüm yapıldı: bu resim parçalara ayrıldı (baş, gövde, 2x3 kol parçası, plaka); el sallama klibi medya/hareket/karakter2/kukla-el-sallama-v1.mp4. Yöntem ve sınırlar: bilgi/tempo-olcumu.md, scripts/hareket/kukla/README.md.

@@ -52,3 +52,12 @@ kaş kalkması, gülümseme. Çıktı: medya/hareket/karakter2/hareket-v5.mp4 (d
 Sonuç: "canlı duruş" seviyesinde (nefes alan, göz kırpan, gülümseyen karakter), akıcı aksiyon seviyesinin yaklaşık 15-25 kat altında. El sallama, yürüme, dönme bu resimde yapılamaz
 (kol/bacak ayrı parça değil). Sonraki seviye için: kolu ayrı parçaya kesip arkasını doldurma denemesi (riskli) ya da yapay zekâ video modeli ya da karakteri kod sistemimize (scripts/vektor) taşıma.
 Katlanma ölçümü: scripts/hareket/katlanma_olc.py – 144 karenin hiçbirinde çizgili yerde determinant 0,4'ün altına düşmüyor (kontrolsüz ilk sürümde eller 63/72 karede katlanıyordu).
+
+## Kukla yöntemi: karakteri eklemlerinden parçalara ayırıp hareket ettirme (2026-11-20 gece, Büşra'nın fikri)
+Büşra: "Eklem yerlerini hareket etmesi için ayrı ayrı bölüp tarasana." → Kombinezonlu kadın resmi (686x1024) kesilip parçalandı: baş (saç+bukleler), gövde (boyun, askılar, korse, bel bandı),
+her kol 3 parça (üst kol, ön kol, el) + yuvarlak dirsek/bilek kapakları, temiz duvar plakası (kolların arkasında kalan etek konturu yeniden çizildi). Parçalar eklem merkezlerinden döndürülür (scripts/hareket/kukla/).
+8 sn örnek (medya/hareket/karakter2/kukla-el-sallama-v1.mp4): sol kol omuz+dirsek+bilekle kalkıp el sallıyor, baş eğiliyor, nefes, göz kırpma, bakış, kaş, gülümseme, bukle sallanması. 0 TL, kusursuz döngü.
+Kontrol: dinlenme pozunda orijinalle fark ort. 0,26 (kenarlar 8x büyütüldü, pikseli pikseline aynı). Betik sıfırdan, temiz klasörde 17 sn'de aynı sonucu üretti.
+Ölçüm (160x90, 15 kare/sn kare farkı): tüm klip ort. 0,38; el sallama bölümü 0,52 (idle hareketi 0,24 idi). Böcek-3 kayıtları 3,66–6,26: oran doğrudan kıyaslanamaz (figür karenin ~%25'i) ama hâlâ çok daha sakin.
+Sınırlar: uzun etek bacakları örttüğü için bacak/yürüme yok; dönme yok; kollar gövdenin ARKASINDA katmanlandığı için el gövdenin önüne (belde, göğüste) gelemez.
+Eklem dostu kaynak resim (önden, tam boy, düz arka plan, kollar ~30° açık, eller açık, bacaklar hafif aralık; yürüme için yan görünüş) ile tam hareket mümkün: bkz. scripts/hareket/kukla/README.md.
