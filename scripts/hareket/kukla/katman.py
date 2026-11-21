@@ -28,10 +28,11 @@ def seg_masks(arm, side):
     dE = np.hypot(xx - E[0], yy - E[1]) < RE
     dW = np.hypot(xx - Wr[0], yy - Wr[1]) < RW
     distE = np.hypot(xx - E[0], yy - E[1]); distW = np.hypot(xx - Wr[0], yy - Wr[1])
-    dE = distE < RE + 1.5; dW = distW < RW + 1.5
-    upper = arm & ((tE < 0) | dE)
-    fore = arm & (((tE >= 0) & (tW < 0)) | dE | dW)
-    hand = arm & ((tW >= 0) | dW)
+    capE = distE < RE + 1.5; capW = distW < RW + 1.5            # üstteki parçanın yuvarlak kapağı
+    cpyE = distE < RE - 1.0; cpyW = distW < RW - 1.0            # alttaki parçadaki kopya (kapağın altında tamamen gizli kalır)
+    upper = arm & ((tE < 0) | capE)
+    fore = arm & ((tE >= 0) | cpyE)                              # ön kol + el TEK katman (bilek yumuşak bükülür, kesik yok)
+    hand = np.zeros_like(arm)
     # yumuşak kapak kenarı (üstteki parça: dirsek yuvarlağı; alttaki: bilek yuvarlağı); kesik çizgisinin üst yarısı sert kalır
     ovU = np.where(tE >= 0, np.clip((RE + 1.5 - distE) / 3.0, 0, 1), 1.0).astype(np.float32)
     ovF = np.where(tW >= 0, np.clip((RW + 1.5 - distW) / 3.0, 0, 1), 1.0).astype(np.float32)
@@ -51,7 +52,7 @@ OV = {}
 for side in 'LR':
     u, f, h, ovU, ovF = seg_masks(M['arm' + side], side)
     parts['upper' + side], parts['fore' + side], parts['hand' + side] = u, f, h
-    OV['upper' + side], OV['fore' + side] = ovU, ovF
+    OV['upper' + side] = ovU                                        # sadece dirsek kapağı yumuşatılır (bilek artık bükülüyor)
 
 # ---------------- renk sızdırma (kenar kirlenmesini temizle) + yumuşak alfa
 def bleed(rgb, core, steps=4):
@@ -126,6 +127,8 @@ print('plaka hazır (etek tamamlama sonraki adımda)')
 import os
 os.makedirs('katman', exist_ok=True)
 meta = dict(J=J, RE=RE, RW=RW, layers={})
+allm = {n: m for n, m in parts.items()}
+parts = {n: m for n, m in parts.items() if m.any()}
 allm = {n: m for n, m in parts.items()}
 for n, m in parts.items():
     oth = np.zeros_like(m)

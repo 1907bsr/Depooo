@@ -93,3 +93,10 @@ Format: Tarih – Ne oldu – Neden – Bundan sonraki kural
 - Üst kolu omuz merkezinden sert bir parça gibi döndürünce koltuk altında kol ile gövde arasında omuz-askı hizasına kadar uzanan gri bir boşluk açıldı; kolun iç çizgisi askının arkasına kaçıp çizgi yarım kaldı.
   KURAL: Üst kol sert dönmez; omuz sabit kalır, dönme açısı omuzdan aşağı 70 px boyunca 0'dan tam açıya yumuşakça artar (rig.py _render_bent). Koltuk altı gövdeye bağlı kalır, yuvarlak kapanır.
   Her yeni kukla/rig için kolu 20°, 35°, 50° kaldırıp koltuk altını 8-10x büyütüp bak (iki kol).
+
+## 2026-11-21 – "Düzelmemiş": kol havadayken dirsek ve koltuk altı hâlâ eksikti (Büşra ikinci kez yakaladı)
+- Koltuk altı düzeltmemde (omuzdan yumuşak bükme) büyük gri boşluğu kapattım ama dirseğin yuvarlak ucunda KONTUR YOKTU (kol dirsekten bükülü ve havadayken uç "kesik" görünüyordu) ve koltuk altı hâlâ omuz askısına kadar uzanan sivri bir V'ydi (derisiz, "yarım").
+  KURAL: Bir parça parçaya ayrıldığında yuvarlak eklem kapağının açıkta kalan kenarına kontur çizilir (hangi kısmın açıkta olduğu alfa örneklenerek bulunur). Kol yana kalkınca gövde yan derisi (koltuk altı) sentezlenir ve uç yuvarlak yayla kapatılır.
+- Kullanıcı bir yeri İKİNCİ kez şikâyet ederse önceki düzeltmenin asıl şikâyeti çözmediğini varsay; sadece "büyük" sorunu değil, o hareketin TÜM evrelerini (kalkış, tepe, iniş) videodan çözülmüş karelerle, telefondaki boyuta yakın ve 8-10x büyütmeyle ayrı ayrı kontrol et.
+- Bileği ayrı katman yapmak bilekte kesik/halka çıkardı. KURAL: ön kol + el tek katman, bilek yumuşak bükülür.
+- Gövdenin kola bakan kenarında soluk "hale" çizgisi: kolun açık renkli saçağı gövdeye aitti. KURAL: koyu çizgiyi geçmeden koldan ulaşılan açık pikseller kola aittir.

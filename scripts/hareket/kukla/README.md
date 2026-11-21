@@ -38,3 +38,10 @@ Yürüme için aynı karakterin yan görünüşü ayrıca gerekir.
 - Kolların arkasında kalan etek konturu ölçülüp yeniden çizilir; plaka dolgusu "tam" duvar dolgusundan alınır.
 - Gövdenin alt kenarı yumuşak biter (nefes hareketinde dikiş çizgisi görünmesin); boyun derisi çenenin altına uzatılır.
 - Üst kol sert döndürülmez: omuz sabit, dönme açısı omuzdan aşağı 70 px boyunca yumuşakça artar (`rig.py _render_bent`); aksi halde kol kalkınca koltuk altı açık/yarım kalır.
+- Ön kol ve el TEK katmandır; bilek yumuşak bükülür (`_render_bent`, ±22 px). Bilekte kesik/halka yoktur.
+- Dirsek: yuvarlak kapağın AÇIKTA kalan kenarına kontur dinamik çizilir (`_joint_outline`: kenar, alfa örneklenerek bulunur). Konturu olmayan yuvarlak uç "eksik kol" gibi görünür.
+- Koltuk altı: kol yana kalkınca omuz askısına kadar uzanan sivri boşluk "yarım koltuk altı" görünür. `_armpit_fills`: boşluğun ince ucu morfolojik açma ile bulunur, gövde yan derisiyle doldurulur,
+  ucu yarıçapı `armpit_rho` olan daire yayıyla kapatılır (yay üst kolun alt çizgisini kesintisiz sürdürür); kolun F'ye bakan iç kenar çizgisi yerel deri alanıyla boyanır.
+  Etki kol kalkışına göre yumuşakça artar (11° altında yok, 25° üstünde tam): dinlenme pozu orijinalle aynı kalır.
+- Kolun gövdeye bakan açık renkli saçağı (`parcala.py arm_rim`) kola aittir; gövdeye bırakılırsa gövde kenarında soluk "hale" çizgisi kalır.
+- Kol yukarıdayken kontrol: videodan çözülmüş karelerle (kaldırma, tepe, indirme evreleri) dirsek, bilek ve koltuk altı büyütülüp bakılır.
